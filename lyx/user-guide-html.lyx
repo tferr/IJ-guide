@@ -204,7 +204,15 @@ target "http://imagej.nih.gov/ij/docs/user-guide.zip"
 
 \end_inset
 
- that you can install onto your hard disk for offline browsing.
+ that you can install onto your hard disk for 
+\begin_inset CommandInset href
+LatexCommand href
+name "offline browsing"
+target "_README.txt"
+
+\end_inset
+
+.
  The source files of this guide are available through a Git version control
  repository at the 
 \begin_inset CommandInset href
