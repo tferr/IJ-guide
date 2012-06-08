@@ -85,7 +85,7 @@ How-To: LyX
 ===========
 * Get LyX at www.lyx.org, available under a GPL license
 
-* IJguide.module (utils subfolder) defines all the customizations used
+* IJguide.module (lyx subfolder) defines all the customizations used
   by the guide and must be placed in the layouts subfolder of the LyX
   user directory (create it if needed). You can choose 'LyX>About LyX'
   to know the correct path for your installation. Run 'Lyx>Reconfigure'
@@ -109,7 +109,9 @@ How-To: HTML
   documents. It is very similar to user-guide.lyx but it does not load
   macros and commands that are 'inappropriate' for the HTML version
 
-* Get eLyXer at http://elyxer.nongnu.org/, available under GPL
+* you should have eLyXer (http://elyxer.nongnu.org/, available under GPL)
+  available in the root folder of this file. This elyxer.py in has (tiny)
+  modifications over the original, tailored to the guide.
 
 * The output of conversion goes into ./guide/, ready to be uploaded to
   imagej.nih.gov/ij/docs/. Images for the HTML version should be
@@ -135,9 +137,12 @@ TO DO
 1) Optimize the grep patterns and substitute textfactories with a proper
    shell script
 2) Modify eLyXer source code to split pages using section names and not
-   incremental counters. E.g.: 'PluginsMenu.html#Threshold' instead of bogus
-   'userguide-25.html#toc-Subsection-25.2'
-3) Optimize the grep patterns and substitute textfactories with a proper
-   shell script
-4) Substitute IJguide.module with a proper LaTeX2e class
-5) Modify eLyXer source code to optimize the HTML conversion
+   incremental counters. E.g.: 'imagemenu.html#Threshold' instead of bogus
+   '1.46.html#toc-Subsection-25.2'
+3) Substitute IJguide.module with a proper LaTeX2e class
+4) Modify eLyXer source code to optimize the HTML conversion
+
+KNOWN BUGS
+==========
+1) elyxer fails if there are href with images in description labels
+   (they exist in 06-shortcuts)

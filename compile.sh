@@ -5,13 +5,13 @@
   ## The path to the lyx executable
     LYXPATH=/Applications/LyX.app/Contents/MacOS/lyx
   ## The path to the elyxer executable
-    ELYXERPATH=~/IJguide/elyxer/elyxer.py
+    ELYXERPATH=./elyxer/elyxer.py
   ## The path to the HTML TOC template
-    HTMLTEMPLATETOC=../html/template-toc.html
+    HTMLTEMPLATETOC=./html/template-toc.html
   ## The path to the main HTML template
-    HTMLTEMPLATE=../html/template.html
+    HTMLTEMPLATE=./html/template.html
   ## The main LyX file for the HTML version
-    LYXHTMLFILE=../lyx/user-guide-html.lyx
+    LYXHTMLFILE=./lyx/user-guide-html.lyx
   ## The common name to all the pages
     HOMEPAGE=146.html
   ## IJ version to appear in page titles
