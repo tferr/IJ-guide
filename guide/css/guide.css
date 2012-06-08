@@ -1,0 +1,826 @@
+/*  ImageJ User Guide http://imagej.nih.gov/ij/docs/guide/index.html
+*
+*   Copyright (C) 2009-2012 Tiago Ferreira, Alex Fernández (elyxer.
+*   nongnu.org/lyx.css) and Michael Hüneburg (michaelhue.com/keyscss).
+*
+*   This program is free software: you can redistribute it and/or modify
+*   it under the terms of the GNU General Public License as published by
+*   the Free Software Foundation, either version 3 of the License, or
+*   (at your option) any later version.
+*
+*   This program is distributed in the hope that it will be useful,
+*   but WITHOUT ANY WARRANTY; without even the implied warranty of
+*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*   GNU General Public License for more details.
+*
+*   You should have received a copy of the GNU General Public License
+*   along with this program. If not, see http://www.gnu.org/licenses/.
+*/
+
+.searchword{background-color:#FFF79F;} /*searchhi.js*/	
+body {
+    font: 85% sans-serif;
+    background: #fff;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+#bodyText {margin-left:200px;}
+#globalWrapper {
+    margin: 15px 5% 20px 60px;
+    padding-left: 15px;
+    line-height: 1.4em;
+}
+#tocMenu {
+    display: block;
+    position: fixed;
+    _position: absolute; /* fix for IE */
+    top: 0px;
+    left: 0px;
+    width: 200px;
+    height: 100%;
+}
+#upgradeBrowser {
+    font-size: 85%;
+    position: fixed;
+    _position: absolute; /* IE6 */
+    top: 0;
+    background-color: #F4A83D;
+    border-bottom: 1px solid #D6800C;
+    padding: 8px 8px 8px 80px;
+    _padding: 8px 270px 8px 80px; /* IE6: account for width of TOC */
+}
+#upgradeBrowser span.notify-close {
+    background-color: #FAD163;
+    position: fixed;
+    _position: absolute; /* IE6 */
+    top: 14px;
+    right: 0px;
+    _right: 220px;  /* IE6: account for width of TOC */
+    border: 2px solid #735005;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-decoration: none;
+    margin-right: 4px;
+    margin-left: 4px;
+    display: block;
+    cursor: pointer;
+}
+#upgradeBrowser span.notify-title {font-weight: bold;}
+#showHideTOC {
+    position: fixed;
+    _position: absolute; /* fix for IE */
+    top: 135px;
+    margin-left: 10px;
+    width: 55px;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    text-align: center;
+    line-height: 1.4em;
+}
+#showHideTOC:hover, #showHideTOC:active {
+    background-color: #ccc;
+    text-decoration: none;
+}
+#showHideTOC, div.topheader, div.bottomheader {
+    font-size: 90%;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #efefef;
+    color: #333;
+    -moz-box-shadow: inset 0 0 1px #ccc;
+    -webkit-box-shadow: inset 0 0 1px #ccc;
+    box-shadow: inner 0 0 1px #ccc;
+}
+#imagejdev {
+	position: fixed;
+	_position: absolute; /* fix for IE */
+	display: block;
+	z-index: 5;
+	top: 0;
+	left: -1;
+	border: 0;
+	background: url(../icons/bookmark.png) no-repeat;
+	width: 33px;
+	height: 122px;
+	text-indent: -1000px;
+	overflow: hidden;
+	padding: 0;
+	_padding: 8px 270px 8px 80px; /* IE6: account for width of TOC */
+}
+
+/* Basic styles */
+a {text-decoration: none; background: none;}
+a:link {color: #0030c0;}
+a:visited {color: #603090;}
+a:active {color: #ffa000;}
+a:hover {text-decoration: underline;}
+a[href*="infobox"] { /* all A tags linking to internal infoboxes*/
+    padding: 1px 0 0 16px; background: transparent url(../icons/info-small.png) no-repeat center left
+}
+a[href*="#lis:"] { /* all A tags linking to internal listings*/
+    padding-left: 16px; background: transparent url(../icons/gear-small.png) no-repeat center left
+}
+a[href*="en.wikipedia.org/"] { /* all A tags linking to wikipedia*/
+    padding-right: 14px; background: transparent url(../icons/wikipedia.png) no-repeat center right
+}
+/* all external A tags http and https*/
+a[href^="http"]:not([href^="http://imagej.nih.gov/ij/"]):not([href*="en.wikipedia.org/"]):not([href$=".pdf"]) {
+    padding-right: 11px; background: transparent url(../icons/external.png) no-repeat center right
+}
+/* all A tags in the IJ domain outside the guide folder  */
+a[href^="http://imagej.nih.gov/ij/"] {
+    padding-right: 11px; background: transparent url(../icons/domain.png) no-repeat center right
+}
+a[href$='.pdf'] { /* all A tags whose HREF attribute ends in .pdf */
+    padding-right: 17px; background: transparent url(../icons/pdf.png) no-repeat center right;
+}
+/* all A tags whose HREF attribute ends in a macro extension */
+a[href$='.txt'], a[href$='.ijm'] { 
+    padding-right: 15px; background: transparent url(../icons/script.png) no-repeat center right;
+}
+a[href$='.zip'] { /* all A tags whose HREF attribute ends in .zip */
+    padding-right: 18px; background: transparent url(../icons/package.png) no-repeat center right;
+}
+a[href ^="mailto:"] { /* all A tags whose HREF attribute starts with mailto: */
+    padding-right: 17px; background: transparent url(../icons/mail.png) no-repeat center right;
+}
+/* Headers */
+h1 {margin-top: 1em; line-height: 1.5em;}
+h2 {margin-top: 2.6em;}
+h3 {margin-top: 2em;}
+h1.Part, h1.Part- {text-align: center;}
+sup, a.NomenclatureEntry { /* superscript mark */
+    font-size: 0.75em;
+    line-height: 0.5em;
+    vertical-align: text-top;
+}
+h4.Paragraph, h4.Paragraph- {
+    font-weight: bold;
+    font-size: 120%;
+    display: block;
+    margin: 2.2em 0 .7em 0;
+}
+sub {font-size: 0.75em; line-height: 0.5em; vertical-align: text-bottom;}
+div.Standard {margin: 1em 0;}
+div.Unindented {margin: 0;}
+div.Indented {text-indent: 30pt; margin: 0;}
+div.Indented * {text-indent: 0pt;}
+p.dir {float: right;}
+p.printindex {font-size: 0.90em;}
+a.printindex {color: black;}
+table {
+    display: inline-table;
+    text-align: center;
+    border-collapse: collapse;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+tr.header {
+    border-bottom: 1px solid #555;
+    font-weight: bold;
+}
+td {
+    padding: 1ex;
+    border: thin solid #f0f0f0;
+}
+td div.Standard, div.table div.Standard {
+    margin: 0ex;
+    padding: 0ex;
+}
+td.numeric {text-align: right;}
+td.empty {text-align: center;}
+table.blank { /* 'invisible' table */
+    border-width: 0px;
+    border-spacing: 0px;
+    border-style: none;
+    border-collapse: collapse;
+}
+table.blank th, table.blank td {
+    border-width: 0px;
+    padding: 2px;
+    border-style: none;
+}
+table.formal {
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #555;
+}
+table.formal th, table.formal td {border-width: 0px;}
+div.right {text-align: right;}
+div.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+span.versalitas, span.noun {font-variant: small-caps;}
+span.sans {font-family: sans-serif;}
+span.code {
+    font-family: monospace;
+    font-size: 120%;
+}
+div.Plain {
+    display: inline;
+    width: auto;
+}
+span.Description-entry {font-weight: bold;}
+span.List-entry {
+    display: inline-block;
+    width: 25%;
+    vertical-align: text-top;
+}
+span.List-contents {
+    display: inline-block;
+    width: 75%;
+    vertical-align: text-top;
+}
+div.Space {display: none;}
+span.appendix {display: none;}
+span.greyedout {color: #808080;}
+div.Description, div.List, li {margin: 1em 0;}
+li.nested {list-style-type: none;}
+span.Info {
+    background: #f0f0f0;
+    border: thin solid #c0c0c0;
+}
+a.Label {
+    text-decoration: none;
+    color: #000000;
+}
+span.phantom {color: #ffffff;}
+a.biblioentry {color: black;}
+/* Guide customizations */
+#footer {
+    clear: both;
+    font-size: 90%;
+    margin-top: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+div.infobox { /* Noteworthy infoboxes floats */
+    position: relative;
+    margin: 6ex auto;
+    background: #fff6bf;
+    border: 1px solid #ffd324;
+    border-radius: 6px 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    padding: 5px 20px 5px 20px;
+    text-align: justify;
+    color: #000;
+    clear: both;
+}
+div.infobox:before {
+    position: absolute;
+    content: url(../icons/info.png);    
+    top: -12px;
+    left: -24px;
+    width: 48px;
+    height: 58px;
+}
+div.infoboxcaption {
+    text-align: left;
+    font-weight: bold;
+}
+div.minipagefloat { /* Adjust illustrations in leftminipage */
+    float: right;
+    padding-left: 1.5em;
+    padding-bottom: 2em;
+    clear: both;
+    overflow: auto; /* fix for IE?? */
+}
+div.See {
+    margin: 1.5em 0 1.5em 0;
+    color: #050;
+}
+div.See:before {
+    font-weight: bold;
+    content: 'See Also: ';
+}
+blockquote { /* Adjust the Quotation environment */
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    padding-left: 15px;
+    border-left: 3px solid #ccc;
+}
+div.Labeling {margin: 1em 0 1em 0;}
+div.Nomenclated {margin-bottom: 0.5em;}
+div.Nomenlabel {
+    font-weight: bold;
+    float: left;
+    width: 7em;
+}
+/* Custom flex styles */
+span.menuitem {font-variant: small-caps;}
+span.menusep { /* Specify fonts supporting unicode &#x25B7; (menu separator) */
+    font-family: "Batan", "Gulim", "Hiragino", "Meiryo", "PCMyungjo", "Lucida Sans Unicode", "Menlo", sans-serif; 
+}
+span.Filename, span.Directory {
+    font-family: monospace;
+    font-size: 125%; 
+}
+span.Keystroke { /* KEYS.css (c) 2010 Michael Hüneburg, http://michaelhue.com/keyscss */
+    display: inline;
+    display: inline-block;
+    min-width: 1em;
+    padding: .2em .3em;
+    font: normal .85em/1 "Lucida Grande", Lucida, Arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    -moz-border-radius: .3em;
+    -webkit-border-radius: .3em;
+    border-radius: .3em;
+    border: none;
+    cursor: default;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    background: rgb(250, 250, 250);
+    background: -moz-linear-gradient(top, rgb(210, 210, 210), rgb(255, 255, 255));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(210, 210, 210)), to(rgb(255, 255, 255)));
+    color:  rgb(50, 50, 50);
+    text-shadow: 0 0 2px rgb(255, 255, 255);
+    -moz-box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 .4em rgb(200, 200, 200), 0 .1em 0 rgb(130, 130, 130), 0 .11em 0 rgba(0, 0, 0, .4), 0 .1em .11em rgba(0, 0, 0, .9);
+    -webkit-box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 .4em rgb(200, 200, 200), 0 .1em 0 rgb(130, 130, 130), 0 .11em 0 rgba(0, 0, 0, .4), 0 .1em .11em rgba(0, 0, 0, .9);
+    box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 .4em rgb(200, 200, 200), 0 .1em 0 rgb(130, 130, 130), 0 .11em 0 rgba(0, 0, 0, .4), 0 .1em .11em rgba(0, 0, 0, .9);
+}
+span.normal {font-style: normal;}
+div.PlainVisible {}
+div.indexgroup {margin-left: 2em;}
+span.strong {font-weight: bold;}
+/* Figures and Tables */
+img.embedded {
+    width: 100%;
+    _width: auto;
+}
+div.float {
+    margin-top: 2ex;
+    margin-bottom: 1ex;
+    text-align: center;
+}
+span.float {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+    text-align: center;
+}
+div.figure {
+    display: inline-block;
+    text-align: center;
+    padding: 1ex;
+    margin: 2ex auto;
+    border: 0; /* thin solid #c0c0c0; */
+}
+div.table {
+    display: inline-block;
+    text-align: center;
+    padding: 1ex;
+    margin-left: auto;
+    margin-right: auto;
+}
+div.tablecaption {
+    text-align: justify;
+    font-family: sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5ex 0.5ex 0 0.5ex; 
+}
+div.algorithm {
+    display: inline-block;
+    text-align: left;
+    padding: 1ex;
+    margin-left: auto;
+    margin-right: auto;
+    border: thin solid #c0c0c0;
+}
+div.caption {
+    text-align: justify;
+    font-family: sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5ex 0.5ex;
+}
+img.figure {
+    width: 100%;
+    _width: auto;
+}
+div.multifigure {
+    padding: 1ex;
+    width: 100%;
+}
+div.multitable {
+    display: inline-block;
+    padding: 1ex;
+    margin-left: auto;
+    margin-right: auto;
+    border: thin solid #c0c0c0;
+}
+div.multialgorithm {
+    display: inline-block;
+    padding: 1ex;
+    margin-left: auto;
+    margin-right: auto;
+    border: thin solid #c0c0c0;
+}
+div.wrap-l, div.wrap-o, div.wrap-i {
+    margin: 2ex;
+    float: left;
+}
+div.wrap-r {
+    margin: 2ex;
+    float: right;
+}
+div.listing {
+    position: relative;
+    clear: both;
+}
+div.listing:before {
+    position: absolute;
+	z-index: 2;
+    content: url(../icons/gear.png);    
+    top: 5px;
+    left: -15px;
+    width: 32px;
+    height: 32px;
+}
+div.listingcaption {
+    padding: 6px 0 0 20px; 
+    font-weight: bold;
+    border-bottom: 2px solid #999;
+}
+pre { /* format of listings when JavaScript is disabled */
+	padding: 1em;
+	border: 1px dashed #2f6fab;
+	color: #444;
+	background-color: #f9f9f9;
+	line-height: 1.1em;
+	margin: 0em;
+	font-family: Courier, monospace;
+    overflow-X: auto;
+    overflow-Y: hidden; /* hides the vertical scroll created by IE */
+    width: 100%;
+    _width: auto;
+}
+/* First page */
+h1.title {text-align: center;}
+h1.title img {  /* Fix for image in title */
+    margin-bottom: -10ex;
+    margin-left: -69px;
+}
+h2.author {  /* Fix for image in title */
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 6ex;
+}
+h2.Date {
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 4ex;
+}
+div.abstract {
+    margin: 1em 3em;
+    text-align: justify;
+    font-size: 1em;
+}
+p.abstract-message {display: none;}
+div.tocheader {
+    margin: 1em 0;
+    font-size: large;
+}
+a.toc {color: black;}
+div.tocindent {padding: 0 0 0 2em;}
+div.toc {padding-top: .2em;}
+/* Extras: colors, footnotes, boxes, spaces...*/
+/* Raw colors */
+span.red {color: #c00000;}
+span.blue {color: #0000c0;}
+span.green {color: #00c000;}
+span.magenta {color: #c000c0;}
+span.cyan {color: #00c0c0;}
+span.yellow {color: #c0c000;}
+span.white {color: #ffffff;}
+/* Footnotes */
+span.SupFootMarker {
+    color: #0030c0;
+    font-size: 0.75em;
+    line-height: 0.5em;
+    vertical-align: text-top;
+}
+span.AlignFootMarker {color: #0030c0;}
+div.EndFoot {
+    margin: 0.2ex;
+    background: #ffffff;
+    padding: 0.5ex;
+    font-size: small;
+    font-weight: normal;
+    line-height: 1.5em;
+    text-align: left;
+}
+span.MarginFoot {
+    float: right;
+    clear: right;
+    margin: 0.2ex;
+    border: thin solid #c0c0c0;
+    background: #ffffff;
+    width: 30%;
+    padding: 0.5ex;
+    font-size: small;
+    font-weight: normal;
+    line-height: 1.5em;
+    text-align: left;
+}
+span.HoverFoot {
+    margin: 0.2ex;
+    border: thin solid #c0c0c0;
+    background: #ffffff;
+    padding: 0.5ex;
+    font-size: small;
+    font-weight: normal;
+    line-height: 1.5em;
+    text-align: left;
+}
+span.FootOuter .HoverFoot {
+    display: none;
+    position: absolute;
+}
+span.FootOuter:hover .HoverFoot {
+    display: inline;
+    float: none;
+}
+span.Marginal {
+    float: right;
+    clear: right;
+    margin-left: 3ex;
+    border-top: thin solid #c0c0c0;
+    border-bottom: thin solid #c0c0c0;
+    background: #ffffff;
+    width: 30%;
+    padding: 2ex 0 2ex 2ex;
+    font-size: small;
+    font-weight: normal;
+    line-height: 1.4em;
+    text-align: left;
+}
+span.Note {display: none;}
+/* Boxes */
+div.frameless, div.Frameless {}
+hr.line {display: inline-block;}
+/* Spaces */
+span.hspace {display: inline-block;}
+span.vspace {
+    display: inline-block;
+    vertical-align: text-top;
+}
+span.hfill {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 20mm;
+    background: #fff0f0;
+}
+div.defskip {
+    display: block;
+    height: 1em;
+}
+div.smallskip {
+    display: block;
+    height: 0.5em;
+}
+div.medskip {
+    display: block;
+    height: 1em;
+}
+div.bigskip {
+    display: block;
+    height: 2em;
+}
+div.vfill {
+    display: block;
+    height: 30em;
+}
+/* Sizes */
+span.scriptstyle {font-size: 0.75em;}
+span.scriptscriptstyle {font-size: 0.60em;}
+/* Split Part Navigation */
+div.topheader {
+    margin-bottom: 3em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+div.bottomheader {
+    margin-top: 3.5em;
+    padding-left: 10px;
+    padding-right: 10px;
+    clear: both;
+}
+span.prev {
+    float: left;
+    width: 33%;
+    text-align: left;
+    border-right: 3px solid white;
+}
+span.up {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+    border-right: 3px solid white;
+}
+span.next {
+    float: right;
+    text-align: right;
+}
+span.prev a, span.next a , span.up a{
+    font-weight: bold;
+    color: #36c;
+}
+hr.footer {margin-top: 2em;}
+div.footer {
+    font-size: 0.90em;
+    margin: 1em 0;
+}
+/* CSS file for LaTeX formulas. !Chunks removed*/
+/* Formulas */
+.formula {
+    text-align: center;
+    font-family: "DejaVu Serif", serif;
+    margin: 1.2em 0;
+}
+span.formula {white-space: nowrap;}
+div.formula {
+    padding: 0.5ex;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Basic features */
+a.eqnumber {
+    display: inline-block;
+    float: right;
+    clear: right;
+    font-weight: bold;
+}
+span.unknown {color: #800000;}
+span.ignored, span.arraydef {display: none;}
+.formula i {letter-spacing: 0.1ex;}
+/* Alignment */
+.align-left, .align-l {text-align: left;}
+.align-right, .align-r {text-align: right;}
+.align-center, .align-c {text-align: center;}
+/* Structures */
+span.overline, span.bar {text-decoration: overline;}
+.fraction, .fullfraction {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+.fraction .fraction {
+    font-size: 80%;
+    line-height: 100%;
+}
+span.numerator {display: block;}
+span.denominator {
+    display: block;
+    padding: 0ex;
+    border-top: thin solid;
+}
+sup.numerator, sup.unit {
+    font-size: 70%;
+    vertical-align: 80%;
+}
+sub.denominator, sub.unit {
+    font-size: 70%;
+    vertical-align: -20%;
+}
+span.sqrt {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.1ex;
+}
+sup.root {
+    font-size: 70%;
+    position: relative;
+    left: 1.4ex;
+}
+span.radical {
+    display: inline-block;
+    padding: 0ex;
+    font-size: 150%;
+    vertical-align: top;
+}
+span.root {
+    display: inline-block;
+    border-top: thin solid;
+    padding: 0ex;
+    vertical-align: middle;
+}
+span.symbol {font-size: 125%;}
+span.bigsymbol {font-size: 150%;}
+span.largesymbol {font-size: 175%;}
+span.hugesymbol {font-size: 200%;}
+span.scripts {
+    display: inline-table;
+    vertical-align: middle;
+}
+.script {
+    display: table-row;
+    text-align: left;
+    line-height: 150%;
+}
+span.limits {
+    display: inline-table;
+    vertical-align: middle;
+}
+.limit {
+    display: table-row;
+    line-height: 95%;
+}
+sup.limit, sub.limit {line-height: 150%;}
+span.symbolover {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    float: right;
+    right: 100%;
+    bottom: 0.5em;
+    width: 0px;
+}
+span.withsymbol {display: inline-block;}
+span.symbolunder {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    float: right;
+    right: 80%;
+    top: 0.3em;
+    width: 0px;
+}
+/* Environments */
+span.array, span.bracketcases, span.binomial, span.environment {
+    display: inline-table;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 0em;
+    vertical-align: middle;
+}
+span.arrayrow, span.binomrow {
+    display: table-row;
+    padding: 0ex;
+    border: 0ex;
+}
+span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
+    display: table-cell;
+    padding: 0ex 0.2ex;
+    line-height: 99%;
+    border: 0ex;
+}
+/* CSS section for print */
+@media print {
+body {
+    font: 90% serif;
+    background: #ffffff;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+#globalWrapper {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background: #ffffff;
+    line-height: 1.5em;
+}
+span.FootOuter .Foot {
+    display: block;
+    position: relative;
+    float: right;
+    clear: right;
+    margin: 0.2ex;
+    border: thin solid #c0c0c0;
+    background: #ffffff;
+    width: 30%;
+    padding: 0.5ex;
+    font-size: small;
+    font-weight: normal;
+    line-height: 1.5em;
+    text-align: left;
+}
+span.FootOuter .HoverFoot {
+    display: block;
+    position: relative;
+    float: right;
+    clear: right;
+    margin: 0.2ex;
+    border: thin solid #c0c0c0;
+    background: #ffffff;
+    width: 30%;
+    padding: 0.5ex;
+    font-size: small;
+    font-weight: normal;
+    line-height: 1.5em;
+    text-align: left;
+}
+a:visited {color: #0030c0;}
+#upgradeBrowser, #showHideTOC, #imagejdev, div.topheader, div.bottomheader {display: none;}
+}/* end of print CSS */

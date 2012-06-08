@@ -1,0 +1,29 @@
+/*  ImageJ User Guide http://imagej.nih.gov/ij/docs/guide/index.html
+*
+*   Copyright (C) 2009-2011 Tiago Ferreira. Based code from Alex
+*   Fernández (elyxer.nongnu.org/lyx.css).
+*
+*   This program is free software: you can redistribute it and/or modify
+*   it under the terms of the GNU General Public License as published by
+*   the Free Software Foundation, either version 3 of the License, or
+*   (at your option) any later version.
+*
+*   This program is distributed in the hope that it will be useful,
+*   but WITHOUT ANY WARRANTY; without even the implied warranty of
+*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*   GNU General Public License for more details.
+*
+*   You should have received a copy of the GNU General Public License
+*   along with this program.  If not, see http://www.gnu.org/licenses/.
+*/
+#search,#download{padding:0 0 0.4em 0;}
+#searchform input[type="text"]{width:144px;font-size:0.8em;font-style:italic;padding:6px 6px 6px 19px;background:#eee;border:1px solid #aaa;border-radius:6px;-moz-border-radius:6px;-webkit-border-radius:6px;}
+#searchform input[type="submit"]{margin-left:-169px;background:url(../icons/search.png) no-repeat;width:13px;border:0;cursor:pointer;}
+body{font:small sans-serif;font-size:0.8em;background:#ffffff;color:black;margin-top:8px;margin-right:2px;margin-bottom:2px;margin-left:8px;padding:0;line-height:1.4em;}
+div.toctitle{font-weight:bold;}
+div.tocindent{padding:0 0 0.5em 0.5em;}
+a{text-decoration:none;color:#202020;background:none;}
+a:visited{color:#606060;}
+a:active{color:#ffa000;}
+a:hover{text-decoration:underline;}
+span.menusep{font-family:"Batan","Gulim","Hiragino","Meiryo","PCMyungjo","Lucida Sans Unicode","Menlo",sans-serif;}

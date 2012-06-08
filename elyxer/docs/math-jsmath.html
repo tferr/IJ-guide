@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="generator" content="http://www.nongnu.org/elyxer/"/>
+<meta name="create-date" content="2011-06-30"/>
+<link rel="stylesheet" href="lyx.css" type="text/css" media="all"/>
+<title>eLyxer Math Showcase (jsMath edition)</title>
+<script type="text/javascript" src="./jsMath/plugins/noImageFonts.js"></script>
+<script type="text/javascript" src="./jsMath/easy/load.js"></script>
+</head>
+<body>
+<div id="globalWrapper">
+<noscript>
+<div class="warning">
+Warning: <a href="http://www.math.union.edu/locate/jsMath">jsMath</a> requires JavaScript to correctly process the mathematics on this page. Please enable JavaScript on your browser.
+</div><hr/>
+</noscript>
+<h1 class="title">
+<img class="embedded" src="elyxer.png" alt="figure elyxer.png" style="max-width: 160px; max-height: 160px;"/>
+eLyXer Math Showcase
+</h1>
+<h2 class="author">
+Alex Fernández (elyxer@gmail.com)
+</h2>
+<div class="fulltoc">
+<div class="tocheader">
+Table of Contents
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Section-1">Section 1: Introduction</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Subsection-1.1">Subsection 1.1: Versions</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2">Section 2: Typography</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Subsection-2.1">Subsection 2.1: Greek Symbols</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-2.2">Subsection 2.2: Math Symbols</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-2.3">Subsection 2.3: Other Symbols</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-2.4">Subsection 2.4: Spacing</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-2.5">Subsection 2.5: Fonts</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3">Section 3: Numeration</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-4">Section 4: Simple Structures</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Subsection-4.1">Subsection 4.1: Fractions</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-4.2">Subsection 4.2: Limits</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-4.3">Subsection 4.3: Roots</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-5">Section 5: Complex Structures</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Subsection-5.1">Subsection 5.1: Arrays</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-5.2">Subsection 5.2: Brackets</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-5.3">Subsection 5.3: Cases</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-5.4">Subsection 5.4: Braces</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-6">Section 6: Macros</a>
+</div>
+</div>
+
+</div>
+<h1 class="Section">
+<a class="toc" name="toc-Section-1">1</a> Introduction
+</h1>
+<div class="Unindented">
+This document is intended as a showcase of the mathematical abilities of eLyXer; for more information be sure to visit the <a class="URL" href="index.html">main page</a>.
+</div>
+<h2 class="Subsection">
+<a class="toc" name="toc-Subsection-1.1">1.1</a> Versions
+</h2>
+<div class="Unindented">
+There are several versions of this page:
+</div>
+<ul>
+<li>
+A <a class="URL" href="math.html">non-Unicode version</a> of this page with midspaces.
+</li>
+<li>
+A <a class="URL" href="math-unicode.html">Unicode version</a> with mathematical spaces (generated with <tt>--unicode</tt>).
+</li>
+<li>
+An <a class="URL" href="math-iso885915.html">ISO-8859-15 version</a> (generated with <tt>--iso885915</tt>).
+</li>
+<li>
+An <a class="URL" href="math-html.html">HTML version</a> (generated with <tt>--html</tt>).
+</li>
+<li>
+A <a class="URL" href="math-jsmath.html">jsMath version</a> that uses <a class="URL" href="http://www.math.union.edu/~dpvc/jsMath/welcome.html">jsMath</a> (generated with <tt>--jsmath</tt>).
+</li>
+<li>
+A <a class="URL" href="math-mathjax.html">MathJax version</a> with <a class="URL" href="http://www.mathjax.org/">MathJax</a> (generated with <tt>--mathjax</tt>).
+</li>
+<li>
+A <a class="URL" href="math-googlecharts.html">Google Charts version</a> with <a class="URL" href="http://code.google.com/apis/chart/index.html">Google Charts</a> (generated with <tt>--googlecharts</tt>).
+</li>
+
+</ul>
+<div class="Unindented">
+All of them are generated from the same <tt>.lyx</tt> source file; they should help you decide which rendering options suit you best.
+</div>
+<div class="Indented">
+Also available online is the eLyXer translation of the latest <a class="URL" href="http://elyxer.nongnu.org/lyx/Math.html">LyX’s detailed Math manual</a>, which contains a lot more examples of LyX maths.
+</div>
+<h1 class="Section">
+<a class="toc" name="toc-Section-2">2</a> Typography
+</h1>
+<div class="Unindented">
+Math formulae use a lot of different symbols and fonts.
+</div>
+<h2 class="Subsection">
+<a class="toc" name="toc-Subsection-2.1">2.1</a> Greek Symbols
+</h2>
+<div class="Unindented">
+Greek symbols are very important in equations: <span class="math">\phi</span>, <span class="math">\pi</span>, <span class="math">\Xi</span>. eLyXer offers a complete set in both upper case: <span class="math">\Gamma\ldots\Omega</span> and lower case: <span class="math">\alpha\ldots\omega</span>. Also the AMS italicized upper case: <span class="math">\varGamma\ldots\varOmega</span>.
+</div>
+<h2 class="Subsection">
+<a class="toc" name="toc-Subsection-2.2">2.2</a> Math Symbols
+</h2>
+<div class="Unindented">
+eLyXer supports the whole set of math symbols in <a class="URL" href="http://www.johndcook.com/math_symbols.html">John D. Cook's list</a>: <span class="math">\exists\partial\nabla\geq</span>. It can also render a few more: <span class="math">\propto\times</span>. You also get all symbols from <a class="URL" href="http://www.cl.cam.ac.uk/~mgk25/ucs/examples/TeX.txt">Markus Kuhn's list</a>: <span class="math">\bigodot\amalg</span>.
+</div>
+<h2 class="Subsection">
+<a class="toc" name="toc-Subsection-2.3">2.3</a> Other Symbols
+</h2>
+<div class="Unindented">
+There are other symbols like arrows: <span class="math">\leftarrow\rightarrow</span>, or geometrical shapes: <span class="math">\circ</span>, <span class="math">\square</span>. eLyXer offers limited support for them. You might also want to use financial symbols in formulae: <span class="math">\yen\euro\$</span>.
+</div>
+<h2 class="Subsection">
+<a class="toc" name="toc-Subsection-2.4">2.4</a> Spacing
+</h2>
+<div class="Unindented">
+Equations look good when items are properly separated. The main separation is the Medium Mathematical Space: <span class="math">x=3</span>. <span class="greyedout">
+Note: if you are viewing the non-Unicode version <a class="FlexURL" href="math.html">math.html</a> of this page then you are in fact seeing midspaces, which are very similar but not exactly the same: <span class="math">\frac{4}{18}\mathrm{em}</span> for medium mathematical spaces versus <span class="math">\frac{1}{2}\mathrm{en}</span>, where <span class="math">1\mathrm{em}=2\mathrm{en}</span>. Try out the Unicode version <a class="FlexURL" href="math-unicode.html">math-unicode.html</a> — and viceversa. You can check out what version this page is in the page title.
+</span>
+
+</div>
+<div class="Indented">
+The command <tt>\raisebox</tt> is useful to, surprisingly, raise a little box, <div class="math">
+\raisebox{2mm}{raised}over\raisebox{-2mm}{lowered}\textrm{and back}.</div>Like <tt>\mbox</tt>, it puts its content in a text box. It can also be used just for spacing:<br/>
+ <span class="math">\raisebox{5mm}{}B^{V}</span>.
+</div>
+<div class="Indented">
+There are other spacing commands: <tt>\hspace</tt>: <span class="math">a\hspace{4mm}b</span>, protected space: <span class="math">a\ b</span>, and (at &ldquo;block level&rdquo;)<tt> \vspace</tt>: <span class="math">a\vspace{1cm}b</span>.
+</div>
+<div class="Indented">
+There should be 1 cm of vertical space above this paragraph.
+</div>
+<h2 class="Subsection">
+<a class="toc" name="toc-Subsection-2.5">2.5</a> Fonts
+</h2>
+<div class="Unindented">
+By default, letters denote variables and are taken from the <tt>\mathnormal</tt> font, which is italic, <span class="math">\alpha x+\alpha y=\alpha(x+y)</span>, with the exception of upright capital Greek letters, <span class="math">G\ne\Gamma</span>.
+</div>
+<div class="Indented">
+Function names should be upright: <span class="math">\sin(2\pi),\log(x),\tan\delta</span>.
+</div>
+<div class="Indented">
+Mathematical fonts used in equations include <span class="math">\mathrm{Roman}</span> (<tt>\mathrm</tt>), <span class="math">\mathsf{Sans\: Serif}</span> (<tt>\mathsf</tt>), <span class="math">\mathtt{Typewriter}</span> (<tt>\mathtt</tt>), <span class="math">\mathbf{Bold}</span> (<tt>\mathbf</tt>), <span class="math">\mathscr{SCRIPT}</span> (<tt>\mathscr</tt>), <span class="math">\mathcal{CALLIGRAPHIC}</span> (<tt>\mathcal</tt>), <span class="math">\mathbb{BLACKBOARD\: BOLD}</span> (<tt><span class="versalitas">\</span>mathbb</tt>), and <span class="math">\mathfrak{Fraktur}</span> (<tt>\mathfrak</tt>). For the latter, some single characters are translated to their Unicode equivalents: <span class="math">\mathscr{F}</span>, <span class="math">\mathbb{F}</span>, <span class="math">\mathfrak{F}</span>.
+</div>
+<div class="Indented">
+Regular text in a formula can be achieved via text font commands like <tt>\textrm</tt>: <span class="math">5\:\textrm{to}\:10</span>, via boxes like \mbox (prevents line breaks): <span class="math">6\mbox{ is more than }5</span>, or the AMSmath <tt>\text</tt> macro (scales like math symbols) <span class="math">\text{base}_{\text{sub}}^{\text{super}}</span>. The content of an mbox is processed in LaTeX text mode. This allows text font commands, e.g. a switch to <span class="sans"><b><i>sans-serif-bold-italic</i></b></span>, or the phonetic alphabet: <span class="math">\mbox{\textbf{\textsf{\textbf{\textit{sfbfit}}}}, \textipa{tipa}}</span>.
+</div>
+<div class="Indented">
+Units should be written upright, either with <tt>\mathrm</tt> or with macros from the <tt>units</tt> package, e.g. as simple unit, <span class="math">\unit{km}</span>, with magnitude, <span class="math">\unit[57]{km}</span>, with fractional unit, <span class="math">\unitfrac[200]{km}{h}</span>, or with a fraction before the units, <span class="math">\unit[\nicefrac{3}{2}]{km}</span>, <span class="math">\unit[\frac{7}{16}]{s}</span>.
+</div>
+<h1 class="Section">
+<a class="toc" name="toc-Section-3">3</a> Numeration
+</h1>
+<div class="Unindented">
+Equations can be numbered, like (<a class="Reference" href="#eq:first">↓</a>) <div class="math">\begin{equation}
+y=x\label{eq:first}\end{equation}</div> And also like <a class="Reference" href="#eq:second">(↓)</a>. <div class="math">\begin{equation}
+x=3\label{eq:second}\end{equation}</div> Some equations can be numbered even if they don’t have a label.
+</div>
+<div class="Indented">
+<div class="math">\begin{equation}
+x=2y\end{equation}</div> Notice that equation (<a class="Reference" href="#eq:second">↓</a>) comes after (<a class="Reference" href="#eq:first">↓</a>).
+</div>
+<h1 class="Section">
+<a class="toc" name="toc-Section-4">4</a> Simple Structures
+</h1>
+<div class="Unindented">
+Let’s now see a few of the simpler structures that eLyXer can output.
+</div>
+<h2 class="Subsection">
+<a class="toc" name="toc-Subsection-4.1">4.1</a> Fractions
+</h2>
+<div class="Unindented">
+A simple fraction: <div class="math">
+\frac{1}{2}.</div>Inlined: <span class="math">\frac{2}{3}.</span>
+</div>
+<div class="Indented">
+A big recursive fraction: <div class="math">
+\frac{1}{\left(1+\left(\frac{1}{1+\left(\frac{1}{1+2x}\lyxlock\right)}\lyxlock\right)\right)}\lyxlock</div>
+</div>
+<div class="Indented">
+A nice fraction: <span class="math">\nicefrac{5}{6}</span>. A non-diminishing fraction containing alignments:<div class="math">
+\cfrac{1}{1+\left(\cfrac[l]{1}{1+x}\times\cfrac[r]{1}{1+x}\right)}.</div>
+</div>
+<div class="Indented">
+A similar concept is a binomial coefficient: <span class="math">\binom{A+1}{B}.</span> It can be prettily presented: <div class="math">
+\dbinom{A}{B+1}.</div>
+</div>
+<div class="Indented">
+A symbol can be stacked over another using <tt>\stackrel</tt>: <span class="math">x\stackrel{R}{\rightarrow}y</span>. Anything can be stacked: <div class="math">
+d\stackrel{x>3}{\lim}x,\quad\stackrel{\mathrm{head}}{\mathrm{heels}}.</div>
+</div>
+<h2 class="Subsection">
+<a class="toc" name="toc-Subsection-4.2">4.2</a> Limits
+</h2>
+<div class="Unindented">
+<span class="math">\lim_{x\rightarrow\infty}f(x)</span> should appear as <span class="math">x\rightarrow\infty</span> in italics, and «lim» in plain style. In display mode, a limit must appear below the main symbol: <div class="math">
+\lim_{x\rightarrow\infty}\lyxlock f(x).</div>
+</div>
+<div class="Indented">
+Limits are also used in sums and integrals: <div class="math">
+\sum_{i=1}^{\infty}x,\;\int_{0}^{\infty}f(x)\,\mathrm{d}x</div>where the sum’s limits should appear below (<span class="math">i=1</span>) and above (<span class="math">\infty</span>) the <span class="math">\sum</span>. The placement of the integral limits depends on the document class: LaTeX standard classes place them right to the <span class="math">\int</span>. Limits are shown to the right in inline formulae: <span class="math">\sum_{i=1}^{\infty}x</span> and <span class="math">\intop_{i=1}^{\infty}x.</span>
+</div>
+<div class="Indented">
+The placing of limits can be configured with the <tt>\limits</tt> and <tt>\nolimits</tt> macros: <div class="math">
+\lim\nolimits _{x\rightarrow\infty}\lyxlock f(x),\;\sum\nolimits _{i=1}^{\infty}x,\;\int\limits _{0}^{\infty}f(x)\,\mathrm{d}x</div>
+</div>
+<h2 class="Subsection">
+<a class="toc" name="toc-Subsection-4.3">4.3</a> Roots
+</h2>
+<div class="Unindented">
+A square root: <span class="math">\sqrt{3}.</span> A more complex root in a fraction:<div class="math">
+\frac{1}{\left(1+\sqrt{2}\left(\frac{1}{1+\sqrt{2}}\lyxlock\right)+\sqrt{\frac{1}{2}}\right)}\lyxlock.</div>
+</div>
+<div class="Indented">
+eLyXer can also do higher-order roots: <span class="math">\sqrt[3]{x+y}</span>. A devilish case mixing everything we have seen so far:<div class="math">
+\frac{\sqrt[\nicefrac{7}{8}]{\frac{8}{4}x}+\sum_{i=1}^{\infty}x}{\sqrt[s+5]{\frac{(78x+45y)\times\sqrt{\Omega}}{\sin(x+1)}+\unit[38]{km}}}\lyxlock.</div>
+</div>
+<h1 class="Section">
+<a class="toc" name="toc-Section-5">5</a> Complex Structures
+</h1>
+<div class="Unindented">
+In this section we will explore arrays and related constructs.
+</div>
+<h2 class="Subsection">
+<a class="toc" name="toc-Subsection-5.1">5.1</a> Arrays
+</h2>
+<div class="Unindented">
+An inline array <span class="math">\left[\begin{array}{cc}
+a & b\\
+c & d\end{array}\right]</span> is always shown in the same line. In display mode, the array is shown on its own line: <div class="math">
+\left[\begin{array}{lc}
+12 & 2\\
+3 & 4\times y^{x}\end{array}\right]</div>Apart from that the appearance should be the same.
+</div>
+<h2 class="Subsection">
+<a class="toc" name="toc-Subsection-5.2">5.2</a> Brackets
+</h2>
+<div class="Unindented">
+Arrays are separated by variable-size brackets: <span class="math">\left(\begin{array}{cc}
+a & b\\
+c & d\end{array}\right)</span> <span class="math">\left[\begin{array}{cc}
+a & b\\
+c & d\end{array}\right]</span> <span class="math">\left\{ \begin{array}{cc}
+a & b\\
+c & d\end{array}\right\} </span> <span class="math">\left\langle \begin{array}{cc}
+a & b\\
+c & d\end{array}\right\rangle </span> <span class="math">\left|\begin{array}{cc}
+a & b\\
+c & d\end{array}\right|</span>which might also differ on right and left <span class="math">\left(\begin{array}{cc}
+a & b\\
+c & d\end{array}\right)</span> or use the empty opening <span class="math">\left\{ \begin{array}{cc}
+a & b\\
+c & d\end{array}\right.</span> or closing: <span class="math">\left.\begin{array}{cc}
+a & b\\
+c & d\end{array}\right|</span>. There are also fixed-size big brackets, e.g. <span class="math">\bigl\langle f\bigr\rangle</span>.
+</div>
+<h2 class="Subsection">
+<a class="toc" name="toc-Subsection-5.3">5.3</a> Cases
+</h2>
+<div class="Unindented">
+Used to switch between several values.
+</div>
+<div class="Indented">
+<div class="math">
+y=\begin{cases}
+x & i=0,\\
+x+1 & i<3\end{cases}</div>
+</div>
+<div class="Indented">
+Cases may have more than two rows:
+</div>
+<div class="Indented">
+<div class="math">
+f(x)=\begin{cases}
+0 & x<0,\\
+\infty & x=0\\
+0 & x>0\end{cases}</div>
+</div>
+<h2 class="Subsection">
+<a class="toc" name="toc-Subsection-5.4">5.4</a> Braces
+</h2>
+<div class="Unindented">
+Values can be underbraced or overbraced.
+</div>
+<div class="Indented">
+<span class="math">\underbrace{a-b}=\overbrace{b+c+d+e}</span>.
+</div>
+<h1 class="Section">
+<a class="toc" name="toc-Section-6">6</a> Macros
+</h1>
+<div class="Unindented">
+Now it’s time for user-defined commands (sometimes called &ldquo;macros&rdquo;).
+</div>
+<div class="Indented">
+Definitions can be added as macros<span class="math">
+\newcommand{\stupidroot}[2]{\sqrt[#1]{#2}}
+{\sqrt[#1]{#2}}
+</span>. Then they can be used in formulae: <span class="math">\stupidroot 12</span>. They can accept default parameters<span class="math">
+\newcommand{\defaultroot}[2][4][5]{\sqrt[#1]{#2}}
+{#1\sqrt{#2}}
+</span>. Again, useful in formulae: <span class="math">\defaultroot</span>.
+</div>
+<div class="Indented">
+Other definitions from the preamble can be used: <span class="math">\preambleroot{3}{4}</span>.
+</div>
+<div class="Indented">
+Definitions on the fly are also possible: <span class="math">\newcommand{\ontheflyroot}[2]{\sqrt[#1]{#2}}\ontheflyroot{7}{8}</span>, and used with different values: <span class="math">\ontheflyroot{a}{b}</span>.
+</div>
+
+<hr class="footer"/>
+<div class="footer" id="generated-by">
+Document generated by <a href="http://elyxer.nongnu.org/">eLyXer 1.2.3 (2011-06-30)</a> on <span class="create-date">2011-06-30T15:00:17.320102</span>
+</div>
+</div>
+</body>
+</html>
