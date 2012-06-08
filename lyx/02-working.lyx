@@ -1,0 +1,8323 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options false
+\begin_modules
+IJguide
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "The ImageJ User Guide"
+\pdf_author "Tiago Ferreira \& Wayne Rasband"
+\pdf_subject "The ImageJ User Manual"
+\pdf_keywords "ImageJ, Scientific Digital Image Processing"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 2
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "hyperindex=true, linkcolor={black!50}, citecolor={black!50}, urlcolor={black!50}, filecolor={black!50}"
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 0 0 0 1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part
+Working with ImageJ
+\begin_inset CommandInset label
+LatexCommand label
+name "part:Working-with-ImageJ"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This part introduces some basic aspects of ImageJ so that you can use the
+ software more efficiently.
+ It also introduces some important terms and concepts used throughout this
+ guide.
+ You may skip it if you already use the program efficiently and are familiar
+ with terms such as 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Virtual-Stacks"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Hyperstacks-Intro"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Pseudocolor-Images"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Color-Composites"
+
+\end_inset
+
+ or 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Composite-selections"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Using Keyboard Shortcuts
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Using-Shortcuts"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You'll learn more and more 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Keyboard 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{Shortcuts and Modifier keys,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Shortcuts
+\end_layout
+
+\end_inset
+
+shortcut keys as you use ImageJ, because (almost) all shortcuts are listed
+ throughout ImageJ menus.
+ Similarly, in this guide each command has its shortcut key listed on its
+ name (flanked by square brackets).
+ Please note that the notation for these key-bindings is case sensitive,
+ i.e., Shift-modifiers are not explicitly mentioned (a capital 
+\family sans
+A
+\family default
+ means 
+\family sans
+Shift--A
+\family default
+) and assumes that 
+\emph on
+Require control key for shortcuts 
+\emph default
+in 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+Options\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Misc..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ is unchecked (i.e., except when using the IJ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ImageJ-Macro-Editor"
+
+\end_inset
+
+ or the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Text-Tool"
+
+\end_inset
+
+, you won't have to hold down the Control key to use menu shortcuts).
+ For example, the command 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Invert-[I]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ can be evoked by 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Shift
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+I
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Ctrl
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Shift
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+I
+\end_layout
+
+\end_inset
+
+ if 
+\emph on
+Require control key for shortcuts 
+\emph default
+is checked.
+ The full list of ImageJ shortcuts (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Keyboard-Shortcuts"
+
+\end_inset
+
+) can be retrieved at any time using the 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Plugins\SpecialChar \menuseparator
+Utilities\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:List-Shortcuts..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ command.
+\end_layout
+
+\begin_layout Standard
+There are three 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Modifier keys
+\end_layout
+
+\end_inset
+
+modifier keys in ImageJ:
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+Control
+\series default
+ (
+\series bold
+Command Key
+\series default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Command key
+\end_layout
+
+\end_inset
+
+ on Apple keyboards) Denoted by 
+\begin_inset Quotes els
+\end_inset
+
+Ctrl
+\begin_inset Quotes ers
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Ctrl"
+description "Control key. In this guide also the Command key in Apple keyboards"
+
+\end_inset
+
+ or 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Ctrl
+\end_layout
+
+\end_inset
+
+ in this document.
+ Although a control key is typically present on Apple keyboards, on a Macintosh
+ computer running ImageJ the Command key 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+cmd
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ Cmd
+\end_layout
+
+\end_inset
+
+ replaces the functionality of the Control key of other operating systems.
+ For sake of simplification, 
+\begin_inset Quotes els
+\end_inset
+
+Ctrl
+\begin_inset Quotes ers
+\end_inset
+
+ will always refer to both  throughout this guide.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+Shift
+\series default
+ Denoted by 
+\begin_inset Quotes els
+\end_inset
+
+Shift
+\begin_inset Quotes ers
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Shift"
+description "Shift key"
+
+\end_inset
+
+ or 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Shift
+\end_layout
+
+\end_inset
+
+ in this document.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+Alt
+\series default
+ Denoted by 
+\begin_inset Quotes els
+\end_inset
+
+Alt
+\begin_inset Quotes ers
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Alt"
+description "Alt, Option or Meta key"
+
+\end_inset
+
+ or 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Alt
+\end_layout
+
+\end_inset
+
+ in this document.
+ This is also the 
+\begin_inset Quotes els
+\end_inset
+
+Option
+\begin_inset Quotes ers
+\end_inset
+
+ or 
+\begin_inset Quotes els
+\end_inset
+
+Meta
+\begin_inset Quotes ers
+\end_inset
+
+ key on many keyboards.
+ In ImageJ, it is also used to type special unit symbols such as 
+\begin_inset Formula $\micro$
+\end_inset
+
+ (
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Alt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+M
+\end_layout
+
+\end_inset
+
+) or 
+\begin_inset Formula $\angstrom$
+\end_inset
+
+ (
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Alt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Shift
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout See Also
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Keyboard-Shortcuts"
+
+\end_inset
+
+, 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Plugins\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Shortcuts"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float infobox
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "infobox:Frontmost-window"
+
+\end_inset
+
+Frontmost Window and Window Activation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+In ImageJ, all operations are performed on the active (frontmost) image
+ (which has its title bar highlighted).
+ If a window is already open it will activate when its opening command is
+ re-run, e.g., if the B&C window is already opened (
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+Image\SpecialChar \menuseparator
+Adjust\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Brightness/Contrast...[C]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+), pressing its keyboard shortcut (
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+Shift
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+) will activate it.
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+Pressing 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+Enter
+\end_layout
+
+\end_inset
+
+ on any image will bring the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:The-ImageJ-window"
+
+\end_inset
+
+ to the foreground.
+ In addition, it is also possible to permanently place the main window above
+ all other windows (
+\emph on
+see
+\emph default
+  
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:FloatingMainWin"
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Finding Commands
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Finding-Commands"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Navigating through the extensive list of ImageJ commands, macros and plugins
+ may be quite cumbersome.
+ Through its built-in Command Finder
+\begin_inset space \thinspace{}
+\end_inset
+
+/
+\begin_inset space \thinspace{}
+\end_inset
+
+Launcher
+\begin_inset CommandInset citation
+LatexCommand cite
+key "C-ComandFinder"
+
+\end_inset
+
+, ImageJ offers an expedite alternative that allows you to retrieve commands
+ extremely fast: 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Plugins\SpecialChar \menuseparator
+Utilities\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Command-Finder"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+In addition, ImageJ features a find function that locates macros, scripts
+ and plugins source (
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+.java
+\end_layout
+
+\end_inset
+
+) files on your computer: the 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Plugins\SpecialChar \menuseparator
+Utilities\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Search..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ command.
+ Because most of IJ source files contain circumstanced comments, you can
+ use this utility to retrieve files related not only to a image processing
+ routine (e.g.,
+\emph on
+ background 
+\emph default
+or
+\emph on
+ co-localization
+\emph default
+) but also to a practical context such as 
+\emph on
+radiogram
+\emph default
+, 
+\emph on
+cell
+\emph default
+ or 
+\emph on
+histology
+\emph default
+.
+ Indeed, ImageJ source files contain detailed annotations useful to both
+ developers and regular users that want to know more about ImageJ routines
+ and algorithms.
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Search..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ and 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Command-Finder"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ are described in detail in 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Plugins\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Utilities"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset space \hspace{}
+\length 11.1em
+\end_inset
+
+
+\family sans
+\size small
+Plugins\SpecialChar \menuseparator
+Utilities\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Command-Finder"
+
+\end_inset
+
+
+\begin_inset VSpace 3pt
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/CommandFinderAndSearch.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\family sans
+\size small
+Plugins\SpecialChar \menuseparator
+Utilities\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Search..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout See Also
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Control-Panel..."
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Keyboard-Shortcuts"
+
+\end_inset
+
+ and 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "SourceCodeRetriever"
+target "http://imagej.nih.gov/ij/macros/SourceCodeRetriever.txt"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, a macro that searches for a menu entry and retrieves the source file of
+ the respective command
+\end_layout
+
+\begin_layout Section
+\begin_inset Argument
+status collapsed
+
+\begin_layout Plain Layout
+Undo and Redo
+\end_layout
+
+\end_inset
+
+Undo and Redo
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Undo-and-Redo"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Probably the first thing you will notice is that ImageJ does not have a
+ large 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Undo
+\end_layout
+
+\end_inset
+
+undo/redo buffer.
+ Undo (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Undo-[z]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+) is currently limited to the most recent image editing
+\begin_inset space \thinspace{}
+\end_inset
+
+/
+\begin_inset space \thinspace{}
+\end_inset
+
+filtering operation.
+ With time you will appreciate that this is necessary to minimize memory
+ overhead.
+ Nevertheless, with IJ
+\begin_inset space \thinspace{}
+\end_inset
+
+1.45 and later, 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Undo-[z]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ is, in most cases, undoable and can be applied to multiple images if 
+\emph on
+Keep multiple undo buffers 
+\emph default
+is checked in 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+Options\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Memory-&-Threads..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If you cannot recover from a mistake, you can always use 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+File\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Revert[r]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ to reset the image lo its last saved state.
+ For selections, 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+Selection\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Restore-Selection-[E]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ can be used to recover any misdealt selection.
+\end_layout
+
+\begin_layout Standard
+In ImageJ the equivalent to 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Redo
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes els
+\end_inset
+
+Redo
+\begin_inset Quotes ers
+\end_inset
+
+ is the 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Process\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Repeat-Command-[R]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+, that re-runs the previous used command (skipping 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Undo-[z]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ and 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+File\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Open..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ commands).
+\end_layout
+
+\begin_layout See Also
+
+\family sans
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Plugins\SpecialChar \menuseparator
+Utilities\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Reset..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "Multi Undo"
+target "http://imagejdocu.tudor.lu/doku.php?id=plugin:utilities:multi_undo:start"
+
+\end_inset
+
+ plugin
+\end_layout
+
+\begin_layout Section
+Image Types and Formats
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Image-Types"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Image types
+\end_layout
+
+\end_inset
+
+Digital Images are two-dimensional grids of pixel
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "pixel"
+description "Picture element"
+
+\end_inset
+
+ intensities values with the width and height of the image being defined
+ by the number of pixels in 
+\begin_inset Formula $x$
+\end_inset
+
+ (rows) and 
+\begin_inset Formula $y$
+\end_inset
+
+ (columns) direction.
+ Thus, pixels (picture elements) are the smallest single components of images,
+ holding numeric values -- pixel intensities -- that range between black
+ and white.
+ The characteristics of this range, i.e., the number of unique intensity (brightne
+ss) values that can exist in the image is defined as the bit
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "bit"
+description "Binary digit"
+
+\end_inset
+
+--depth of the image and specifies the level of precision in which intensities
+ are coded, e.g.: A 2--bit image has 
+\begin_inset Formula $2^{2}=4$
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+tones: 00 (black), 01 (gray), 10 (gray), and 11 (white).
+ A 4--bit image has 
+\begin_inset Formula $2^{4}=16$
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+tones ranging from 0000 (0) to 1111 (16), etc.
+ In terms of bits per pixel (bpp
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "bpp"
+description "Bits per pixel"
+
+\end_inset
+
+), the most frequent types of images (
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Type"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) that ImageJ deals with are (
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ImageJ2
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ImageJ2intro"
+
+\end_inset
+
+ supports 
+\begin_inset CommandInset href
+LatexCommand href
+name "many more types of image data"
+target "http://imagejdev.org/imagej2-pixel-types"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring RGB-Color---
+\noindent
+
+\series bold
+8--bit
+\series default
+ Images that can display 256 (
+\begin_inset Formula $2^{8}$
+\end_inset
+
+) gray levels (integers only).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring RGB-Color---
+\noindent
+
+\series bold
+16--bit
+\series default
+ Images that can display 65,
+\begin_inset space \thinspace{}
+\end_inset
+
+536 (
+\begin_inset Formula $2^{16}$
+\end_inset
+
+) gray levels (integers only).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring RGB-Color---
+\noindent
+
+\series bold
+32--bit
+\series default
+ Images that can display 4,
+\begin_inset space \thinspace{}
+\end_inset
+
+294,
+\begin_inset space \thinspace{}
+\end_inset
+
+967,
+\begin_inset space \thinspace{}
+\end_inset
+
+296 (
+\begin_inset Formula $2^{32}$
+\end_inset
+
+) gray levels (integers and fractional values).
+ 32--bit images pixels can have
+\shape smallcaps
+ any
+\shape default
+ intensity value (i.e., any real number) including 
+\emph on
+NaN
+\emph default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "NaN"
+description "Not a Number"
+
+\end_inset
+
+ (Not a Number).
+ In computing these are called floating point images.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring RGB-Color---
+\noindent
+
+\series bold
+RGB
+\begin_inset space \space{}
+\end_inset
+
+Color
+\series default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Color-Images"
+
+\end_inset
+
+ that can display 256 values in the 
+\bar under
+R
+\bar default
+ed, 
+\bar under
+G
+\bar default
+reen and 
+\bar under
+B
+\bar default
+lue channel.
+ These are 24--bit (
+\begin_inset Formula $2^{3\times8}$
+\end_inset
+
+) images.
+ RGB
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RGB"
+description "Red Green Blue"
+
+\end_inset
+
+ color images can also be 32--bit color images (24--bit color images with
+ additional eight bits coding alpha blending values, i.e., transparency).
+\end_layout
+
+\begin_layout Subsection*
+Native Formats
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Native-Formats"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Natively (i.e.
+\begin_inset space \space{}
+\end_inset
+
+without the need of third-party plugins) ImageJ opens the following formats:
+ 
+\series bold
+TIFF
+\series default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "TIFF"
+description "Tagged Image File Format"
+
+\end_inset
+
+, 
+\series bold
+GIF
+\series default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "GIF"
+description "Graphics Interchange Format"
+
+\end_inset
+
+, 
+\series bold
+JPEG
+\series default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "JPEG"
+description "Joint Photographic Experts Group"
+
+\end_inset
+
+, 
+\series bold
+PNG
+\series default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "PNG"
+description "Portable Network Graphics"
+
+\end_inset
+
+, 
+\series bold
+DICOM
+\series default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "DICOM"
+description "Digital Imaging and Communications in Medicine"
+
+\end_inset
+
+, 
+\series bold
+BMP
+\series default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "BMP"
+description "Bitmap Image File (Device Independent Bitmap, DIB)"
+
+\end_inset
+
+, 
+\series bold
+PGM
+\series default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "PGM"
+description "Portable GrayMap"
+
+\end_inset
+
+ and 
+\series bold
+FITS
+\series default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "FITS"
+description "Flexible Image Transport System"
+
+\end_inset
+
+.
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Image formats!Native
+\end_layout
+
+\end_inset
+
+Many more formats are supported with the aid of plugins.
+ These are discussed in 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Non-native-Supported-Formats"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+TIFF
+\series default
+ (Tagged Image File Format) is the 
+\begin_inset Quotes els
+\end_inset
+
+default
+\begin_inset Quotes ers
+\end_inset
+
+ format of ImageJ (cf.
+\begin_inset space \space{}
+\end_inset
+
+
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+File\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Save[s]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+).
+ Images can be 1--bit, 8--bit, 16--bit (unsigned
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+A numeric variable is signed if it can represent both positive and negative
+ numbers, and unsigned if it can only represent positive numbers.
+\end_layout
+
+\end_inset
+
+), 32--bit (real) or RGB color.
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+TIFF
+\end_layout
+
+\end_inset
+
+TIFF files with multiple images of the same type and size open as 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Stacks-Intro"
+
+\end_inset
+
+ or 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Hyperstacks-Intro"
+
+\end_inset
+
+.
+ ImageJ opens 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lossless compression
+\end_layout
+
+\end_inset
+
+lossless compressed TIFF files (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:Formats"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:Formats"
+
+\end_inset
+
+) by the LZW
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "LZW"
+description "Lempel-Ziv-Welch"
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+LZW compression
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+PackBits compression
+\end_layout
+
+\end_inset
+
+PackBits and 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ZIP!Lossless compression
+\end_layout
+
+\end_inset
+
+ZIP (
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Deflate 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{Zip compression,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Deflate/Inflate) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "C-ZIPcompressedTIFFs"
+
+\end_inset
+
+ compression schemes.
+ In addition, TIFF files can be opened and saved as 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ZIP!Archived TIFF files
+\end_layout
+
+\end_inset
+
+ZIP archives.
+\begin_inset Newline newline
+\end_inset
+
+Tiff tags and information needed to import the file (number of images, offset
+ to first images, gap between images) are printed to the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Log-Window"
+
+\end_inset
+
+ when ImageJ is running in 
+\emph on
+Debug Mode
+\emph default
+ (
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Edit\SpecialChar \menuseparator
+Options\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Misc..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, 
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Settings-and-Preferences"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+DICOM
+\series default
+ (Digital Imaging and Communications in Medicine) is a standard popular
+ in the medical imaging community.
+ Support in ImageJ is limited to uncompressed 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DICOM
+\end_layout
+
+\end_inset
+
+DICOM files.
+ DICOM files containing multiple images open as 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Stacks-Intro"
+
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Use 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Show-Info..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ to display the DICOM header information.
+ A DICOM sequence can be opened using 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+File\SpecialChar \menuseparator
+Import\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Image-Sequence..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ or by dragging and dropping the folder on the 
+\begin_inset Quotes els
+\end_inset
+
+ImageJ
+\begin_inset Quotes ers
+\end_inset
+
+ window.
+ Imported sequences are sorted by image number instead of filename and the
+ tags are preserved when DICOM images are saved in TIFF format.
+ ImageJ supports custom DICOM dictionaries, such as the one at 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagej.nih.gov/ij/download/docs/DICOM_Dictionary.txt
+\end_layout
+
+\end_inset
+
+.
+ More information can be found at the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Center for Advanced Brain Imaging"
+target "http://www.cabiatl.com/mricro/dicom/index.html"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+FITS
+\series default
+ (Flexible Image Transport System) image is the format adopted by the astronomic
+al community for data interchange and archival storage.
+ Use 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Show-Info..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ to display the 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+FITS
+\end_layout
+
+\end_inset
+
+FITS header.
+ More information 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "http://fits.gsfc.nasa.gov"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+PGM
+\series default
+ (
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+PGM
+\end_layout
+
+\end_inset
+
+Portable GrayMap), 
+\series bold
+PBM
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "PBM"
+description "Portable BitMap"
+
+\end_inset
+
+
+\series default
+ (Portable BitMap) and 
+\series bold
+PPM
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "PPM"
+description "Portable PixMap"
+
+\end_inset
+
+
+\series default
+ (Portable PixMap) are simple image formats that use an ASCII
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "ASCII"
+description "American Standard Code for Information Interchange"
+
+\end_inset
+
+ header.
+ More information 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "http://local.wasp.uwa.edu.au/~pbourke/dataformats/ppm/"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AVI
+\series default
+ (Audio Video Interleave) is a container format which can contain data encoded
+ in many different ways.
+ ImageJ only supports uncompressed 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+AVI
+\end_layout
+
+\end_inset
+
+AVIs, various 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+YUV
+\end_layout
+
+\end_inset
+
+YUV 4:2:2 compressed formats, and 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+PNG
+\end_layout
+
+\end_inset
+
+PNG or 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+JPEG
+\end_layout
+
+\end_inset
+
+JPEG-encoded individual frames.
+ Note that most 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+MJPG
+\end_layout
+
+\end_inset
+
+MJPG
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "MJPG"
+description "Motion-JPEG"
+
+\end_inset
+
+ (motion-JPEG) formats are not read correctly.
+ Attempts to open AVIs in other formats will fail.
+\end_layout
+
+\begin_layout See Also
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Non-native-Supported-Formats"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:Formats"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:Formats"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:JpegAlert"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:JpegAlert"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Non--native Formats 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Non-native-Supported-Formats"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When opening a file, ImageJ first checks whether it can natively handle
+ the format.
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Image formats!Non--native
+\end_layout
+
+\end_inset
+
+If ImageJ does not recognize the type of file it calls for the appropriate
+ reader plugin using 
+\begin_inset CommandInset href
+LatexCommand href
+name "HandleExtraFileTypes"
+target "http://imagej.nih.gov/ij/plugins/file-handler.html"
+
+\end_inset
+
+, a plugin bundled with ImageJ.
+ If that fails, it tries to open the file using the 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+LOCI Bio-Formats
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Bio-formats 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{LOCI,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "LOCI Bio-Formats library"
+target "http://www.loci.wisc.edu/ome/formats.html"
+
+\end_inset
+
+ (if present), a remarkable plugin that supports around 
+\begin_inset CommandInset href
+LatexCommand href
+name "eighty of the most common"
+target "http://www.loci.wisc.edu/software/bio-formats"
+
+\end_inset
+
+ file formats used in microscopy.
+ If nevertheless the file cannot be opened, an error message is displayed.
+ Because both these plugins are under active development, it is important
+ that you keep them updated.
+\end_layout
+
+\begin_layout Standard
+In addition, the ImageJ web site lists 
+\begin_inset CommandInset href
+LatexCommand href
+name "more than fifty plugins"
+target "http://imagej.nih.gov/ij/plugins/#io"
+
+\end_inset
+
+ that recognize more 
+\begin_inset Quotes els
+\end_inset
+
+exotic
+\begin_inset Quotes ers
+\end_inset
+
+ file formats.
+ The ImageJ Documentation Portal maintains a 
+\begin_inset CommandInset href
+LatexCommand href
+name "list of file formats"
+target "http://imagejdocu.tudor.lu/doku.php?id=faq:general:which_file_formats_are_supported_by_imagej"
+
+\end_inset
+
+ that are supported by ImageJ.
+\end_layout
+
+\begin_layout See Also
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Native-Formats"
+
+\end_inset
+
+, 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+File\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Import"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:Formats"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:Formats"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:JpegAlert"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:JpegAlert"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "Acquisition plugins"
+target "http://imagej.nih.gov/ij/plugins/#acq"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "Input/Output plugins"
+target "http://imagej.nih.gov/ij/plugins/#io"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float infobox
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "infobox:Formats"
+
+\end_inset
+
+Image Types: Lossy Compression and Metadata
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+Two critical aspects to keep in mind when converting images:
+\end_layout
+
+\begin_layout Description
+\begin_inset CommandInset label
+LatexCommand label
+name "misc:LossyCompression"
+
+\end_inset
+
+Lossy
+\begin_inset space \space{}
+\end_inset
+
+compression Transcoding an image into a format that uses 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lossy compression
+\end_layout
+
+\end_inset
+
+lossy compression will alter the original data, introducing artifacts (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:JpegAlert"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:JpegAlert"
+
+\end_inset
+
+).
+ This is the case, e.g., for JPEG formats (with the exception of some 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+
+\size small
+JPEG2000
+\end_layout
+
+\end_inset
+
+JPEG2000 images that use lossless compression).
+ As such, these types of data are intended for human interpretation only
+ and are not suitable for quantitative analyses
+\end_layout
+
+\begin_layout Description
+\begin_inset CommandInset label
+LatexCommand label
+name "misc:Metadata"
+
+\end_inset
+
+Metadata In ImageJ, 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Metadata
+\end_layout
+
+\end_inset
+
+metadata associated with the image, such as scale, gray value calibration
+ and user comments is only supported in tiff and zip (compressed tiff) images.
+ In addition, selections and 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Overlay-Intro"
+
+\end_inset
+
+ are also saved in the TIFF header (cf.
+\begin_inset space \space{}
+\end_inset
+
+
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+File\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Save[s]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+).
+ None of the above is saved in other formats (cf.
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Native-Formats"
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Stacks, Virtual Stacks and Hyperstacks
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:StacksVirtualStacksHyperStks"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Stacks
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Stacks-Intro"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ImageJ can display multiple spatially or temporally related images in a
+ single window.
+ These image sets are called stacks.
+ The images that make up a stack are called slices.
+ In 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Stacks
+\end_layout
+
+\end_inset
+
+stacks, a pixel (which represents 2D image data in a bitmap image) becomes
+ a voxel
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "voxel"
+description "Volumetric pixel"
+
+\end_inset
+
+ (volumetric pixel), i.e., an intensity value on a regular grid in a three
+ dimensional space.
+ 
+\end_layout
+
+\begin_layout Standard
+All the slices in a stack must be the same size and bit depth.
+ A scrollbar provides the ability to move through the slices and the slider
+ is preceded by a play/pause icon that can be used to start/stop stack animation.
+ Right-clicking on this icon runs the 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Animation-Options..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ dialog box.
+\end_layout
+
+\begin_layout Standard
+Most ImageJ filters will, as an option, process all the slices in a stack.
+ ImageJ opens multi-image TIFF files as a stack, and saves stacks as multi-image
+ TIFFs.
+ The 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+File\SpecialChar \menuseparator
+Import\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Import>Raw"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ command opens other multi-image, uncompressed files.
+ A folder of images can be opened as a stack either by dragging and dropping
+ the folder onto the 
+\begin_inset Quotes els
+\end_inset
+
+ImageJ
+\begin_inset Quotes ers
+\end_inset
+
+ window or or by choosing 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+File\SpecialChar \menuseparator
+Import\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Image-Sequence..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ To create a new stack, simply choose 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+File\SpecialChar \menuseparator
+New\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Image...[n]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ and set the 
+\emph on
+Slices
+\emph default
+ field to a value greater than one.
+ The 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Stacks"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ submenu contains commands for common stack operations.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Graphics
+	filename images/StacksHyperstacks.png
+	scale 55
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Stacks-and-Hyperstacks"
+
+\end_inset
+
+
+\begin_inset Argument
+status collapsed
+
+\begin_layout Plain Layout
+Stacks and Hyperstacks
+\end_layout
+
+\end_inset
+
+
+\series bold
+Stacks and Hyperstacks in ImageJ:
+\family sans
+\series default
+ 
+\family default
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+File\SpecialChar \menuseparator
+Open Samples\SpecialChar \menuseparator
+Mitosis (26MB, 5D stack)
+\end_layout
+
+\end_inset
+
+.
+ Hyperstacks dimensionality can be reduced using the 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+Hyperstacks\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Reduce-Dimensionality..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+Stacks\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Z-Project..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+Hyperstacks\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Channels...[Z]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ commands.
+ The 
+\begin_inset Quotes els
+\end_inset
+
+(V)
+\begin_inset Quotes ers
+\end_inset
+
+ on the window titles denotes a virtual image (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Virtual-Stacks"
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout See Also
+
+\size small
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:StacksMenu"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "Stack Manipulations"
+target " http://fiji.sc/wiki/index.php/Stack_Manipulation"
+
+\end_inset
+
+ on Fiji website, 
+\begin_inset CommandInset href
+LatexCommand href
+name "Image5D"
+target "http://imagej.nih.gov/ij/plugins/image5d.html"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Virtual Stacks
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Virtual-Stacks"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Stacks!Virtual
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Virtual stacks 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{Stacks~(Virtual),}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Virtual stacks are disk resident (as opposed to RAM
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RAM"
+description "Random-Access Memory"
+
+\end_inset
+
+ resident) and are the only way to load image sequences that do not fit
+ in RAM.
+ There are several things to keep in mind when working with virtual stacks:
+\end_layout
+
+\begin_layout Itemize
+Virtual stacks are read-only, so changes made to the pixel data are not
+ saved when you switch to a different slice.
+ You can work around this by using macros (e.g., 
+\size small
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Process Virtual Stack"
+target "http://imagej.nih.gov/ij/macros/Process_Virtual_Stack.txt"
+
+\end_inset
+
+
+\size default
+) or the 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Process\SpecialChar \menuseparator
+Batch\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Virtual-Stack..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ command
+\end_layout
+
+\begin_layout Itemize
+You can easily run out of memory using commands like 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Crop-[X]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ because any stack generated from commands that do not generate virtual
+ stacks will be RAM resident.
+\end_layout
+
+\begin_layout Itemize
+TIFF virtual stacks can usually be accessed faster than 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+JPEG
+\end_layout
+
+\end_inset
+
+JPEG virtual stacks.
+ A JPEG sequence can be converted to TIFF by opening the JPEG images as
+ a virtual stack and using 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+File\SpecialChar \menuseparator
+Save As\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:SaveAs>Image-Seq..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ to save in TIFF format
+\end_layout
+
+\begin_layout Standard
+ImageJ appends a 
+\begin_inset Quotes els
+\end_inset
+
+(V)
+\begin_inset Quotes ers
+\end_inset
+
+ to the window title of virtual stacks and hyperstacks (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Hyperstacks-Intro"
+
+\end_inset
+
+).
+ Several built-in ImageJ commands in the 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+File\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Import"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ submenu have the ability to open virtual stacks, namely: 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Import>TIFF-Virtual-Stack"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Image-Sequence..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Import>Raw"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+,
+\family sans
+ 
+\family default
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Stack-From-List..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+,
+\family sans
+ 
+\family default
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Import>AVI..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ (cf.
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Virtual Stack Opener"
+target "http://imagej.nih.gov/ij/plugins/virtual-opener.html"
+
+\end_inset
+
+).
+ In addition, TIFF stacks can be open as virtual stacks by drag and drop
+ (cf.
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:VirtualTiff"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:VirtualTiff"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout See Also
+
+\size small
+\begin_inset CommandInset href
+LatexCommand href
+name "LOCI Bio-Formats"
+target "http://www.loci.wisc.edu/ome/formats.html"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset href
+LatexCommand href
+name "RegisterVirtualStackSlices"
+target "http://fiji.sc/wiki/index.php/Register_Virtual_Stack_Slices"
+
+\end_inset
+
+ plugins, 
+\begin_inset CommandInset href
+LatexCommand href
+name "Process Virtual Stack"
+target "http://imagej.nih.gov/ij/macros/Process_Virtual_Stack.txt"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset href
+LatexCommand href
+name "VirtualStackFromList"
+target "http://imagej.nih.gov/ij/macros/VirtualStackFromList.txt"
+
+\end_inset
+
+ macros 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float infobox
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "infobox:VirtualTiff"
+
+\end_inset
+
+Opening Virtual Stacks by Drag & Drop
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+TIFF stacks with a 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+.tif
+\end_layout
+
+\end_inset
+
+ extension open as virtual stacks when dragged and dropped on the
+\family sans
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/tools/Switcher-small.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\family default
+toolbar icon.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/DragAndDropVirtualTiff.png
+	display false
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Hyperstacks
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Hyperstacks-Intro"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Stacks!Hyperstacks
+\end_layout
+
+\end_inset
+
+Hyperstacks are multidimensional images, extending image stacks to four
+ (4D) or five (5D) dimensions: 
+\begin_inset Formula $x$
+\end_inset
+
+ (width), 
+\begin_inset Formula $y$
+\end_inset
+
+ (height), 
+\begin_inset Formula $z$
+\end_inset
+
+ (slices), 
+\begin_inset Formula $c$
+\end_inset
+
+ (channels or wavelengths) and 
+\begin_inset Formula $t$
+\end_inset
+
+ (time frames).
+ Hyperstacks are displayed in a window with three labelled scrollbars (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:Stacks-and-Hyperstacks"
+
+\end_inset
+
+).
+ Similarly to the scrollbar in 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Stacks-Intro"
+
+\end_inset
+
+, the frame slider (
+\emph on
+t
+\emph default
+) has a play/pause icon.
+ 
+\end_layout
+
+\begin_layout See Also
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image
+\family default
+\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Hyperstacks"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ submenu
+\end_layout
+
+\begin_layout Section
+\begin_inset Argument
+status collapsed
+
+\begin_layout Plain Layout
+Color Images
+\end_layout
+
+\end_inset
+
+Color Images
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This section is partially extracted from the MBF
+\begin_inset space \thinspace{}
+\end_inset
+
+ImageJ online manual at 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.macbiophotonics.ca/imagej/colour_image_processi.htm
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Color-Images"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+MBF ImageJ
+\end_layout
+
+\end_inset
+
+ImageJ deals with color mainly in three ways: pseudocolor images, RGB images,
+ RGB/ HS
+\size small
+B
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "HSB"
+description "Hue Saturation Brightness"
+
+\end_inset
+
+
+\size default
+ stacks, and composite images.
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Image types
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Pseudocolor Images
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Pseudocolor-Images"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A pseudocolor (or indexed color) image is a single channel gray image (8,
+ 16 or 32--bit) that has color assigned to it via a lookup table or LUT
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "LUT"
+description "Lookup table"
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+LUT
+\end_layout
+
+\end_inset
+
+.
+ A LUT is literally a predefined table of gray values with matching red,
+ green and blue values so that shadows of gray are displayed as colorized
+ pixels.
+ Thus, differences in color in the pseudo-colored image reflect differences
+ in intensity of the object rather than differences in color of the specimen
+ that has been imaged.
+\end_layout
+
+\begin_layout Standard
+8-bit indexed color images (such as GIFs) are a special case of pseudocolor
+ images as their lookup table is stored in the file with the image.
+ These images are limited to 256 colors (24--bit RGB images allow 16.7 million
+ of colors, 
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Image-Types"
+
+\end_inset
+
+) and concomitantly smaller file sizes.
+ Reduction of true color values to a 256 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Color palette 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{LUT,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+color palette is performed by color quantization algorithms.
+ ImageJ uses the 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Color!Quantization
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Heckbert quantization
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Algorithm!Heckbert quantization
+\end_layout
+
+\end_inset
+
+Heckbert's median-cut color quantization algorithm (
+\emph on
+see
+\emph default
+ 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Type"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ menu), which, in most cases, allows indexed color images to look nearly
+ identical to their 24-bit originals.
+\end_layout
+
+\begin_layout See Also
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image
+\family default
+\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Lookup-Tables"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:LUTMenu"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+True Color Images
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:True-color-images"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As described in 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Image-Types"
+
+\end_inset
+
+, true color images such as RGB images reflect genuine colors, i.e., the green
+ in an RGB image reflects green color in the specimen.
+ Color images are typically produced by color CCD
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CCD"
+description "Charge-Coupled Device"
+
+\end_inset
+
+ cameras, in which 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Color filter array
+\end_layout
+
+\end_inset
+
+color filter arrays (
+\begin_inset CommandInset href
+LatexCommand href
+name "Bayer masks"
+target "http://en.wikipedia.org/wiki/Bayer_filter"
+
+\end_inset
+
+) are placed over the image sensor.
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+CCD
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Color Spaces and Color Separation
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Color-Spaces-and"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "Color spaces"
+target "http://en.wikipedia.org/wiki/Color_space"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Color!Models
+\end_layout
+
+\end_inset
+
+describe the gamut of colors that image-handling devices deal with.
+ Because human vision is trichromatic, most color models represent colors
+ by three values.
+ Mathematically, these values (color components) form a three-dimensional
+ space such as the RGB
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+RGB
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+HSB
+\end_layout
+
+\end_inset
+
+HSB, 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+CIE Lab
+\end_layout
+
+\end_inset
+
+CIE
+\begin_inset space \thinspace{}
+\end_inset
+
+Lab or 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+YUV
+\end_layout
+
+\end_inset
+
+YUV color space.
+ 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Graphics
+	filename images/RGB-HSBcolorModels.png
+	display false
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\series bold
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ColorModels"
+
+\end_inset
+
+
+\begin_inset Argument
+status collapsed
+
+\begin_layout Plain Layout
+RGB and HSB color models
+\end_layout
+
+\end_inset
+
+Representation of an eight pixel color image in the RGB and HSB color spaces.
+
+\series default
+ The RGB color space maps the RGB color model to a cube with 
+\emph on
+Red
+\emph default
+ (R) values increasing along the x-axis, 
+\emph on
+Green
+\emph default
+ (G) along the y-axis and 
+\emph on
+Blue
+\emph default
+ (B) along the z-axis.
+ In the HSB cylindrical coordinate system, the angle around the central
+ vertical axis corresponds to 
+\emph on
+Hue
+\emph default
+ (H), the distance from the axis corresponds to 
+\emph on
+Saturation
+\emph default
+ (S), and the distance along the axis corresponds to 
+\emph on
+Brightness
+\emph default
+ (B).
+ In both cases the origin holds the black color.
+ The right panel shows the same image after brightness reduction, easily
+ noted by the vertical displacement along the HSB cylinder.
+ Images produced using Kai Uwe Barthel's 
+\begin_inset CommandInset href
+LatexCommand href
+name "3D Color Inspector"
+target "http://www.f4.fhtw-berlin.de/~barthel/ImageJ/ColorInspector//help.htm"
+
+\end_inset
+
+ plugin.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+RGB (
+\bar under
+R
+\bar default
+ed, 
+\bar under
+G
+\bar default
+reen, 
+\bar under
+B
+\bar default
+lue) is the most commonly-used color space.
+ However, other alternatives such as HSB (
+\bar under
+H
+\bar default
+ue, 
+\bar under
+S
+\bar default
+aturation, 
+\bar under
+B
+\bar default
+rightness) provide significant advantages when processing color information.
+ In the HSB color space, 
+\emph on
+Hue
+\emph default
+ describes the attribute of pure color, and therefore distinguishes between
+ colors.
+ 
+\emph on
+Saturation
+\emph default
+ (sometimes called 
+\begin_inset Quotes eld
+\end_inset
+
+purity
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+vibrancy
+\begin_inset Quotes erd
+\end_inset
+
+) characterizes the shade of color, i.e., how much white is added to the pure
+ color.
+
+\emph on
+ Brightness
+\emph default
+ (also know as 
+\emph on
+Value
+\emph default
+ -- HSV system) describes the overall brightness of the color (
+\emph on
+see
+\emph default
+ e.g., the color palette of 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:CPtool"
+
+\end_inset
+
+).
+ In terms of digital imaging processing, using the HSB system over the tradition
+al RGB is often advantageous: e.g., since the Brightness component of an HSB
+ image corresponds to the grayscale version of that image, processing only
+ the brightness channel in routines that require grayscale images is a significa
+nt computational gain
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+See
+\emph default
+ Wootton R, Springall DR, Polak JM.
+ Image Analysis in Histology: Conventional and Confocal Microscopy.
+ 
+\emph on
+Cambridge University Press
+\emph default
+, 1995
+\emph on
+,
+\emph default
+ ISBN 0521434823
+\end_layout
+
+\end_inset
+
+.
+ You can read more about the HSB color model 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "http://en.wikipedia.org/wiki/HSB_color_space"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In ImageJ, conversions between image types are performed using the 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+\size small
+Image
+\family default
+\size default
+\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Type"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ submenu.
+ Segmentation on the HSB, RGB, CIE
+\begin_inset space \thinspace{}
+\end_inset
+
+Lab and YUV color spaces can be performed by the 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+\size small
+Image
+\family default
+\size default
+\SpecialChar \menuseparator
+Adjust\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Color-Threshold..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ command 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "C-ColorThres"
+
+\end_inset
+
+.
+ Segregation of color components (specially useful for quantification of
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Color!Deconvolution
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Color!Separation 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{Color!Deconvolution,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Immunohistochemistry 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{Histochemical staining,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+histochemical staining) is also possible using Gabriel Landini's 
+\begin_inset CommandInset href
+LatexCommand href
+name "Colour Deconvolution"
+target "http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html"
+
+\end_inset
+
+ plugin.
+ In addition, several other plugins related to color processing can be obtained
+ from the 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJ website"
+target "http://imagej.nih.gov/ij/plugins/index.html#color"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Conveying Color Information
+\series medium
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\series medium
+This section is partially extracted from Masataka Okabe and Kei Ito, 
+\emph on
+Color Universal Design (CUD) --- How to make figures and presentations that
+ are friendly to Colorblind people
+\emph default
+, 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://jfly.iam.u-tokyo.ac.jp/color/
+\end_layout
+
+\end_inset
+
+, accessed 2009.01.15
+\end_layout
+
+\end_inset
+
+
+\series default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Conveying-Color-Information"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+People see color with significant variations.
+ Indeed, the popular phrase 
+\begin_inset Quotes eld
+\end_inset
+
+One picture is worth ten thousand words
+\begin_inset Quotes erd
+\end_inset
+
+ may not apply to certain color images, specially those that do not follow
+ the basic principles of 
+\series medium
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Color Universal Design"
+target "http://jfly.iam.u-tokyo.ac.jp/color/"
+
+\end_inset
+
+
+\series default
+.
+ Citing Masataka Okabe and Kei Ito:
+\end_layout
+
+\begin_layout Quotation
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Color!Blindness
+\end_layout
+
+\end_inset
+
+Colorblind people can recognize a wide ranges of colors.
+ But certain ranges of colors are hard to distinguish.
+ The frequency of colorblindness is fairly high.
+ One in 12 Caucasian (8%), one in 20 Asian (5%), and one in 25 African (4%)
+ males are so-called 
+\begin_inset Quotes els
+\end_inset
+
+red--green
+\begin_inset Quotes ers
+\end_inset
+
+ colorblind.
+\end_layout
+
+\begin_layout Quotation
+There are always colorblind people among the audience and readers.
+ There should be more than 
+\shape smallcaps
+ten
+\shape default
+ colorblind in a room with 250
+\begin_inset space \thinspace{}
+\end_inset
+
+people (assuming 50% male and 50% 
+\size small
+female
+\size default
+).
+\end_layout
+
+\begin_layout Quotation
+[
+\begin_inset space \thinspace{}
+\end_inset
+
+\SpecialChar \ldots{}
+] There is a good chance that the paper you submit may go to colorblind
+ reviewers.
+ Supposing that your paper will be reviewed by three white males (which
+ is not unlikely considering the current population in science), the probability
+ that at least one of them is colorblind is whopping 22%! 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Graphics
+	filename images/Dichromacy.png
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\series bold
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ColorBlindness"
+
+\end_inset
+
+
+\begin_inset Argument
+status collapsed
+
+\begin_layout Plain Layout
+Red--green images and partial color blindness
+\end_layout
+
+\end_inset
+
+Red--green images and partial color blindness.
+
+\series default
+ Deuteranopia (second panel), protanopia (third panel) are the most common
+ types of partial color blindness (red
+\begin_inset space \thinspace{}
+\end_inset
+
+/
+\begin_inset space \thinspace{}
+\end_inset
+
+green confusion).
+ Tritanopia (blue
+\begin_inset space \thinspace{}
+\end_inset
+
+/
+\begin_inset space \thinspace{}
+\end_inset
+
+orange confusion, fourth panel) is quite rare.
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:Replacing-Red-w-Magenta"
+
+\end_inset
+
+ (bottom row) is a simple way to compensate for color vision deficiencies.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+One practical point defined by 
+\series medium
+the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Color Universal Design"
+target "http://jfly.iam.u-tokyo.ac.jp/color/"
+
+\end_inset
+
+ is the use of magenta in red--green overlays (
+\series default
+\emph on
+see also
+\series medium
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Landini:2009p19625"
+
+\end_inset
+
+).
+
+\series default
+ Magenta is the equal mixture of red and blue.
+ Colorblind people that have difficulties recognizing the red component
+ can easily recognize the blue hue.
+ The region of double positive becomes white, which is easily distinguishable
+ for colorblind.
+ In ImageJ this is easily accomplished using the 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+Color\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Merge-Channels..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, or using the ImageJ macro language (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:Replacing-Red-w-Magenta"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:Replacing-Red-w-Magenta"
+
+\end_inset
+
+).
+ 
+\begin_inset Float infobox
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "infobox:Replacing-Red-w-Magenta"
+
+\end_inset
+
+Replacing Red with Magenta in RGB Images
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+When building RGB images, magenta can be obtained using the 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+Color\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Merge-Channels..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Previously created RGB images can be converted to 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Magenta Green Blue (MGB)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes els
+\end_inset
+
+MGB
+\begin_inset Quotes ers
+\end_inset
+
+ using 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+Color\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Channels...[Z]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ Alternatively, the 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Process\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Image-Calculator..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ command can be used to add the red channel to the blue channel.
+ Both these approaches can be automated using the ImageJ macro language
+ as exemplified by Macros 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "lis:RGBtoMGB1"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "lis:RGBtoMGB2"
+
+\end_inset
+
+.
+ Once saved in the 
+\begin_inset Flex Directory
+status collapsed
+
+\begin_layout Plain Layout
+ImageJ/plugins/
+\end_layout
+
+\end_inset
+
+ folder these 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Macros-ExtendingIJ"
+
+\end_inset
+
+ are treated as regular ImageJ commands.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+In 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fiji-intro"
+
+\end_inset
+
+, as expected, the procedure of modifying RGB images is simpler: one just
+ needs to run 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+Color\SpecialChar \menuseparator
+Replace Red with Magenta
+\end_layout
+
+\end_inset
+
+
+\family default
+.
+ For even more convenience, Fiji provides an analogous command that replaces
+ the system clipboard's image with a magenta-green one.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is also possible to simulate color blindness using the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Vischeck"
+target "http://www.vischeck.com/downloads/"
+
+\end_inset
+
+ or 
+\begin_inset CommandInset href
+LatexCommand href
+name "Dichromacy"
+target "http://www.dentistry.bham.ac.uk/landinig/software/dichromacy/dichromacy.html"
+
+\end_inset
+
+ plugins
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+One advantage of Dichromacy over the Vischeck plugin is that it can be recorded
+ and called from scripts and macros, without user interaction.
+\end_layout
+
+\end_inset
+
+, or in 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Fiji
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fiji-intro"
+
+\end_inset
+
+, using the 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+Color\SpecialChar \menuseparator
+Simulate Color Blindness
+\end_layout
+
+\end_inset
+
+ command.
+\begin_inset listings
+lstparams "float=h,showstringspaces=false,tabsize=4"
+inline false
+status collapsed
+
+\begin_layout Plain Layout
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:RGBtoMGB2"
+
+\end_inset
+
+Replace
+\begin_inset space \thinspace{}
+\end_inset
+
+Red
+\begin_inset space \thinspace{}
+\end_inset
+
+with
+\begin_inset space \thinspace{}
+\end_inset
+
+Magenta.ijm (Using 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Process\SpecialChar \menuseparator
+Image Calculator\SpecialChar \ldots{}
+
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ /* This macro replaces Red with Magenta in RGB images using Process>Image
+ Calculator...
+  command.
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+   if (bitDepth!=24)
+\end_layout
+
+\begin_layout Plain Layout
+
+       exit("This macro requires an RGB image");
+\end_layout
+
+\begin_layout Plain Layout
+
+ setBatchMode(true);
+\end_layout
+
+\begin_layout Plain Layout
+
+   title= getTitle();
+\end_layout
+
+\begin_layout Plain Layout
+
+   r= title+" (red)"; g= title+" (green)"; b= title+" (blue)";
+\end_layout
+
+\begin_layout Plain Layout
+
+   run("Split Channels");
+\end_layout
+
+\begin_layout Plain Layout
+
+   imageCalculator("Add", b, r);
+\end_layout
+
+\begin_layout Plain Layout
+
+   run("Merge Channels...", "red=&r green=&g blue=&b");
+\end_layout
+
+\begin_layout Plain Layout
+
+   rename(title + " (MGB)");
+\end_layout
+
+\begin_layout Plain Layout
+
+ setBatchMode(false);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Color Composite Images
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Color-Composites"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In a 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Color!Composites
+\end_layout
+
+\end_inset
+
+composite image colors are handled through channels.
+ The advantages with this type of image over plain RGB images are: 
+\end_layout
+
+\begin_layout Enumerate
+Each channel is kept separate from the others and can be turned on and off
+ using the 
+\begin_inset Quotes els
+\end_inset
+
+Channels
+\begin_inset Quotes ers
+\end_inset
+
+ tool (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+Color\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Channels...[Z]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+).
+ This feature allows, e.g., to perform measurements on a specific channel
+ while visualizing multiple.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Channels can be 8, 16 or 32--bit and can be displayed with any lookup table
+\end_layout
+
+\begin_layout Enumerate
+More than 3
+\begin_inset space \thinspace{}
+\end_inset
+
+channels can be merged or kept separate
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "float=h,showstringspaces=false,tabsize=4"
+inline false
+status collapsed
+
+\begin_layout Plain Layout
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:RGBtoMGB1"
+
+\end_inset
+
+Replace
+\begin_inset space \thinspace{}
+\end_inset
+
+Red
+\begin_inset space \thinspace{}
+\end_inset
+
+with
+\begin_inset space \thinspace{}
+\end_inset
+
+Magenta.ijm (Using 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+Color\SpecialChar \menuseparator
+Channels\SpecialChar \ldots{}
+
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ /* This macro replaces Red with Magenta in RGB images using the Image>Color>Cha
+nnels...
+ tool.
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+   if (bitDepth!=24)         // Ignore non-RGB images
+\end_layout
+
+\begin_layout Plain Layout
+
+       exit("This macro requires an RGB image");
+\end_layout
+
+\begin_layout Plain Layout
+
+ setBatchMode(true);         // Enter `Batch' mode
+\end_layout
+
+\begin_layout Plain Layout
+
+   title = getTitle();       // Retrieve the image title
+\end_layout
+
+\begin_layout Plain Layout
+
+   run("Make Composite");    // Run Image>Color>Make Composite
+\end_layout
+
+\begin_layout Plain Layout
+
+   run("Magenta");           // Run Image>Lookup Tables>Magenta on channel
+ 1
+\end_layout
+
+\begin_layout Plain Layout
+
+   run("RGB Color");         // Run Image>Type>RGB Color
+\end_layout
+
+\begin_layout Plain Layout
+
+   rename(title + " (MGB)"); // Rename the image
+\end_layout
+
+\begin_layout Plain Layout
+
+ setBatchMode(false);        // Restore `GUI' mode
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Selections
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Selections-Intro"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Selections (regions of interest, ROIs
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "ROI"
+description "Region Of Interest"
+
+\end_inset
+
+), are typically created using the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Toolbar"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:IJ-Tools"
+
+\end_inset
+
+.
+ Although ImageJ can display simultaneously several 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Selection
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ROI
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+see{Selection,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ROIs (see 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Overlay-Intro"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:The-ROI-Manager"
+
+\end_inset
+
+) only one selection can be active at a time.
+ Selections can be measured (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Analyze\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Measure...[m]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+), drawn (
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Draw-[d]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+), filled (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fill-[f]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+) or filtered (
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Process\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Filters"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ submenu), in the case of area selections.
+ In addition it is also possible to hold multiple ROIs as non-destructive
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Overlay-Intro"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Selections can be initially outlined in one of the nine ImageJ default colors
+ (
+\emph on
+Red
+\emph default
+, 
+\emph on
+Green
+\emph default
+, 
+\emph on
+Blue
+\emph default
+, 
+\emph on
+Magenta
+\emph default
+, 
+\emph on
+Cyan
+\emph default
+, 
+\emph on
+Yellow
+\emph default
+, 
+\emph on
+Orange
+\emph default
+, 
+\emph on
+Black
+\emph default
+ and White).
+ Once created, selections can be contoured or painted with any other color
+ using
+\family sans
+ 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+Selection\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Properties..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+.
+ Selection Color can be changed in 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+Options\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Colors..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, by double clicking on the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Point-Tool"
+
+\end_inset
+
+, or using hot keys (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "lis:ChangeSelectionColor"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lis:ChangeSelectionColor"
+
+\end_inset
+
+).
+ It is highlighted in the center of the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Point-Tool"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Multi-point-Tool"
+
+\end_inset
+
+.
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Graphics
+	filename images/Selections.pdf
+	width 88col%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\series bold
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:exampleAreaROIs"
+
+\end_inset
+
+Three types of area selections In ImageJ.
+
+\series default
+ Notice the cursor changes: to an 
+\emph on
+arrow
+\emph default
+ when it is within the selection, to a 
+\emph on
+cross-hair
+\emph default
+ when outside the selection, to a 
+\emph on
+hand
+\emph default
+ when over a selection vertex or 
+\begin_inset Quotes els
+\end_inset
+
+handler
+\begin_inset Quotes ers
+\end_inset
+
+.
+ Notice also the filled handler in the polygon selection and the absence
+ of point handlers in 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Composite-selections"
+
+\end_inset
+
+.
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Overlay-Intro"
+
+\end_inset
+
+, i.e., non-active selections displayed in the non-destructive image overlay,
+ are also displayed without handlers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Manipulating ROIs
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Manipulating-ROIs"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Most of commands that can be useful in defining or drawing selections are
+ available in the 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:SelectionSubMenu"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ submenu and summarized in 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:ROI-manipulations"
+
+\end_inset
+
+.
+ Listed below are the most frequent manipulations involving 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ROI
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+seealso{Selection,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+selections:
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000
+\noindent
+
+\series bold
+Adjusting
+\series default
+ Area selections can be adjusted with the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Brush-Selection-Tool"
+
+\end_inset
+
+.
+ In addition, vertexes of selections created with the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Polygon-Selection-Tool"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Segmented-Line-Selection"
+
+\end_inset
+
+ can be adjusted by Alt/Shift-clicking.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000
+\noindent
+
+\series bold
+Deleting
+\series default
+ Choose any of the selection tools and click outside the selection, or use
+ 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family sans
+Edit\SpecialChar \menuseparator
+Selection\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Select-None-[A]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+.
+ Use
+\family sans
+ 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family sans
+Edit\SpecialChar \menuseparator
+Selection\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Restore-Selection-[E]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ to restore a selection back after having deleted it.
+ With 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Overlay-Intro"
+
+\end_inset
+
+, an activated ROI can be deleted by pressing the 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+Backspace
+\end_layout
+
+\end_inset
+
+ (
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+Delete
+\end_layout
+
+\end_inset
+
+ on Mac) key.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000
+\noindent
+
+\series bold
+Managing
+\series default
+ A selection can be transferred from one image window to another by activating
+ the destination window and runnig 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family sans
+Edit\SpecialChar \menuseparator
+Selection\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Restore-Selection-[E]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+.
+ Alternatively, 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family sans
+Analyze\SpecialChar \menuseparator
+Tools\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:SynchronizeWindows"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ to create ROIs across multiple images.
+ Multiple selections can be stored as 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Overlay-Intro"
+
+\end_inset
+
+ or in the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:The-ROI-Manager"
+
+\end_inset
+
+ list (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family sans
+Analyze\SpecialChar \menuseparator
+Tools\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ROI-Manager..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000
+\noindent
+
+\series bold
+Moving
+\series default
+ Selections can be moved by clicking and dragging as long as the cursor
+ is within the selection and has changed to an
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/pointers/Pointer-Arrow.png
+	scale 50
+
+\end_inset
+
+.
+ The status bar displays the coordinates of the upper left corner of the
+ selection (or the bounding rectangle for non-rectangular selections) as
+ it is being moved.
+ To move the contents of a selection, rather than the selection itself,
+ 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family sans
+Edit\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Copy[c]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+, 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family sans
+Edit\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Paste[v]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+, and then click within the selection and drag.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000
+\noindent
+
+\series bold
+Nudging
+\series default
+ Selections can be 
+\begin_inset Quotes els
+\end_inset
+
+nudged
+\begin_inset Quotes ers
+\end_inset
+
+ one pixel at a time in any direction using the arrow keys.
+ Note that the up and down keys zoom the image in and out in the absence
+ of selections (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "Arrow-Keys"
+
+\end_inset
+
+ shortcuts).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000
+
+\series bold
+Resizing
+\series default
+ The 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Brush-Selection-Tool"
+
+\end_inset
+
+ can be used to perform fine adjustments of ROI contours.
+ Most ROIs can be resized one pixel at a time by holding 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Alt
+\end_layout
+
+\end_inset
+
+ while using the arrow keys.
+ In general (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Area-selection-tools"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Line-Selection-Tools"
+
+\end_inset
+
+ for details), selections are resized by dragging one of the selection handlers.
+ While dragging, holding 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Ctrl
+\end_layout
+
+\end_inset
+
+ resizes the selection around its center, holding 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Alt
+\end_layout
+
+\end_inset
+
+ imposes a fixed aspect ratio and holding 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Shift
+\end_layout
+
+\end_inset
+
+ forces a 1:1 aspect ratio.
+\end_layout
+
+\begin_layout See Also
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Key-Modifiers"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Composite Selections
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Composite-selections"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 5
+placement l
+overhang 0in
+width "24.5col%"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/compositeROI.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Composite selections are non-contiguous ROIs containing more than one cluster
+ of pixels and/or ROIs containing internal holes.
+ Composite ROIs are typically originated with the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Brush-Selection-Tool"
+
+\end_inset
+
+ but they can be defined with any other selection tool using key modifiers.
+ 
+\end_layout
+
+\begin_layout Standard
+The following modifier keys can be use to create composite selections:
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Selection!Composite
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring shifttt
+\noindent
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Shift
+\end_layout
+
+\end_inset
+
+ Drawing outside current selection while pressing Shift creates new content.
+ To add a non-square rectangle or ellipse, the Shift key must be released
+ after adding the selection
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring shifttt
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Alt
+\end_layout
+
+\end_inset
+
+ Drawing inside current selection while pressing Alt creates a hole removing
+ content from the ROI
+\end_layout
+
+\begin_layout Standard
+Note that some operations may not be performed properly on complex ROIs.
+ In these cases, it may be useful to convert a composite ROI into a polygon
+ using the 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Edit\SpecialChar \menuseparator
+Selection\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Enlarge..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ command as explained in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:Composites"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:Composites"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout See Also
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Wand-Tool"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "ROI2PolylineROI"
+target "http://imagejdocu.tudor.lu/doku.php?id=wishlist:completed:freehand_and_selection_brush_roi_conversion"
+
+\end_inset
+
+ macro
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Argument
+status collapsed
+
+\begin_layout Plain Layout
+Selections With Sub-pixel Coordinates
+\end_layout
+
+\end_inset
+
+Selections With Sub-pixel Coordinates
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Sub-pixel-Selections"
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Sub-pixel selections
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+feature{Selections with sub-pixel resolution}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since ImageJ 1.46, selections can be defined with 
+\begin_inset CommandInset href
+LatexCommand href
+name "subpixel accuracy"
+target "http://en.wikipedia.org/wiki/Sub-pixel_resolution"
+
+\end_inset
+
+, beyond the nominal pixel resolution of the image: 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:Subpixel-selections"
+
+\end_inset
+
+.
+ Line Selections (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Line-Selection-Tools"
+
+\end_inset
+
+) are created with floating-point coordinates if the 
+\emph on
+Sub-pixel resolution
+\emph default
+ checkbox is active in 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Edit\SpecialChar \menuseparator
+Options\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Profile-Plot-Options..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Sub-pixel coordinates of pre-existing selections can be interpolated using
+ the 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Edit\SpecialChar \menuseparator
+Selection\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Interpolate"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ command.
+ Interpolated points are easily noticeable on small selections created on
+ images zoomed 1200% or greater.
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Graphics
+	filename images/SubPixel.png
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Subpixel-selections"
+
+\end_inset
+
+
+\begin_inset Argument
+status collapsed
+
+\begin_layout Plain Layout
+Floating point selections
+\end_layout
+
+\end_inset
+
+
+\series bold
+Interpolated selections.
+
+\series default
+ ROIs drawn with (left) or without (middle) sub-pixel accuracy.
+ For line selections (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Line-Selection-Tools"
+
+\end_inset
+
+), this option can be enabled in
+\series bold
+ 
+\series default
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\series medium
+Edit\SpecialChar \menuseparator
+Options\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Profile-Plot-Options..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ by activating the 
+\emph on
+Sub-pixel resolution
+\emph default
+ checkbox.
+ Pixel coordinates of area selections (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Area-selection-tools"
+
+\end_inset
+
+), can be interpolated using 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\series medium
+Edit\SpecialChar \menuseparator
+Selection\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Interpolate"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ The image on the right is the output of 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "SubPixelSelections.js"
+target "http://imagej.nih.gov/ij/macros/js/SubPixelSelections.js"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, a script that demonstrates how to create selections at sub-pixel resolution
+ without the need of setting any option in ImageJ.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout See Also
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Zoom"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Magnifying-Glass"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset Argument
+status collapsed
+
+\begin_layout Plain Layout
+Overlays
+\end_layout
+
+\end_inset
+
+Overlays
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Overlay-Intro"
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+improvement{Improved handling of Overlays}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Overlay
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Non-destructive annotations 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{Overlay,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Annotations!Non-destructive image overlay
+\end_layout
+
+\end_inset
+
+Overlays are non-active selections displayed 
+\begin_inset Quotes els
+\end_inset
+
+over
+\begin_inset Quotes ers
+\end_inset
+
+ the pixel data, on the image overlay, and are the core of non-destructive
+ image processing in ImageJ.
+ In a way you can think of the image overlay as an invisible 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:The-ROI-Manager"
+
+\end_inset
+
+ in which selections are being added, allowing ROIs to be on 
+\begin_inset Quotes els
+\end_inset
+
+hold
+\begin_inset Quotes ers
+\end_inset
+
+.
+ This concept of multiple distinct selections has been dramatically improved
+ in 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ImageJ2intro"
+
+\end_inset
+
+ so we urge you to download IJ2 if multiple ROIs are important in your workflows.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Graphics
+	filename images/OverlayShowcase.png
+	width 75col%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\series bold
+Non-destructive operations using the image overlay.
+
+\series default
+ Overlays can be used to annotate images, store ROIs and blend images (ImageROIs
+) at multiple opacity levels.
+ Refer to the 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Overlay"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+documentation for further 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:image-overlays"
+
+\end_inset
+
+.
+ You can 
+\begin_inset CommandInset href
+LatexCommand href
+name "download the frontmost"
+target "http://imagej.nih.gov/ij/docs/guide/images/ImageWithOverlay.tif"
+
+\end_inset
+
+ image to practice overlay editing.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Importantly, overlay selections are 
+\begin_inset CommandInset href
+LatexCommand href
+name "vector graphics"
+target "http://en.wikipedia.org/wiki/Vector_graphics"
+
+\end_inset
+
+ composed of mathematically-defined paths (as opposed to 
+\begin_inset CommandInset href
+LatexCommand href
+name "raster graphics"
+target "http://en.wikipedia.org/wiki/Raster_graphics"
+
+\end_inset
+
+ in which objects are defined by pixels) and are not affected by scaling,
+ i.e., do not become pixelated.
+ Most of overlay-related commands are listed in the 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Overlay"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, and in the ROI Manager window (
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Analyze\SpecialChar \menuseparator
+Tools\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ROI-Manager..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+).
+ Appearance of overlay selections can be adjusted using 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+Overlay\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Overlay-Options..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+/
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Labels..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As mentioned in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:Formats"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:Formats"
+
+\end_inset
+
+, overlays are saved in the header of tif images, and do not need to be
+ saved externally when using TIFF, the default file format of ImageJ.
+ The major advantages of overlays are summarized below:
+\end_layout
+
+\begin_layout Description
+Storage
+\begin_inset space \space{}
+\end_inset
+
+of
+\begin_inset space \space{}
+\end_inset
+
+ROIs In ImageJ it is only possible to have a single ROI at a time.
+ However, it is possible to add selections to the image overlay using 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+B
+\end_layout
+
+\end_inset
+
+ (
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+Overlay\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Add-Selection...[b]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+).
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+feature{}
+\end_layout
+
+\end_inset
+
+ Once added to the image overlay, ROIs can be re-activated by Alt-clicking,
+ Control-clicking or long-pressing (
+\begin_inset Formula $\nicefrac{1}{4}$
+\end_inset
+
+ second or longer).
+ Activated ROIs can be deleted by pressing the 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+Backspace
+\end_layout
+
+\end_inset
+
+ key.
+ Selections can also be added and recovered in bulk, using the 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+Overlay\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:From-ROI-Manager"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+/
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:To-ROI-Manager"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ commands.
+\end_layout
+
+\begin_layout Description
+Non-destructive
+\begin_inset space \space{}
+\end_inset
+
+annotations Overlays are the best way of annotating images in ImageJ (
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:image-overlays"
+
+\end_inset
+
+).
+ As vector graphics, overlays do not change pixel values, can be scaled
+ without loss of quality even at high zoom levels (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:ZoomedCanvas"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:ZoomedCanvas"
+
+\end_inset
+
+) and can be displayed at different opacity values (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:HEX"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:HEX"
+
+\end_inset
+
+).
+ RGB snapshots of the image with embedded overlays can be created by holding
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Shif
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+
+, the shortcut for 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+Overlay\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Flatten-[F]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Quotes els
+\end_inset
+
+Flattened
+\begin_inset Quotes ers
+\end_inset
+
+ images with the overlay rendered as pixel data are also created when saving
+ the image as PNG or JPEG (
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+File\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:SaveAs"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+), or when printing the image canvas (
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+File\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Print...[p]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+).
+ The 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Flatten
+\end_layout
+
+\end_inset
+
+ command is also listed in the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:The-ROI-Manager"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Image
+\begin_inset space \space{}
+\end_inset
+
+ROIs An 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Image selection 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{ImageROI}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ImageROI
+\end_layout
+
+\end_inset
+
+imageROI (image selection) is a ROI that displays an image as an overlay.
+ As described in 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Edit\SpecialChar \menuseparator
+Selection\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Image-to-Selection..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+Overlay\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Add-Image..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, this allows multiple images to be 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Blend
+\end_layout
+
+\end_inset
+
+blended on a single image canvas.
+\end_layout
+
+\begin_layout Section
+3D Volumes
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:3D-Intro"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Currently, the support for 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ThreeD ROIs@3D ROIs
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+3D ROIs
+\end_layout
+
+\end_inset
+
+3D ROIs (selections containing contiguous cluster of voxels) is somewhat
+ limited in ImageJ.
+ This limitation has been addressed by 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ImageJ2intro"
+
+\end_inset
+
+ and several IJ1 plugins.
+ The list below summarizes some of the ImageJ plugins that deal effectively
+ with multi-dimensional objects.
+ Note that a manual installation of these tools as standalone ImageJ plugins
+ is a challenging task given their special dependencies, reason why they
+ are all bundled as part of 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Fiji
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fiji-intro"
+
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Graphics
+	filename images/3Dviewer.png
+	width 70col%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:-3D-Viewer"
+
+\end_inset
+
+
+\begin_inset Argument
+status collapsed
+
+\begin_layout Plain Layout
+3D Viewer
+\end_layout
+
+\end_inset
+
+
+\series bold
+3D Viewer (Fiji
+\begin_inset space \thinspace{}
+\end_inset
+
+1.46o), bringing hardware-accelerated 3D visualization to ImageJ.
+
+\series default
+ As explained in 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:3D-Intro"
+
+\end_inset
+
+, most of plugins that truly extend ImageJ functionally to multi-dimentional
+ data are bundled as part of Fiji.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+3D
+\begin_inset space \space{}
+\end_inset
+
+Filters Specialized 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ThreeD Filters@3D Filters
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+3D Filters
+\end_layout
+
+\end_inset
+
+3D filters such as 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Process\SpecialChar \menuseparator
+Filters\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Gaussian-Blur-3D..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ can be installed to perform 3D operations.
+ Examples are the 
+\begin_inset CommandInset href
+LatexCommand href
+name "3D processing package"
+target "http://imagejdocu.tudor.lu/doku.php?id=plugin:morphology:3d_binary_morphological_filters:start"
+
+\end_inset
+
+ by Thomas Boudier 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iannuccelli:2010p13791"
+
+\end_inset
+
+ and the 
+\begin_inset CommandInset href
+LatexCommand href
+name "3D binary filters"
+target "http://fiji.sc/wiki/index.php/3D_Binary_Filters"
+
+\end_inset
+
+ by Benjamin Schmid.
+\end_layout
+
+\begin_layout Description
+3D
+\begin_inset space \space{}
+\end_inset
+
+Object
+\begin_inset space \space{}
+\end_inset
+
+Counter 
+\begin_inset CommandInset href
+LatexCommand href
+name "3D Object Counter"
+target "http://imagejdocu.tudor.lu/doku.php?id=plugin:analysis:3d_object_counter:start"
+
+\end_inset
+
+ (3D-OC) 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ThreeD Object Counter@3D Object Counter
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+3D Object Counter
+\end_layout
+
+\end_inset
+
+counts and qualifies 3D objects in a stack 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bolte:2006p2466"
+
+\end_inset
+
+, similarly to the 2D analysis performed by 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Analyze\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Analyze-Particles..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ It is complemented by 
+\begin_inset CommandInset href
+LatexCommand href
+name "3D Roi Manager"
+target "http://imagejdocu.tudor.lu/doku.php?id=plugin:stacks:3d_roi_manager:start"
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iannuccelli:2010p13791"
+
+\end_inset
+
+, a companion plugin that adds a 3D 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:The-ROI-Manager"
+
+\end_inset
+
+ to ImageJ
+\end_layout
+
+\begin_layout Description
+3D
+\begin_inset space \space{}
+\end_inset
+
+Viewer 
+\begin_inset CommandInset href
+LatexCommand href
+name "3D Viewer"
+target "http://3dviewer.neurofly.de/"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ThreeD Viewer@3D Viewer
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+3D Viewer
+\end_layout
+
+\end_inset
+
+brings powerful hardware-accelerated 3D visualization to ImageJ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schmid:2010p18702"
+
+\end_inset
+
+, extending the limited functionality of 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+Stacks\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:3D-Project..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ In the ImageJ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:-3D-Viewer"
+
+\end_inset
+
+ stacks can be displayed as texture-based volume renderings, surfaces or
+ orthoslices.
+ It is macro-recordable and can be used by other plugins as a high-level
+ programming library for 3D visualization
+\end_layout
+
+\begin_layout Description
+Simple
+\begin_inset space \space{}
+\end_inset
+
+Neurite
+\begin_inset space \space{}
+\end_inset
+
+Tracer 
+\begin_inset CommandInset href
+LatexCommand href
+name "Simple Neurite Tracer"
+target "http://fiji.sc/wiki/index.php/Simple_Neurite_Tracer"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Simple Neurite Tracer
+\end_layout
+
+\end_inset
+
+allows semi-automated segmentation of tubular structures in 3D 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Longair:2011p20768"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+TrakEM2 As mentioned earlier, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "misc:TrakEM2"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+TrakEM2
+\end_layout
+
+\end_inset
+
+features powerful tools for multi-dimensional regions of interest 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cardona:2010p18306"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout See Also
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Image\SpecialChar \menuseparator
+Stacks\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:3D-Project..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+/
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Orthogonal-Views"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Analyze\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Surface-Plot..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:Skeletonize-vs-Skeletonize3D"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:Skeletonize-vs-Skeletonize3D"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "3D tools in Fiji"
+target "http://fiji.sc/wiki/index.php/Special:Search?search=3d&fulltext=Search"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "Three Pane Crop"
+target "http://www.longair.net/edinburgh/imagej/three-pane-crop/"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "3D image processing tutorials"
+target "http://imagejdocu.tudor.lu/doku.php?id=tutorial:working:3d_image_processing_and_analysis_with_imagej"
+
+\end_inset
+
+ on the ImageJ wikipage
+\end_layout
+
+\begin_layout Section
+\begin_inset Argument
+status collapsed
+
+\begin_layout Plain Layout
+Settings and Preferences
+\end_layout
+
+\end_inset
+
+Settings and Preferences
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Settings-and-Preferences"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+improvement{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Settings
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Preferences 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{Settings,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Options 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{Settings,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ImageJ preferences are automatically saved in a preferences file, the
+\family typewriter
+ 
+\family default
+
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+IJ_prefs.txt
+\end_layout
+
+\end_inset
+
+ text file.
+ This file is stored in 
+\begin_inset Flex Directory
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sim$
+\end_inset
+
+/Library/Preferences/
+\end_layout
+
+\end_inset
+
+ on Mac OS
+\begin_inset space \thinspace{}
+\end_inset
+
+X, in 
+\begin_inset Flex Directory
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sim$
+\end_inset
+
+/.imagej/
+\end_layout
+
+\end_inset
+
+ on Linux and in the ImageJ folder on Windows.
+ Several macros and plugins also write parameters to this file.
+ If the 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+IJ_prefs.txt
+\end_layout
+
+\end_inset
+
+ is erased using 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Edit\SpecialChar \menuseparator
+Options\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ResetOptions"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, ImageJ will create a new one the next time it is opened resetting all
+ parameters to their default values.
+ 
+\end_layout
+
+\begin_layout Standard
+Sometimes, it may be useful to override (or restore) certain settings that
+ may have been changed during a working session.
+ For example, the 
+\emph on
+Limit to threshold
+\emph default
+ option (
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Analyze\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Set-Measurements..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) will affect most measurements performed on thresholded images.
+ Thus, it may be wise to check the status of this parameter before each
+ analysis, specially when working on multiple computers.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "float=h,showstringspaces=false,tabsize=4"
+inline false
+status collapsed
+
+\begin_layout Plain Layout
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:setOption"
+
+\end_inset
+
+Ensuring Specific Settings at Launch
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ macro "AutoRun" {
+\end_layout
+
+\begin_layout Plain Layout
+
+   setOption("DebugMode", true);
+\end_layout
+
+\begin_layout Plain Layout
+
+   setOption("Bicubic", true);
+\end_layout
+
+\begin_layout Plain Layout
+
+   setOption("Display Label", true);
+\end_layout
+
+\begin_layout Plain Layout
+
+   setOption("Limit to Threshold", false);
+\end_layout
+
+\begin_layout Plain Layout
+
+   setOption("BlackBackground", true);
+\end_layout
+
+\begin_layout Plain Layout
+
+   run("Colors...", "foreground=white background=black"); //this line could
+ be substituted by: setBackgroundColor(0,0,0); setForegroundColor(255,255,255);
+\end_layout
+
+\begin_layout Plain Layout
+
+   run("Profile Plot Options...", "width=350 height=200 draw");
+\end_layout
+
+\begin_layout Plain Layout
+
+   run("Brightness/Contrast...");
+\end_layout
+
+\begin_layout Plain Layout
+
+ }
+\end_layout
+
+\end_inset
+
+The 
+\family typewriter
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\family typewriter
+setOption()
+\end_layout
+
+\end_inset
+
+
+\family default
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "macro function"
+target "http://imagej.nih.gov/ij/developer/macro/functions.html#setOption"
+
+\end_inset
+
+ can be used to set this and several other ImageJ options.
+ Calling this function from the 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+StartupMacros
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+AutoRun
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+AutoRun
+\begin_inset Quotes erd
+\end_inset
+
+ macro in the 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+StartupMacros.txt
+\end_layout
+
+\end_inset
+
+ file ensures preferences are set each time ImageJ starts.
+ The macro 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "lis:setOption"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lis:setOption"
+
+\end_inset
+
+ exemplifies this approach ensuring that the following settings are enforced
+ at startup:
+\end_layout
+
+\begin_layout Enumerate
+TIFF tag values are displayed by ImageJ (
+\emph on
+Debug Mode
+\emph default
+ in 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+Options\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Misc..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+)
+\end_layout
+
+\begin_layout Enumerate
+Bicubic interpolation is preferred over bilinear (e.g.,
+\family sans
+ 
+\family default
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+Selection\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Straighten..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Enumerate
+The name of the measured image name is recorded in the first column of the
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Results-Table"
+
+\end_inset
+
+ (
+\emph on
+Display Label 
+\emph default
+in 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Analyze\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Set-Measurements..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Enumerate
+Measurements are not restricted to thresholded pixels (
+\emph on
+Limit to Threshold
+\emph default
+ in 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Analyze\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Set-Measurements..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Enumerate
+Binary images are processed assuming white objects on a black background
+ (
+\emph on
+Black background
+\emph default
+ in 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Process\SpecialChar \menuseparator
+Binary\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:BinaryOptions..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, 
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:blackBackground"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:blackBackground"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Background color
+\emph default
+ is black and 
+\emph on
+foreground color
+\emph default
+ is white (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+Options\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Colors..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+)
+\end_layout
+
+\begin_layout Enumerate
+ImageJ plots contain grid lines and are always 
+\begin_inset Formula $350\times200$
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+pixels in size (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+Options\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Profile-Plot-Options..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+)
+\end_layout
+
+\begin_layout Enumerate
+Open the B&C widget at its last saved screen position (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+Adjust\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Brightness/Contrast...[C]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+)
+\end_layout
+
+\begin_layout See Also
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:GUIcustomization"
+
+\end_inset
+
+, FAQs
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "FAQ"
+description "Frequently Asked Questions"
+
+\end_inset
+
+ on 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJ wikipage"
+target "http://imagejdocu.tudor.lu/doku.php?id=faq:technical:how_do_i_set_up_imagej_to_deal_with_white_particles_on_a_black_background_by_default"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:Organizing-Commands"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:Organizing-Commands"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_body
+\end_document

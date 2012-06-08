@@ -1,0 +1,2141 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options false
+\begin_modules
+IJguide
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "The ImageJ User Guide"
+\pdf_author "Tiago Ferreira \& Wayne Rasband"
+\pdf_keywords "ImageJ, Scientific Digital Image Processing"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 2
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "hyperindex=true, linkcolor={black!50}, citecolor={black!50}, urlcolor={black!50}, filecolor={black!50}, hyperfootnotes=false, breaklinks=true"
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 0 0 0 1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:credits"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-WindowsInstaller"
+
+\end_inset
+
+The ImageJ installer for Windows is created using the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Inno Setup"
+target "http://www.jrsoftware.org/isinfo.php"
+
+\end_inset
+
+ installer generator.
+ 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+ImageJ.exe
+\end_layout
+
+\end_inset
+
+ the Windows that launches ImageJ (
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+ij.jar
+\end_layout
+
+\end_inset
+
+) was contributed by George Silva.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-ZIPcompressedTIFFs"
+
+\end_inset
+
+Support for ZIP-compressed TIFFs was contributed by Jason Newton in IJ
+\begin_inset space \thinspace{}
+\end_inset
+
+1.45g.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-FxFinder"
+
+\end_inset
+
+The macro editor's Function Finder (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Macros\SpecialChar \menuseparator
+Find Functions...
+\end_layout
+
+\end_inset
+
+
+\family default
+) was written by Jérôme Mutterer.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-EllipseTool"
+
+\end_inset
+
+The 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Elliptical-Selection-Tool"
+
+\end_inset
+
+ was contributed by Norbert Vischer.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-ROIbrush"
+
+\end_inset
+
+The 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Brush-Selection-Tool"
+
+\end_inset
+
+ is based on the 
+\begin_inset CommandInset href
+LatexCommand href
+name "ROI Brush Tool"
+target "http://imagej.nih.gov/ij/plugins/roi-brush.html"
+
+\end_inset
+
+ plugin from Tom Larkworthy and Johannes Schindelin.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-ArrowTool"
+
+\end_inset
+
+Jean-Yves Tinevez and Johannes Schindelin (authors of the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Fiji Arrow Tool"
+target "http://fiji.sc/wiki/index.php/Arrow"
+
+\end_inset
+
+) contributed code to the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Arrow-Tool"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-WandTool"
+
+\end_inset
+
+Michael Schmid, added 4--connected and 8--connected tracing with tolerance
+ to the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Wand-Tool"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-Toolsets"
+
+\end_inset
+
+Macro Toolsets distributed with ImageJ have been contributed by Gilles Carpentie
+r, Jérôme Mutterer and Tiago Ferreira.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-PixelInspector"
+
+\end_inset
+
+The 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:PixelInspector"
+
+\end_inset
+
+ is a plugin tool conversion of Michael Schmid's 
+\begin_inset CommandInset href
+LatexCommand href
+name "Pixel Inspector"
+target "http://imagejdocu.tudor.lu/doku.php?id=plugin:utilities:pixel_inspector:start"
+
+\end_inset
+
+ plugin.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-ImportResults"
+
+\end_inset
+
+In IJ
+\begin_inset space \thinspace{}
+\end_inset
+
+1.43l and earlier, the 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+File\SpecialChar \menuseparator
+Import\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Import>Results"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ command was based on Jérôme Mutterer's 
+\begin_inset CommandInset href
+LatexCommand href
+name "Import_Results_Table"
+target "http://imagej.nih.gov/ij/macros/Import_Results_Table.txt"
+
+\end_inset
+
+ macro.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-StackFromList"
+
+\end_inset
+
+Marcel van Herk added URLs support to the 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+File\SpecialChar \menuseparator
+Import\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Stack-From-List..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\family default
+command in IJ
+\begin_inset space \thinspace{}
+\end_inset
+
+1.45f.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-AviPlugins"
+
+\end_inset
+
+Michael Schmid contributed improvements to the 
+\begin_inset CommandInset href
+LatexCommand href
+name "AVI reader"
+target "http://imagej.nih.gov/ij/source/ij/plugin/AVI_Reader.java"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset href
+LatexCommand href
+name "AVI writer"
+target "http://imagej.nih.gov/ij/source/ij/plugin/filter/AVI_Writer.java"
+
+\end_inset
+
+ plugins.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-FITSwriter"
+
+\end_inset
+
+Karen Collins contributed improvements to the FITS_Writer (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+File\SpecialChar \menuseparator
+Save As\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:FITS..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ command).
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-FitCircle"
+
+\end_inset
+
+The 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+Selection\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fit-Circle"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ command, based on a MATLAB script by 
+\begin_inset CommandInset href
+LatexCommand href
+name "Nikolai Chernov"
+target "http://www.math.uab.edu/~chernov/cl/MATLABcircle.html"
+
+\end_inset
+
+, was contributed by Michael Doube and Ved Sharma.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-CreateSelection"
+
+\end_inset
+
+The 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+Selection\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Create-Selection"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ command is based on the Threshold_To_Selection plugin written by Johannes
+ Schindelin.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-SocketListener"
+
+\end_inset
+
+IJ
+\begin_inset space \thinspace{}
+\end_inset
+
+1.46f adopted Johannes Schindelin's RMI-based 
+\begin_inset CommandInset href
+LatexCommand href
+name "OtherInstance"
+target "http://fiji.sc/javadoc/fiji/OtherInstance.html"
+
+\end_inset
+
+ class from Fiji, which works on multi-user machines and is more secure.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-CP"
+
+\end_inset
+
+The Color Picker (
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+Color\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Color-Picker...[K]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) was written by Gali Baler, a 2003--2004 intern from 
+\begin_inset CommandInset href
+LatexCommand href
+name "Bethesda-Chevy Chase High School"
+target "http://www.montgomeryschoolsmd.org/schools/bcchs/"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-ThresMeth"
+
+\end_inset
+
+The 16
+\begin_inset space \thinspace{}
+\end_inset
+
+different thresholding methods available in the 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+Adjust\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Threshold...[T]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ tool were implemented by Gabriel Landini.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-Resizer-Scaler"
+
+\end_inset
+
+Michael Schmid contributed improvements to the downsizing kernel used by
+ 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+Adjust\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Size..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ and 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Scale...[E]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ as well as undo support for 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Scale...[E]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-ColorThres"
+
+\end_inset
+
+The 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+Adjust\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Color-Threshold..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ command implements Gabriel Landini's 
+\begin_inset CommandInset href
+LatexCommand href
+name "Threshold Colour plugin"
+target "http://www.dentistry.bham.ac.uk/landinig/software/software.html"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-Reslice-Zproj"
+
+\end_inset
+
+The 
+\begin_inset CommandInset href
+LatexCommand href
+name "Reslice"
+target "http://imagej.nih.gov/ij/source/ij/plugin/Slicer.java"
+
+\end_inset
+
+ and the 
+\begin_inset CommandInset href
+LatexCommand href
+name "ZProject"
+target "http://imagej.nih.gov/ij/source/ij/plugin/ZProjector.java"
+
+\end_inset
+
+ plugin (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+Stacks\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Reslice...[/]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ and 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Z-Project..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ commands) were contributed by Patrick Kelly and Harvey Karten of the University
+ of California, San Diego.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-OrthoViews"
+
+\end_inset
+
+The 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+Stacks\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Orthogonal-Views"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ command is based on Dimiter Prodanov's 
+\begin_inset CommandInset href
+LatexCommand href
+name "StackSlicer"
+target "http://imagej.nih.gov/ij/plugins/stack-slicer/index.html"
+
+\end_inset
+
+ plugin and Albert Cardona's Updater class.
+ Michael Doube added support for XZ and YZ view control as well as mouse
+ wheel control.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-3Dproject-1"
+
+\end_inset
+
+The
+\family sans
+ 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+Stacks\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:3D-Project..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ was written by Michael Castle and Janice Keller of the University of Michigan
+ Mental Health Research Institute (MHRI).
+ Bill Mohler added suport for hyperstacks and 16/32--bit images in IJ
+\begin_inset space \thinspace{}
+\end_inset
+
+1.44m.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-Concatenator"
+
+\end_inset
+
+The 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+Stacks\SpecialChar \menuseparator
+Tools\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Concatenate..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ command implemented in IJ
+\begin_inset space \thinspace{}
+\end_inset
+
+1.46e is based on the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Concatenate"
+target "http://imagej.nih.gov/ij/plugins/concatenate.html"
+
+\end_inset
+
+ plugin by Jonathan Jackson.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-SubstackMaker"
+
+\end_inset
+
+The 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+Stacks\SpecialChar \menuseparator
+Tools\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "par:Make-Substack"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ command is based on the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Substack Maker"
+target "http://imagej.nih.gov/ij/plugins/substack-maker.html"
+
+\end_inset
+
+ plugin by Anthony Padua, Daniel Barboriak and Ved Sharma.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-ReduceDimens"
+
+\end_inset
+
+The 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+Hyperstacks\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Reduce-Dimensionality..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ command is based Jérôme Mutterer's 
+\begin_inset CommandInset href
+LatexCommand href
+name "Reduce HyperStack"
+target "http://imagej.nih.gov/ij/macros/Reduce_HyperStack.txt"
+
+\end_inset
+
+ macro.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-Binner"
+
+\end_inset
+
+The 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+Transform\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Bin..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ command is based on Nico Stuurman's 
+\begin_inset CommandInset href
+LatexCommand href
+name "Binner"
+target "http://valelab.ucsf.edu/~nico/IJplugins/Binner.html"
+
+\end_inset
+
+ plugin.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-SetZoom"
+
+\end_inset
+
+The 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Image\SpecialChar \menuseparator
+Zoom\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Set-Zoom..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\size small
+ 
+\family default
+\size default
+command is based on Albert Cardona's 
+\begin_inset CommandInset href
+LatexCommand href
+name "Zoom Exact"
+target "http://albert.rierol.net/software.html"
+
+\end_inset
+
+ plugin.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-Find-Maxima"
+
+\end_inset
+
+The 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Process\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Find-Maxima"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ command is based on a plugin contributed by Michael Schmid.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-EnhContrast"
+
+\end_inset
+
+The equalization code implemented in 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Process\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Enhance-Contrast"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ was contributed by Richard Kirk.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-RemoveNaNs"
+
+\end_inset
+
+The 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Process\SpecialChar \menuseparator
+
+\family default
+Noise
+\family sans
+\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Remove-NaNs..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+was contributed by Michael Schmid.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-MathMacro"
+
+\end_inset
+
+The 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Process\SpecialChar \menuseparator
+Math\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Macro..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ command is modeled after Ulf Dittmer's 
+\begin_inset CommandInset href
+LatexCommand href
+name "Expression"
+target "http://www.ulfdittmer.com/imagej/index.html#Expression"
+
+\end_inset
+
+ plugin.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-FFTfilter"
+
+\end_inset
+
+The 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Process\SpecialChar \menuseparator
+FFT\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Bandpass-Filter..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ is a built in version of Joachim Walter's 
+\begin_inset CommandInset href
+LatexCommand href
+name "FFT Filter"
+target "http://imagej.nih.gov/ij/plugins/fft-filter.html"
+
+\end_inset
+
+ plugin.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-Fill-Holes"
+
+\end_inset
+
+The 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Process\SpecialChar \menuseparator
+Binary\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fill-Holes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ algorithm was contributed by Gabriel Landini.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-Skeletonize3D"
+
+\end_inset
+
+The 
+\begin_inset CommandInset href
+LatexCommand href
+name "Skeletonize3D"
+target "http://fiji.sc/wiki/index.php/Skeletonize3D"
+
+\end_inset
+
+ plugin was written by Ignacio Arganda-Carreras, based on an 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "ITK"
+description "Insight Segmentation and Registration "
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "ITK"
+target "http://itk.org/itkindex.html"
+
+\end_inset
+
+ implementation by 
+\begin_inset CommandInset href
+LatexCommand href
+name "Hanno Homann"
+target "http://hdl.handle.net/1926/1292"
+
+\end_inset
+
+.
+ It implements a 3D thinning algorithm from Lee et al.
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Building skeleton models via 3-D medial surface axis thinning algorithms"
+target "http://dx.doi.org/10.1006/cgip.1994.1042"
+
+\end_inset
+
+.
+\begin_inset space \space{}
+\end_inset
+
+
+\emph on
+CVGIP
+\emph default
+, 56(6):462--478, 1994.
+ 
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-MultiThreadFilters"
+
+\end_inset
+
+Multi-threading support for all 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Process\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Filters"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ commands was contributed by Stephan Saalfeld and Michael Schmid in ImageJ
+\begin_inset space \thinspace{}
+\end_inset
+
+1.45c.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-GaussianBlur"
+
+\end_inset
+
+The faster and more accurate version of
+\family sans
+ 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Process\SpecialChar \menuseparator
+Filters\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Gaussian-Blur..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ implemented in ImageJ
+\begin_inset space \thinspace{}
+\end_inset
+
+1.38r was contributed by Michael Schmid.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-NonBlockingDialog"
+
+\end_inset
+
+The 
+\family typewriter
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\family typewriter
+NonBlockingGenericDialog.class
+\end_layout
+
+\end_inset
+
+
+\family default
+ used by the 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Process\SpecialChar \menuseparator
+Batch\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:batch>Macro..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ command was added by Johannes Schindelin.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-SubtractBackground"
+
+\end_inset
+
+The rolling ball code of 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Process\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Subtract-Background..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ is based on the NIH Image Pascal version by Michael Castle and Janice Keller.
+ The sliding paraboloid algorithm was written by Michael Schmid.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-Distribution"
+
+\end_inset
+
+The 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Analyze\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Distribution..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ command was written by Gabriel Landini.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-Histogram"
+
+\end_inset
+
+The scaled color bar implemented in 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Analyze\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Histogram"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ was contributed by Bob Dougherty.
+ 
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-CurveFitter"
+
+\end_inset
+
+The much improved 
+\begin_inset CommandInset href
+LatexCommand href
+name "CurveFitter"
+target "http://imagej.nih.gov/ij/developer/api/ij/measure/CurveFitter.html"
+
+\end_inset
+
+ (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Analyze\SpecialChar \menuseparator
+Tools\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Curve-Fitting..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+) implemented in IJ
+\begin_inset space \thinspace{}
+\end_inset
+
+1.46f was contributed by Michael Schmid.
+ The Rodboard and Gaussian functions were originally contributed by David
+ Rodbard (NIH) and Stefan W
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+"o
+\end_layout
+
+\end_inset
+
+rz (DKFZ), respectively.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-RM-XOR"
+
+\end_inset
+
+The ROI
+\begin_inset space \space{}
+\end_inset
+
+Manager(
+\emph on
+XOR
+\emph default
+) command (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Analyze\SpecialChar \menuseparator
+Tools\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ROI-Manager..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+) was added by Johannes Schindelin.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-RM-MultiMeasure"
+
+\end_inset
+
+The ROI
+\begin_inset space \space{}
+\end_inset
+
+Manager(
+\emph on
+Multi
+\begin_inset space \space{}
+\end_inset
+
+Measure
+\emph default
+) command (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Analyze\SpecialChar \menuseparator
+Tools\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ROI-Manager..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+) is based on Bob Dougherty's Multi_Measure plugin.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-RM-MultiPlot"
+
+\end_inset
+
+The ROI
+\begin_inset space \space{}
+\end_inset
+
+Manager(
+\emph on
+Multi
+\begin_inset space \space{}
+\end_inset
+
+Plot
+\emph default
+) command (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Analyze\SpecialChar \menuseparator
+Tools\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ROI-Manager..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+) was contributed by Philippe Gendre.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-SyncWIndows"
+
+\end_inset
+
+The 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Analyze\SpecialChar \menuseparator
+Tools\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:SynchronizeWindows"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ command (an improved version of the 
+\begin_inset CommandInset href
+LatexCommand href
+name "SyncWindows_ plugin"
+target "http://imagej.nih.gov/ij/plugins/ucsd.html"
+
+\end_inset
+
+ by Patrick Kelly) was contributed by Joachim Walter.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-ControlPanel"
+
+\end_inset
+
+The Control Panel (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Plugins\SpecialChar \menuseparator
+Utilities\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Control-Panel..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+) was written by Cezar M.
+\begin_inset space \space{}
+\end_inset
+
+Tigare.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-ComandFinder"
+
+\end_inset
+
+The Command Finder (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Plugins\SpecialChar \menuseparator
+Utilities\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Command-Finder"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+) was written by Mark Longair.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-PluginTool"
+
+\end_inset
+
+The 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "PlugInTool"
+target "http://imagej.nih.gov/ij/source/ij/plugin/tool/PlugInTool.java"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ class was inspired by Johannes Schindelin's 
+\begin_inset CommandInset href
+LatexCommand href
+name "AbstractTool"
+target "http://fiji.sc/javadoc/fiji/tool/AbstractTool.html"
+
+\end_inset
+
+ class in Fiji.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C-Several"
+
+\end_inset
+
+Other additions, improvements and reproducible  bug reports have been contribute
+d by Adrian Daerr, Airen Peraza, Ajay Gopal, Albert Cardona, Alberto Duina,
+ Alden Dima, Andreas Maier, Andrew French, Andrii Savchenko, Arttu Miettinen,
+ Aryeh Weiss, Balazs Nyiri, Barry DeZonia, Bill Mohler, Bob Hamilton, Bruno
+ Vellutini, Burri Olivier, Carne Draug, Charles Anderson, Cheryl McCreary,
+ Christian Moll, Christophe Leterrier, Christopher Harrison, Damon Poburko,
+ Daniel Hornung, Daniel Kalthoff, Daniel Senff, David Gauntt, David McDonald,
+ Denny Hugg, Dimiter Prodanov, Divakar Ramachandran, Dorai Iyer, Duncan
+ Mak, Eik Schumann, Emmanuel Levy, Erik Meijering, Fabian Svara, Francis
+ Burton, Frank Sprenger, Franklin Shaffer, Frederic Hessman, Gabriel Landini,
+ Gilles Carpentier, Gregory Reneff, Hiroki Hakoshima, Ian Lim, Ingo Bartholomaeu
+s, Jakob Preus, Jamie Robinson, Jan Eglinger, Jan Funke, Jarek Sacha, Jay
+ Unruh, Jean-Pierre Clamme, Jerome Mutterer, Jesper Pedersen, Jim Passmore,
+ Joachim Wesner, Johannes Hermen, Johannes Schindelin, Johannes Weissmann,
+ John Oreopoulos, John Pearl, Jonathan Silver, Jose Wojnacki, Juan Grande,
+ Julian Cooper, Kai Uwe Barthel, Karen Collins, Kees Straatman, Kevin Moll,
+ Kris Sheets, Mark Krebs, Mark Longair, Martin Dressler, Mat Al-Tamimi,
+ Matthew Smith, Michael Cammer, Michael Doube, Michael Ellis, Michael Schmid,
+ Michel Julier, Nagananda Gurudev, Nico Stuurman, Norbert Vischer, Olaf
+ Freyer, Oliver Bannach, Paul Jurczak, Peter Haub, Rainer Engel, Reinhard
+ Mayr, Richard Cole, Richie Mort, Robert Dougherty, Shannon Stewman, Simon
+ Roussel, Stefan Starke, Stephan Saalfeld, Steven Green, Thomas Boudier,
+ Thorsten Wagner, Tiago Ferreira, Tomas Karlsson, Tseng Qingzong, Ulf Dittmer,
+ Uwe Walschus, Valerio Mussi, Ved Sharma, Vytas Bindokas, Wilhelm Burger,
+ Winfried Wurm, Xiao Chen, Zeljka Maglica.
+\end_layout
+
+\end_body
+\end_document

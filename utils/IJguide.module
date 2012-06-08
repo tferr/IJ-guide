@@ -1,0 +1,524 @@
+#\DeclareLyXModule{ImageJ Guide Customizations}
+#DescriptionBegin
+#Defines customizations used to typeset the IJ User Guide (http://imagej.nih.gov/ij/docs/guide/) such as: 1) The "Noteworthy" float, 2) The marginal call-outs "New", "Improved" and "Changed" (custom insets), 3) the "Keystroke" and "GUI-cmd" character styles, 3) the "See Also" environment and 4) the "Footnote wihtout footmark" custom inset. This module loads (among others) the following packages: appendix, caption, fancyhdr, float, footmisc, framed, geometry, hypperef, ifthen, listings, menukeys, microtype, multicol, nomencl, placeins, relsize, sectsty, setspace, SIunits, tcolorbox, textcomp, tikz, todonotes, xcolor. It is probably incompatible with other modules using the todonotes class.
+#DescriptionEnd
+# Author: Tiago Ferreira
+# Last Update: 2012.06.05
+
+Format 35
+Preamble
+\makeatletter
+  %%%%%%%%%%%% Page Layout
+    % We want a screen reading pdf without odd/even margin assymetry and a booklet-like print
+    % version created by pdfpages. For the booklet version we will place the marginal todonotes on
+    % the outer margin, saving space in the inner margin of the booklet. We will use the option
+    % <twoside> to alternate marginpars, then eliminate symmetry with the geometry package. We will
+    % increase <textwidth> and <textheight>. NB: fancyhdr must be loaded after geometry parameters!
+    \usepackage[a4paper, twoside, hmarginratio={1:1},margin=2.58cm]{geometry}
+    \usepackage{mparhack} % correct the notorious bug of misplaced mpar on top of page
+    %\reversemarginpar % force all subsequent marginal notes to be put on the opposite side
+
+  %%%%%%%%%%%% File size
+    %\pdfcompresslevel=9 % default: 9
+    %\pdfminorversion=5 % increase PDF version so that compression can be used, default: 5
+    %\pdfobjcompresslevel=2 % compress non-stream objects, default: 2
+    %\usepackage{cmap} % use real Unicode characters instead of TeX compounds for non-ASCII chars
+
+  %%%%%%%%%%%% General
+    \usepackage{ifthen}
+    \usepackage{microtype} % micro-typographic extensions of pdfTEX
+    \usepackage{sectsty} % sections font control
+    \usepackage{appendix} % appendices control
+    \usepackage[amssymb,textstyle]{SIunits} % get the upright'\micro'
+    \usepackage{textcomp} % e.g., to produce \textquotesingle
+
+  %%%%%%%%%%%% Fix for Acrobat Readers 
+    % By default Acrobat Readers use DeviceCMYK. At least with AR 8 and 9, converted RGB colors are
+    % shifted and ill rendered, so we'll make sure AR will use DeviceRGB
+    \pdfpageattr{/Group <</S /Transparency /I true /CS /DeviceRGB>>}
+
+  %%%%%%%%%%%% Adjust headers
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    %%% Get Dates to place in footer
+    \newcommand{\revisiondate}{{\the\year/\/\two@digits{\the\month}/\/\two@digits{\the\day}}}
+    %%% Adjust parameters
+    \renewcommand{\headrulewidth}{0pt} %default is 0.4pt? 
+    \fancyhead{}
+    \renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+    \renewcommand{\subsectionmark}[1]{\markright{#1}{}}
+    \rhead{\scriptsize\rightmark}
+    \lhead{\scriptsize\leftmark}
+    \fancyfoot[R]{\scriptsize{}Last updated: \revisiondate}
+    %\fancyfoot[C]{}\fancyfoot[R]{\scriptsize\thepage}
+
+  %%%%%%%%%%%%  Adjust Floats
+    \usepackage[below]{placeins} % floats are not placed before the section, less demanding than strict
+    %%% Adjust captions. Default preset for caption skip is 10pt
+    \usepackage[font=small]{caption} % textformat=period
+    \captionsetup[figure]{labelformat=empty,position=bottom,skip=5pt}
+    \captionsetup[table]{labelformat=empty,position=top,skip=5pt}
+    %%% Center all tables and figure floats
+    \renewenvironment{figure}[1][]{%
+        \ifthenelse{\equal{#1}{}}{\@float{figure}}{\@float{figure}[#1]}\centering
+    }{\end@float}
+    \renewenvironment{table}[1][]{%
+        \ifthenelse{\equal{#1}{}}{\@float{table}}{\@float{table}[#1]}\centering
+    }{\end@float}
+
+  %%%%%%%%%%%%  Adjust Listings
+    \usepackage{listings, xcolor}
+    \colorlet{lstfcolor}{gray}% color of frame to be used in caption and lstset
+    \colorlet{lstbcolor}{lstfcolor!10} % color of background to be used in lset
+  
+    % Define a new caption style for listings: We'll insert a tcolorbox to match 'noteworthy' floats
+    \DeclareCaptionFormat{listing}{
+        \begin{tcolorbox}[coltext=white,colback=lstfcolor,colframe=lstfcolor,boxsep=0pt,top=2pt,bottom=2pt,left=4pt,boxrule=0.4mm]
+        {#1#2#3}
+        \end{tcolorbox}\vspace*{-7.6pt}
+    }
+    % Adjust lstlisting caption
+    \captionsetup[lstlisting]{%
+        format=listing, labelformat=parens, font={small,bf}, labelsep=space, listformat=parens, singlelinecheck=false
+    }
+    \providecommand*{\lstlistingname}{} %\footnotesize\textsc{Macro}
+    \renewcommand*{\lstlistingname}{}   %\footnotesize\textsc{Macro}
+    \lstdefinelanguage{ijm} {
+        language= java,
+      % comments: italic green in Fiji
+        commentstyle=\slshape\color[RGB]{0,200,0},
+      % strings: magenta(?) in Fiji
+        stringstyle=\color[RGB]{140,0,140},
+      % operators: brown(?) in Fiji
+        otherkeywords={+,-,=,<,!,\&},
+        keywordstyle=\color[RGB]{130,60,0},
+      % digits: gray(?) in Fiji
+        alsoletter={1234567890},
+        emph={[3]1,2,3,4,5,6,7,8,9,0,16,32,111,121,132,255,256},
+        emphstyle=[3]\color[RGB]{50,50,50},
+      % statements: bold blue in Fiji
+        emph={[2]var,macro,function,return,true,false,if,then,else,for,while,do,length},
+        emphstyle=[2]\color[RGB]{0,0,200}\bf,
+      %IJ v1.46 built-in macro functions: golden(?) in Fiji
+        emph={abs, acos, Array.concat, Array.copy, Array.fill, Array.getStatistics, Array.print, Array.rankPositions, Array.reverse, Array.slice, Array.sort, Array.trim, asin, atan, atan2, autoUpdate, beep, bitDepth, calibrate, call, changeValues, charCodeAt, close, cos, d2s, Dialog.create, Dialog.addMessage, Dialog.addString, Dialog.addNumber, Dialog.addSlider, Dialog.addCheckbox, Dialog.addCheckboxGroup, Dialog.addChoice, Dialog.addHelp, Dialog.setInsets, Dialog.show, Dialog.getString, Dialog.getNumber, Dialog.getCheckbox, Dialog.getChoice, doCommand, doWand, drawLine, drawOval, drawRect, drawString, dump, endsWith, eval, exec, exit, exp, Ext, File.append, File.close, File.dateLastModified, File.delete, File.directory, File.exists, File.getName, File.getParent, File.isDirectory, File.lastModified, File.length, File.makeDirectory, File.name, File.nameWithoutExtension, File.open, File.openAsString, File.openAsRawString, File.openUrlAsString, File.openDialog, File.rename, File.saveString, File.separator, fill, fillOval, fillRect, Fit.doFit, Fit.rSquared, Fit.p, Fit.nParams, Fit.f, Fit.nEquations, Fit.getEquation, Fit.plot, Fit.logResults, Fit.showDialog, floodFill, floor, fromCharCode, getArgument, getBoolean, getBoundingRect, getCursorLoc, getDateAndTime, getDimensions, getDirectory, getDisplayedArea, getFileList, getHeight, getHistogram, getImageID, getImageInfo, getInfo, getLine, getList, getLocationAndSize, getLut, getMetadata, getMinAndMax, getNumber, getPixel, getPixelSize, getProfile, getRawStatistics, getResult, getResultLabel, getSelectionBounds, getSelectionCoordinates, getSliceNumber, getStatistics, getString, getStringWidth, getThreshold, getTime, getTitle, getValue, getVoxelSize, getVersion, getWidth, getZoom, IJ, deleteRows, getToolName, freeMemory, currentMemory, maxMemory, pad, redirectErrorMessages, renameResults, imageCalculator, indexOf, is, isActive, isKeyDown, isNaN, isOpen, lastIndexOf, lengthOf, lineTo, List.set, List.get, List.getValue, List.size, List.clear, List.setList, List.getList, List.setMeasurements, List.setCommands, log, makeEllipse, makeLine, makeOval, makePoint, makePolygon, makeRectangle, makeSelection, makeText, matches, maxOf, minOf, moveTo, newArray, newImage, newMenu, nImages, nResults, nSlices, open, Overlay.moveTo, Overlay.lineTo, Overlay.drawLine, Overlay.add, Overlay.setPosition, Overlay.drawRect, Overlay.drawEllipse, Overlay.drawString, Overlay.show, Overlay.hide, Overlay.hidden, Overlay.remove, Overlay.size, Overlay.removeSelection, Overlay.copy, Overlay.paste, parseFloat, parseInt, PI, Plot.create, Plot.setLimits, Plot.setFrameSize, Plot.setLineWidth, Plot.setColor, Plot.add, Plot.addText, Plot.setJustification, Plot.drawLine, Plot.show, Plot.update, Plot.getValues, pow, print, random, rename, replace, requires, reset, resetMinAndMax, resetThreshold, restorePreviousTool, restoreSettings, roiManager, round, run, runMacro, save, saveAs, saveSettings, screenHeight, screenWidth, selectionContains, selectionName, selectionType, selectImage, selectWindow, setAutoThreshold, setBackgroundColor, setBatchMode, setColor, setFont, setForegroundColor, setJustification, setKeyDown, setLineWidth, setLocation, setLut, setMetadata, setMinAndMax, setOption, setPasteMode, setPixel, setResult, setRGBWeights, setSelectionLocation, setSelectionName, setSlice, setThreshold, setTool, setupUndo, setVoxelSize, setZCoordinate, showMessage, showMessageWithCancel, showProgress, showStatus, sin, snapshot, split, sqrt, Stack.isHyperstack, Stack.getDimensions, Stack.setDimensions, Stack.setChannel, Stack.setSlice, Stack.setFrame, Stack.getPosition, Stack.setPosition, Stack.getFrameRate, Stack.setFrameRate, Stack.getFrameInterval, Stack.setFrameInterval, Stack.getUnits, Stack.setTUnit, Stack.setZUnit, Stack.setDisplayMode, Stack.getDisplayMode, Stack.setActiveChannels, Stack.getActiveChannels, Stack.swap, Stack.getStatistics, startsWith, String.resetBuffer, String.append, String.buffer, String.copy, String.copyResults, String.getResultsHeadings, String.paste, substring, tan, toBinary, toHex, toLowerCase, toolID, toScaled, toUnscaled, toString, toUpperCase, updateDisplay, updateResults, wait, waitForUser},%
+        emphstyle=\color[RGB]{165,65,0},
+      % other settings
+        sensitive=true, upquote=true, showstringspaces=false,
+    }
+    \lstset{%
+        language=ijm, float=htb, captionpos=t,
+        frame=tblr, framerule=0.4mm, rulecolor=\color{lstfcolor},
+        xleftmargin=13.15pt, framexleftmargin=9pt, framexrightmargin=-4.2pt,%
+        backgroundcolor=\color{lstbcolor},
+        numbers=left, numbersep=3pt, numberstyle=\tiny,
+        breaklines=true, breakatwhitespace=true, breakindent=15pt,
+        prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        basicstyle=\footnotesize\ttfamily,
+    }
+
+  %%%%%%%%%%%%  Adjust Footnotes
+    \usepackage[perpage,hang,flushmargin]{footmisc}
+    % adjust footnoterule
+    \addtolength{\skip\footins}{3mm}
+    \renewcommand\footnoterule{\kern-3\p@\hrule\@width1\columnwidth\kern2.6\p@}
+    % make arabic footnote marks inside minipages (to be used in tables)
+    \let\thempfootnote\thefootnote
+    % define an unnumbered footnote (without footmark)
+    \def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
+
+  %%%%%%    Fix for hyperfootnotes
+    % hyperfootnotes= false must be loaded as an option. it has no effect in the in hypersetup. As of this
+    % writings LyX does not allow to load this option in the Document properties. This will impose it
+    \toks@\expandafter{%
+        \expandafter\ifHy@hyperfootnotes
+            \@footnotemark
+            \else \H@@footnotemark
+            \fi}
+    \xdef\@footnotemark{\the\toks@}%
+    \let\footnotes@ve = \footnote
+    \def\footnote{\Hy@hyperfootnotesfalse\footnotes@ve}
+
+  %%%%%%%%%%%%  Adjust index
+    \usepackage{multicol}
+    \renewenvironment{theindex}{
+        \if@twocolumn \@restonecolfalse \else \@restonecoltrue \fi
+        \setlength{\columnseprule}{0pt}
+        \setlength{\columnsep}{35pt}
+        \flushleft
+        \begin{multicols}{3}[\section*{\indexname}]
+        %\markboth{\MakeUppercase\indexname}{\MakeUppercase\indexname}%
+            \setlength{\parindent}{0pt}
+            \setlength{\parskip}{0.3pt}
+            \relax\let\item\@idxitem}%
+        {\end{multicols}
+        \if@restonecol\onecolumn\else\clearpage\fi}
+    \renewcommand\@idxitem{\par\hangindent 20\p@}
+    \renewcommand\subitem{\@idxitem \hspace*{10\p@}}
+    \renewcommand\subsubitem{\@idxitem \hspace*{20\p@}}
+    %\renewcommand\indexspace{\par \vskip 5\p@ \@plus5\p@ \@minus3\p@\relax}
+
+  %%%%%%%%%%%%  Adjust Nomenclature
+    \usepackage{nomencl}
+    \renewcommand{\nomname}{List of Abbreviations and Acronyms}%
+    \setlength{\nomlabelwidth}{.18\hsize}%
+    \renewcommand{\nomlabel}[1]{#1 \dotfill}%
+    \setlength{\nomitemsep}{3.6pt}%
+    \renewcommand{\nomentryend}{;}%
+    \renewcommand*\nompreamble{
+        \setlength{\columnsep}{12mm} %width between the multicols columns
+        \flushleft\footnotesize\begin{multicols*}{2}}%
+    \renewcommand*\nompostamble{\end{multicols*}}%
+
+  %%%%%%%%%%%%  Define the "Noteworthy" float
+    % We could define a new type of float but we'll instead customize the default "ruled" style
+    % (see http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions)
+    \usepackage{float}
+    \usepackage{tcolorbox}
+    \tcbuselibrary{skins} % loads tikz
+    \usetikzlibrary{shadings,shadows}
+    % Tweak the ruled style: hack a tcolorbox inside the float
+    \colorlet{shadecolor}{green!15} %will be used by cellcolor in doc
+    \renewcommand\floatc@ruled[2]{{\@fs@cfont #1 #2}\par}
+    \renewcommand\fs@ruled{
+        %\def\@fs@cfont{\bfseries}\let\@fs@capt\floatc@ruled
+        \def\@fs@pre{%
+            \vspace*{5pt}
+            \begin{tcolorbox}[%
+                skin=beamer, boxrule=0.4mm, colback=shadecolor, colframe=shadecolor!70!black, left=2.5mm,
+                before={\hspace*{-0.025\columnwidth}\begin{minipage}{1.05\columnwidth}},
+                after={\end{minipage}}]
+            }
+        \def\@fs@mid{\kern10pt}%
+        \def\@fs@post{
+            \end{tcolorbox}
+            \vspace*{5pt}
+            \kern0pt\relax
+            }%
+        \let\@fs@iftopcapt\iftrue}
+    
+    % Customize caption of infoboxes
+    % define float. Use empty label and correct its aligment. issues with labelformat=simple in captionsetup?
+    \floatname{infobox}{\protect\hspace*{-3.8pt}}
+    % \theinfobox will only be created if a \infobox exists in the document so we'll provide it here
+    \providecommand{\theinfobox}{}
+    \renewcommand{\theinfobox}{\Roman{infobox}} % Use Roman numerals
+    % Roman numerals will overflow numwidth in the toc, this is just a lame fix to move them slightly left
+    \DeclareCaptionListFormat{myinfobox}{\hspace*{-8pt}\theinfobox}
+    \captionsetup[infobox]{listformat=myinfobox,labelsep=quad,font={sc,bf},singlelinecheck=false}
+
+  %%%%%%%%%%%%  hyperref
+    \usepackage{hyperref}
+    \urlstyle{same} % kill the default monospaced font
+    \providecommand*{\phantomsection}{} % Avoid all sorts of troubles
+
+  %%%%%%%%%%%%  Use todonotes as call-outs
+    \usepackage[shadow]{todonotes}
+    \usepackage{setspace} % we'll need custom spacing inside the todonote
+    \newcounter{todocounter}
+    \newcommand{\todonum}[2][]{\stepcounter{todocounter}\todo[#1]{\thetodocounter: #2}}
+    \setlength{\marginparwidth}{2cm} % tidy the todonote width
+    \newcommand{\feature}[1]{ % new label
+        \ifthenelse{\equal{#1}{}}{
+        \todo[noline,size=\footnotesize, backgroundcolor=green!20!white,bordercolor=green!60!white,nolist]{
+        \vspace*{-16pt}\begin{spacing}{0.8}\center\textsc{New in IJ\,\theguideversion}\end{spacing}\vspace*{1pt}}
+        }{
+        \todo[noline,size=\footnotesize, backgroundcolor=green!20!white,bordercolor=green!60!white,caption={#1}]{
+            \vspace*{-16pt}\begin{spacing}{0.8}\center\textsc{New in IJ\,\theguideversion}\end{spacing}\vspace*{1pt}}
+        }
+    }
+    \newcommand{\change}[1]{ % changes label
+        \ifthenelse{\equal{#1}{}}{
+        \todo[noline,size=\footnotesize, backgroundcolor=red!20!white, bordercolor=red!60!white, nolist]{
+        \vspace*{-16pt}\begin{spacing}{0.85}\center\textsc{Changed in IJ\,\theguideversion}\end{spacing}\vspace*{1pt}}
+        }{
+        \todo[noline,size=\footnotesize, backgroundcolor=red!20!white, bordercolor=red!60!white, caption={#1}]{
+        \vspace*{-16pt}\begin{spacing}{0.85}\center\textsc{Changed in IJ\,\theguideversion}\end{spacing}\vspace*{1pt}}
+        }
+    }
+    \newcommand{\improvement}[1]{ % improvements label
+        \ifthenelse{\equal{#1}{}}{
+        \todo[noline,size=\footnotesize, backgroundcolor=yellow!20!white, bordercolor=yellow!60!white,nolist]{
+        \vspace*{-16pt}\begin{spacing}{0.85}\center\textsc{Improved in IJ\,\theguideversion}\end{spacing}\vspace*{1pt}}
+    }{
+        \todo[noline,size=\footnotesize, backgroundcolor=yellow!20!white, bordercolor=yellow!60!white,caption={#1}]{
+        \vspace*{-16pt}\begin{spacing}{0.85}\center\textsc{Improved in IJ\,\theguideversion}\end{spacing}\vspace*{1pt}}
+        }
+    }
+
+  %%%%%%%%%%%   load menuitems: Menus and keystrokes
+    \usepackage{menukeys}
+      \renewmenumacro{\keys}[+]{shadowedroundedkeys} % separator: +
+      \renewmenumacro{\directory}[/]{hyphenatepaths}
+      %\renewmenumacro{\menu}[>]{menus}
+    
+  %%%%%%%%%%%   Define globally the version Guide, Title, etc..
+    \providecommand{\theguideversion}{??}
+\makeatother
+EndPreamble
+
+Float
+    Type                infobox
+    GuiName             "Noteworthy"
+    Placement           htb
+    Extension           loi
+    #NumberWithin       None
+    Style               ruled
+    ListName            "Noteworthy"
+    IsPredefined        false
+    UsesFloatPkg        true
+    RefPrefix           infobox
+End
+
+Style "See Also"
+    Category            List
+    Margin              First_Dynamic
+    LatexType           command
+    LatexName           calso
+    NextNoIndent        1
+    LabelSep            xx
+    ParIndent           MMM
+    ParSkip             0.4
+    ItemSep             0.2
+    TopSep              0.7
+    BottomSep           0.7
+    #ParSep             0.3
+    Align               Block
+    AlignPossible       Block, Left
+    LabelType           Static
+    LabelString         "See Also"
+    Font
+      Shape             Up
+      Size              Small
+    EndFont
+    LabelFont
+      Shape             Smallcaps
+    EndFont
+    Preamble
+    \newcommand{\calso}[1]{%
+    \begin{list}{}
+        {\settowidth{\labelwidth}{SeeAlsoo::}
+         \setlength{\leftmargin}{\labelwidth}
+         \addtolength{\leftmargin}{\labelsep}
+         \renewcommand{\makelabel}[1]{\small\textsc{See\ also:}\hfil}}
+    \item #1
+    \end{list}}
+    EndPreamble
+End
+
+InsetLayout "Flex:Define Version"
+    LyxType         custom
+    LabelString     "IJ Version"
+    Decoration      classic
+    BgColor         red
+    Font
+        Size        Small
+    EndFont
+    LabelFont
+        Color       red
+        Size        Small
+    EndFont
+    MultiPar        false
+    LatexType       command
+    LatexName       renewcommand{\theguideversion}
+End
+
+InsetLayout "Flex:Insert Version"
+    LyxType         custom
+    LabelString     IJversion
+    Decoration      Classic
+    BgColor         red
+    #Font
+    #   Size        Small
+    #EndFont
+    LabelFont
+        Color       red
+        Size        Small
+    EndFont
+    MultiPar        false
+    LatexType       command
+    LatexName       theguideversion
+End
+
+InsetLayout "Flex:Highlight: Change"
+    LyxType         custom
+    LabelString     Change
+    Decoration      classic
+    BgColor         red
+    Font
+        Size        Small
+    EndFont
+    LabelFont
+        Color       red
+        #Family     Sans
+        Size        Small
+    EndFont
+    MultiPar        true
+    LatexType       command
+    LatexName       change
+End
+
+InsetLayout "Flex:Highlight: Improvement"
+    LyxType         custom
+    LabelString     Improvement
+    Decoration      classic
+    BgColor         yellow
+    Font
+        Size        Small
+    EndFont
+    LabelFont
+        Color       yellow
+        #Family     Sans
+        Size        Small
+    EndFont
+    MultiPar        true
+    LatexType       command
+    LatexName       improvement
+  End
+
+InsetLayout "Flex:Highlight: Feature"
+    LyxType         custom
+    LabelString     Feature
+    Decoration      classic
+    BgColor         green
+    Font
+        Size        Small
+        Color       White
+    EndFont
+    LabelFont
+        Color       green
+        #Family     Sans
+        Size        Small
+    EndFont
+    MultiPar        true
+    LatexType       command
+    LatexName       feature
+End
+
+InsetLayout "Flex:Table of Highlights"
+    LyxType         custom
+    LabelType       Static
+    LabelString     "Table of Highlights"
+    Decoration      Classic
+    BgColor         White
+    Font
+        Color       Black
+    EndFont
+    LabelFont
+        Color       Black
+        #Family     Sans
+        Size        Small
+    EndFont
+    Align           Center
+    MultiPar        0
+    LatexType       command
+    LatexName       makelistofhighlights
+    Preamble
+        %%%%%%%%%%%% Create the list of Release Notes (Features, Improvements and Changes)
+        \providecommand{\makelistofhighlights}[1]{
+            \phantomsection
+            \addcontentsline{toc}{section}{Release Notes for ImageJ \theguideversion}
+            %% There seems to be an issue (with tocloft?) and todonotes that creates bogus title in the list of todonotes. The problem
+            %% goes away by unloading toclof. The following "tabular" is a really ugly fix to provide a properly foormated title
+            \listoftodos[\hspace*{-11pt}\begin{tabular}{l}\cellcolor{white}\textbf{\Large{#1}}\end{tabular}\vspace*{\medskipamount}]
+        }
+    EndPreamble
+End
+
+InsetLayout "Flex:Table of Listings"
+    LyxType         custom
+    LabelString     "Table of Listings"
+    Decoration      Classic
+    BgColor         White
+    Font
+        Color       Black
+    EndFont
+    LabelFont
+        Color       Black
+        #Family     Sans
+        Size        Small
+    EndFont
+    Align           Center
+    MultiPar        0
+    LatexType       command
+    LatexName       makelistoflistings
+    Preamble
+        %%%%%%%%%%%% Create the list of Listings
+        \newcommand*{\makelistoflistings}[1]{
+            \ifthenelse{\NOT\equal{#1}{}}{\renewcommand{\lstlistlistingname}{#1}}{}
+            \phantomsection
+            \addcontentsline{toc}{section}{\lstlistlistingname}
+            \lstlistoflistings
+        }
+    EndPreamble
+End
+
+InsetLayout Flex:Keystroke
+    LyxType         charstyle
+    LabelString     Key
+    LatexType       command
+    LatexName       mykeystroke
+    BgColor         yellow
+    Preamble
+        \providecommand*{\mykeystroke}[1]{{\keys{{#1}}}}
+    EndPreamble
+End
+
+InsetLayout Flex:MenuItem
+    LyxType         charstyle
+    LabelString     GUI-cmd
+    LatexType       command
+    LatexName       userinterface
+    #BgColor         blue
+    Font
+        Family      Sans
+    EndFont
+    Preamble
+        \newcommand*{\userinterface}[1]{{\sffamily #1}}
+    EndPreamble
+    InToc                 true
+    HTMLTag               gui
+End
+
+InsetLayout Flex:Directory
+    LyxType         charstyle
+    LabelString     Directory
+    BgColor         cyan
+    Font
+        Family      Typewriter
+    EndFont
+    LatexType       command
+    LatexName       dirnameref
+    Preamble
+        \newcommand*{\dirnameref}[2][]{{\textcolor{black!90}{\relsize{-0.4}\drawtikzfolder\,\ttfamily{\directory{#1}{#2}}}}}
+    EndPreamble
+End
+
+InsetLayout Flex:Filename
+    LyxType         charstyle
+    LabelString     Filename
+    BgColor         cyan
+    Font
+        Family      Typewriter
+    EndFont
+    LatexType       command
+    LatexName       filenameref
+    Preamble
+        \newcommand*{\filenameref}[2][]{{\textcolor{black!90}{\relsize{-0.4}\winmenuwin\,\ttfamily{\directory{#1}{#2}}}}}
+    EndPreamble
+End
+
+InsetLayout "Flex:Footnote_without_mark"
+    LyxType         custom
+    LabelString     Foot_(NoMark)
+    Decoration      classic
+    Font
+        Size        Small
+    EndFont
+    LabelFont
+        Color       Green
+        Size        Small
+    EndFont
+    MultiPar        true
+    LatexType       command
+    LatexName       blfootnote
+End

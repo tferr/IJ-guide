@@ -1,0 +1,45 @@
+\documentclass[a4paper, landscape, twoside]{article}
+%\pdfminorversion=5
+%\pdfobjcompresslevel=2
+%\pdfcompresslevel=8
+\usepackage{geometry, hyperref, microtype, pdfpages}
+\hypersetup{
+	pdftitle={ImageJ User Guide },
+ 	pdfauthor={Tiago Ferreira \& Wayne Rasband},
+ 	pdfsubject={ImageJ 1.46 Handbook},
+ 	pdfkeywords={ImageJ, Fiji, Scientific Digital Image Processing},
+ 	pdfstartview=FitH, pdfpagelayout=OneColumn, bookmarksopen=false
+}
+\newcommand{\bindingtext}{\tiny IJ User Guide --- Booklet\qquad\thepage} % vertical header for booklet
+
+\begin{document}
+    \pagestyle{empty}
+    \pagenumbering{Roman} % pdf viewer page display
+    
+%% Insert cover
+    \includepdf[noautoscale=true]{../cover/CoverBooklet.pdf}
+    \cleardoublepage
+    
+%% Make side header
+    \pagenumbering{arabic} % pdf viewer page display
+    \newgeometry{left=1.5mm,right=1.5mm, top=8mm, bottom=8mm, centering}
+
+    \newlength{\bindingXmargin} \addtolength{\bindingXmargin}{\paperwidth  -14.5mm}
+    \newlength{\bindingYmargin} \addtolength{\bindingYmargin}{\paperheight -20mm -\widthof{\bindingtext}}
+
+    \newcommand{\drawbinding}{%
+        \ifthenelse{\isodd{\thepage}}
+        {\rotatebox{90}{\bindingtext}}
+        {\hspace{\bindingXmargin}\rotatebox{-90}{\hspace*{\bindingYmargin}\bindingtext}}%
+    }
+    
+%%  Insert pages
+    \includepdf[%
+        pages=3-,
+        nup=2x1,
+        delta=-28mm 0,
+        offset=6mm 0mm,
+        frame=false,
+        pagecommand=\drawbinding]
+        {user-guide}
+\end{document}

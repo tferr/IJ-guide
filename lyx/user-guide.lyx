@@ -1,0 +1,2552 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+%%%%%%%%%%%% Adjust TOC
+\usepackage{tocloft}
+\addtolength{\cftsubsecnumwidth}{6pt} % make space for more than 10 subsections
+\addtolength{\cftsubsubsecnumwidth}{1em} % make space for more than 10 subsubsections
+\cftpagenumbersoff{part} % remove page numbers from Part
+
+%%%%%%%%%%%% Colors
+\usepackage{colortbl} % colored tables
+\definecolor{ijcyan}{RGB}{0,255,255}
+\definecolor{ijmagenta}{RGB}{255,0,255}
+\definecolor{ijorange}{RGB}{255,150,0}%actual:255,200,0
+\definecolor{ijyellow}{RGB}{255,255,0}
+
+%%%%%%%%%%%% Make paragraphs into subsubsubsections
+\setcounter{secnumdepth}{4} % get numbered paragraphs 
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}% 
+  {-3.25ex\@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}%
+  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+%%%%%%%%%%%  Set special dates
+\usepackage{datetime}
+\end_preamble
+\use_default_options false
+\begin_modules
+IJguide
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_title "ImageJ User Guide "
+\pdf_author "Tiago Ferreira \& Wayne Rasband"
+\pdf_subject "ImageJ 1.46 Handbook"
+\pdf_keywords "ImageJ, Fiji, Scientific Digital Image Processing"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 2
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "hyperindex=true, linkcolor={black!65}, citecolor={black!65}, urlcolor={blue!40!black}, pdfstartview=FitH, pdfpagelayout=OneColumn"
+\papersize a4paper
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle empty
+\bullet 0 0 0 1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Flex Define Version
+status collapsed
+
+\begin_layout Plain Layout
+1.46p
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename ../cover/CoverMain.pdf
+	display false
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Title
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pdfbookmark[1]{Foreword}{ForewordNote}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+sffamily
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minipage}[c][3cm][t]{1.3cm}%
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+includegraphics{images/IJ-icon-cover}%
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{minipage}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minipage}[c]{09.4cm}%
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+setlength{
+\backslash
+tabcolsep}{0pt}
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+begin{tabular}{c} 
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+multicolumn{1}{l}{
+\end_layout
+
+\begin_layout Plain Layout
+
+       
+\backslash
+textcolor{black!75}{
+\backslash
+textbf{
+\backslash
+Huge ImageJ User Guide}}}
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+tabularnewline[0.2cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+noalign{
+\backslash
+vskip6pt}
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+multicolumn{1}{r}{
+\backslash
+textcolor{black!75}{
+\backslash
+textbf{
+\backslash
+LARGE 
+\backslash
+hfill{}IJ
+\backslash
+,
+\backslash
+theguideversion{}}}}
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+tabularnewline[0.7cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+multicolumn{1}{c}{
+\backslash
+textcolor{black!75}{
+\backslash
+Large
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+href{mailto:tiago.ferreira@mail.mcgill.ca}{Tiago Ferreira}
+\end_layout
+
+\begin_layout Plain Layout
+
+     ~{$^{
+\backslash
+footnotesize
+\backslash
+bullet}$}~
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+href{mailto:wsr@nih.gov}{Wayne Rasband}}}
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minipage}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{
+\backslash
+fill}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+par
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Frontnote
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{quote}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hrulefill
+\backslash
+qquad
+\backslash
+textsc{Foreword}
+\backslash
+qquad
+\backslash
+hrulefill
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{
+\backslash
+medskipamount}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+ImageJ User Guide
+\emph default
+ provides a detailed overview of ImageJ (and inherently 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fiji-intro"
+
+\end_inset
+
+), the standard in scientific image analysis.
+\end_layout
+
+\begin_layout Standard
+It was thought as a comprehensive, fully-searchable, self-contained, annotatable
+ manual (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Guide-Conventions"
+
+\end_inset
+
+).
+ A 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "HTML"
+description "HyperText Markup Language"
+
+\end_inset
+
+HTML version is also available as well as printer-friendly booklets (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Guide-Formats"
+
+\end_inset
+
+).
+ Its latest version can always be obtained from 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagej.nih.gov/ij/docs/guide
+\end_layout
+
+\end_inset
+
+.
+ The source files are available through a Git version control repository
+ at 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://fiji.sc/guide.git
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Given ImageJ's heavy development this guide will always remain incomplete.
+ All ImageJ users and developers are encouraged to contribute to the ImageJ
+ documentation resources (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Getting-Involved"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+hrulefill
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{quote}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+vspace*{2.0cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{plain}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%TOC
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+pdfbookmark[1]{Contents}{tableofcontents}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Footnote without mark
+status collapsed
+
+\begin_layout Plain Layout
+Please note that this is not an extensive list.
+ Detailed release notes for version
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Flex Insert Version
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ are available on the ImageJ news web site: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagej.nih.gov/ij/notes.html
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Table of Highlights
+status collapsed
+
+\begin_layout Plain Layout
+Summarized Release Notes for ImageJ
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Flex Insert Version
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "listoffeatures"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Noteworthy
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{Noteworthy}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{doublespace}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+noindent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList infobox
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "noteworthylist"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{doublespace}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Listings
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{doublespace}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+noindent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Table of Listings
+status collapsed
+
+\begin_layout Plain Layout
+Macro Listings
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "macrolistingslist"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{doublespace}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Guide Formats
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Guide-Formats"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This guide is available in the following formats:
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+Enhanced
+\begin_inset space \space{}
+\end_inset
+
+PDF
+\series default
+ Optimized for electronic viewing and highly enriched in hypertext links
+ (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Guide-Conventions"
+
+\end_inset
+
+).
+ Available at 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagej.nih.gov/ij/docs/guide/user-guide.pdf
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+HTML
+\begin_inset space \space{}
+\end_inset
+
+document
+\series default
+ available online at 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagej.nih.gov/ij/docs/guide/
+\end_layout
+
+\end_inset
+
+.
+ For offline usage a downloadable ZIP archive is also available at 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagej.nih.gov/ij/docs/user-guide.zip
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+Printable
+\begin_inset space \space{}
+\end_inset
+
+booklets
+\series default
+ Two-sided booklets that can be printed on a duplex unit printer by setting
+ the automatic duplex mode to 
+\begin_inset Quotes eld
+\end_inset
+
+short edge binding
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Two formats are available: A4 (
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagej.nih.gov/ij/docs/guide/user-guide-A4booklet.pdf
+\end_layout
+
+\end_inset
+
+) and letter size paper (
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagej.nih.gov/ij/docs/guide/user-guide-USbooklet.pdf
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{Conventions}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Conventions Used in this Guide
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Guide-Conventions"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Throughout the guide, internal  links are displayed in gray (e.g., Part 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "par:User-Interface1"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "par:User-Interface1"
+
+\end_inset
+
+).
+ Links to external URLs, such as the 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJ website"
+target "http://imagej.nih.gov/ij/"
+
+\end_inset
+
+, 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagej.nih.gov/ij/
+\end_layout
+
+\end_inset
+
+, are displayed in dark blue.
+\end_layout
+
+\begin_layout Standard
+\noindent
+ImageJ commands are typed in 
+\family sans
+sans
+\begin_inset space \space{}
+\end_inset
+
+serif
+\family default
+ typeface with respective shortcut keys flanked by square brackets (e.g.:
+\begin_inset space \space{}
+\end_inset
+
+
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family sans
+Image\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Duplicate...[D]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+).
+ As explained in 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Using-Shortcuts"
+
+\end_inset
+
+, this notation implies Shift-modifiers (i.e., 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+[D]
+\end_layout
+
+\end_inset
+
+ means pressing 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Shift
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+[d]
+\end_layout
+
+\end_inset
+
+ only the 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+
+ key) and assumes that 
+\emph on
+Require control key for shortcuts 
+\emph default
+in 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+Options\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Misc..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ is unchecked.
+ Note that references to the 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Ctrl
+\end_layout
+
+\end_inset
+
+ key include the 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+cmd
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ Cmd
+\end_layout
+
+\end_inset
+
+ key of Macintosh keyboards.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Useful tips and reminders are placed in 
+\begin_inset Quotes els
+\end_inset
+
+Noteworthy notes
+\begin_inset Quotes ers
+\end_inset
+
+ numbered with upper case roman numerals (e.g., 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:Frontmost-window"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:Frontmost-window"
+
+\end_inset
+
+).
+ The full list of these notes is available 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "noteworthylist"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Filenames, directories and file extensions are typed in monospaced font
+ marked by a related icon, e.g., file 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+StartupMacros.txt
+\end_layout
+
+\end_inset
+
+ in folder 
+\begin_inset Flex Directory
+status collapsed
+
+\begin_layout Plain Layout
+/Applications/ImageJ/macros/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Macro functions and code snippets are typed in monospaced font, e.g., 
+\family typewriter
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family typewriter
+resetMinAndMax()
+\end_layout
+
+\end_inset
+
+
+\family default
+.
+ Scripts and macros are numbered with arabic numerals included in parentheses
+ (e.g., 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "lis:RGBtoMGB1"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lis:RGBtoMGB1"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "lis:RGBtoMGB1"
+
+\end_inset
+
+) and typeset with the same 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Syntax highlighting
+\end_layout
+
+\end_inset
+
+syntax markup provided by the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fiji-Scrip-Editor"
+
+\end_inset
+
+.
+ The full list of macro listings is available 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "macrolistingslist"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Selected highlights of version
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Flex Insert Version
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ are listed 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "listoffeatures"
+
+\end_inset
+
+ and flagged with colored marginal notes.
+ These should be interpreted as:
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "27col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "2cm"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+todo[inline,size=
+\backslash
+footnotesize, backgroundcolor=green!20!white,bordercolor=green!60!white,nolist]{
+ 	
+\backslash
+vspace*{-16pt}
+\backslash
+begin{spacing}{0.8}
+\backslash
+center
+\backslash
+textsc{New in IJ
+\backslash
+,
+\backslash
+theguideversion}
+\backslash
+end{spacing}
+\backslash
+vspace*{1pt} }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "73col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\paragraph_spacing single
+\noindent
+
+\size small
+A new feature implemented in ImageJ
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+theguideversion{}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "27col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "2cm"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+todo[inline,size=
+\backslash
+footnotesize, backgroundcolor=yellow!20!white, bordercolor=yellow!60!white,nolis
+t]{ 	
+\backslash
+vspace*{-16pt}
+\backslash
+begin{spacing}{0.8}
+\backslash
+center
+\backslash
+textsc{Improved in IJ
+\backslash
+,
+\backslash
+theguideversion}
+\backslash
+end{spacing}
+\backslash
+vspace*{1pt} }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "73col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\paragraph_spacing single
+\noindent
+
+\size small
+A routine that has been improved since previous versions.
+ Typically, a faster or more precise algorithm, a command with better usability,
+ or a task that has been extended to more image types.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "27col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "2cm"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+todo[inline,size=
+\backslash
+footnotesize, backgroundcolor=red!20!white, bordercolor=red!60!white,nolist]{
+ 	
+\backslash
+vspace*{-16pt}
+\backslash
+begin{spacing}{0.8}
+\backslash
+center
+\backslash
+textsc{Changed in IJ
+\backslash
+,
+\backslash
+theguideversion}
+\backslash
+end{spacing}
+\backslash
+vspace*{1pt} }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "73col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\paragraph_spacing single
+\noindent
+
+\size small
+A pre-existing command that has been renamed or moved to a different menu
+ location in ImageJ
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+theguideversion{}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{fancy}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "01-intro.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "02-working.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "03-extending.lyx"
+
+\end_inset
+
+
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sectionmark{The ImageJ Window}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "04-gui.lyx"
+
+\end_inset
+
+
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+All sections will be IJ commands so all sectional headings must appear in
+ sans serif.
+ We could use 
+\backslash
+allsectionsfont{
+\backslash
+sffamily} provided by sectsty.
+ However, this would also change the font of the heading counter.
+ We will use Lyx Insets instead.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%% Update the TOC entries so that IJ commands appear in sans serif.
+ Requires tocloft
+\end_layout
+
+\begin_layout Plain Layout
+
+%%
+\backslash
+addtocontents{toc}{
+\backslash
+protect
+\backslash
+renewcommand*
+\backslash
+protect
+\backslash
+cftsecfont{
+\backslash
+sffamily
+\backslash
+bfseries}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  %%
+\backslash
+addtocontents{toc}{
+\backslash
+protect
+\backslash
+renewcommand*
+\backslash
+protect
+\backslash
+cftsubsecfont{
+\backslash
+sffamily}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%% Restore section fonts to default
+\end_layout
+
+\begin_layout Plain Layout
+
+  %
+\backslash
+allsectionsfont{
+\backslash
+rmfamily}
+\end_layout
+
+\begin_layout Plain Layout
+
+%% Restore TOC fonts to default.
+ Requires tocloft
+\end_layout
+
+\begin_layout Plain Layout
+
+  %
+\backslash
+addtocontents{toc}{
+\backslash
+protect
+\backslash
+renewcommand*
+\backslash
+protect
+\backslash
+cftsecfont{
+\backslash
+rmfamily
+\backslash
+bfseries}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  %
+\backslash
+addtocontents{toc}{
+\backslash
+protect
+\backslash
+renewcommand*
+\backslash
+protect
+\backslash
+cftsubsecfont{
+\backslash
+rmfamily}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  %
+\backslash
+addtocontents{toc}{
+\backslash
+protect
+\backslash
+renewcommand{
+\backslash
+cftsecfont}{
+\backslash
+rmfamily
+\backslash
+bfseries}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  %
+\backslash
+addtocontents{toc}{
+\backslash
+protect
+\backslash
+renewcommand{
+\backslash
+cftsubsecfont}{
+\backslash
+rmfamily}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}% no headings on the first page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%% In the TOC, do not show page numbers for sections (IJ Menus)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addtocontents{toc}{
+\backslash
+protect
+\backslash
+cftpagenumbersoff{section}}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand include
+filename "05-commands.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%% Restore sections page numbers in the TOC 
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+addtocontents{toc}{
+\backslash
+protect
+\backslash
+cftpagenumberson{section}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}% no headings on the first page
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sectionmark{Listof Shortcuts}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "06-shortcuts.lyx"
+
+\end_inset
+
+
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{plain}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pdfbookmark[0]{Addenda}{addenda}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Credits
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+refname}{Credits}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+refname}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+makeatletter % @ is now a letter
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+def
+\backslash
+bibleftdelim{
+\backslash
+hspace*{-30pt}[C}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+def
+\backslash
+bibrightdelim{]}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+def
+\backslash
+@biblabel#1{
+\backslash
+bibleftdelim #1
+\backslash
+bibrightdelim}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+makeatother % @ is a symbol
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+small{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "07-credits.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% biblio fix: reset item labels
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+makeatletter % @ is now a letter
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+def
+\backslash
+bibleftdelim{[}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+def
+\backslash
+bibrightdelim{]}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+def
+\backslash
+@biblabel#1{
+\backslash
+bibleftdelim #1
+\backslash
+bibrightdelim}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+makeatother % @ is a symbol
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "08-biblio.lyx"
+
+\end_inset
+
+
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Nomenclature
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+phantomsection
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+nomname}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+printnomenclature
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Index
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+indexname}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset index_print
+LatexCommand printindex
+type "idx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{Colophon}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "09-about.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

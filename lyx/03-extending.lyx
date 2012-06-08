@@ -1,0 +1,2840 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options false
+\begin_modules
+IJguide
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "The ImageJ User Guide "
+\pdf_author "Tiago Ferreira \& Wayne Rasband"
+\pdf_keywords "ImageJ, Scientific Digital Image Processing"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 2
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "hyperindex=true, linkcolor={black!50}, citecolor={black!50}, urlcolor={black!50}, filecolor={black!50}"
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 0 0 0 1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part
+Extending ImageJ
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Extending-ImageJ"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ImageJ capabilities can be extended by loadable code modules in the form
+ of macros, scripts or plugins.
+ 300
+\begin_inset Formula $+$
+\end_inset
+
+ macros, 500
+\begin_inset Formula $+$
+\end_inset
+
+ plugins and 20
+\begin_inset Formula $+$
+\end_inset
+
+ scripts are available through the ImageJ web site.
+ Below is a short description of these three type of ImageJ add-ons:
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring macrosss
+\noindent
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Macros-ExtendingIJ"
+
+\end_inset
+
+ The easiest way to execute a series of ImageJ commands.
+ The ImageJ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Macros
+\end_layout
+
+\end_inset
+
+macro language -- a 
+\emph on
+Java-like
+\emph default
+ language -- contains a set of control structures, operators and built-in
+ functions and can be used to call built-in commands and other macros.
+ Macro code is stored in text files (
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+.txt
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+.ijm
+\end_layout
+
+\end_inset
+
+ extensions).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring macrosss
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Plugins"
+
+\end_inset
+
+ Much more powerful, flexible and faster than macros (most of ImageJ's built-in
+ menu commands are actually 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Plugins
+\end_layout
+
+\end_inset
+
+plugins) but harder to write and debug.
+ Plugins are written in the 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Java
+\end_layout
+
+\end_inset
+
+Java programming language (
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+.java
+\end_layout
+
+\end_inset
+
+ source files) and compiled to 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+.class
+\end_layout
+
+\end_inset
+
+ files.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring macrosss
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Scripts"
+
+\end_inset
+
+ ImageJ uses the Mozilla Rhino interpreter to run 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+JavaScript
+\end_layout
+
+\end_inset
+
+JavaScripts.
+ Similarly to plugins, scripts have full access to all ImageJ and Java APIs
+ but do not need to be compiled (scripts and macros run interpretively).
+ On the other hand, scripts lack the simplicity of macro language and feel
+ less integrated in ImageJ.
+\end_layout
+
+\begin_layout Section
+Macros
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Macros-ExtendingIJ"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Macros
+\end_layout
+
+\end_inset
+
+macro is a simple program that automates a series of ImageJ commands.
+ The easiest way to create a macro is to record a sequence of commands using
+ the command recorder (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Plugins\SpecialChar \menuseparator
+Macros\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Record..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+).
+ 
+\end_layout
+
+\begin_layout Standard
+A macro is saved as a text file (
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+.txt 
+\end_layout
+
+\end_inset
+
+or 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+.ijm
+\end_layout
+
+\end_inset
+
+ extension) and once installed executed by selecting the macro name in the
+ 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Plugins\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Macros"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ submenu, by 
+\begin_inset CommandInset href
+LatexCommand href
+name "pressing a key"
+target "http://imagej.nih.gov/ij/developer/macro/macros.html#shortcuts"
+
+\end_inset
+
+ or, in the case of 
+\begin_inset CommandInset href
+LatexCommand href
+name "Macro tools"
+target "http://imagej.nih.gov/ij/developer/macro/macros.html#tools"
+
+\end_inset
+
+, by clicking on an icon in the ImageJ toolbar.
+ In addition, any macro file placed in 
+\begin_inset Flex Directory
+status collapsed
+
+\begin_layout Plain Layout
+ImageJ/plugins
+\end_layout
+
+\end_inset
+
+ with an 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+.ijm
+\end_layout
+
+\end_inset
+
+ extension will be installed in the 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Plugins\SpecialChar \menuseparator
+
+\end_layout
+
+\end_inset
+
+ 
+\family default
+menu like any other plugin (before version
+\begin_inset space \thinspace{}
+\end_inset
+
+1.41 only files with an underscore in the name would be listed).
+\end_layout
+
+\begin_layout Standard
+There are more than 300
+\begin_inset space \thinspace{}
+\end_inset
+
+example macros, on the ImageJ Web site.
+ To try one, open it in a browser window and drag it directly to the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:The-ImageJ-window"
+
+\end_inset
+
+ or, copy it to the clipboard (
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Ctrl
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Ctrl
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+
+), switch to IJ, and run 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+File\SpecialChar \menuseparator
+New\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:SystemClipboard[V]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ (
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Ctrl
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Shift
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+V
+\end_layout
+
+\end_inset
+
+), pasting the macro into a new 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ImageJ-Macro-Editor"
+
+\end_inset
+
+ window.
+ Run it using the editor's 
+\family sans
+Macros\SpecialChar \menuseparator
+Run Macro
+\family default
+ command (
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Ctrl
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+
+).
+ Most of the example macros are also available in the macros folder, inside
+ the ImageJ folder.
+\end_layout
+
+\begin_layout Subsection*
+Macro Programming
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Macro-Programming"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The ImageJ community has created excellent tutorials on macro programming.
+ These resources are indispensable guides to the ImageJ macro language:
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+The ImageJ Macro Language --- Programmer's Reference Guide
+\emph default
+ by Jérôme Mutterer and Wayne Rasband.
+ This booklet compiles most of the documentation dispersed throughout the
+ web related to ImageJ's macro programming.
+ It provides an up to date printable manual for the ImageJ macro language:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagej.nih.gov/ij/docs/macro_reference_guide.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+improvement{Fourtneen new macro functions}
+\end_layout
+
+\end_inset
+
+The Built-in Macro Functions webpage (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Help\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Macro-Functions..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ and 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Macros\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "FunctionFinder[F]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ in the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ImageJ-Macro-Editor"
+
+\end_inset
+
+), the indispensable guide to the built-in functions that can be called
+ from the ImageJ macro language.
+ It is thoroughly documented and constantly updated:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagej.nih.gov/ij/developer/macro/functions.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Tutorials on the 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Fiji
+\end_layout
+
+\end_inset
+
+Fiji webpage: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://fiji.sc/wiki/index.php/Introduction_into_Macro_Programming
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+How-tos and tutorials on the ImageJ Documentation Portal
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagejdocu.tudor.lu/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout See Also
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Scripts"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Plugins"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ImageJ-Macro-Editor"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fiji-Scrip-Editor"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Scripts
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Scripts"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+JavaScript
+\end_layout
+
+\end_inset
+
+JavaScript scripting was introduced in ImageJ
+\begin_inset space \thinspace{}
+\end_inset
+
+1.41 in order to bring full access to ImageJ and Java APIs (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "tab:Advantages-JavaScript"
+
+\end_inset
+
+).
+ ImageJ uses the Mozilla Rhino interpreter built into Java
+\begin_inset space \thinspace{}
+\end_inset
+
+1.6 for Linux and Windows to run JavaScript.
+ Mac users, and users of earlier versions of Java, must download 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+JavaScript.jar
+\end_layout
+
+\end_inset
+
+ into the plugins folder.
+ This JAR
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "JAR"
+description "Java ARchive"
+
+\end_inset
+
+ file is available on the 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJ website"
+target "http://imagej.nih.gov/ij/download/tools/JavaScript.jar"
+
+\end_inset
+
+ and is included with the Mac version of ImageJ in 
+\begin_inset Flex Directory
+status collapsed
+
+\begin_layout Plain Layout
+ImageJ/plugins/jars
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Example JavaScript programs are available at 
+\begin_inset CommandInset href
+LatexCommand href
+name "imagej.nih.gov/ij/macros/js/"
+target "http://imagej.nih.gov/ij/macros/js/"
+
+\end_inset
+
+.
+ Thread safe JavaScript code can be generated using the Recorder (
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Plugins\SpecialChar \menuseparator
+Macros\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Record..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+).
+ Scripts can be opened in the editor as any other macro.
+ Scripts with the extension 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+.js
+\end_layout
+
+\end_inset
+
+ can be run using 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Macros\SpecialChar \menuseparator
+Run Macro
+\end_layout
+
+\end_inset
+
+ otherwise 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Macros\SpecialChar \menuseparator
+Evaluate JavaScript
+\end_layout
+
+\end_inset
+
+ (
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Ctrl
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+J
+\end_layout
+
+\end_inset
+
+) must be used.
+\end_layout
+
+\begin_layout Subsection*
+JavaScript Programming
+\end_layout
+
+\begin_layout Standard
+Resources on ImageJ JavaScript scripting include:
+\end_layout
+
+\begin_layout Enumerate
+The ImageJ web site, with growing documentation:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagej.nih.gov/ij/developer/javascript.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Tutorials on the 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Fiji
+\end_layout
+
+\end_inset
+
+Fiji webpage:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://fiji.sc/wiki/index.php/Javascript_Scripting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Online scripts repository:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagej.nih.gov/ij/macros/js/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\lang american
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Advantages-JavaScript"
+
+\end_inset
+
+
+\begin_inset Argument
+status collapsed
+
+\begin_layout Plain Layout
+Advantages and disadvantages of JavaScript
+\end_layout
+
+\end_inset
+
+
+\series bold
+Advantages and disadvantages of JavaScript in ImageJ.
+
+\series default
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ActionBar
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+CodeBar
+\end_layout
+
+\end_inset
+
+ A thorough comparison between different scripting languages is available
+ on the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Fiji webpage"
+target "http://fiji.sc/wiki/index.php/Scripting_comparisons"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+
+\size scriptsize
+\lang american
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+arraystretch}{1.15}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addtocounter{footnote}{1}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{spacing}{0.9}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="47.6col%">
+<column alignment="left" valignment="top" width="47.6col%">
+<row>
+<cell multicolumn="1" alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none" width="47.6col%">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+JavaScript Advantages
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none" width="47.6col%">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+JavaScript Disadvantages
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Full access to ImageJ and Java APIs
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Slower, especially starting up
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset CommandInset href
+LatexCommand href
+name "Standardized"
+target "http://en.wikipedia.org/wiki/ECMAScript"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+No equivalent of macro sets
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Richer language (objects, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\size small
+?
+\end_layout
+
+\end_inset
+
+ operator, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\size small
+break
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\size small
+continue
+\end_layout
+
+\end_inset
+
+, etc.)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Cannot use most of ImageJ's 360+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "built in macro functions"
+target "http://imagej.nih.gov/ij/developer/macro/functions.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset CommandInset href
+LatexCommand href
+name "Extensive documentation"
+target "http://en.wikipedia.org/wiki/JavaScript"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Requires knowledge of complex ImageJ and Java APIs
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+No support for 
+\begin_inset Quotes eld
+\end_inset
+
+batch mode
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Cannot create tools and toolbar menus
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Not compatible with Function Finder and CodeBar
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\size small
+CodeBar is a convenient 
+\begin_inset Quotes els
+\end_inset
+
+ActionBar
+\begin_inset Quotes ers
+\end_inset
+
+ that retrieves snippets and common tasks frequently used in macro writing.
+ 
+\begin_inset Quotes els
+\end_inset
+
+ActionBars
+\begin_inset Quotes ers
+\end_inset
+
+ provide one or many easy to use button bar(s) that extend ImageJ's graphical
+ user interface.
+ You can read more about the ActionBar plugin at the 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJ Documentation Portal"
+target "http://imagejdocu.tudor.lu/doku.php?id=plugin:utilities:action_bar:start"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+No debugger
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{spacing}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout See Also
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Macros-ExtendingIJ"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Plugins"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ImageJ-Macro-Editor"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fiji-Scrip-Editor"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Plugins
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Plugins"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Plugins are a much more powerful concept than 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Macros-ExtendingIJ"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Scripts"
+
+\end_inset
+
+ and most of ImageJ's built-in menu commands are in fact implemented as
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Plugins
+\end_layout
+
+\end_inset
+
+plugins.
+ Quoting Werner Bailer 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bailer:2006p14110"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Quotation
+Plugins are implemented as 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Java
+\end_layout
+
+\end_inset
+
+Java classes, which means that you can use all features of the Java language,
+ access the full ImageJ API
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "API"
+description "Application Programming Interface"
+
+\end_inset
+
+ and use all standard and third-party Java APIs in a plugin.
+ This opens a wide range of possibilities of what can be done in a plugin.
+ 
+\end_layout
+
+\begin_layout Quotation
+The most common uses of plugins are filters performing some analysis or
+ processing on an image or image stack and I/O plugins for reading/writing
+ not natively supported formats from/to file or other devices.
+ But as you can see when looking at the plugins listed on the ImageJ plugins
+ page, there are many other things you can do with plugins, such as rendering
+ graphics or creating extensions of the ImageJ graphical user interface.
+\end_layout
+
+\begin_layout Standard
+Plugins in the 
+\begin_inset Flex Directory
+status collapsed
+
+\begin_layout Plain Layout
+ImageJ/plugins/
+\end_layout
+
+\end_inset
+
+ folder are listed at the bottom of the 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Plugins"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ menu (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:Organizing-Commands"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:Organizing-Commands"
+
+\end_inset
+
+).
+ Only 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+.class
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+.jar
+\end_layout
+
+\end_inset
+
+ files in the plugins folder with at least one underscore in their name
+ will be installed.
+ Note that, with IJ
+\begin_inset space \thinspace{}
+\end_inset
+
+1.44d an later, ImageJ no longer automatically installs, at startup, plugins
+ in JAR file directories that start with a lower case letter.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Developing ImageJ Plugins
+\end_layout
+
+\begin_layout Standard
+More information on how to develop ImageJ plugins can be obtained on the
+ following documents:
+\end_layout
+
+\begin_layout Enumerate
+Developer Resources Page on the ImageJ website (
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Help\SpecialChar \menuseparator
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Help-Dev.Resources..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+):
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagej.nih.gov/ij/developer/index.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Dedicated tutorials on 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Fiji
+\end_layout
+
+\end_inset
+
+Fiji's webpage:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://fiji.sc/wiki/index.php/Introduction_into_Developing_Plugins
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Dedicated tutorials on the ImageJ Documentation Portal:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagejdocu.tudor.lu/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Dedicated tutorials on the ImageJDev webpage:
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "IDE"
+description "Integrated Development Environment"
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Eclipse
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+NetBeans
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://developer.imagej.net/ides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout See Also
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Macros-ExtendingIJ"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Scripts"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ImageJ-Macro-Editor"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fiji-Scrip-Editor"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Scripting in Other Languages
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:ScriptingOtherLang"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Support for other languages is possible in ImageJ using 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fiji-intro"
+
+\end_inset
+
+ and its powerful editor.
+ Fiji adds extra support for 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+BeanShell
+\end_layout
+
+\end_inset
+
+BeanShell, 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Clojure
+\end_layout
+
+\end_inset
+
+Clojure, 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Python
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Jython 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+see{Python,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Python and 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Ruby
+\end_layout
+
+\end_inset
+
+Ruby.
+ The following documents will introduce you to the advanced scripting capabiliti
+es of Fiji:
+\end_layout
+
+\begin_layout Enumerate
+The extensive tutorial on scripting Fiji with Jython by Albert Cardona:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.ini.uzh.ch/~acardona/fiji-tutorial/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Dedicated tutorials on the 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Fiji
+\end_layout
+
+\end_inset
+
+Fiji webpage:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://fiji.sc/wiki/index.php/Scripting_comparisons
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Fiji Script Editor
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Fiji-Scrip-Editor"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Fiji features a more powerful script editor than ImageJ's built-in 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ImageJ-Macro-Editor"
+
+\end_inset
+
+.
+ The Fiji editor is an invaluable help when writing scripts in any of Fiji's
+ supported languages, including the ImageJ macro language.
+ The editor features full undo support, 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Syntax highlighting
+\end_layout
+
+\end_inset
+
+syntax highlighting, tabs, bookmarks and several other tools that simplify
+ scripting workflows in ImageJ.
+ For more information visit Fiji's editor website at 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://fiji.sc/wiki/index.php/Script_Editor
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Graphics
+	filename images/FijiScriptEditor.png
+	display false
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\series bold
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fiji-Script-Editor"
+
+\end_inset
+
+The Fiji Script Editor (ImageJA
+\begin_inset space \space{}
+\end_inset
+
+1.44m).
+ 
+\series default
+The Fiji Editor is an advanced text editor, supporting BeanShell, Jython,
+ JRuby and other scripting languages.
+ It does not support 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "FunctionFinder[F]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ but selecting a built-in macro function and running 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Tools\SpecialChar \menuseparator
+Open Help on Macro Functions\SpecialChar \ldots{}
+
+\end_layout
+
+\end_inset
+
+ retrieves the documentation for the selected function.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout See Also
+\noindent
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:ScriptingOtherLang"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:IJ-cmd-line"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "IJ_ED"
+target "http://imagejdocu.tudor.lu/doku.php?id=plugin:utilities:ij_ed:start"
+
+\end_inset
+
+, a plugin by Jérôme Mutterer that binds 
+\begin_inset CommandInset href
+LatexCommand href
+name "jEdit"
+target "http://www.jedit.org/"
+
+\end_inset
+
+ to ImageJ 
+\end_layout
+
+\begin_layout Section
+\begin_inset Argument
+status collapsed
+
+\begin_layout Plain Layout
+Running ImageJ From the Command Line
+\end_layout
+
+\end_inset
+
+Running ImageJ from the Command Line
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:IJ-cmd-line"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ImageJ was devised as a desktop application.
+ It can, however, run without a graphics environment (
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Headless mode
+\end_layout
+
+\end_inset
+
+headless mode) by adding a special library (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+headless.jar
+\end_layout
+
+\end_inset
+
+) to the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+ij.jar
+\end_layout
+
+\end_inset
+
+ classpath that overrides key ImageJ classes to work better headlessly.
+ As described on the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Fiji website"
+target "http://fiji.sc/wiki/index.php/Headless"
+
+\end_inset
+
+, this strategy is implemented in 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fiji-intro"
+
+\end_inset
+
+ through the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+-headless
+\end_layout
+
+\end_inset
+
+ command line flag (
+\emph on
+see also
+\emph default
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "Running ImageJ in headless mode"
+target "http://imagejdocu.tudor.lu/doku.php?id=faq:technical:how_do_i_run_imagej_without_a_graphics_environment_headless"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset href
+LatexCommand href
+name "Using Cluster for Image Processing with IJ"
+target "http://cmci.embl.de/documents/100922imagej_cluster"
+
+\end_inset
+
+).
+ Headless operations are simplified in 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ImageJ2intro"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ImageJ recognizes the following command line options:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begingroup
+\end_layout
+
+\begin_layout Plain Layout
+
+%change ttvariant to courier since default monospaced font does not allow
+ bold typeface
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+ttdefault}{pcr}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring eval-macro-code-batch-pat
+\noindent
+
+\family typewriter
+\series bold
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family typewriter
+\series bold
+"file-name
+\series default
+"
+\end_layout
+
+\end_inset
+
+
+\family default
+\series default
+ Opens a file.
+ Examples:
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+
+\begin_inset space \hspace*{}
+\length 15pt
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family typewriter
+blobs.tif
+\end_layout
+
+\end_inset
+
+
+\family default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+
+\begin_inset space \hspace*{}
+\length 15pt
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family typewriter
+/Users/wayne/images/blobs.tif
+\end_layout
+
+\end_inset
+
+
+\family default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+
+\begin_inset space \hspace*{}
+\length 15pt
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family typewriter
+e81*.tif
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring eval-macro-code-batch-pat
+\noindent
+
+\family typewriter
+\series bold
+-ijpath
+\begin_inset space \space{}
+\end_inset
+
+path
+\family default
+\series default
+ Specifies the path to the directory containing the plugins directory.
+ Example:
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+
+\begin_inset space \hspace*{}
+\length 15pt
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family typewriter
+-ijpath /Applications/ImageJ
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring eval-macro-code-batch-pat
+\noindent
+
+\family typewriter
+\series bold
+-port
+\family default
+\series default
+ Specifies the port ImageJ uses to determine if another instance is running.
+ Examples:
+\family typewriter
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset space \hspace*{}
+\length 15pt
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family typewriter
+-port1
+\end_layout
+
+\end_inset
+
+
+\family default
+ (use default port address + 1) 
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+
+\begin_inset space \hspace*{}
+\length 15pt
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family typewriter
+-port2
+\end_layout
+
+\end_inset
+
+
+\family default
+ (use default port address + 2)
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+
+\begin_inset space \hspace*{}
+\length 15pt
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family typewriter
+-port0
+\end_layout
+
+\end_inset
+
+
+\family default
+ (do not check for another instance (
+\begin_inset CommandInset href
+LatexCommand href
+name "OtherInstance"
+target "http://imagej.nih.gov/ij/source/ij/OtherInstance.java"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring eval-macro-code-batch-pat
+\noindent
+
+\family typewriter
+\series bold
+-macro
+\begin_inset space \space{}
+\end_inset
+
+path
+\begin_inset space \space{}
+\end_inset
+
+[arg]
+\family default
+\series default
+ Runs a macro or script, passing it an optional argument, which can be retrieved
+ using 
+\family typewriter
+getArgument()
+\family default
+.
+ Examples:
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+
+\begin_inset space \hspace*{}
+\length 15pt
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family typewriter
+-macro analyze.ijm
+\end_layout
+
+\end_inset
+
+
+\family default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+
+\begin_inset space \hspace*{}
+\length 15pt
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family typewriter
+-macro analyze /Users/wayne/images/stack1
+\family default
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring eval-macro-code-batch-pat
+\noindent
+
+\family typewriter
+\series bold
+-batch
+\begin_inset space \space{}
+\end_inset
+
+path
+\begin_inset space \space{}
+\end_inset
+
+[arg]
+\family default
+\series default
+ Runs a macro or script in batch mode (no GUI), passing it an optional argument.
+ ImageJ exits when the macro finishes.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring eval-macro-code-batch-pat
+\noindent
+
+\family typewriter
+\series bold
+-eval
+\begin_inset space \space{}
+\end_inset
+
+"macro
+\begin_inset space \space{}
+\end_inset
+
+code"
+\family default
+\series default
+ Evaluates macro code.
+ Examples:
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+
+\begin_inset space \hspace*{}
+\length 15pt
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family typewriter
+-eval "print(
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+textquotesingle{}
+\end_layout
+
+\end_inset
+
+Hello, world
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+textquotesingle{}
+\end_layout
+
+\end_inset
+
+);"
+\end_layout
+
+\end_inset
+
+
+\family default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+
+\begin_inset space \hspace*{}
+\length 15pt
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family typewriter
+-eval "return getVersion();"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring eval-macro-code-batch-pat
+\noindent
+
+\family typewriter
+\series bold
+-run
+\begin_inset space \space{}
+\end_inset
+
+command
+\family default
+\series default
+ Runs an ImageJ menu command.
+ Example:
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+
+\begin_inset space \hspace*{}
+\length 15pt
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family typewriter
+-run "About ImageJ\SpecialChar \ldots{}
+"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring eval-macro-code-batch-pat
+\noindent
+
+\family typewriter
+\series bold
+-debug
+\family default
+\series default
+ Runs ImageJ in debug mode.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+endgroup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout See Also
+\begin_inset CommandInset href
+LatexCommand href
+name "Linux installation"
+target "http://imagej.nih.gov/ij/docs/install/linux.html"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJ Documentation Portal: Command line"
+target "http://imagejdocu.tudor.lu/doku.php?id=diverse:start&s[]=command&s[]=line"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

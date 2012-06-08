@@ -1,0 +1,143 @@
+                    Typesetting The ImageJ User Guide
+                       Tiago Ferreira, June 2012
+
+Introduction
+============
+These are the (in)complete instructions required to publish the ImageJ
+User Guide, http://imagej.nih.gov/ij/docs/guide/
+
+Requirements
+============
+1) A full TeX Live installation: http://www.tug.org/texlive/
+   Around 40 packages are required to build the guide properly. Minimal
+   TeX distributions may not be sufficient. If space is a concern - a 
+   full installation may take up tp 2GB -, you can always use tlmgr (the
+   package manager distributed with TeXLive to trim your installation,
+   e.g., by removing multi-language support. See 
+   <http://www.tug.org/texlive/tlmgr.html> for details. To give you an
+   idea, the guide for IJ 1.44o required the following packages:
+      {amsmath},{amssymb},{appendix},{array},{babel},{booktabs},{calc},
+      {caption},{colortbl},{color},{fancyhdr},{fancy},{fix-cm},{float},
+      {fontenc},{footmisc},{framed},{geometry},{graphicx},{hyperref},
+      {listings},{longtable},{makeidx},{microtype},{multicol},
+      {multirow},{nomencl},{pdfpages},{placeins},{prettyref},{rotating},
+      {sectsty},{setspace},{setspace},{SIunits},{textcomp},{textcomp},
+      {tocloft},{todonotes},{ulem},{units},{url},{varioref},{wrapfig},
+      {xcolor},{xifthen}      
+    Use the texdoc utility to open the documentation for a particular
+    package, e.g.,
+        $ texdoc xcolor
+
+2) Lyx (http://www.lyx.org), eLyXer (http://elyxer.nongnu.org/) and
+   Python (http://www.python.org/) are required to produce the HTML
+   version of the guide
+
+Usage
+=====
+As of v1.44 edition, LyX is preferentially used. The reason for this is
+eLyXer, currently the best available HTML converter. eLyXer produces far
+better results than tex4ht, hevea, tth or latex2html. If you don't feel
+comfortable with TeX this may be good news, since LyX offers the ease of
+use of a graphical interface for TeX/LaTeX. If on the other hand, you
+are a TeX connoisseur and think LyX is a fragility, please know that
+eLyXer may be able to parse TeX directly in a near future. Right now,
+however, LyX is required for the HTML output.
+The pdf compilation, on the other hand, can be created directly from
+pdflatex and is fully independent from LyX. The only (innocuous) issue
+with this approach is that the TeX files produced by LyX may have
+preambles with repeated commands, sometimes arranged in an awkward way.
+
+Structure
+=========
+The guide is divided into a set of child documents: 01-,02-,... etc.
+These are all included in the "user-guide" main file. All illustrations
+are placed inside the "images" subfolder. pdftex supports png, pdf and
+jpg. The "ImageJRefs.bib" file contains the bibliography listed in the
+'IJ related publications' appendix. Covers are in the ./cover folder
+
+Bibliographic Styles
+====================
+The guide uses "plainurl", "plainyr-rev", or a variant. These are
+bibliographic styles that use plain formatting with support for doi/url
+field. They should be part of your TeX installation, if not just run
+    $ latex makebst.tex
+and follow the prompts (stick to default answers in case of doubt)
+
+compile.sh
+==========
+Runs the lyx2tex exporter (part of the lyx distribution) in headless
+mode, typesets the guide and booklets using pdflatex. Then, it runs
+elyxer to perform the HTML conversion. These steps are explained below.
+
+How-To: TeX
+===========
+* To compile the full guide with pdflatex, make sure the images folder
+  and ImageJRefs.bib are symlinked to the tex folder, change to the
+  ./tex directory, then simply run:
+    $ pdflatex user-guide.tex
+  As always, you may need to run it twice to ensure correct hyperlinks
+
+* To typeset the booklets:
+    $ pdflatex user-guide-A4booklet.tex
+    $ pdflatex user-guide-USbooklet.tex
+
+How-To: LyX
+===========
+* Get LyX at www.lyx.org, available under a GPL license
+
+* IJguide.module (utils subfolder) defines all the customizations used
+  by the guide and must be placed in the layouts subfolder of the LyX
+  user directory (create it if needed). You can choose 'LyX>About LyX'
+  to know the correct path for your installation. Run 'Lyx>Reconfigure'
+  to make LyX aware of the addition. To test everything out, open
+  guide-test.lyx, run 'View>View [PDF (pdflatex)]' and you should obtain
+  a compiled pdf demoing some of the guide environments.
+  Note that when LyX deconvolves a file back to TeX, all modules loaded
+  by the document will be automatically added to the .tex file preamble
+
+* Make sure the images folder and ImageJRefs.bib are symlinked to the
+  ./lyx folder
+
+* To build, open user-guide.lyx and choose 'View>View [PDF (pdflatex)]',
+  or, from the command prompt (with [LYXDIR] being the path to the lyx
+  executable directory), run:
+    $ LYXDIR/lyx --force-overwrite --export pdflatex ./lyx/user-guide.lyx
+
+How-To: HTML
+============
+* user-guide-html.lyx is the master file loading all the other child
+  documents. It is very similar to user-guide.lyx but it does not load
+  macros and commands that are 'inappropriate' for the HTML version
+
+* Get eLyXer at http://elyxer.nongnu.org/, available under GPL
+
+* The output of conversion goes into ./guide/, ready to be uploaded to
+  imagej.nih.gov/ij/docs/. Images for the HTML version should be
+  pre-resized to the final dimensions using Resize_snapshots.ijm (utils
+  subfolder) and placed in ./guide/images/. A basic conversion would be
+    $ elyxer.py ./lyx/user-guide-html.lyx ./guide/user-guide.html
+  but for a proper output a couple of parameters must be specified. These
+  are detailed in compile.sh. To know more about the options used, type
+    $ python elyxer.py --help
+
+* guide.css in ./guide/css/ contains the CSS customizations used by the
+  guide. It is built on top of the CSS templates on ./html/css/ (mainly
+  code from A. Fernandez). JavaScript functions are in ./guide/js/
+
+* The final tweaks (such as removal of latex markup/environments that do
+  not make sense on HTML) are done by bulk search & replace using grep.
+  At the moment this is done using CleanseGuide.textfactory, a textfactory
+  (.plist file) for BBEdit/TexWrangler, a closed source text editors for
+  Mac OS X.
+
+TO DO
+=====
+1) Optimize the grep patterns and substitute textfactories with a proper
+   shell script
+2) Modify eLyXer source code to split pages using section names and not
+   incremental counters. E.g.: 'PluginsMenu.html#Threshold' instead of bogus
+   'userguide-25.html#toc-Subsection-25.2'
+3) Optimize the grep patterns and substitute textfactories with a proper
+   shell script
+4) Substitute IJguide.module with a proper LaTeX2e class
+5) Modify eLyXer source code to optimize the HTML conversion

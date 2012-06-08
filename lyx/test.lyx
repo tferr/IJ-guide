@@ -1,0 +1,653 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+%%%%%%%%%%%% Page Layout
+% We want a screen reading pdf with no odd/even margin assymetry. A booklet-like print version will
+% then be created using pdfpages. For that version we will place the marginal todonotes on the outer
+% margin, since that will save space in the inner margin of the booklet. This is the strategy: use the 
+% twoside option to alternate marginpars then eliminate symmetry with the geometry package.
+% While we are at it, we'll make textwidth textheight slightly bigger. NB: fancyhdr must be loaded after
+% geometry parameters. Using Lyx's page layout preference pane will load fancyhdr before, causing
+% misaligments in the headings
+\usepackage[a4paper, twoside, hmarginratio={1:1},margin=2.58cm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{mparhack} % correct the notorious bug of misplaced mpar on top of page
+%\reversemarginpar
+\usepackage{layout}
+\end_preamble
+\use_default_options false
+\begin_modules
+IJguide
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_title "IJguide.module test"
+\pdf_author "Tiago Ferreira"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 2
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "linkcolor={black!65}, citecolor={black!65}, urlcolor={blue!40!black}"
+\papersize a4paper
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 0 0 0 1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+IJguide.module
+\end_layout
+
+\begin_layout Author
+Tiago Ferreira 
+\end_layout
+
+\begin_layout Date
+November 2011
+\end_layout
+
+\begin_layout Section*
+Introduction
+\end_layout
+
+\begin_layout Standard
+This is a mock document testing the
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+ IJguide.module
+\end_layout
+
+\end_inset
+
+, required to typeset the ImageJ user guide (
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://imagej.nih.gov/ij/docs/user-guide.pdf
+\end_layout
+
+\end_inset
+
+).
+ Refer to the module header for required packages.
+ The main customizations provided by the module are exemplified on the next
+ sections.
+ The page layout of the guide is detailed 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "sec:Guide-Layout"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:The-Noteworthy-float"
+
+\end_inset
+
+The 
+\begin_inset Quotes eld
+\end_inset
+
+Noteworthy
+\begin_inset Quotes erd
+\end_inset
+
+ float
+\end_layout
+
+\begin_layout Standard
+Useful tips and reminders are placed in 
+\begin_inset Quotes els
+\end_inset
+
+Noteworthy boxes
+\begin_inset Quotes ers
+\end_inset
+
+ numbered by upper case roman numerals.
+ Here goes an example using 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Insert\SpecialChar \menuseparator
+Float\SpecialChar \menuseparator
+Noteworthy
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float infobox
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+This is really important
+\end_layout
+
+\end_inset
+
+So important we have to mention it in a Noteworthy box.
+ The list of these notes can be inserted using 
+\begin_inset Flex MenuItem
+status open
+
+\begin_layout Plain Layout
+Insert\SpecialChar \menuseparator
+List /Toc\SpecialChar \menuseparator
+Noteworthy
+\end_layout
+
+\end_inset
+
+, which gives something like this:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset FloatList infobox
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Release Notes Highlights
+\end_layout
+
+\begin_layout Standard
+These are the 
+\begin_inset Quotes eld
+\end_inset
+
+New
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Improved
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+Changed
+\begin_inset Quotes erd
+\end_inset
+
+ custom insets that will appear in the document as marginal call-outs.
+ To use them, first define globally the IJ version using 
+\begin_inset Flex MenuItem
+status open
+
+\begin_layout Plain Layout
+Insert\SpecialChar \menuseparator
+Custom Insets\SpecialChar \menuseparator
+Define Version
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Flex Define Version
+status open
+
+\begin_layout Plain Layout
+9.99
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Once defined, the version number can be evoked using 
+\begin_inset Flex MenuItem
+status open
+
+\begin_layout Plain Layout
+Insert\SpecialChar \menuseparator
+Custom Insets\SpecialChar \menuseparator
+Insert Version
+\end_layout
+
+\end_inset
+
+: E.g., this document refers to ImageJ
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Flex Insert Version
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Whenever you need to highlight a certain feature, use the following flags
+ in ERT:
+\end_layout
+
+\begin_layout Description
+New 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+feature{}
+\end_layout
+
+\end_inset
+
+A new feature implemented in ImageJ
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Flex Insert Version
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Improved 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+improvement{}
+\end_layout
+
+\end_inset
+
+A routine that has been improved since previous versions.
+ Typically, a faster or more precise algorithm, a command with better usability,
+ or a task that has been extended to more image types.
+\end_layout
+
+\begin_layout Description
+Change 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+change{}
+\end_layout
+
+\end_inset
+
+A pre-existing command that has been renamed or moved to a different menu
+ location.
+\end_layout
+
+\begin_layout Standard
+Non-empty insets will be listed on the List of Highlights (
+\begin_inset Flex MenuItem
+status open
+
+\begin_layout Plain Layout
+Insert\SpecialChar \menuseparator
+Custom Insets\SpecialChar \menuseparator
+Table of Highlights
+\end_layout
+
+\end_inset
+
+).
+ For instance, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+improvement{Banana}
+\end_layout
+
+\end_inset
+
+This 
+\begin_inset Quotes eld
+\end_inset
+
+improvement
+\begin_inset Quotes erd
+\end_inset
+
+ note on the side will appear in List of Highlights.
+ we have inserted it on the last page so go there and check.
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Table of Highlights
+status open
+
+\begin_layout Plain Layout
+Summarized Release Notes for ImageJ
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Customized Environments
+\end_layout
+
+\begin_layout Standard
+The most frequently used in the guide is the 
+\begin_inset Quotes eld
+\end_inset
+
+See Also
+\begin_inset Quotes erd
+\end_inset
+
+, a list type environment.
+ Use the Environment Drop-down menu in the LyX main toolbar to access it.
+ It looks like this:
+\end_layout
+
+\begin_layout See Also
+Other resources
+\end_layout
+
+\begin_layout Section
+Character Styles
+\end_layout
+
+\begin_layout Standard
+Menu items are sans serif typeface 
+\begin_inset Flex MenuItem
+status open
+
+\begin_layout Plain Layout
+Edit\SpecialChar \menuseparator
+Text Style\SpecialChar \menuseparator
+ MenuItem
+\end_layout
+
+\end_inset
+
+.
+ Shortcuts are defined in a similar way: 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Shift
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+K
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+E
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Y
+\end_layout
+
+\end_inset
+
+.
+ Check the 
+\begin_inset Flex MenuItem
+status open
+
+\begin_layout Plain Layout
+Edit\SpecialChar \menuseparator
+Text Style\SpecialChar \menuseparator
+
+\end_layout
+
+\end_inset
+
+ submenu for other types such as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+code
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Directory
+status collapsed
+
+\begin_layout Plain Layout
+Path/to/Directory/
+\end_layout
+
+\end_inset
+
+, or 
+\begin_inset Flex Filename
+status open
+
+\begin_layout Plain Layout
+Path/to/Filename.ext
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Listings
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Dummy ImageJ macro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ // This is a macro listing
+\end_layout
+
+\begin_layout Plain Layout
+
+ run
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Page Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Guide-Layout"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+layout{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
