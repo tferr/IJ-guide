@@ -1,0 +1,1136 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+%%%%%%%%%%%% Adjust TOC
+\usepackage{tocloft}
+\addtolength{\cftsubsecnumwidth}{6pt} % make space for more than 10 subsections
+\addtolength{\cftsubsubsecnumwidth}{1em} % make space for more than 10 subsubsections
+\cftpagenumbersoff{part} % remove page numbers from Part
+
+%%%%%%%%%%%% Colors
+\usepackage{colortbl} % colored tables
+\definecolor{ijcyan}{RGB}{0,255,255}
+\definecolor{ijmagenta}{RGB}{255,0,255}
+\definecolor{ijorange}{RGB}{255,150,0}%actual:255,200,0
+\definecolor{ijyellow}{RGB}{255,255,0}
+
+%%%%%%%%%%%% Make paragraphs into subsubsubsections
+\setcounter{secnumdepth}{4} % get numbered paragraphs 
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}% 
+  {-3.25ex\@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}%
+  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+%%%%%%%%%%%  Set special dates
+\usepackage{datetime}
+\end_preamble
+\use_default_options false
+\begin_modules
+IJguide
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding utf8-plain
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_title "ImageJ User Guide "
+\pdf_author "Tiago Ferreira \& Wayne Rasband"
+\pdf_subject "IJ 1.46"
+\pdf_keywords "ImageJ, Scientific Digital Image Processing"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 2
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "hyperindex=true, linkcolor={black!65}, citecolor={black!65}, urlcolor={blue!40!black}"
+\papersize a4paper
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\bullet 0 0 0 1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\noindent
+\begin_inset Graphics
+	filename images/IJ-icon-cover-small.png
+	lyxscale 50
+	display false
+
+\end_inset
+
+ImageJ User Guide
+\end_layout
+
+\begin_layout Date
+\noindent
+IJ
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Flex Insert Version
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Tiago Ferreira & Wayne Rasband
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+The
+\emph on
+ ImageJ User Guide
+\emph default
+ guide provides a detailed overview of ImageJ (and inherently 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fiji-intro"
+
+\end_inset
+
+), the standard in scientific image analysis.
+ It is available as a 
+\begin_inset CommandInset href
+LatexCommand href
+name "PDF"
+target "user-guide.pdf"
+
+\end_inset
+
+ (optimized for electronic viewing), as well as printable booklets available
+ in two formats: 
+\begin_inset CommandInset href
+LatexCommand href
+name "A4"
+target "user-guide-A4booklet.pdf"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset href
+LatexCommand href
+name "Letter size"
+target "user-guide-USbooklet.pdf"
+
+\end_inset
+
+ paper.
+ These are two-sided booklets that can be printed on a duplex unit printer
+ by setting the automatic duplex mode to 
+\begin_inset Quotes eld
+\end_inset
+
+short edge binding
+\begin_inset Quotes erd
+\end_inset
+
+.
+ This HTML version is also available as a downloadable 
+\begin_inset CommandInset href
+LatexCommand href
+name "ZIP archive"
+target "http://imagej.nih.gov/ij/docs/user-guide.zip"
+
+\end_inset
+
+ that you can install onto your hard disk for offline browsing.
+ The source files of this guide are available through a Git version control
+ repository at the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Fiji website"
+target "http://fiji.sc/guide.git"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Abstract
+Given ImageJ's heavy development this guide will always remain incomplete.
+ All ImageJ users and developers are encouraged to contribute to the ImageJ
+ documentation resources (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Getting-Involved"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float infobox
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Conventions Used in the Guide
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+ImageJ commands are typed in 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+small capitals
+\end_layout
+
+\end_inset
+
+ with respective shortcut keys flanked by square brackets (e.g.:
+\begin_inset space \space{}
+\end_inset
+
+
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family sans
+Image\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Duplicate...[D]"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+).
+ As explained in 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Using-Shortcuts"
+
+\end_inset
+
+ this notation implies shift-modifiers (i.e., 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family sans
+[D]
+\end_layout
+
+\end_inset
+
+
+\family default
+ means pressing 
+\family sans
+
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family sans
+Shift
+\end_layout
+
+\end_inset
+
+ 
+\family default
+
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+D
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+, 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+[d]
+\end_layout
+
+\end_inset
+
+ only the 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+
+\family sans
+D
+\end_layout
+
+\end_inset
+
+ key) and assumes that 
+\emph on
+Require control key for shortcuts 
+\emph default
+in 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+
+\family sans
+Edit\SpecialChar \menuseparator
+Options\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Misc..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+ is unchecked.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\series bold
+\size larger
+Selected Contents
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Getting Started
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Installation..."
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:ImageJ-Distributions"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Other-Software-Packages"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Help-Resources"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Working with ImageJ
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series medium
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Finding-Commands"
+
+\end_inset
+
+,
+\series default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Image-Types"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Overlay-Intro"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Selections-Intro"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:StacksVirtualStacksHyperStks"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Scripting
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Extending-ImageJ"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Macro-Programming"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fiji-Scrip-Editor"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:ImageJ-Macro-Editor"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:IJ-cmd-line"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+User Interface
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Area-selection-tools"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Line-Selection-Tools"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:CPtool"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:The-ROI-Manager"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:SyncWindows"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Commands
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Subtract-Background..."
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Find-Maxima"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Threshold...[T]"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "fig:ParticleAnalyzer"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Community
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Getting-Involved"
+
+\end_inset
+
+
+\series medium
+, 
+\series default
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Community Resources"
+target "146-3.html#toc-Subsection-3.2"
+
+\end_inset
+
+
+\series medium
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJ News"
+target "http://imagej.nih.gov/ij/notes.html"
+
+\end_inset
+
+,
+\series default
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "Fiji"
+target "http://fiji.sc/wiki/index.php/Fiji"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJDev"
+target "http://imagej.net/"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "Collaborators"
+target "146-References.html#Credits"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\series bold
+\size larger
+Noteworthy
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList infobox
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\series bold
+\size larger
+Macro Listings
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\noindent
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lis:RGBtoMGB1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\noindent
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lis:RGBtoMGB2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\noindent
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lis:setOption"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\noindent
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lis:macro:PopupMenu"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\noindent
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lis:CustomizingIJFloat"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\noindent
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lis:Offline-Samples"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\noindent
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lis:getHistogram"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\noindent
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lis:toolsShrtct1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\noindent
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lis:toolsShrtct2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\noindent
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lis:toolsShrtct3"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\noindent
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "01-intro.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "02-working.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "03-extending.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "04-gui.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "05-commands.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "06-shortcuts.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "07-credits.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Plain Layout
+The following references are a small sample (particularly biased towards
+ the life sciences) of the bibliography directly related to ImageJ, the
+ standard in scientific image analysis.
+ These publications include: 1) technical articles and books describing
+ routines implemented in ImageJ, 2) research articles that have made extensive
+ use of ImageJ as a scientific tool or 3) reviews that discuss ImageJ pertinentl
+y.
+ A similar list is maintained on the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fiji-intro"
+
+\end_inset
+
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "website"
+target "http://fiji.sc/wiki/index.php/Publications"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+To reference ImageJ one of the 
+\begin_inset CommandInset href
+LatexCommand href
+name "following citations"
+target "http://imagej.nih.gov/ij/docs/faqs.html#cite"
+
+\end_inset
+
+ is possible:
+\end_layout
+
+\begin_layout Enumerate
+Rasband, W.S., ImageJ, U.S.
+\begin_inset space \space{}
+\end_inset
+
+National Institutes of Health, Bethesda, Maryland, USA, 
+\begin_inset CommandInset href
+LatexCommand href
+name "imagej.nih.gov/ij/"
+target "http://imagej.nih.gov/ij/"
+
+\end_inset
+
+, 1997--2012.
+\end_layout
+
+\begin_layout Enumerate
+Abràmoff, M.D., Magalhães, P.J.
+\begin_inset space \space{}
+\end_inset
+
+and Ram, S.J.
+ 
+\emph on
+Image Processing with ImageJ
+\emph default
+.
+ Biophotonics International, 11(7):36--42, 2004 (
+\begin_inset CommandInset href
+LatexCommand href
+name "PDF"
+target "http://webeye.ophth.uiowa.edu/dept/biograph/abramoff/imagej.pdf"
+
+\end_inset
+
+) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Abramoff:2004p4386"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+To reference this document:
+\end_layout
+
+\begin_layout Itemize
+Ferreira T.
+\begin_inset space \space{}
+\end_inset
+
+and Rasband W
+\emph on
+.
+ 
+\emph default
+ImageJ User Guide --- IJ
+\begin_inset space \thinspace{}
+\end_inset
+
+1.46, 
+\begin_inset CommandInset href
+LatexCommand href
+name "imagej.nih.gov/ij/docs/guide/"
+target "http://imagej.nih.gov/ij/docs/guide/"
+
+\end_inset
+
+, 2010--2012
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:IJ-related-pub"
+
+\end_inset
+
+ 
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintAll"
+bibfiles "ImageJRefs"
+options "plainurl"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "09-about.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

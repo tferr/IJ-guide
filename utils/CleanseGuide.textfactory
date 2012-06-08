@@ -1,0 +1,1292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BBEditDocumentType</key>
+	<string>TextTransform</string>
+	<key>TextTransformComponents</key>
+	<array>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>1. Tag topheader</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1&lt;div class="topheader"&gt;</string>
+				<key>SearchString</key>
+				<string>(&lt;div id="globalWrapper"&gt;[\s]*)&lt;div class="splitheader"&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>2. Tag bottomheader</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>&lt;div class="bottomheader"&gt;</string>
+				<key>SearchString</key>
+				<string>&lt;div class="splitheader"&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>3. Remove #prev and #next from splitheader to avoid flickering when navigating</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1</string>
+				<key>SearchString</key>
+				<string>(\.html)#(prev|next)\b</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>3a. Frontpage: Remove bogus header of infobox list</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string>&lt;div class="tocheader"&gt;list-infobox&lt;/div&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>3b. Frontpage: Fix infobox labels on infobox list</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>"&gt;</string>
+				<key>SearchString</key>
+				<string>"&gt;float-infobox</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>---Particular case</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string>&lt;span class="unknown"&gt;\\feature&lt;/span&gt;Plugin Tools &lt;span class="unknown"&gt;\\negthinspace&lt;/span&gt;&lt;span class="unknown"&gt;\\negthinspace&lt;/span&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>Merge double references to infoboxes</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1: </string>
+				<key>SearchString</key>
+				<string>(#infobox:.+?"&gt;\d+)([↑↓]&lt;/a&gt; &lt;a class="Reference" href=".+?#infobox:.+?"&gt;)</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>4. infobox float: Create infoboxcaption for futher customization</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>&lt;div class="infoboxcaption"&gt;</string>
+				<key>SearchString</key>
+				<string>&lt;div class="caption"&gt;float-infobox</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>5. tag listings captions</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1&lt;div class="listingcaption"&gt;</string>
+				<key>SearchString</key>
+				<string>(&lt;div class="listing"&gt;)&lt;div class="caption"&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<true/>
+				<key>Comment</key>
+				<string>6. Add Ijm brush suppor to listings</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>&lt;pre class="brush: ijm"&gt;</string>
+				<key>SearchString</key>
+				<string>&lt;pre class="listing"&gt;</string>
+				<key>UseGrep</key>
+				<false/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<true/>
+				<key>Comment</key>
+				<string>7. Fix \theguideversion{}</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>1.46</string>
+				<key>SearchString</key>
+				<string>&lt;span class="Insert"&gt;&lt;/span&gt;</string>
+				<key>UseGrep</key>
+				<false/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>Convert paragraphs into h4</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>&lt;h4 \1&lt;/h4&gt; </string>
+				<key>SearchString</key>
+				<string>^&lt;div (class="Paragraph"&gt;\r.+\r)&lt;/div&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- Create better links to  nomenc entries</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1[?]\2</string>
+				<key>SearchString</key>
+				<string>(&lt;a class="NomenclatureEntry" name=".*?&gt;)↓(&lt;/a&gt;)</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- Remove index entries</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string>&lt;a class="IndexReference" name=".*?&lt;/a&gt;{1}?</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- Set img sizes to its maximum (real) dimensions 1/2</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1\2\3</string>
+				<key>SearchString</key>
+				<string>(style="width: )\d*?[%a-z]*; max-width: (\d*?[%a-z]*; height: )\d*?[%a-z]*; max-height: (\d*?[%a-z]*;")</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- Set img sizes to its maximum (real) dimensions 2/2</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1\2\3</string>
+				<key>SearchString</key>
+				<string>(style=")max-(width: \d*?[%a-z]*; )max-(height: \d*?[%a-z]*;")</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- Remove vspaces only apliable to the pdf. MUST BE RUN BEFORE minipage labeling</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string>&lt;div class="vspace" style="height: .*;"&gt;[\s]*&lt;/div&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- tag minipages with images or tables: minipagefloats</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>&lt;div class="minipagefloat"\1</string>
+				<key>SearchString</key>
+				<string>&lt;div class="Frameless" style="width: [.0-9]*%;"(&gt;\r+.*?&lt;img|&gt;\r.*?&lt;table&gt;)</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- Remove all other minipages</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>&lt;div class="Standard"&gt;</string>
+				<key>SearchString</key>
+				<string>&lt;div class="Frameless" style="width: [.0-9]*%;"&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- Fix Credits</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>&lt;/div&gt;&lt;a class="toc" name="Credits"&gt;&lt;/a&gt;&lt;h1 class="biblio"&gt;Credits&lt;/h1&gt;</string>
+				<key>SearchString</key>
+				<string>&lt;/div&gt;&lt;a class="toc" name="References"&gt;&lt;/a&gt;&lt;h1 class="biblio"&gt;References&lt;/h1&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- Fix References</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>&lt;a class="toc" name="References"&gt; &lt;/a&gt; &lt;h1 class="biblio"&gt;References&lt;/h1&gt;</string>
+				<key>SearchString</key>
+				<string>&lt;a class="Label" name="sec:IJ-related-pub"&gt; &lt;/a&gt; &lt;h1 class="biblio"&gt;References&lt;/h1&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- Create a new div for nomenclature lables for further customization</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1&lt;div class="Nomenlabel"&gt;\2&lt;/div&gt;</string>
+				<key>SearchString</key>
+				<string>(&lt;div class="Nomenclated"&gt;)(.*&lt;/a&gt;[\w/\\:]+)</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- PDF replacement 1</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>src="images/CP.png" alt="figure images/CP.png" style="width: 594px; height: 294px;" /&gt;</string>
+				<key>SearchString</key>
+				<string>src="images/CP.pdf" alt="figure images/CP.pdf"/&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- PDF replacement 2</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>src="images/MacroEnvironment.png" alt="figure images/MacroEnvironment.png" style="width: 784px; height: 473px;" /&gt;</string>
+				<key>SearchString</key>
+				<string>src="images/MacroEnvironment.pdf" alt="figure images/MacroEnvironment.pdf"/&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- PDF replacement 3</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>src="images/Selections.png" alt="figure images/Selections.png" style="width: 598px; height: 116px;" /&gt;</string>
+				<key>SearchString</key>
+				<string>src="images/Selections.pdf" alt="figure images/Selections.pdf"/&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- PDF replacement 4</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>src="images/ROIManager.png" alt="figure images/ROIManager.png" style="width: 800px; height: 354px;" /&gt;</string>
+				<key>SearchString</key>
+				<string>src="images/ROIManager.pdf" alt="figure images/ROIManager.pdf"/&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- PDF replacement 5</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>src="images/Threshold.png" alt="figure images/Threshold.png" style="width: 598px; height: 306px;" /&gt;</string>
+				<key>SearchString</key>
+				<string>src="images/Threshold.pdf" alt="figure images/Threshold.pdf"/&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- Get rid of  todonotes highlighting the release notes on all headings</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\r\3</string>
+				<key>SearchString</key>
+				<string>(&lt;span class="unknown"&gt;\\(improvement|feature|change)&lt;/span&gt;.*?)(&lt;/h[1-3]&gt;)</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- Ged rid of empty todonotes outside headings</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string>&lt;span class="unknown"&gt;\\(improvement|feature|change)&lt;/span&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- Replace italic lyxarrows (menu separator)</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1</string>
+				<key>SearchString</key>
+				<string>&lt;i&gt;( ▷.+?)&lt;/i&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>OK: Kill \begingroup and \endgroup</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string>&lt;div class="Standard"&gt;&lt;span class="unknown"&gt;\\(begin|end)group&lt;/span&gt; *&lt;/div&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>OK: Kill misc spacing commands</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string>&lt;span class="unknown"&gt;\\(parskip|medskipamount|parindent|negthinspace)&lt;/span&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>OK: Kill misc setlength commands</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string>&lt;span class="unknown"&gt;\\setlength&lt;/span&gt;(.*pt)?</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>OK: Kill addtocontents</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string>&lt;div class="Standard"&gt; *&lt;span class="unknown"&gt;\\addtocontents&lt;/span&gt;.*&lt;/div&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>OK: Kill phantomsection</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string>&lt;span class="unknown"&gt;\\phantomsection&lt;/span&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>OK: Kill \cellcolor</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>(</string>
+				<key>SearchString</key>
+				<string>&lt;span class="unknown"&gt;\\cellcolor&lt;/span&gt;\[RGB\].*\(</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>OK: Clean textquotesingle</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>'</string>
+				<key>SearchString</key>
+				<string>&lt;span class="unknown"&gt;\\textquotesingle&lt;/span&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>OK: Clean thickapprox</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>≈</string>
+				<key>SearchString</key>
+				<string>&lt;span class="unknown"&gt;\\thickapprox&lt;/span&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- Clean \micro</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>&amp;mu;</string>
+				<key>SearchString</key>
+				<string>&lt;span class="unknown"&gt;\micro&lt;/span&gt;</string>
+				<key>UseGrep</key>
+				<false/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>Particular issue</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string>&lt;span class="unknown"&gt;\\addtocounter&lt;/span&gt;footnote1 &lt;span class="environment"&gt;&lt;span class="arrayrow"&gt;\r&lt;span class="arraycell align-l"&gt;\r0.9\r&lt;/span&gt;\r\r&lt;/span&gt;\r&lt;/span&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>Particular issue: Bogus line in toc</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string>^\s+&lt;div class="toc"&gt;\r&lt;a class="Link" href="146.html#" target="_top"&gt;Table of Contents&lt;/a&gt;\r&lt;/div&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>fix macro listingins on first page</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>&lt;div class="toc"&gt;\r&lt;a class="Link" \1</string>
+				<key>SearchString</key>
+				<string>^&lt;div class="Standard"&gt;\r&lt;a class="Reference" (href="146.+?&lt;/a&gt;\r&lt;/div&gt;)</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>fix short toc on first page</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1&lt;div class="toc"&gt;\2</string>
+				<key>SearchString</key>
+				<string>^(&lt;b&gt;.+?&lt;/b&gt;)&lt;div class="Standard"&gt;(\r&lt;a class="Reference" href="146.+&lt;/a&gt;\s+&lt;/div&gt;)</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>Remove bogus spacing command</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string>&lt;span class="unknown"&gt;\\end&lt;/span&gt;spacing</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>Remove all sectionmarks command</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string>&lt;span class="unknown"&gt;\\sectionmark&lt;/span&gt;\w+</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>Kill pdfbookmark commands</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string>&lt;div class="Standard"&gt;&lt;span class="unknown"&gt;\\pdfbookmark&lt;/span&gt;.*&lt;/div&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>- Remove misc latex commands</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string>&lt;span class="unknown"&gt;\\emph&lt;/span&gt;</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>-Make Headers smaller ImageJ&gt;IJ</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1IJ\3</string>
+				<key>SearchString</key>
+				<string>(&lt;span class="(prev|up)"&gt;.*&lt;/a&gt;.*\b)ImageJ(\b.*&lt;/span&gt;)</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>-Make Headers smaller Section&gt;Sec.</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1Sec.\3</string>
+				<key>SearchString</key>
+				<string>(&lt;span class="(prev|up)"&gt;.*&lt;/a&gt;.*\b)Section(\b.*&lt;/span&gt;)</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>-Make Headers smaller and&gt;&amp;</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1\&amp;amp;\3</string>
+				<key>SearchString</key>
+				<string>(&lt;span class="(prev|up)"&gt;.*&lt;/a&gt;.*\b)and(\b.*&lt;/span&gt;)</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>Replace Apple Cmd key signs</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>&amp;#8984;</string>
+				<key>SearchString</key>
+				<string>&lt;span class="unknown"&gt;\cmd&lt;/span&gt;</string>
+				<key>UseGrep</key>
+				<false/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>Replace Angstrom symbols</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>&amp;Aring;</string>
+				<key>SearchString</key>
+				<string>&lt;span class="unknown"&gt;\angstrom&lt;/span&gt;</string>
+				<key>UseGrep</key>
+				<false/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1IJ\2</string>
+				<key>SearchString</key>
+				<string>(&lt;span class="next"&gt;.*\b)ImageJ(\b.*&lt;a class="next")</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1Sec.\2</string>
+				<key>SearchString</key>
+				<string>(&lt;span class="next"&gt;.*\b)Section(\b.*&lt;a class="next")</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1\&amp;amp;\2</string>
+				<key>SearchString</key>
+				<string>(&lt;span class="next"&gt;.*\b)and(\b.*&lt;a class="next")</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>EncodeEntitiesInAttributes</key>
+				<false/>
+				<key>FormatMode</key>
+				<string>GentleHierarchical</string>
+				<key>NormalizeAttributeQuotes</key>
+				<false/>
+				<key>NormalizeTagCase</key>
+				<false/>
+			</dict>
+			<key>ComponentName</key>
+			<string>FormatMarkup</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>*** Particular case: A wide "next"</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1\3</string>
+				<key>SearchString</key>
+				<string>(&lt;span class="(next|prev)".*Sec\. \d*: Stacks), Virtual Stacks( \&amp;amp; Hyperstacks)</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>Particular case. A link that exists only in the PDF</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string></string>
+				<key>SearchString</key>
+				<string> (&lt;i&gt;see&lt;/i&gt; &lt;a class="Reference" href="#sec:Guide-Formats"&gt;$↓&lt;/a&gt;)</string>
+				<key>UseGrep</key>
+				<false/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1\3</string>
+				<key>SearchString</key>
+				<string>(&lt;span class="(next|prev)".*Sec\. \d*: )Running IJ From the (Command Line)</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1</string>
+				<key>SearchString</key>
+				<string>(&lt;span class="(next|prev)".*Sec\. \d*: Scripting) in Other Languages</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<true/>
+				<key>Comment</key>
+				<string>Rename noteworthy name on frontpage. so that the toc works</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>			&lt;a class="toc" name="Noteworthy"&gt;&lt;/a&gt;&lt;b&gt;&lt;span class="larger"&gt;Noteworthy&lt;/span&gt;&lt;/b&gt; </string>
+				<key>SearchString</key>
+				<string>			&lt;a class="toc" name="toc-Subsection--2"&gt;&lt;/a&gt;&lt;b&gt;&lt;span class="larger"&gt;Noteworthy&lt;/span&gt;&lt;/b&gt; </string>
+				<key>UseGrep</key>
+				<false/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>Prettify 8/32--bit</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>\1\2</string>
+				<key>SearchString</key>
+				<string>(\d-)-(bit)</string>
+				<key>UseGrep</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<true/>
+				<key>Comment</key>
+				<string>Rename Refname title</string>
+				<key>MatchWords</key>
+				<true/>
+				<key>ReplaceString</key>
+				<string>	&lt;h1 class="biblio"&gt;		ImageJ Related Publications 	&lt;/h1&gt;</string>
+				<key>SearchString</key>
+				<string>	&lt;h1 class="biblio"&gt;		References 	&lt;/h1&gt;</string>
+				<key>UseGrep</key>
+				<false/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>CaseSensitive</key>
+				<false/>
+				<key>Comment</key>
+				<string>tag ▷ so that it looks nicer in firefox</string>
+				<key>MatchWords</key>
+				<false/>
+				<key>ReplaceString</key>
+				<string>&lt;span class="menusep"&gt;▷&lt;/span&gt;</string>
+				<key>SearchString</key>
+				<string> ▷ </string>
+				<key>UseGrep</key>
+				<false/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ReplaceAll</string>
+		</dict>
+		<dict>
+			<key>ComponentArguments</key>
+			<dict>
+				<key>ReplacementChar</key>
+				<string> </string>
+				<key>Zap8Bit</key>
+				<false/>
+				<key>ZapControls</key>
+				<true/>
+				<key>ZapGremlinsAction</key>
+				<string>ReplaceWithChar</string>
+				<key>ZapNulls</key>
+				<true/>
+			</dict>
+			<key>ComponentName</key>
+			<string>ZapGremlins</string>
+		</dict>
+	</array>
+	<key>TextTransformOptions</key>
+	<dict>
+		<key>EnableFileFilter</key>
+		<true/>
+		<key>FilterDictionary</key>
+		<dict>
+			<key>FilterTerms</key>
+			<array>
+				<dict>
+					<key>Field</key>
+					<string>FileName</string>
+					<key>Operator</key>
+					<string>-Equ</string>
+					<key>TermData</key>
+					<string>toc.html</string>
+				</dict>
+				<dict>
+					<key>Field</key>
+					<string>FileNameExtension</string>
+					<key>Operator</key>
+					<string>+Equ</string>
+					<key>TermData</key>
+					<string>html</string>
+				</dict>
+				<dict>
+					<key>Field</key>
+					<string>FileNameExtension</string>
+					<key>Operator</key>
+					<string>-Equ</string>
+					<key>TermData</key>
+					<string>txt</string>
+				</dict>
+			</array>
+			<key>Mode</key>
+			<string>||</string>
+			<key>Name</key>
+			<string>nottoc</string>
+			<key>UniqueID</key>
+			<string>CF5FA51C-E98A-4BB0-8892-E964F1C4BC63</string>
+		</dict>
+		<key>SaveMode</key>
+		<string>yes </string>
+		<key>SearchInvisibles</key>
+		<false/>
+		<key>SearchRecursive</key>
+		<false/>
+		<key>SkipShielded</key>
+		<false/>
+		<key>TextFilesOnly</key>
+		<true/>
+	</dict>
+	<key>TextTransformSources</key>
+	<array>
+		<dict>
+			<key>SourceNodeData</key>
+			<string>file://localhost/Users/Tiago/IJguide/IJguide-1.46/guide/</string>
+			<key>SourceNodeType</key>
+			<string>Folder</string>
+		</dict>
+	</array>
+	<key>com.barebones.DocumentType</key>
+	<string>TextTransform</string>
+</dict>
+</plist>

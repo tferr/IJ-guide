@@ -1,0 +1,928 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{datetime}
+\end_preamble
+\use_default_options false
+\begin_modules
+IJguide
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "The ImageJ User Guide "
+\pdf_author "Tiago Ferreira \& Wayne Rasband"
+\pdf_keywords "ImageJ, Scientific Digital Image Processing"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 2
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "hyperindex=true, linkcolor={black!50}, citecolor={black!50}, urlcolor={black!50}, filecolor={black!50}"
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 0 0 0 1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Colophon
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:About-this-Guide"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The initial contents of this guide have been retrieved in 2009 from the
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJ website"
+target "http://imagej.nih.gov/ij/"
+
+\end_inset
+
+ using 
+\begin_inset CommandInset href
+LatexCommand href
+name "html2text"
+target "http://www.mbayer.de/html2text/"
+
+\end_inset
+
+.
+ Since then, it has been complemented and updated using informations posted
+ on the 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJ mailing list"
+target "http://imagej.nih.gov/ij/list.html"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJ Documentation Portal"
+target "http://imagejdocu.tudor.lu/doku.php?id=start"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "Fiji"
+target "http://fiji.sc/wiki/index.php/Fiji"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJ"
+target "http://imagej.nih.gov/ij/"
+
+\end_inset
+
+, and 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJDev"
+target "http://developer.imagej.net/"
+
+\end_inset
+
+ websites and Tony Collins 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJ for Microscopy"
+target "http://www.macbiophotonics.ca/imagej/"
+
+\end_inset
+
+
+\emph default
+ manual.
+ Nevertheless, because there has never been accompanying documentation for
+ some of the 350+ described commands, several sections have been written
+ from scratch based on the relevant 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJ source code"
+target "http://imagej.nih.gov/ij/developer/source/index.html"
+
+\end_inset
+
+
+\emph on
+ 
+\emph default
+and authors own experience.
+ Legacy nomenclature that became obsolete with version 
+\begin_inset Flex Insert Version
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ has been intentionally omitted.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+The guide was typeset with TeXLive
+\begin_inset space \thinspace{}
+\end_inset
+
+2012 on Mac OS
+\begin_inset space \thinspace{}
+\end_inset
+
+10.6.8.
+ All illustrations were created with ImageJ/Fiji, loaded with G.
+\begin_inset space \space{}
+\end_inset
+
+Landini's 
+\begin_inset CommandInset href
+LatexCommand href
+name "IJ Robot"
+target "http://fiji.sc/wiki/index.php/IJ_Robot"
+
+\end_inset
+
+ and J.
+\begin_inset space \space{}
+\end_inset
+
+Schindelin's 
+\begin_inset CommandInset href
+LatexCommand href
+name "Tutorial Maker"
+target "http://fiji.sc/wiki/index.php/Tutorial_Maker"
+
+\end_inset
+
+ plugins.
+ Screenshots were produced by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+screencapture
+\end_layout
+
+\end_inset
+
+ shell utility controlled by the following IJ macro: 
+\begin_inset listings
+lstparams "otherkeywords={=},showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+ exec("screencapture -ciWo > /dev/null 2>&1 &"); run("System Clipboard");
+\end_layout
+
+\begin_layout Plain Layout
+
+ setLineWidth(1); setForegroundColor(111, 121, 132);
+\end_layout
+
+\begin_layout Plain Layout
+
+ drawRect(0, 0, getWidth, getHeight);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The HTML version was produced with 
+\begin_inset CommandInset href
+LatexCommand href
+name "eLyXer 1.2"
+target "http://elyxer.nongnu.org/"
+
+\end_inset
+
+ and formatted using CSS code from Alex Fernández and Michael Hüneburg;
+ JavaScript code from Ciarán O'Kelly, Stuart Langridge and Tiago Ferreira.
+ It uses 
+\begin_inset CommandInset href
+LatexCommand href
+name "SyntaxHighlighter"
+target "http://alexgorbatchev.com/SyntaxHighlighter/"
+
+\end_inset
+
+ and icons from the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Tango Desktop Project"
+target "http://tango.freedesktop.org/Tango_Desktop_Project"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Getting Involved
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Getting-Involved"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Your help is needed to improve ImageJ.
+ Even if you are not a programmer, your participation is important:
+\end_layout
+
+\begin_layout Itemize
+Are you a skilled ImageJ user?
+\begin_inset Newline newline
+\end_inset
+
+You might want to help out with the documentation effort: Write a FAQ, How-To,
+ Tutorial or 
+\begin_inset CommandInset href
+LatexCommand href
+name "Video Tutorial"
+target "http://imagejdocu.tudor.lu/doku.php?id=video:start"
+
+\end_inset
+
+ on the 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJ Documentation Portal"
+target "http://imagejdocu.tudor.lu/doku.php?id=howto:general:how_to_use_this_documenation_wiki"
+
+\end_inset
+
+; Help us updating the ImageJ User Guide; Share the add-ons you may have
+ created with the community;  Subscribe the 
+\begin_inset CommandInset href
+LatexCommand href
+name "mailing list"
+target "http://imagej.nih.gov/ij/list.html"
+
+\end_inset
+
+ and help answering the questions raised by other users.
+\end_layout
+
+\begin_layout Itemize
+Are you know knowledgeable in image processing?
+\begin_inset Newline newline
+\end_inset
+
+Please join the 
+\begin_inset CommandInset href
+LatexCommand href
+name "mailing list"
+target "http://imagej.nih.gov/ij/list.html"
+
+\end_inset
+
+ and participate in the discussions.
+ You could also write a Tutorial on the 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJ Documentation Portal"
+target "http://imagejdocu.tudor.lu/doku.php?id=howto:general:how_to_use_this_documenation_wiki"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Do you have a strong scientific background?
+\begin_inset Newline newline
+\end_inset
+
+Frequently, the most demanding tasks in scientific image processing relate
+ to experimental design.
+ Even if you do not have special expertise in image processing, by participating
+ on the 
+\begin_inset CommandInset href
+LatexCommand href
+name "mailing list"
+target "http://imagej.nih.gov/ij/list.html"
+
+\end_inset
+
+ discussions, your experience will be valuable to others.
+\end_layout
+
+\begin_layout Itemize
+Do you want ImageJ to improve?
+\begin_inset Newline newline
+\end_inset
+
+You can report bugs or request new features using the 
+\begin_inset CommandInset href
+LatexCommand href
+name "mailing list"
+target "http://imagej.nih.gov/ij/list.html"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Do you have experience in graphic/web design?
+\begin_inset Newline newline
+\end_inset
+
+If you are able to to improve the look and feel of the guide we welcome
+ your skills.
+\end_layout
+
+\begin_layout Subsection*
+The ImageJ Icon
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:About-the-Cover"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hartnack 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{IJ
+\backslash
+, icon,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+IJ icon
+\end_layout
+
+\end_inset
+
+Hartnack microscope (
+\emph on
+ca
+\emph default
+.
+\begin_inset space \space{}
+\end_inset
+
+1870's) depicted on the front page inspired the 
+\begin_inset CommandInset href
+LatexCommand href
+name "ImageJ icon for Mac OS X"
+target "http://imagej.nih.gov/ij/docs/install/osx.html#icon"
+
+\end_inset
+
+.
+ It is based on a 
+\begin_inset CommandInset href
+LatexCommand href
+name "photograph"
+target "http://www.arsmachina.com/s-hart1209.htm"
+
+\end_inset
+
+ by 
+\begin_inset CommandInset href
+LatexCommand href
+name "Tom Grill"
+target "http://www.tomgrill.com/"
+
+\end_inset
+
+ at 
+\begin_inset CommandInset href
+LatexCommand href
+name "arsmachina.com"
+target "http://www.arsmachina.com/"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Edmund Hartnack (1826--1891) was a renown microscope manufacturer that pioneered
+ the use of correction collars in water-immersion lenses and the adoption
+ of the substage condenser
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Merico, G.
+ Microscopy in Camillo Golgi's times.
+
+\emph on
+ J Hist Neurosci,
+\emph default
+ (2003) 8(2):113--20
+\end_layout
+
+\end_inset
+
+.
+ The precision and robustness of Hartnack optics played a pivotal role in
+ the groundbreaking research by the Nobel laureates Robert Koch
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Brock, TD
+\emph on
+.
+ 
+\emph default
+Robert Koch, A life in medicine and
+\emph on
+ 
+\emph default
+bacteriology.
+
+\emph on
+ ASM,
+\emph default
+ 1999
+\end_layout
+
+\end_inset
+
+, Camillo Golgi
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Brenni P.
+ Gli strumenti di fisica dell'Istituto Tecnico Toscano -- Ottica.
+ 
+\emph on
+IMSS
+\emph default
+, 1995 
+\end_layout
+
+\end_inset
+
+ and Santiago Ramón y Cajal
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+DeFelipe & Jones.
+ Santiago Ramón y Cajal and methods in neurohistology.
+ 
+\emph on
+Trends Neurosci
+\emph default
+, (1992) 15(7):237--46
+\end_layout
+
+\end_inset
+
+.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Charles Darwin
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.darwinproject.ac.uk/darwins-letters
+\end_layout
+
+\end_inset
+
+, accessed 2011.03.15
+\end_layout
+
+\end_inset
+
+, Louis Ranvier
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Barbara, JG.
+ Louis Ranvier (1835--1922): The Contribution of Microscopy to Physiology
+ and the Renewal of French General Anatomy.
+ 
+\emph on
+J Hist Neurosci
+\emph default
+, 2007 Oct-Dec;16(4):413--31
+\end_layout
+
+\end_inset
+
+ and Sigmund Freud
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Frixione, E.
+ Sigmund Freud's contribution to the history of the neuronal cytoskeleton.
+ 
+\emph on
+J Hist Neurosci,
+\emph default
+ (2003) 12(1)12--24
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pdfbookmark[1]{Revision History}{revisionhistory}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Document Revision History
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Document-Revision-History"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="19col%">
+<column alignment="left" valignment="top" width="72col%">
+<row topspace="default">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Date
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Notes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topspace="default" bottomspace="default">
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+monthname 
+\end_layout
+
+\end_inset
+
+ 
+
+\begin_inset space \space{}
+\end_inset
+
+2012
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Updated for v
+\begin_inset space \thinspace{}
+\end_inset
+
+1.46
+\begin_inset Newline newline
+\end_inset
+
+Second major revision
+\begin_inset Newline newline
+\end_inset
+
+Improvements in layout and browsability
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topspace="default" bottomspace="default">
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+September 2011
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Updated for v
+\begin_inset space \thinspace{}
+\end_inset
+
+1.45
+\begin_inset Newline newline
+\end_inset
+
+Deeply revised edition with several new sections in Parts I--IV
+\begin_inset Newline newline
+\end_inset
+
+Available as printable booklets
+\begin_inset Newline newline
+\end_inset
+
+Redesigned HTML version 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomspace="default">
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+January 2011
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Updated for v
+\begin_inset space \thinspace{}
+\end_inset
+
+1.44
+\begin_inset Newline newline
+\end_inset
+
+New sections on advanced ImageJ usage, Fiji scripting, command line usage
+ and interoperability with other software packages
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomspace="default">
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+May 2010
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+First HTML version
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomspace="default">
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+April 2010
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+First edition covering v
+\begin_inset space \thinspace{}
+\end_inset
+
+1.43
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Acknowledgments
+\end_layout
+
+\begin_layout Standard
+We are extremely grateful to Alex Fernández for his wonderful 
+\begin_inset CommandInset href
+LatexCommand href
+name "eLyXer"
+target "http://elyxer.nongnu.org/"
+
+\end_inset
+
+, Alex Gorbatchev for 
+\begin_inset CommandInset href
+LatexCommand href
+name "SyntaxHighlighter"
+target "http://alexgorbatchev.com/SyntaxHighlighter/"
+
+\end_inset
+
+ and Johannes Schindelin for fruitful discussions and assistance with the
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "Git repository"
+target "http://fiji.sc/guide.git"
+
+\end_inset
+
+.
+ We are also thankful to all of those who submitted material, criticisms,
+ suggestions and encouragement to update this edition.
+ But above all, our thanks go to the extraordinary ImageJ community for
+ its dedication to the project.
+\end_layout
+
+\end_body
+\end_document
