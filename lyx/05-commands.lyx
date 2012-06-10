@@ -26469,6 +26469,8 @@ reference "sub:Fonts..."
 \end_inset
 
  widget.
+ If unchecked, labels are typeset using ImageJ's default font: sans-serif
+ typeface.
 \end_layout
 
 \begin_layout Description

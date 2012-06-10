@@ -154,7 +154,7 @@ reference "sec:Results-Table"
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1310,7 +1310,7 @@ reference "sub:Segmented-Line-Selection"
 , 
 \begin_inset CommandInset ref
 LatexCommand nameref
-reference "sub:Freehand-Selection-Tool"
+reference "sub:Freehand-Line-Selection"
 
 \end_inset
 
