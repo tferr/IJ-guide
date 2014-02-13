@@ -1,0 +1,3 @@
+[submodule "elyxer"]
+	path = elyxer
+	url = git://git.sv.gnu.org/elyxer.git
