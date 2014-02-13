@@ -664,7 +664,7 @@ reference "sub:ImageJ-Macro-Editor"
 
 \end_inset
 
-), the indispensable guide to the built-in functions that can be called
+) is the indispensable guide to the built-in functions that can be called
  from the ImageJ macro language.
  It is thoroughly documented and constantly updated:
 \begin_inset Newline newline
@@ -1013,7 +1013,7 @@ http://imagej.nih.gov/ij/macros/js/
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1096,7 +1096,7 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1361,7 +1361,14 @@ batch mode
 \begin_layout Plain Layout
 
 \size small
-Cannot create tools and toolbar menus
+Cannot create 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:CustomToolsAndToolsets"
+
+\end_inset
+
+ and toolbar menus
 \end_layout
 
 \end_inset
@@ -1383,7 +1390,14 @@ Cannot create tools and toolbar menus
 \begin_layout Plain Layout
 
 \size small
-Not compatible with Function Finder and CodeBar
+Not compatible with 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "FunctionFinder[F]"
+
+\end_inset
+
+ and CodeBar
 \begin_inset Foot
 status collapsed
 

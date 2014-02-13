@@ -4,16 +4,16 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="generator" content="http://www.nongnu.org/elyxer/" />
-	<meta name="create-date" content="2012-06-07" />
+	<meta name="create-date" content="2012-06-24" />
 	<meta name="author" content="Tiago Ferreira" />
 	<meta name="description" content="The ImageJ handbook" />
 	<meta name="keywords" content="ImageJ,IJ,fiji,scientifc image processing,manual,guide" />
-	<title>Imagej User Guide - IJ 1.46p </title>
+	<title>ImageJ User Guide - IJ 1.46r | File Menu </title>
 	<link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
 	<link rel="stylesheet" href="css/guide.css" type="text/css" media="all" />
-<script type="text/javascript" src="js/toc.js"> </script> <script type="text/javascript" src="js/searchhi.js"> </script> <script type="text/javascript" src="sh/scripts/shCore.js"></script> <script type="text/javascript" src="sh/scripts/shBrushJScript.js"></script> <script type="text/javascript" src="sh/scripts/shBrushIJmacro.js"></script> 
 	<link href="sh/styles/shCore.css" rel="stylesheet" type="text/css" />
 	<link href="sh/styles/shThemeFijiEd.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/toc.js"> </script> <script type="text/javascript" src="js/searchhi.js"> </script> <script type="text/javascript" src="sh/scripts/shCore.js"></script> <script type="text/javascript" src="sh/scripts/shBrushJScript.js"></script> <script type="text/javascript" src="sh/scripts/shBrushIJmacro.js"></script> 
 <script type="text/javascript">SyntaxHighlighter.defaults['toolbar']=false;SyntaxHighlighter.all();</script> 
 </head>
 <body onload="initialize_page();">
@@ -117,7 +117,6 @@
 			<span class="menuitem">File<span class="menusep">▷</span><a class="Reference" href="146-26.html#sub:Import">Import<span class="menusep">▷</span>↓</a></span>, <a class="Reference" href="146-7.html#sec:Image-Types">Image Types and Formats↑</a>, <a class="Reference" href="146-8.html#sub:Virtual-Stacks">Virtual Stacks↑</a>, <a class="Reference" href="146-26.html#infobox:Open-Import">9: Opening Files: File<span class="menusep">▷</span>Open…, File<span class="menusep">▷</span>Import<span class="menusep">▷</span> and Drag &amp; Drop↓</a> 
 		</div>
 		<div class="Standard">
-			<span class="small">
 		<div class="float">
 			<a class="Label" name="infobox:Open-Import"> </a>
 			<div class="infobox">
@@ -135,7 +134,6 @@
 				</div>
 			</div>
 		</div>
-		</span> 
 	</div>
 	<h2 class="Subsection">
 		<a class="toc" name="toc-Subsection-26.3">26.3</a> <span class="menuitem">Open Next [O]</span><a class="Label" name="sub:OpenNext[O]"> </a> 
@@ -216,7 +214,7 @@
 		<span class="Description-entry"><b><i>Enter Pattern</i></b></span> Regular expressions (regex<a class="NomenclatureEntry" name="noment-regex" href="146-Nomenclature.html#nom-regex">[?]</a>) can be typed here for advanced filtering (<i>see</i> <a class="Reference" href="146-26.html#tab:regex-syntax">Basic syntax of regular-expressions↓</a>). 
 	</div>
 	<div class="Description">
-		<span class="Description-entry"><i>Scale Images</i></span> Setting a value less than 100% will reduce memory requirements. E.g., entering 50 reduces the amount of memory needed to open a stack by 75%. 
+		<span class="Description-entry"><i>Scale Images</i></span> Setting a value less than 100% will reduce memory requirements. E.g., entering 50 reduces the amount of memory needed to open a stack by 25% (two-dimensional images: <span class="formula">0.5 × 0.5 = 0.25</span> of the original data). This value is ignored if <i>Use Virtual Stack</i> is checked.
 	</div>
 	<div class="Description">
 		<span class="Description-entry"><i>Convert to RGB</i></span> Allows a mixture of RGB and grayscale images to be opened by converting all the sequence to RGB. Note that if this option is unchecked and the first imported image is 8-bit then all the remaining images in the sequence will be converted to 8-bit. Checking this option, circumvents this issue. 
@@ -251,8 +249,8 @@
 				<table class="formal">
 					<tr class="header">
 						<td align="center" valign="top" colspan="2"> <span class="footnotesize">Regex Syntax (Character Classes)</span> </td>
-						<td align="left" valign="top" colspan="1"> <span class="footnotesize">Example</span> </td>
-						<td align="left" valign="top" colspan="1"> <span class="footnotesize">Meaning</span> </td>
+						<td align="center" valign="top" colspan="1"> <span class="footnotesize">Example</span> </td>
+						<td align="center" valign="top" colspan="1"> <span class="footnotesize">Meaning</span> </td>
 					</tr>
 					<tr>
 						<td align="center" valign="top"> <span class="code">[ ]</span> </td>
@@ -313,7 +311,6 @@
 		</div>
 	</div>
 	<div class="Standard">
-		<span class="small">
 	<div class="float">
 		<a class="Label" name="infobox:ImportImgSeq"> </a>
 		<div class="infobox">
@@ -326,7 +323,6 @@
 			As a replacement, use the <i>Use virtual stack</i> option and then convert to 8-bit using <span class="menuitem">File<span class="menusep">▷</span>Type<span class="menusep">▷</span>8-bit.</span> Memory requirements can also be reduced by using the <i>Scale Images (%) </i>option. The amount of memory allocated to ImageJ can be adjusted in <span class="menuitem">Edit<span class="menusep">▷</span>Options<span class="menusep">▷</span><a class="Reference" href="146-27.html#sub:Memory-&-Threads...">Memory &amp; Threads…↓</a></span> 
 		</div>
 	</div>
-	</span> 
 </div>
 <h3 class="Subsubsection">
 	<a class="toc" name="toc-Subsubsection-26.6.2">26.6.2</a> <span class="menuitem">Raw…</span><a class="Label" name="sub:Import>Raw"> </a> 
@@ -448,15 +444,11 @@
 		Uses a built in version of the <a class="URL" href="http://imagej.nih.gov/ij/plugins/avi-reader.html">AVI reader</a> plugin to open an AVI file (JPEG or PNG compressed, or uncompressed) as a stack or virtual stack (one slice per video frame) <span class="bibcites">[<a class="bibliocite" name="cite-12" href="146-References.html#biblio-12">12</a>]</span>. Animation speed is retrieved from image frame rate. AVI files can also be opened using <span class="menuitem">File<span class="menusep">▷</span><a class="Reference" href="146-26.html#sub:Open...">Open… [o]↑</a> </span>or drag and drop but macros must use this command to gain access to the dialog box options.
 		<div class="medskip">
 		</div>
-		Please note that ImageJ only supports a restricted number of AVI formats including various YUV 4:2:2 and 4:2:0 compressed formats. MJPG (motion-JPEG) formats are not read correctly. (cf. <a class="URL" href="http://imagej.nih.gov/ij/source/ij/plugin/AVI_Reader.java">plugin source code</a>). 
+		ImageJ supports a restricted number of AVI formats including MJPG (motion-JPEG) and various YUV 4:2:2/4:2:0 compressed formats (cf. <a class="URL" href="http://imagej.nih.gov/ij/source/ij/plugin/AVI_Reader.java">plugin source code</a>). The <a href="http://loci.wisc.edu/software/bio-formats" >OME Bio-Formats library</a> (<i>see</i> <a class="Reference" href="146-7.html#sub:Non-native-Supported-Formats">Non--native Formats↑</a>) extends support to MSRLE and MSV1 encoded formats.
+		<div class="medskip">
+		</div>
+		The dialog promt allows you to choose if frames should be converted to 8-bit grayscale or flipped vertically. For large files, an option to open the movie as a virtual stack is also available (<i>see</i> <a class="Reference" href="146-8.html#sub:Virtual-Stacks">Virtual Stacks↑</a>). It is also possible to specify the starting and ending frame. Enter <span class="formula">0</span> (zero) to specify the last frame, <span class="formula"> − 1</span> to specify the second last frame, etc.
 	</div>
-</div>
-<div class="Standard">
-	<div class="medskip">
-	</div>
-</div>
-<div class="Standard">
-	The dialog promt allows you to choose if frames should be converted to 8-bit grayscale or flipped vertically. For large files, an option to open the movie as a virtual stack is also available (<i>see</i> <a class="Reference" href="146-8.html#sub:Virtual-Stacks">Virtual Stacks↑</a>). It is also possible to specify the starting and ending frame. Enter <span class="formula">0</span> (zero) to specify the last frame, <span class="formula"> − 1</span> to specify the second last frame, etc. 
 </div>
 <div class="See">
 	<span class="menuitem">File<span class="menusep">▷</span>Save As<span class="menusep">▷</span><a class="Reference" href="146-26.html#sub:SaveAs>Avi...">AVI…↓</a></span> 
@@ -527,7 +519,6 @@
 	<a class="Reference" href="146-7.html#infobox:Formats">3: Image Types: Lossy Compression and Metadata↑</a>, <a class="Reference" href="146-26.html#infobox:JpegAlert">11: Warning on JPEG Compression↓</a> 
 </div>
 <div class="Standard">
-	<span class="small">
 <div class="float">
 	<a class="Label" name="infobox:JpegAlert"> </a>
 	<div class="infobox" style="max-width: 100%;">
@@ -553,7 +544,6 @@
 		</div>
 	</div>
 </div>
-</span> 
 </div>
 <h3 class="Subsubsection">
 	<a class="toc" name="toc-Subsubsection-26.10.4">26.10.4</a> <span class="menuitem">Text Image…</span><a class="Label" name="sub:SaveAs>Text-Image..."> </a> 
@@ -624,7 +614,7 @@
 		<img class="embedded" src="images/SaveAsAvi.png" alt="figure images/SaveAsAvi.png" style="width: 273px; height: 120px;" /> 
 	</div>
 	<div class="Standard">
-		Exports a stack or hyperstack as an AVI file <span class="bibcites">[<a class="bibliocite" name="cite-12" href="146-References.html#biblio-12">12</a>]</span>.
+		Exports a stack or hyperstack as an AVI file <span class="bibcites">[<a class="bibliocite" name="cite-12" href="146-References.html#biblio-12">12</a>]</span>. Note that AVI files larger than 2 GB are not correctly written.
 		<div class="Description">
 			<span class="Description-entry"><i>Compression</i></span> <i>JPEG</i>, <i>PNG</i> or <i>Uncompressed</i>. With IJ 1.44 and later, <a class="Reference" href="146-11.html#sub:Overlay-Intro">Overlays↑</a> are embedded when saving in JPEG or PNG format. The default compression is <i>JPEG</i>. 
 		</div>
@@ -679,7 +669,7 @@
 	<a class="toc" name="toc-Subsection-26.11">26.11</a> <span class="menuitem">Revert [r]</span><a class="Label" name="sub:Revert[r]"> </a> 
 </h2>
 <div class="Standard">
-	Reloads the active image, stack or hyperstack from disk, reverting it to its last saved state. It is actually a shortcut for closing the window without saving, and then reopening it. Note that it may not work with <a class="Reference" href="146-7.html#sub:Non-native-Supported-Formats">Non--native Formats ↑</a> opened through external plugins such as the <a class="URL" href="http://www.loci.wisc.edu/ome/formats.html">LOCI Bio-Formats library</a>. 
+	Reloads the active image, stack or hyperstack from disk, reverting it to its last saved state. It is actually a shortcut for closing the window without saving, and then reopening it. Note that it may not work with <a class="Reference" href="146-7.html#sub:Non-native-Supported-Formats">Non--native Formats ↑</a> opened through external plugins such as the <a class="URL" href="http://loci.wisc.edu/software/bio-formats">OME Bio-Formats library</a>. 
 </div>
 <div class="See">
 	<a class="Reference" href="146-6.html#sec:Undo-and-Redo">Undo and Redo↑</a> 
@@ -737,7 +727,7 @@
 	<span class="prev"><a class="prev" name="prev" href="146-Part-V.html">Prev</a> Part V: Menu Commands</span> <span class="up"><a class="up" name="up" href="146-Part-V.html">Up</a> Part V: Menu Commands</span> <span class="next">Sec. 27: Edit<span class="menusep">▷</span> <a class="next" name="next" href="146-27.html">Next</a></span> 
 </div>
 <div id="footer">
-	Last modified: 2012-06-07 <a href="#" style="float:right">Top</a> 
+	Last modified: 2012-09-07 <a href="#" style="float:right">Top</a> 
 </div>
 </div>
 </div>

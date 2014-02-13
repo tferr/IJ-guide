@@ -160,8 +160,15 @@ reference "sec:Key-Modifiers"
 \end_inset
 
 .
- Also note that, except when using the text tool, you do not need to hold
- down the control key to use a keyboard shortcut, unless 
+ Also note that, except when using the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Text-Tool"
+
+\end_inset
+
+, you do not need to hold down the control key to use a keyboard shortcut,
+ unless 
 \emph on
 Require control key for shortcuts 
 \emph default
@@ -4685,7 +4692,7 @@ reference "sub:Next-Slice-[>]"
 
 
 \family default
- Skip nine slices 
+ Skip ten slices 
 \end_layout
 
 \begin_layout Description
@@ -4702,7 +4709,7 @@ reference "sub:Previous-Slice-[>]"
 
 
 \family default
- Skip nine slices 
+ Skip ten slices 
 \end_layout
 
 \begin_layout Description
@@ -4825,7 +4832,7 @@ First
 
 Lane
 \family default
- Assume lanes are horizontal
+ Assumes lanes are horizontal
 \end_layout
 
 \begin_layout Description
@@ -5990,7 +5997,7 @@ target "http://imagej.nih.gov/ij/developer/macro/functions.html#setTool"
 
 \end_inset
 
-, which allows assigning keyboards to 
+, which allows assigning keyboard shortcuts to 
 \begin_inset CommandInset ref
 LatexCommand nameref
 reference "sec:CustomToolsAndToolsets"

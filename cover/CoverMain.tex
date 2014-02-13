@@ -9,7 +9,7 @@
 \colorlet{lessblack}{black!85}
 \thispagestyle{empty}
 
-\providecommand{\theguideversion}{1.46p}
+\providecommand{\theguideversion}{1.46r}
 
 \def\nodeshadowed[#1]#2;{%
     \node[scale=1,above,#1]{#2};
@@ -42,8 +42,11 @@
 \end{tikzpicture}
 
 \begin{tikzpicture}[overlay, transform shape, rotate=-45]
-    \node[scale=2,above,at={(13.38,9.5)}, yslant=0, fill=orange!50, draw=orange!100, very thick,minimum size=1.6cm] {
+    \node[scale=2,above,at={(13.38,9.5)}, yslant=0, fill=blue!40, draw=blue!80, very thick,minimum size=1.8cm] {
         \Huge\textcolor{lessblack}{\textbf{\qquad IJ\,\theguideversion \qquad{}}}
+    };%
+    \node[scale=3,above,at={(13.42,8.95)}, yslant=0, minimum size=0.8cm] {
+        \textcolor{white}{\bf{Revised edition}}
     };%
 \end{tikzpicture}
 

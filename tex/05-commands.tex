@@ -1,7 +1,7 @@
 
 \part{Menu Commands\label{par:Commands}}
 
-As described in the \nameref{par:User-Interface1}, the menu bar lists
+As described in \nameref{par:User-Interface1}, the menu bar lists
 all ImageJ commands. It is organized in eight menus:
 \begin{lyxlist}{windowss}
 \item [{\userinterface{\noindent \nameref{sec:File}}}] \noindent Basic
@@ -281,7 +281,9 @@ and ImageJ will only open files whose name contains that string.
 can be typed here for advanced filtering (\emph{see} \nameref{tab:regex-syntax}).
 \item [{\emph{Scale\ Images}}] Setting a value less than 100\% will reduce
 memory requirements. E.g., entering 50 reduces the amount of memory
-needed to open a stack by 75\%. 
+needed to open a stack by 25\% (two-dimensional images: $0.5\times0.5=0.25$
+of the original data). This value  is ignored if \emph{Use Virtual
+Stack} is checked.
 \item [{\emph{Convert\ to\ RGB}}] Allows a mixture of RGB and grayscale
 images to be opened by converting all the sequence to RGB. Note that
 if this option is unchecked and the first imported image is 8--bit
@@ -507,9 +509,11 @@ drag and drop but macros must use this command to gain access to the
 dialog box options.\medskip{}
 
 
-Please note that ImageJ only supports a restricted number of AVI formats
-including various YUV 4:2:2 and 4:2:0 compressed formats. \index{MJPG}MJPG
-(motion-JPEG) formats are not read correctly. (cf.\ \href{http://imagej.nih.gov/ij/source/ij/plugin/AVI_Reader.java}{plugin source code}).%
+ImageJ supports a restricted number of AVI formats including \index{MJPG}MJPG
+(motion-JPEG) and various YUV 4:2:2/4:2:0 compressed formats (cf.\ \href{http://imagej.nih.gov/ij/source/ij/plugin/AVI_Reader.java}{plugin source code}).
+The \index{OME Bio-Formats@OME Bio-Formats \see{Bio-Formats,}}\index{LOCI Bio-Formats@LOCI Bio-Formats \see{Bio-Formats,}}\index{Bio-formats@Bio-formats \see{LOCI,}}\href{http://loci.wisc.edu/software/bio-formats}{OME Bio-Formats library}
+(\emph{see} \nameref{sub:Non-native-Supported-Formats}) extends support
+to  MSRLE and MSV1 encoded formats.%
 \end{minipage}
 
 \medskip{}
@@ -748,7 +752,8 @@ for the depicted snapshot the first image would be saved as `mitosis\_t001\_z001
 \end{minipage}%
 \begin{minipage}[c][1\totalheight][t]{0.53\columnwidth}%
 \index{Stacks!Export}Exports a stack or hyperstack as an \index{AVI}AVI
-file \cite{C-AviPlugins}.
+file \cite{C-AviPlugins}. Note that AVI files larger than 2\,GB
+are not correctly written.
 \begin{description}
 \item [{\emph{Compression}}] \emph{JPEG}, \emph{PNG} or \emph{Uncompressed}.
 With IJ\,1.44 and later, \nameref{sub:Overlay-Intro} are embedded
@@ -822,7 +827,7 @@ that tabulates ROI coordinates at evenly spaced one pixel intervals.
 from disk, reverting it to its last saved state. It is actually a
 shortcut for closing the window without saving, and then reopening
 it. Note that it may not work with \nameref{sub:Non-native-Supported-Formats}
-opened through external plugins such as the \index{LOCI Bio-Formats}\href{http://www.loci.wisc.edu/ome/formats.html}{LOCI Bio-Formats library}.
+opened through external plugins such as the \index{Bio-Formats}\href{http://loci.wisc.edu/software/bio-formats}{OME Bio-Formats library}.
 
 
 \calso{\nameref{sec:Undo-and-Redo}}
@@ -894,7 +899,7 @@ Described in {\small \nameref{sec:Undo-and-Redo}.}{\small \par}
 \subsection{\protect\userinterface{Cut {[}x{]}}\label{sub:Cut[x]}}
 
 Copies the contents of the current image selection to the internal
-clipboard and fills it with the current background color.
+clipboard, filling the selection with the current background color.
 
 
 \calso{\userinterface{Edit\lyxarrow{}\nameref{sub:Copy-to-System}}, \userinterface{\nameref{sub:Paste-Control...}}}
@@ -1111,7 +1116,7 @@ polyline selection (\emph{see} \nameref{fig:ROI-manipulations}).
 \subsubsection{\protect\userinterface{Fit Circle}\label{sub:Fit-Circle}}
 
 Fits a \index{Fit!Circle}\index{Algorithm!Newton-based Pratt fit@\emph{Newton-based Pratt} fit}circle
-to a multipoint (with at leas 3 points) or area selection \cite{C-FitCircle}
+to a multipoint (with at least 3 points) or area selection \cite{C-FitCircle}
 (\emph{see} \nameref{fig:ROI-manipulations}). Composite selections
 are not supported. With open shapes (lines and points), the fitting
 algorithm (\emph{Newton-based Pratt} fit) described in Pratt V, ``Direct
@@ -1214,8 +1219,8 @@ of one pixel regardless of the image magnification (\emph{see} \ref{infobox:Zoom
 
 With \nameref{sec:Text-Tool} selections, it is also possible to specify
 the font size and text alignment. Choose \emph{List coordinates} to
-retrieve on a dedicated table the XY coordinates of active selection
-at evenly spaced one pixel intervals. 
+retrieve a dedicated table of XY coordinates from the active selection
+at evenly spaced one pixel intervals.
 
 Note that while this command can only be applied to the active selection,
 the ROI Manager's \emph{Properties\ldots{}}\ command (\userinterface{Analyze\lyxarrow{}Tools\lyxarrow{}\nameref{sub:ROI-Manager...}})
@@ -1323,8 +1328,8 @@ also works with straight line selections. In this case, the object
 defined by the line selection is rotated to be horizontal.
 \begin{figure}[h]
 \noindent {\small \includegraphics[scale=0.5]{images/Straighten}}\caption[Straightening filamentous objects]{\textbf{\label{fig:Straighten}}\protect\userinterface{\textbf{Edit\lyxarrow{}Selection\lyxarrow{}}\nameref{sub:Straighten...}}.
-As described in \nameref{sub:Segmented-Line-Selection}, the nodes
-of a polyline points can be repositioned (dragged), deleted (using
+As described in \nameref{sub:Segmented-Line-Selection}, the points
+of a polyline selection can be repositioned (dragged), deleted (using
 Alt-click) or duplicated (using Shift-click). Press \protect\mykeystroke{Shift}
 \protect\mykeystroke{E} (\protect\userinterface{Edit\lyxarrow{}Selection\lyxarrow{}\nameref{sub:Restore-Selection-[E]}})
 to restore accidentally deleted lines.}
@@ -1370,8 +1375,8 @@ and fourth corner points of the rectangle being disconnected.
 Creates an image selection \index{Annotation!Layers@Layers \see{ImageROI, Overlay,}}\index{ImageROI}(ImageROI).
 Image selections are \nameref{sub:Overlay-Intro}  that can be moved
 around the canvas (\emph{see} \userinterface{Image\lyxarrow{}Overlay\lyxarrow{}\nameref{sub:Add-Image...}}).
-Once created, opacity of the blended image be re-adjusted at any time
-using \userinterface{Edit\lyxarrow{}Selection\lyxarrow{}\nameref{sub:Properties...}}.
+Once created, opacity of the blended image can be re-adjusted at any
+time using \userinterface{Edit\lyxarrow{}Selection\lyxarrow{}\nameref{sub:Properties...}}.
 Use \mykeystroke{Shift} \mykeystroke{E} (\userinterface{Edit\lyxarrow{}Selection\lyxarrow{}\nameref{sub:Restore-Selection-[E]}})
 to recover the blending image after clicking outside its limits. Use
 \mykeystroke{Shift} \mykeystroke{F} (\userinterface{\nameref{sub:Flatten-[F]}})
@@ -1393,7 +1398,7 @@ in TIFF format.
 \subsubsection[{\protect\userinterface{Add to Manager {[}t{]}}}]{\protect\userinterface{Add to Manager {[}t{]}}\label{sub:Add-to-Manager}\improvement{}}
 
 Adds the current selection to the ROI Manager (\userinterface{Analyze\lyxarrow{}Tools\lyxarrow{}\nameref{sub:ROI-Manager...}}).
-If there is no selection the ROI Manager is open.
+If there is no selection the ROI Manager is opened.
 
 
 \subsection{\protect\userinterface{Options\lyxarrow{}}\label{sub:Options}}
@@ -1412,7 +1417,7 @@ Displays a dialog box that allows to change the line width (in pixels)
 of line selections (\emph{see} \nameref{sec:Line-Selection-Tools})
 and concomitantly the lines generated by the \userinterface{Edit\lyxarrow{}\nameref{sub:Draw-[d]}}
 command. This legacy command has been superseded by the \userinterface{Image\lyxarrow{}Adjust\lyxarrow{}\nameref{sub:Line-WidthSlider}}
-widget, but required since the later is not recordable (\emph{see}
+widget, but required since the latter is not recordable (\emph{see}
 \userinterface{Plugins\lyxarrow{}Macros\lyxarrow{}\nameref{sub:Record...}}).%
 \end{minipage}
 
@@ -1691,11 +1696,11 @@ to the ImageJ64 application. Linux users need to be running 64--bit
 versions of Linux and Java. The title of the \emph{Memory}\,\&\,\emph{Threads}
 dialog box changes to \emph{Memory}\,\emph{(64--bit)} when ImageJ
 is running on a properly configured 64--bit system.
-\item [{\emph{Parallel}\ \emph{threads}\ \emph{for}\ \emph{stacks}}] Defaults
-to the number of available processors determines the number of parallel
-threads used by commands in the \userinterface{Process\lyxarrow{}\nameref{sub:Filters}}
+\item [{\emph{Parallel}\ \emph{threads}\ \emph{for}\ \emph{stacks}}] Determines
+the number of parallel threads used by commands in the \userinterface{Process\lyxarrow{}\nameref{sub:Filters}}
 and the \userinterface{Process\lyxarrow{}\nameref{sub:Math}} submenus
-when processing stacks.
+when processing stacks. The default value is the number of available
+processors.
 \item [{\emph{Keep\ multiple\ undo\ buffers}}] If checked, the \index{Undo}undo
 buffer will be preserved when switching images. \userinterface{Edit\lyxarrow{}\nameref{sub:Undo-[z]}}
 remains restricted to the most recent operation, but is available
@@ -1749,9 +1754,10 @@ command.\vspace*{\bigskipamount}
 \item [{\emph{Target}}] Specifies the Java version of the class files created
 by \userinterface{Plugins\lyxarrow{}\nameref{sub:Compile-and-Run...}}
 Plugins compiled with a \emph{Target} of 1.6 will not run on earlier
-version Java. A \emph{Target} of 1.4 should be used to create plugins
-capable of running on all versions ImageJ. \emph{Target} cannot be
-set higher than the version of Java ImageJ is currently running on.\end{description}
+versions of Java. A \emph{Target} of 1.4 should be used to create
+plugins capable of running on all versions ImageJ. \emph{Target} cannot
+be set higher than the version of Java ImageJ is currently running
+on.\end{description}
 %
 \end{minipage}
 \begin{description}
@@ -1814,7 +1820,7 @@ when using keyboard shortcuts for menu commands.
 \item [{\emph{Move\ isolated\ plugins\ to\ Misc.\ menu}}] This option
 can reduce the size of the Plugins menu, preventing it from running
 off the bottom of the screen. When this option is enabled, plugins
-that attempt install themselves in a submenu with only one command
+that attempt to install themselves in a submenu with only one command
 are instead installed in the \userinterface{Plugins\lyxarrow{}Miscellaneous}
 submenu. An example of such a plugin is \href{http://bigwww.epfl.ch/thevenaz/turboreg/}{TurboReg},
 which normally creates a \userinterface{Plugins\lyxarrow{}TurboReg}
@@ -1855,8 +1861,8 @@ to their default values when ImageJ is restarted.%
 As mentioned in \nameref{sec:Settings-and-Preferences}, \filenameref{IJ\_prefs.txt}
 holds all the settings and preferences of ImageJ and is stored in
 \dirnameref{$\sim$/Library/Preferences/} on Mac OS\,X, in \dirnameref{$\sim$/.imagej/}
-on Linux and in the ImageJ folder on Windows. Several macros and plugins
-also write parameters to this file.
+on Linux and Windows (with $\sim$ referring to the user's home directory).
+Several macros and plugins also write parameters to this file.
 
 
 \calso{\eqref{lis:setOption} \nameref{lis:setOption}, \userinterface{Plugins\lyxarrow{}Utilities\lyxarrow{}\nameref{sub:Reset...}}}
@@ -1880,21 +1886,15 @@ submenu)}.\index{Image types}  Note that ImageJ2 supports \protect\href{http://d
 \noindent %
 \begin{tabular}{l>{\centering}m{1.25cm}>{\centering}m{1.25cm}>{\centering}m{1.25cm}>{\centering}m{1.25cm}>{\centering}m{1.25cm}>{\centering}m{1.25cm}>{\centering}m{1.25cm}}
 \toprule 
- & {\small 8--bit} & {\small 16--bit} & {\small 32--bit} & {\small 8--bit color} & {\small RGB color} & {\small RGB stack} & {\small HSB stack}\tabularnewline
+\multirow{1}{*}{{\small $\triangledown$From\ \ To$\triangleright$}} & \textbf{\small 8--bit} & \textbf{\small 16--bit} & \textbf{\small 32--bit} & \textbf{\small 8--bit color} & \textbf{\small RGB color} & \textbf{\small RGB stack} & \textbf{\small HSB stack}\tabularnewline
 \midrule
-{\small 8--bit} & \ldots{} & {\small I, S} & {\small I, S} &  & {\small I, S} &  & \tabularnewline
-\cmidrule{2-8} 
-{\small 16--bit} & {\small I, S} & \ldots{} & {\small I, S} &  & {\small I, S} &  & \tabularnewline
-\cmidrule{2-8} 
-{\small 32--bit} & {\small I, S} & {\small I, S} & \ldots{} &  & {\small I, S} &  & \tabularnewline
-\cmidrule{2-8} 
-{\small 8--bit color} & {\small I, S} &  &  & \ldots{} & {\small I} &  & \tabularnewline
-\cmidrule{2-8} 
-{\small RGB color} & {\small I, S} &  &  & {\small I, S} & \ldots{} & {\small I, S} & {\small I, S}\tabularnewline
-\cmidrule{2-8} 
-{\small RGB stack\ } &  &  &  &  & {\small I} & \ldots{} & \tabularnewline
-\cmidrule{2-8} 
-{\small HSB stack} &  &  &  &  & {\small I} &  & \ldots{}\tabularnewline
+\textbf{\small 8--bit} & \ldots{} & {\small I, S} & {\small I, S} &  & {\small I, S} &  & \tabularnewline
+\textbf{\small 16--bit} & {\small I, S} & \ldots{} & {\small I, S} &  & {\small I, S} &  & \tabularnewline
+\textbf{\small 32--bit} & {\small I, S} & {\small I, S} & \ldots{} &  & {\small I, S} &  & \tabularnewline
+\textbf{\small 8--bit color} & {\small I, S} &  &  & \ldots{} & {\small I} &  & \tabularnewline
+\textbf{\small RGB color} & {\small I, S} &  &  & {\small I, S} & \ldots{} & {\small I, S} & {\small I, S}\tabularnewline
+\textbf{\small RGB stack\ } &  &  &  &  & {\small I} & \ldots{} & \tabularnewline
+\textbf{\small HSB stack} &  &  &  &  & {\small I} &  & \ldots{}\tabularnewline
 \midrule
 \multicolumn{8}{l}{{\small I:\enskip{}Single images only; \enskip{}S:\enskip{}Stacks}}\tabularnewline
 \end{tabular}
@@ -2035,7 +2035,7 @@ the specified range to the remaining channels is also available.
 \item [{\emph{Apply}}] Applies the current display range mapping function
 to the pixel data. If there is a selection, only pixels within the
 selection are modified. This option currently only works with 8--bit
-images and stacks and with RGB stacks. \textbf{This is the only B\&C
+images, 8--bit stacks and RGB stacks. \textbf{This is the only B\&C
 option that alters the pixel data of non-RGB images}.
 \end{description}
 
@@ -2164,7 +2164,7 @@ is suboptimal. Please note that windowing does not affect image data
 Use this tool to automatically or interactively set lower and upper
 \index{Threshold}threshold values, segmenting grayscale images into
 features of interest and background. Use \userinterface{Analyze\lyxarrow{}\nameref{sub:Measure...[m]}})
-(with \emph{Limit~to~Threshold} in \userinterface{Analyze\lyxarrow{}\nameref{sub:Set-Measurements...}}
+(with \emph{Limitto~Threshold} in \userinterface{Analyze\lyxarrow{}\nameref{sub:Set-Measurements...}}
 checked) to measure the aggregate of the selected features. Use \userinterface{Analyze\lyxarrow{}\nameref{sub:Analyze-Particles...}}
 to measure features individually. Use the \nameref{sub:Wand-Tool}
 to outline a single feature.
@@ -2450,7 +2450,7 @@ RGB images.
 not be disposed.
 \item [{\emph{Ignore\ source\ LUTs}}] If checked, LUTs of source images
 are ignored. In this case, merged channels will adopt the lookup table
-mentioned besides the channel choice, i.e., \emph{red}, \emph{gree},
+mentioned besides the channel choice, i.e., \emph{red}, \emph{gree}n,
 \emph{blue}, \emph{gray},\emph{ cyan}, \emph{magenta}, \emph{yellow}.
 As mentioned, this option is assumed when merging into RGB.\end{description}
 %
@@ -2649,7 +2649,7 @@ it can delete the current channel, z-slice or t-frame.
 \subsubsection{\protect\userinterface{Next Slice {[}>{]}}\label{sub:Next-Slice-[>]}}
 
 Displays the slice that follows the currently displayed slice. Holding
-\mykeystroke{Alt} \mykeystroke{>} will skip nine slices forward.
+\mykeystroke{Alt} \mykeystroke{>} will skip ten slices forward.
 
 
 \calso{\nameref{Arrow-Keys}}
@@ -2658,7 +2658,7 @@ Displays the slice that follows the currently displayed slice. Holding
 \subsubsection{\protect\userinterface{Previous Slice {[}<{]}}\label{sub:Previous-Slice-[>]}}
 
 Displays the slice that precedes the currently displayed slice. Holding
-\mykeystroke{Alt} \mykeystroke{<} will skip nine slices backward.
+\mykeystroke{Alt} \mykeystroke{<} will skip ten slices backward.
 
 
 \calso{\nameref{Arrow-Keys}}
@@ -2843,7 +2843,7 @@ plugins, \userinterface{Edit\lyxarrow{}Options\lyxarrow{}\nameref{sub:DICOM...}}
 
 Projects an image stack along the axis perpendicular to image plane
 (the so-called \emph{z} axis) \cite{C-Reslice-Zproj}. With \index{Z Projection@Z Projection \see{Projection,}}\index{Stacks!Projection@Projection \see{Projection,}}hyperstacks,
-the projection s performed on the active time frame, or for all time
+the projection is performed on the active time frame, or for all time
 points if \emph{All Time Frames} is checked. Five different projection
 types are supported. The preferred projection method is stored in
 the preferences file.
@@ -2935,7 +2935,7 @@ reasonably uniform and unique intensity values and highlight (or make
 invisible) inner structures. Note that you can also use \userinterface{Image\lyxarrow{}Adjust\lyxarrow{}\nameref{sub:Threshold...[T]}}
 to set the transparency bounds.
 \item [{\emph{Opacity}}] Can be used to reveal hidden spatial relationships,
-specially on overlapping objects of different colors and dimensions.
+especially on overlapping objects of different colors and dimensions.
 The (surface) \emph{Opacity} parameter permits the display of weighted
 combinations of nearest-point projection with either of the other
 two methods, often giving the observer the ability to view inner structures
@@ -3034,7 +3034,8 @@ will be removed. Also, note that \nameref{sub:Virtual-Stacks} and
 \nameref{sub:Hyperstacks-Intro} can only have overlay labels.
 \item [{\emph{Use\ text\ tool\ font}}] If checked, labels will be created
 using the typeface and style specified in the \nameref{sub:Fonts...}
-widget.
+widget. If unchecked, labels are typeset using ImageJ's default font:
+sans-serif typeface.
 \item [{\emph{Help}}] Opens \href{http://imagej.nih.gov/ij/docs/menus/image.html\#label}{http://imagej.nih.gov/ij/docs/menus/image.html\#{}label}.
 \end{description}
 
@@ -3592,7 +3593,7 @@ data in the \nameref{sec:Results-Table} into a 32--bit image named
 This submenu contains commands that control how the current image
 is displayed. The \mykeystroke{$+$} and \mykeystroke{$-$} or \mykeystroke{$\uparrow$}
 and \mykeystroke{$\downarrow$} keys are the preferred way to use
-the \nameref{sub:ZoomIn} and \nameref{sub:ZoomIn} commands.\index{Zoom}
+the \nameref{sub:ZoomIn} and \nameref{sub:ZoomOut} commands.\index{Zoom}
 When a selection exists, zooming with the \nameref{Arrow-Keys} requires
 holding down either \mykeystroke{Shift} or \mykeystroke{Ctrl}.
 
@@ -3648,7 +3649,8 @@ the window.
 \subsubsection{\protect\userinterface{Original Scale {[}4{]}}\label{sub:Original-Scale-[4]}}
 
 Displays the image at the magnification used when the image was first
-opened. As a shortcut, double click on the magnifying glass tool.
+opened. As a shortcut, double click on the \nameref{sec:Magnifying-Glass}
+tool.
 
 
 \subsubsection{\protect\userinterface{View 100\% {[}5{]}}\label{sub:View-100=000025-[5]}}
@@ -3715,8 +3717,8 @@ used to create freehand annotations.}
 \begin{minipage}[c][1\totalheight][t]{0.627\columnwidth}%
 Selections are immediately added to the current overlay when pressing
 \mykeystroke{B}. Pressing \mykeystroke{Alt} \mykeystroke{B} will
-display the dialog box depicted on the left in which\emph{ Stroke
-color} and \emph{width} and \emph{Fill} \emph{color} can be set.\medskip{}
+display a dialog box in which\emph{ Stroke color} and \emph{width}
+and \emph{Fill} \emph{color} can be set.\medskip{}
 
 
 Except for text selections, and as explained in \userinterface{Edit\lyxarrow{}Selection\lyxarrow{}\nameref{sub:Properties...}},
@@ -3816,8 +3818,8 @@ be used to create semi-transparent \nameref{sub:Overlay-Intro}.
 \renewcommand{\tabcolsep}{2.9pt}%
 \begin{tabular}{llcccccccccccc}
 \toprule 
-\multirow{2}{*}{{\footnotesize Color}} & \multirow{2}{*}{{\footnotesize RGB triplet}} & \multicolumn{11}{c}{{\footnotesize Opacity value (optional)}} & \multirow{2}{*}{{\footnotesize Hex triplet}}\tabularnewline
- &  & {\footnotesize 0\%~~} & {\footnotesize 10\%~} & {\footnotesize 20\%~} & {\footnotesize 30\%~} & {\footnotesize 40\%~} & {\footnotesize 50\%~} & {\footnotesize 60\%~} & {\footnotesize 70\%~} & {\footnotesize 80\%~} & {\footnotesize 90\%~} & {\footnotesize 100\%} & \tabularnewline
+\multirow{2}{*}{{\footnotesize Color}} & \multirow{2}{*}{{\footnotesize RGB triplet}} & \multicolumn{11}{c}{{\footnotesize Opacity value}} & \multirow{2}{*}{{\footnotesize Hex triplet}}\tabularnewline
+ &  & {\footnotesize 100\%} & {\footnotesize \,90\%\,} & {\footnotesize \,80\%\,} & {\footnotesize \,70\%\,} & {\footnotesize \,60\%\,} & {\footnotesize \,50\%\,} & {\footnotesize \,40\%\,} & {\footnotesize \,30\%\,} & {\footnotesize \,20\%\,} & {\footnotesize \,10\%\,} & {\footnotesize \,\,0\%\,\,} & \tabularnewline
 \midrule
 {\footnotesize Blue } & \multicolumn{1}{l}{{\footnotesize 0,\,0,\,255}} & {\footnotesize \cellcolor{blue}\#FF} & {\footnotesize \cellcolor{blue!90!shadecolor}\#E5} & {\footnotesize \cellcolor{blue!80!shadecolor}\#CC} & {\footnotesize \cellcolor{blue!70!shadecolor}\#B2} & {\footnotesize \cellcolor{blue!60!shadecolor}\#99} & {\footnotesize \cellcolor{blue!50!shadecolor}\#7F} & {\footnotesize \cellcolor{blue!40!shadecolor}\#66} & {\footnotesize \cellcolor{blue!30!shadecolor}\#4C} & {\footnotesize \cellcolor{blue!20!shadecolor}\#33} & {\footnotesize \cellcolor{blue!10!shadecolor}\#19} & {\footnotesize \#00} & {\footnotesize \cellcolor{blue!100!shadecolor}00\,00\,FF}\tabularnewline
 {\footnotesize Cyan} & \multicolumn{1}{l}{{\footnotesize 0,\,255,\,255}} & {\footnotesize \cellcolor{ijcyan}\#FF} & {\footnotesize \cellcolor{ijcyan!90!shadecolor}\#E5} & {\footnotesize \cellcolor{ijcyan!80!shadecolor}\#CC} & {\footnotesize \cellcolor{ijcyan!70!shadecolor}\#B2} & {\footnotesize \cellcolor{ijcyan!60!shadecolor}\#99} & {\footnotesize \cellcolor{ijcyan!50!shadecolor}\#7F} & {\footnotesize \cellcolor{ijcyan!40!shadecolor}\#66} & {\footnotesize \cellcolor{ijcyan!30!shadecolor}\#4C} & {\footnotesize \cellcolor{ijcyan!20!shadecolor}\#33} & {\footnotesize \cellcolor{ijcyan!10!shadecolor}\#19} & {\footnotesize \#00} & {\footnotesize \cellcolor{ijcyan!100!shadecolor}00\,FF\,FF}\tabularnewline
@@ -4109,7 +4111,7 @@ out from the surroundings by more than this value (calibrated units
 for calibrated images). In other words, a threshold is set at the
 maximum value minus noise tolerance and the contiguous area around
 the maximum above the threshold is analyzed. For accepting a maximum,
-this area must not contain any point with a value higher at than the
+this area must not contain any point with a value higher than the
 maximum. Only one maximum within this area is accepted.\index{Noise}\end{description}
 %
 \end{minipage}
@@ -4426,9 +4428,9 @@ foreground, white background} checkbox reflects and sets the global
 
 If a threshold has not been set, \userinterface{\nameref{sub:Make-Binary}}
 will analyze the histogram of the current selection, or of the entire
-image if there is no selection is present and set an automatic threshold
-level to create the binary image (\emph{`Auto-thresholding}' is
-displayed in the Status bar, cf.\ \userinterface{\nameref{sub:Threshold...[T]}}). 
+image if no selection is present, and set an automatic threshold level
+to create the binary image (\emph{`Auto-thresholding}' is displayed
+in the Status bar, cf.\ \userinterface{\nameref{sub:Threshold...[T]}}). 
 
 With stacks the \userinterface{\nameref{sub:Convert-to-Mask}} dialog
 box is displayed. Note that for non-thresholded images and stacks
@@ -4674,8 +4676,8 @@ separating or cutting apart particles that touch. It first calculates
 the \index{Euclidian distance map}Euclidian distance map (EDM) and
 finds the ultimate eroded points (UEPs). It then dilates each of the
 UEPs (the peaks or local maxima of the EDM) as far as possible --
-either until the edge of the particle is reached, or the edge of the
-region of another (growing) UEP. Watershed segmentation works best
+either until the edge of the particle is reached, or the edge touches
+a region of another (growing) UEP. Watershed segmentation works best
 for smooth convex objects that don't overlap too much.
 
 \index{Debug}Enable debugging in \userinterface{Edit\lyxarrow{}Options\lyxarrow{}\nameref{sub:Misc...}}
@@ -4712,9 +4714,9 @@ The output type (\emph{Overwrite}, \emph{8--bit}, \emph{16--bit} or
 \emph{32--bit}) of this command can be set in the \userinterface{Process\lyxarrow{}Binary\lyxarrow{}\nameref{sub:BinaryOptions...}}
 dialog box. In the output, the value inside the Voronoi cells is zero;
 the pixel values of the dividing lines between the cells are equal
-to the distance to the two nearest particles. This is similar to a
-medial axis transform of the background, but there are no lines in
-inner holes of particles. 
+to the distance between the two nearest particles. This is similar
+to a medial axis transform of the background, but there are no lines
+in inner holes of particles. 
 
 
 \calso{\userinterface{\nameref{sub:Find-Maxima}} (\userinterface{Segmented Particles}
@@ -4755,26 +4757,13 @@ which erodes from the edges unless this checkbox is selected.\end{description}
 %
 \end{minipage}
 \begin{description}
-\item [{\emph{Black\ background}}] If checked, binary images will be created
-without using an inverted LUT (cf.\ \ref{infobox:InvertedLutMask}
-\nameref{infobox:InvertedLutMask})\index{Black background} and commands
-in the \userinterface{Process\lyxarrow{}\nameref{sub:Binary}} submenu
-will assume that images contain white objects on a black background
-(\emph{see} \ref{infobox:blackBackground} \nameref{infobox:blackBackground}).
-Macros can set this option using \code{setOption(\textquotedbl{}BlackBackground\textquotedbl{}, true);}
-(\emph{see} \ref{infobox:blackBackground} \nameref{infobox:blackBackground}
-and \nameref{sec:Settings-and-Preferences}).
-\item [{\emph{Pad}\ \emph{edges}\ \emph{when}\ \emph{eroding}}] If checked,
-\userinterface{Binary\lyxarrow{}\nameref{sub:Erode}} does not erode
-from the edges of the image. This setting also affects \userinterface{Binary\lyxarrow{}\nameref{sub:Close--}},
-which erodes from the edges unless this checkbox is selected.
 \item [{\emph{EDM\ output}}] Determines the output type for the \userinterface{Binary\lyxarrow{}\nameref{sub:Distance-Map}},
 \userinterface{\nameref{sub:Ultimate-Points}} and \userinterface{\nameref{sub:Voronoi}}
 commands. Set it to \emph{`Overwrite}' for 8--bit output that overwrites
 the input image; `\emph{8--bit}', `\emph{16--bit}' or \emph{`32--bit}'
 for separate output images. 32--bit output has floating point (subpixel)
 distance resolution.
-\item [{\emph{Do}}] This drop-down menu allows to test the chosen settings
+\item [{\emph{Do}}] This drop-down menu allows one to test the chosen settings
 by previewing each binary operation (\userinterface{\nameref{sub:Erode}},
 \userinterface{\nameref{sub:Dilate}}, \userinterface{\nameref{sub:Open}},
 \userinterface{\nameref{sub:Close--}}, \userinterface{\nameref{sub:Outline}},
@@ -4925,7 +4914,7 @@ are replaced by the constant.\index{Max}
 \end{minipage}%
 \begin{minipage}[c][1\totalheight][t]{0.65\columnwidth}%
 Applies the function $f(p)=(\nicefrac{p}{255}){}^{\gamma}\times255$
-to each pixel ($p$) in the image or selection, where $0.1\leq\gamma\geq5.0$.
+to each pixel ($p$) in the image or selection, where $0.1\leq\gamma\leq5.0$.
 For RGB images, this function is applied to all three color channels.
 For 16--bit images, the image min and max are used for scaling instead
 of 255. 
@@ -6115,9 +6104,9 @@ command makes an area selection convex.
 points along the selection boundary, also known as \index{Feret}\index{Caliper length@Caliper length  \see{Feret,}}maximum
 caliper. Uses the heading \textbf{Feret}. The angle (0--180 degrees)
 of the Feret's diameter is displayed as \textbf{FeretAngle}, as well
-as the minimum caliper diameter (\textbf{MinFeret}). The length of
-the object's projection in the X (\textbf{FeretX}) and Y (\textbf{FeretY})
-direction is also displayed (\emph{see also} \href{http://imagej.nih.gov/ij/macros/FeretsDiameter.txt}{Feret's Diameter}
+as the minimum caliper diameter (\textbf{MinFeret}). The starting
+coordinates of the Feret diameter (\textbf{FeretX} and \textbf{FeretY})
+are also displayed (\emph{see also} \href{http://imagej.nih.gov/ij/macros/FeretsDiameter.txt}{Feret's Diameter}
 macro and \href{http://imagejdocu.tudor.lu/doku.php?id=plugin:analysis:geodesic_distances:start}{Chamfer distances and Geodesic diameters}
 plugin).
 \item [{\emph{Integrated\ density}}] The sum of the values of the pixels
@@ -6228,7 +6217,7 @@ used for all opened images during the current session instead of just
 the active image, \emph{see} \ref{infobox:GlobalCal} \nameref{infobox:GlobalCal}.
 
 \emph{Click to Remove Scale} resets \emph{Distance in Pixels} field
-and \emph{Know Distance} to zero and the \emph{Unit of Length} to
+and \emph{Known Distance} to zero and the \emph{Unit of Length} to
 `pixel'.
 
 
@@ -6244,31 +6233,37 @@ plugin}
 \index{Optical density@Optical density  \see{Calibration (Optical density),}}\index{Calibration!Optical density}Use
 this dialog box to calibrate an image to a set of density standards,
 for example radioactive isotope standards or a calibrated optical
-density step tablet. The calibration procedure is done in three steps: 
+density step tablet. Note that, in general, calibrations cannot be
+applied to 32--bit images (the pixel intensity unit of 32--bit images
+can still be changed, nevertheless).
+
+The calibration procedure is done in three steps: 
 \begin{enumerate}
 \item Use \userinterface{Analyze\lyxarrow{}\nameref{sub:Clear-Results}}
 to reset the measurement counter, use one of the \nameref{sec:Area-selection-tools}
 and \userinterface{Analyze\lyxarrow{}\nameref{sub:Measure...[m]}}
 to record the mean gray value of each of the standards. 
 \item When finished making the measurements, select \userinterface{Analyze\lyxarrow{}\nameref{sub:Calibrate...}}
-to display the \userinterface{Calibrate\ldots{}} dialog box. To calibrate
+to display the \emph{Calibrate\ldots{}}~dialog box. To calibrate
 the image, enter the known standard values in the right column. The
 left column will be already populated with the measured mean gray
 values. Select a curve fitting method from the popup menu, enter the
 unit of measurement, and click `OK'. If \emph{Show plot} is checked,
 ImageJ will then display the calibration function on a separate window.
 Note that both columns must contain the same number of values.
-\item If the calibration function is not satisfactory, bring up the \userinterface{\nameref{sub:Calibrate...}}
-dialog box again and select a different curve fitting method.
+\item If the calibration function is not satisfactory, bring up the \emph{Calibrate\ldots{}}~dialog
+box again and select a different curve fitting method.
 \end{enumerate}
 In addition to the functions that can be chosen from the drop-down
 menu (described in \userinterface{\nameref{tab:CurveFitterFunctions}})
 two other functions are available that do not require any measurement
 of OD standards:
 \begin{description}
-\item [{\emph{Uncalibrated\ OD}}] Causes ImageJ to convert gray values
-from 8--bit images to uncalibrated optical density values using the
-function~ $\mbox{Unc.\,\ OD}=\log_{10}(\nicefrac{255}{\mbox{Pixel value}})$.
+\item [{\emph{Uncalibrated\ OD}}] As mentioned in \userinterface{Gels\lyxarrow{}\nameref{misc:GelAnalyzerOptions}},
+causes ImageJ to convert gray values from 8--bit images to uncalibrated
+\href{http://en.wikipedia.org/wiki/Absorbance}{optical density} values
+using the function~ $\mbox{Unc.\,\ OD}=\log_{10}(\nicefrac{255}{\mbox{Pixel value}})$.
+This conversion can only be performed on 8-bit images.
 \item [{\emph{Pixel\ Inverter}}] Linear function defined by~ $\mbox{Inverted\,\ pixel}=\mbox{\emph{Bit-depth}}-1-\mbox{Pixel value}$,
 with \emph{Bit-depth} being 255 for 8--bit images or 65535 for 16--bit
 images.
@@ -6281,7 +6276,7 @@ images.
 
 \calso{\href{http://imagej.nih.gov/ij/docs/examples/calibration/}{Optical Density Calibration}
 tutorial, \nameref{infobox:GlobalCal}, \userinterface{\nameref{sub:Calibration-Bar...}},
-\userinterface{\nameref{sub:Curve-Fitting...}}}
+\userinterface{\nameref{sub:Curve-Fitting...}}, \nameref{sec:Image-Types}}
 
 \begin{infobox}
 \caption{\label{infobox:GlobalCal}Global Calibrations}
@@ -6338,10 +6333,6 @@ and displayed, as well as the \emph{Mean}, standard deviation (\emph{StdDev}),
 minimum (\emph{Min}), maximum (\emph{Max}) and modal (\emph{Mode})
 gray value.
 
-Use the \emph{List} or \emph{Copy} buttons to save the \index{Histogram}histogram
-data. Click on \emph{Log} to display a log-scaled version of the histogram
-(overlaid in gray).
-
 \begin{minipage}[c][1\totalheight][t]{0.537\columnwidth}%
 \includegraphics[scale=0.55]{images/Histogram}%
 \end{minipage}%
@@ -6361,26 +6352,33 @@ However, single-channel RGB histograms can be obtained by repetitively
 clicking on the \emph{RGB} button.%
 \end{minipage}
 
+\begin{wrapfigure}[9]{l}{0.24\columnwidth}%
+\vspace*{-12pt}
+\includegraphics[scale=0.55]{images/HistogramDialog}\end{wrapfigure}%
+Use the \emph{List} or \emph{Copy} buttons to save the \index{Histogram}histogram
+data. Click on \emph{Log} to display a log-scaled version of the histogram
+(overlaid in gray).
+
 With 16--bit images, the range of gray values between the \emph{Min}
 and \emph{Max} values is divided into 256 bins. With 32--bit images,
-the number of bins is specified in the depicted dialog box.
-
-\begin{wrapfigure}[9]{l}{0.24\columnwidth}%
-\includegraphics[scale=0.55]{images/HistogramDialog}\end{wrapfigure}%
-With any image type, an options dialog can be called with \mykeystroke{Alt}
+the number of bins is specified in the depicted dialog box. With any
+image type, an options dialog can be called with \mykeystroke{Alt}
 \mykeystroke{H} or by holding \mykeystroke{Alt} while clicking on
 \userinterface{Analyze\lyxarrow{}\nameref{sub:Histogram}}.
 \begin{description}
 \item [{\emph{Bins}}] Specifies the number of bins.
+\end{description}
+\clearpage{}
+\begin{description}
 \item [{\emph{Use\ min/max}}] If checked, the X-axis range is determined
 by the minimum and maximum values in the image or selection. If unchecked,
-\emph{X Min} and\emph{ X Max} values can be or specified to fix the
-X-axis range. 
+\emph{X Min} and\emph{ X Max} values can be specified to fix the X-axis
+range. 
 \item [{\emph{Y\ Max}}] Fixes the Y-axis range. Type \emph{`}Auto' to
 have the range determined by the largest bin count.
 \end{description}
 The \code{getHistogram()} and \code{Plot.getValues()} macro functions
-can be used to get the `value' and `Count' data displayed when
+can be used to get the `Value' and `Count' data displayed when
 you click the \emph{List} button (cf.\ \eqref{lis:getHistogram}
 \nameref{lis:getHistogram}).
 
@@ -6409,7 +6407,7 @@ you click the \emph{List} button (cf.\ \eqref{lis:getHistogram}
 \begin{minipage}[c][1\totalheight][t]{0.409\columnwidth}%
 \index{Plot profile}Displays a two-dimensional graph of the intensities
 of pixels along a line or rectangular selection. The X-axis represents
-distance along the line and the Y-axis is the pixel intensity. \emph{NaNs}
+distance along the line and the Y-axis is the pixel intensity. \emph{NaN}
 values in 32--bit images (\emph{see} \nameref{sec:Image-Types}) are
 ignored.
 
@@ -6486,14 +6484,68 @@ of the source image or smoothing it.
 plugin (it works with all image types and viewing angle, perspective,
 scale, lighting and smoothing can be interactively adjusted), \href{http://imagej.nih.gov/ij/plugins/color-inspector.html}{3D Color Inspector/Color Histogram}}
 
+\begin{infobox}[H]
+\caption{\label{infobox:Densitometry}Using Scanners in Densitometry}
+
+
+\index{Gel analysis@1--D Gel analysis}Electrophoretic gels such as
+Western blots need frequently to be quantified in order to translate
+biochemical results into statistical values (\emph{see} \nameref{sub:Gels}).
+Independently of the measurement method, you should be familiar with
+the \href{http://en.wikipedia.org/wiki/Beer\%E2\%80\%93Lambert_law }{Beer--Lambert law}\index{Bee--Lambert law},
+so that you are aware that the optical density (\href{http://en.wikipedia.org/wiki/Absorbance}{absorbance})
+of the staining to be measured must be proportional to the concentration
+of the probed material. An obvious corollary of the Beer--Lambert
+law is that saturated stains (or overexposed films) cannot be quantified.\vspace*{\medskipamount}
+
+
+Generally speaking, office scanners are not suitable for densitometric
+analysis. That being said, and in the absence of better alternatives,
+they can be used to digitize gels and X-ray films if the following
+guidelines are respected:
+\begin{description}
+\item [{Samples~must~be~scanned~in~transmission~mode}] Most flatbed
+scanners have the light source and detector located on the same side
+of the instrument (reflection mode). Under these conditions, light
+interacts with semi-transparent objects in a complex manner with reflected
+light re-passing through the object on its way to the detector. In
+addition, thick samples (such as Coomassie-stained gels) are imaged
+from the surface under reflection light.\\
+Scanners can only serve as densitometers if the light source and detector
+are on opposite sides of the instrument (transmission mode). This
+is critical for quantitation of absorbances and requires an adapter
+for transparencies or negatives to be mounted or built-in on the scanner.
+\item [{The~scanner~must~offer~a~linear~intensity~response}] The
+response characteristics of most scanner detectors is unknown, therefore
+the film/gel should always be scanned next to a photographic gray
+scale image of known optical intensity (optical tablet or step wedge,
+\emph{see} \href{http://imagej.nih.gov/ij/docs/examples/calibration/}{optical density calibration tutorial}).
+Autogain must be disabled during digitization to ensure generally
+linear intensity responses.
+\end{description}
+In addition, images should also be scanned with sufficiently high
+spatial and dynamic (bit-depth) resolutions (the optical---not interpolated---resolution
+of a scanner can also be measured: e.g., high contrast patterns 84.6\,$\micro$m
+($\nicefrac{1}{300}$\,inch) apart should be distinguishable on images
+scanned at 300\,dpi). Note that, in general, \emph{a posteriori}
+background corrections on scanned images should also be avoided.\vspace*{\medskipamount}
+
+
+All these issues have been discussed in detail in Gassmann et al.
+``Quantifying Western blots: pitfalls of densitometry'' \cite{Gassmann:2009p20997}
+(N.B.: The paper benchmarks a legacy version of \userinterface{Process\lyxarrow{}\nameref{sub:Subtract-Background...}}).
+\end{infobox}
+
+
 
 \subsection[\protect\userinterface{Gels\lyxarrow{}}]{\protect\userinterface{Gels\lyxarrow{}}\label{sub:Gels}\improvement{}}
 
 Use the commands in this submenu to analyze one-dimensional electrophoretic
-gels. \index{Gel analysis@1--D Gel analysis}These commands use a
-simple graphical method that involves generating lane profile plots,
-drawing lines to enclose peaks of interest, and then measuring peak
-areas (i.e., \index{Area under the curve@Area under the curve \see{Definite integral,}}definite
+gels. Electrophoretic densitometry is discussed in more detail in
+\ref{infobox:Densitometry} \nameref{infobox:Densitometry}. \index{Gel analysis@1--D Gel analysis}These
+commands use a simple graphical method that involves generating lane
+profile plots, drawing lines to enclose peaks of interest, and then
+measuring peak areas (i.e., \index{Area under the curve@Area under the curve \see{Definite integral,}}definite
 integrals) using the \nameref{sub:Wand-Tool...}. Note that this technique
 cannot be used to compare bands on different gels unless gels are
 calibrated to known standards.
@@ -6521,24 +6573,27 @@ has not yet been run an error message is displayed: ``\emph{The data
 needed to re-plot the lanes is not available}''.
 \item [{Reset}] Resets the analysis.
 \item [{Label\ Peaks}] Uses the area measurements obtained with the \nameref{sub:Wand-Tool}
-to label lane peaks (\emph{see} \userinterface{Gel\ Analyzer\ Options\ldots{}}).
-\item [{Gel\ Analyzer\ Options\ldots{}}] Use this dialog to control
-the behavior of the Gel Analyzer.
+to label lane peaks (\emph{see} \userinterface{Gel\ Analyzer\ Options\ldots{}}).\phantomsection{}
+\item [{\label{misc:GelAnalyzerOptions}Gel\ Analyzer\ Options\ldots{}}] Use
+this dialog to control the behavior of the gel analyzer.
 
 \begin{description}
 \item [{\emph{Vertical\,/\,Horizontal\ scale\ factor}}] Specifies the
 scale factor at which the lane profile plots are displayed. 
 \item [{\emph{Uncalibrated\ OD}}] If checked, ImageJ will convert gray
-values to uncalibrated optical density values using the function:
-$\mbox{Unc.\,\ OD}=\log_{10}(\nicefrac{255}{pixel\, value})$. Note
-that images can be calibrated to, e.g., a calibrated optical density
-step tablet using the \userinterface{Analyze\lyxarrow{}\nameref{sub:Calibrate...}}
-command.
+values to uncalibrated \href{http://en.wikipedia.org/wiki/Absorbance}{optical density}
+values. As explained in \userinterface{Analyze\lyxarrow{}\nameref{sub:Calibrate...}},
+ImageJ converts pixel intensities into optical density using the function:
+$\mbox{Unc.\,\ OD}=\log_{10}(\nicefrac{255}{pixel\, value})$. As
+mentioned earlier, the conversion can only be performed on 8--bit
+images. Thus, when dealing with higher bit-depth images (see \nameref{sec:Image-Types}),
+the gel analyzer works on a 8--bit copy of the gel (kept hidden from
+the user) when using this option. 
 \item [{\emph{Label}\ \emph{With}\ \emph{Percentages}}] If checked, the
-Label\ Peaks command will print to the Results table the \emph{peak
-percentage} and use it to label the plot. The percentage value is
-obtained by dividing the area of each peak by the sum of all measured
-peaks from all lanes.
+\userinterface{Label Peaks} command will print to the \nameref{sec:Results-Table}
+table the \emph{peak percentage} and use it to label the plot. The
+percentage value is obtained by dividing the area of each peak by
+the sum of all measured peaks from all lanes.
 \item [{\emph{Invert}\ \emph{Peaks}}] If checked, peaks will be inverted,
 i.e, bands darker than background will have positive peaks, bands
 lighter than background will have negative peaks. This setting does
@@ -6693,16 +6748,19 @@ scatter plots and histograms}
 -- ImageJ\,1.46g.}}
 \end{figure}
 ImageJ's CurveFitter provides a simple tool for fitting various functions
-to X- and Y-data, using an improved multithreaded \index{Simplex algorithm@Simplex algorithm  \see{Curve fitting,}}\href{http://en.wikipedia.org/wiki/Simplex}{simplex}
-algorithm {\small \cite{C-CurveFitter}}. This strategy (an \href{http://en.wikipedia.org/wiki/Iterative_method}{iterative method})
+to X- and Y-data, using an improved multithreaded \index{Simplex@Simplex  \see{Curve fitting,}}\index{Nelder-Mead@Nelder-Mead  \see{Curve fitting,}}simplex
+\href{http://en.wikipedia.org/wiki/Nelder-Mead_method}{algorithm}
+{\small \cite{C-CurveFitter}}. This strategy (an \href{http://en.wikipedia.org/wiki/Iterative_method}{iterative method})
 is a kind of ``trial and error'' procedure in which the parameters
 of the fitting model are adjusted in a systematic way until the equation
 fits the data as close as required. It proceeds by: 1) Making first
 guesses of all the non-linear parameters; 2) Computing the model,
 comparing it to the data set and calculating a fitting error; 3) If
 the fitting error is large, the CurveFitter will systematically change
-parameters and return to step 3). The loop stops when the fitting
-accuracy is met (which in difficult cases may never happen). 
+parameters and return to step 2). The loop stops when the fitting
+accuracy is met, which in difficult cases may never happen. In the
+latter case, the procedure terminates after an imposed number of iterations
+or restarts. 
 
 The typical usage of this command is listed below:\index{Curve fitting}\index{Fit!Curve@Curve  \see{Curve fitting,}}\index{Linear regression@Linear regression  \see{Curve fitting,}}\index{Polynomial regression@Polynomial regression  \see{Curve fitting,}}
 \begin{enumerate}
@@ -6712,7 +6770,10 @@ Values may be separated by spaces, tabs, commas or semicolons.
 \item The function to be fit is selected from the drop-down menu. Several
 built-in functions are available (\emph{see} \nameref{tab:CurveFitterFunctions}).
 User defined functions with up to six parameters are also possible
-by choosing \emph{{*}User-defined{*}.}
+by choosing \emph{{*}User-defined{*}}. Note that elimination of parameters
+by linear regression does not take place for user-defined functions.
+As a consequence, the performance of custom functions does not fully
+match that of built-in functions.
 \item Once the \emph{Fit} button is pressed, ImageJ displays a graph of
 the data with the fitted curve as depicted in \nameref{fig:CurveFitter}.
 If \emph{Show Settings }is checked, detailed information about the
@@ -6725,11 +6786,13 @@ namely:
 in which the CurveFitter will try to improve upon the parameter values
 to get the best fit. Usually the algorithm reaches optimal convergence
 before reaching the default value.
-\item [{Number\ of\ restarts}] The number of re-initializations the algorithm
-should perform from the initial best solution in case it gets ``stuck''
-in a local minimum, i.e., when the algorithm fails to converge at
-an optimum solution. By default, the simplex is restarted twice. There
-is no limit for the number of restarts, apart form the maximum number
+\item [{Number\ of\ restarts}] To ensure that the result is trustworthy
+(i.e., that it did that it did not get ``stuck'' or find a local
+minimum), CurveFitter tries at least twice to find the minimum, with
+different starting points. If the two results are not the same, \emph{Number
+of restarts} determines how often it may start two additional runs,
+until the best two results agree within the error tolerance. There
+is no limit for the number of restarts, apart from the maximum number
 of iterations.
 \end{description}
 \item Click \emph{Apply} to create a 32--bit copy (\emph{see} \nameref{sec:Image-Types})
@@ -6763,21 +6826,28 @@ to yield optimal convergence.\selectlanguage{english}%
 {\small Straight line} & {\small $y=a+bx$} & {\small cf.\ Pixel Inverter (\userinterface{{\small Analyze\lyxarrow{}\nameref{sub:Calibrate...}}})}\tabularnewline
 \addlinespace
 \addlinespace
-{\small 2$^{\text{nd}}$--8$^{\text{th}}$ degree polynomial} & {\small $y=a+bx+cx^{2}+\ldots+ix^{8}$} & {\small $[x_{\textup{Min}},x_{\textup{Max}}]$ should include $0$}{\small \par}
+{\small 2$^{\text{nd}}$--8$^{\text{th}}$ degree polynomial} & {\small $y=a+bx+cx^{2}+\ldots+ix^{8}$} & {\small The range of $x$ values should not be too far from $0$,
+especially for higher-order polynomials}{\small \par}
 
 {\small 4\textsuperscript{th}: should fulfill $|x_{\textup{Mean}}|<2\times(x_{\textup{Max}}-x_{\textup{Min}})$}{\small \par}
 
+{\small 5\textsuperscript{th}: should fulfill $|x_{\textup{Mean}}|<(x_{\textup{Max}}-x_{\textup{Min}})/2$}{\small \par}
+
 {\small 7\textsuperscript{th} \& 8\textsuperscript{th}: should fulfill
-$x_{\textup{Min}}+(x_{\textup{Max}}-x_{\textup{Min}})/2\approx0$ }\tabularnewline
+$|x_{\textup{Mean}}|\ll x_{\textup{Max}}-x_{\textup{Min}}$}\tabularnewline
 \addlinespace
 \addlinespace
-{\small Power} & {\small $y=a\times x^{b}$} & \multirow{2}{0.496\columnwidth}{{\small Optionally, fit can be performed without linear regression
-during minimization}}\tabularnewline
+{\small Power$^{\dagger}$} & {\small $y=a\times x^{b}$} & \multirow{2}{0.496\columnwidth}{{\small $^{\dagger}$Optionally, fit can be performed without linear
+regression during minimization. Most curve-fitting programs such as
+Microsoft$\textsuperscript{\textregistered}$ Excel$\textsuperscript{\textregistered}$
+use regression. Fitting without regression assumes equal weight for
+all data points and is insensitive to zero or negative data}}\tabularnewline
 \addlinespace
+{\small Exponential$^{\dagger}$} & {\small $y=a\times e^{bx}$} & \tabularnewline
 \addlinespace
-{\small Exponential} & {\small $y=a\times e^{bx}$} & \tabularnewline
 \addlinespace
 {\small Exponential with offset} & {\small $y=a\times e^{-(bx)}+c$} & \tabularnewline
+\addlinespace
 \addlinespace
 {\small Exponential recovery} & {\small $y=a\times(1-e^{(-bx)})+c$} & {\small cf.\ \href{http://www.macbiophotonics.ca/imagej/intensity_vs_time_ana.htm}{FRAP\_{}Profiler}
 plugin}\tabularnewline
@@ -6787,15 +6857,16 @@ plugin}\tabularnewline
  & {\small $y=a+b\times\ln(x-c)$} & \tabularnewline
 \addlinespace
 \addlinespace
-{\small Rodboard} & {\small $y=\frac{d+(a-d)}{1+(\frac{x}{c})^{b}}$} & \multirow{3}{0.496\columnwidth}{{\small In versions prior to IJ\,1.46f,}\emph{\small{} Rodbard (NIH
-Image)}{\small{} actually fits $x=Rodbard(y)$, with the graph having
-$x$ and $y$ points exchanged \cite{C-CurveFitter}}}\tabularnewline
+{\small Rodbard} & {\small $y=\frac{d+(a-d)}{1+(\frac{x}{c})^{b}}$} & \multirow{3}{0.496\columnwidth}{{\small \cite{C-CurveFitter}, }\emph{\small see}{\small{} DeLean A,
+Munson PJ, Rodbard D. Simultaneous analysis of families of sigmoidal
+curves: application to bioassay, radioligand assay, and physiological
+dose-response curves. Am J Physiol. 1978 Aug;235(2):E97--102 {[}\href{http://www.ncbi.nlm.nih.gov/pubmed/686171}{PMID: 686171}{]}}}\tabularnewline
 \addlinespace
-{\small Rodboard}{\small \par}
+{\small Rodbard}{\small \par}
 
 {\small (NIH Image)} & {\small $x=\frac{d+(a-d)}{1+(\frac{y}{c})^{b}}$} & \tabularnewline
 \addlinespace
-{\small Inverse Rodboard} & $y=c\times(\frac{x-a}{d-x})^{\nicefrac{1}{b}}$ & \tabularnewline
+{\small Inverse Rodbard} & $y=c\times(\frac{x-a}{d-x})^{\nicefrac{1}{b}}$ & \tabularnewline
 \addlinespace
 \addlinespace
 {\small Gaussian} & {\small $y=a+(b-a)\times e^{-\frac{(x-c)^{2}}{2d^{2}}}$} & {\small \cite{C-CurveFitter}}\tabularnewline
@@ -6862,8 +6933,8 @@ all ROIs on the list. Use \userinterface{Analyze\lyxarrow{}\nameref{sub:Set-Meas
 to specify the measuring parameters. 
 \item [{\emph{Deselect}}] \improvement{}Deselects any selected ROIs on
 the list. As mentioned in \ref{infobox:ROIManager} \nameref{infobox:ROIManager},
-\emph{Deselect} works as a \emph{Select~All }button, instructing
-commands to consider all ROIs in the list.\phantomsection{}
+when items are deselected subsequent ROI Manager commands are applied
+to all ROIs.\phantomsection{}
 \item [{\emph{\label{misc:RM-Properties}Properties\ldots{}}}] Similarly
 to \userinterface{Edit\lyxarrow{}Selection\lyxarrow{}\nameref{sub:Properties...}},
 opens a dialog box in which is possible to assign a contour color
@@ -6911,7 +6982,13 @@ to \userinterface{Image\lyxarrow{}Overlay\lyxarrow{}\nameref{sub:Labels...}}
 \item [{\emph{More}{\scriptsize $\gg$}}] \improvement{}Displays a drop-down
 menu with several additional commands (this menu is also available
 when right-clicking on the ROI Manager's list area):
-
+\end{description}
+\begin{minipage}[c][1\totalheight][t]{0.252\columnwidth}%
+\begin{description}
+\item [{\includegraphics[scale=0.55]{images/ROIManagerMenu}}]~\end{description}
+%
+\end{minipage}%
+\begin{minipage}[c][1\totalheight][t]{0.748\columnwidth}%
 \begin{description}
 \item [{\emph{Open\ldots{}}}] Opens a \filenameref{.roi} file and adds
 it to the list or opens a \index{ZIP}ZIP archive (\filenameref{.zip}
@@ -6924,18 +7001,12 @@ in a ZIP archive.
 \item [{\emph{AND}}] Uses the conjunction operator on the selected ROIs
 to create a composite selection. All ROIs are considered if none is
 selected.\index{Logical operations!ROIs}\index{AND@AND  \see{Logical operations,}}
-\end{description}
-\end{description}
-\begin{minipage}[c][1\totalheight][t]{0.252\columnwidth}%
-\begin{description}
-\item [{\includegraphics[scale=0.55]{images/ROIManagerMenu}}]~\end{description}
-%
-\end{minipage}%
-\begin{minipage}[c][1\totalheight][t]{0.748\columnwidth}%
-\begin{description}
 \item [{\emph{OR\ (Combine)}}] Uses the union operator on the selected
 ROIs to create a composite selection. Combines all ROIs if none is
-selected.\index{Logical operations!ROIs}\index{OR@OR  \see{Logical operations,}}
+selected.\index{Logical operations!ROIs}\index{OR@OR  \see{Logical operations,}}\end{description}
+%
+\end{minipage}
+\begin{description}
 \item [{\emph{XOR}}] Uses the exclusive or operator on the selected ROIs
 to create a composite selection \cite{C-RM-XOR}. All ROIs are considered
 if none is selected.\index{Logical operations!ROIs}\index{XOR@XOR  \see{Logical operations,}}
@@ -6946,10 +7017,8 @@ analyzer to the ROI Manager. Requires that \emph{Record~Starts} be
 checked in the \userinterface{Analyze\lyxarrow{}\nameref{sub:Analyze-Particles...}}
 dialog box. Particle analyzer objects can also be added to the ROI
 Manager by checking \emph{Add}\ \emph{to}\ \emph{Manager} in the
-Analyze Particles dialog box.\end{description}
-%
-\end{minipage}
-
+Analyze Particles dialog box.
+\end{description}
 \begin{minipage}[c][1\totalheight][t]{0.347\columnwidth}%
 \begin{description}
 \item [{\includegraphics[scale=0.55]{images/ROIManagerMultiMeasure}}]~\end{description}
@@ -6991,6 +7060,11 @@ stack slices (\emph{see} \nameref{fig:The-ROI-Manager} illustration).
 \item [{\emph{Labels\ldots{}}}] Alias for \userinterface{Image\lyxarrow{}Overlay\lyxarrow{}\nameref{sub:Labels...}},
 which allow the customization of selection labels when \emph{Show
 All} is active.
+\item [{\emph{List}}] \feature{New command: ROI Manager's \emph{Print List}}Prints
+a table detailing the properties of the ROIs stored in the Manager,
+including: \emph{Index} (cf. \code{\href{http://imagej.nih.gov/ij/developer/macro/functions.html\#roiManager}{roiManager("index")}}
+macro function), \emph{Name}, \emph{XY} coordinates of ROI center
+(pixels), and stroke \emph{Color}.
 \begin{infobox}[h]
 \caption{\label{infobox:ROIManager}Selecting ROIs in the ROI Manager}
 
@@ -7148,7 +7222,7 @@ is synchronized across the synchronized window set\emph{.}
 \item [{\emph{Sync}\ \emph{t-frames}}] If checked, the frame slider (t)
 is synchronized across the synchronized window set\emph{.}
 \item [{\emph{Imag}e\ \emph{scaling}}] If checked, positions to different
-windows is translated via offscreen coordinates, providing correct
+windows are translated via offscreen coordinates, providing correct
 registration at different zoom levels.
 \end{description}
 
@@ -7463,10 +7537,10 @@ them, and the amount of memory used will be the same as when you started.
 
 \subsubsection{\protect\userinterface{Capture Screen {[}g{]}}\label{sub:Capture-Screen-[g]}}
 
-Copies the screen to an RGB image and displays that image a new window.\index{Screenshot}
-Holding  \mykeystroke{Ctrl} \mykeystroke{Shift} \mykeystroke{G}
-will capture the screen while a modal dialog box is active if the
-dialog is based on ImageJ's GenericDialog class. 
+Copies the screen to an RGB image and displays that image in a new
+window.\index{Screenshot} Holding  \mykeystroke{Ctrl} \mykeystroke{Shift}
+\mykeystroke{G} will capture the screen while a modal dialog box
+is active if the dialog is based on ImageJ's GenericDialog class. 
 
 
 \calso{\nameref{sub:Capture-Image}, \userinterface{\nameref{sub:Flatten-[F]}}}
@@ -7593,7 +7667,11 @@ plugin.
 \subsubsection[\protect\userinterface{Plugin Tool}]{\protect\userinterface{Plugin Tool}\label{sub:NewPluginTool}\feature{}}
 
 Opens a prototype plugin tool, demonstrating \filenameref{\href{http://imagej.nih.gov/ij/source/ij/plugin/tool/PlugInTool.java}{ij.plugin.tool.PlugInTool}}
-\cite{C-PluginTool}.
+\cite{C-PluginTool}. A plugin tool is a Java plugin that installs
+in the ImageJ toolbar to interact with the image canvas (\emph{see}
+\nameref{sec:CustomToolsAndToolsets}). Plugin tools with names ending
+in \filenameref{Tool} are listed on the \nameref{sec:ToolSwitcher}
+if placed in the \dirnameref{ImageJ/plugins/Tools/} directory.
 
 
 \calso{\href{http://imagej.nih.gov/ij/plugins/index.html\#tools}{Plugin Tools }}
@@ -7647,8 +7725,8 @@ release notes.
 The \userinterface{Edit\lyxarrow{}Options\lyxarrow{}\nameref{sub:Compiler...}}
 command can be used to configure the javac compiler. Since ImageJ\,1.44c
 and later, \userinterface{\nameref{sub:Compile-and-Run...}} adds
-the Bio-Formats plugin (\filenameref{loci\_tools.jar}) to the Java
-compiler's classpath.
+the \href{http://loci.wisc.edu/software/bio-formats}{Bio-Formats}
+plugin (\filenameref{loci\_tools.jar}) to the Java compiler's classpath.
 
 \clearpage{}
 
@@ -7761,7 +7839,7 @@ an indispensable guide to the built in functions that can be called
 from the ImageJ macro language.
 
 
-\calso{\nameref{sub:Macros-ExtendingIJ}}
+\calso{\nameref{sub:Macros-ExtendingIJ}, \nameref{FunctionFinder[F]}}
 
 
 \subsection{\protect\userinterface{Update ImageJ\ldots{}}\label{sub:Update-ImageJ...}}

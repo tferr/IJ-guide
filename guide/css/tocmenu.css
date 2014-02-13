@@ -19,7 +19,7 @@
 #search,#download{padding:0 0 0.4em 0;}
 #searchform input[type="text"]{width:144px;font-size:0.8em;font-style:italic;padding:6px 6px 6px 19px;background:#eee;border:1px solid #aaa;border-radius:6px;-moz-border-radius:6px;-webkit-border-radius:6px;}
 #searchform input[type="submit"]{margin-left:-169px;background:url(../icons/search.png) no-repeat;width:13px;border:0;cursor:pointer;}
-body{font:small sans-serif;font-size:0.8em;background:#ffffff;color:black;margin-top:8px;margin-right:2px;margin-bottom:2px;margin-left:8px;padding:0;line-height:1.4em;}
+body{font:small sans-serif;font-size:0.8em;background:#fff;color:#000;margin-top:8px;margin-right:2px;margin-bottom:2px;margin-left:8px;padding:0;line-height:1.4em;}
 div.toctitle{font-weight:bold;}
 div.tocindent{padding:0 0 0.5em 0.5em;}
 a{text-decoration:none;color:#202020;background:none;}
@@ -27,3 +27,4 @@ a:visited{color:#606060;}
 a:active{color:#ffa000;}
 a:hover{text-decoration:underline;}
 span.menusep{font-family:"Batan","Gulim","Hiragino","Meiryo","PCMyungjo","Lucida Sans Unicode","Menlo",sans-serif;}
+#jump{position: fixed;_position: absolute;top:135px;left:165px;float:right;}

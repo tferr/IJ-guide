@@ -57,11 +57,6 @@ logicalmkup
 \paperorientation portrait
 \suppress_date false
 \use_refstyle 0
-\branch PDF-only
-\selected 1
-\filename_suffix 0
-\color #ffffff
-\end_branch
 \index Index
 \shortcut idx
 \color #008000
@@ -85,12 +80,26 @@ logicalmkup
 \begin_body
 
 \begin_layout Standard
+\noindent
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 %Bibliography
+\end_layout
+
+\begin_layout Plain Layout
+
+%%%%%Ugly hack to reduce white space inserted by the previous float.
+ This must be fixed properly
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-72pt} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -124,8 +133,9 @@ refname}
 \end_layout
 
 \begin_layout Standard
+\noindent
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -171,11 +181,9 @@ leftmargin
 \backslash
 begin{minipage}{
 \backslash
-textwidth}
-\end_layout
-
-\begin_layout Plain Layout
-
+textwidth}{
+\backslash
+normalsize 
 \end_layout
 
 \end_inset
@@ -184,6 +192,7 @@ textwidth}
 \end_layout
 
 \begin_layout Standard
+\noindent
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:IJ-related-pub"
@@ -194,6 +203,7 @@ name "sec:IJ-related-pub"
 \end_layout
 
 \begin_layout Standard
+\noindent
 The following references are a small sample (particularly biased towards
  the life sciences) of the bibliography directly related to ImageJ, the
  standard in scientific image analysis.
@@ -220,6 +230,7 @@ target "http://fiji.sc/wiki/index.php/Publications"
 \end_layout
 
 \begin_layout Standard
+\noindent
 \begin_inset VSpace medskip
 \end_inset
 
@@ -227,19 +238,24 @@ target "http://fiji.sc/wiki/index.php/Publications"
 \end_layout
 
 \begin_layout Standard
-To reference ImageJ one of the 
+\noindent
+To cite ImageJ one of the citations is possible (see 
 \begin_inset CommandInset href
 LatexCommand href
-name "following citations"
+name "FAQs"
 target "http://imagej.nih.gov/ij/docs/faqs.html#cite"
 
 \end_inset
 
- is possible:
+):
 \end_layout
 
 \begin_layout Enumerate
-Rasband, W.S., ImageJ, U.S.
+\noindent
+
+\size footnotesize
+Rasband WS.
+ ImageJ, U.S.
 \begin_inset space \space{}
 \end_inset
 
@@ -255,17 +271,23 @@ target "http://imagej.nih.gov/ij/"
 \end_layout
 
 \begin_layout Enumerate
-Abràmoff, M.D., Magalhães, P.J.
-\begin_inset space \space{}
+\noindent
+
+\size footnotesize
+Abràmoff MD, Magalhães PJ and Ram SJ.
+ 
+\begin_inset Quotes eld
 \end_inset
 
-and Ram, S.J.
- 
-\emph on
 Image Processing with ImageJ
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\emph on
+Biophotonics International
 \emph default
-.
- Biophotonics International, 11(7):36--42, 2004 (
+, 11(7):36--42, 2004 (
 \begin_inset CommandInset href
 LatexCommand href
 name "PDF"
@@ -283,25 +305,107 @@ key "Abramoff:2004p4386"
 .
 \end_layout
 
-\begin_layout Standard
-To reference this document:
-\end_layout
+\begin_layout Enumerate
+\noindent
 
-\begin_layout Itemize
-Ferreira T.
+\size footnotesize
+Schneider CA, Rasband WS and Eliceiri KW.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+NIH Image to ImageJ: 25 years of image analysis
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\emph on
+Nature Methods
+\emph default
+, pp.
 \begin_inset space \space{}
 \end_inset
 
-and Rasband W
-\emph on
-.
+671, 2012 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schneider:2012p20999"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+To cite 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fiji-intro"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+\noindent
+
+\size small
+Schindelin J et al.
  
+\begin_inset Quotes eld
+\end_inset
+
+Fiji: an open-source platform for biological-image analysis
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\emph on
+Nature Methods
 \emph default
+, pp.
+\begin_inset space \space{}
+\end_inset
+
+676--82, 2012 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schindelin:2012p21012"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+To cite this document:
+\end_layout
+
+\begin_layout Itemize
+\noindent
+
+\size footnotesize
+Ferreira T and Rasband W
+\emph on
+S.
+
+\emph default
+ 
+\begin_inset Quotes eld
+\end_inset
+
 ImageJ User Guide --- IJ
 \begin_inset space \thinspace{}
 \end_inset
 
-1.46, 
+1.46
+\begin_inset Quotes erd
+\end_inset
+
+, 
 \begin_inset CommandInset href
 LatexCommand href
 name "imagej.nih.gov/ij/docs/guide/"
@@ -313,30 +417,52 @@ target "http://imagej.nih.gov/ij/docs/guide/"
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace medskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\noindent
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
-  
+  }
 \backslash
 end{minipage}
+\backslash
+medskip
 \backslash
 bigskip}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
 \begin_layout Plain Layout
 
 
 \backslash
-small{}
+bibliographystyle{plainurl}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+nocite{*}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+footnotesize 
+\backslash
+bibliography{ImageJRefs}}
 \end_layout
 
 \end_inset
@@ -345,11 +471,26 @@ small{}
 \end_layout
 
 \begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintAll"
 bibfiles "ImageJRefs"
 options "plainurl"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 

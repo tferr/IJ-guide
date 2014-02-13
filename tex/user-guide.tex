@@ -1,4 +1,4 @@
-%% LyX 2.0.3 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 2.0.4 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[11pt,a4paper,american,english]{article}
 \usepackage[T1]{fontenc}
@@ -19,6 +19,7 @@
 \usepackage{wrapfig}
 \usepackage{booktabs}
 \usepackage{units}
+\usepackage{textcomp}
 \usepackage{url}
 \usepackage{pdfpages}
 \usepackage{multirow}
@@ -92,7 +93,7 @@
     % increase <textwidth> and <textheight>. NB: fancyhdr must be loaded after geometry parameters!
     \usepackage[a4paper, twoside, hmarginratio={1:1},margin=2.58cm]{geometry}
     \usepackage{mparhack} % correct the notorious bug of misplaced mpar on top of page
-    %\reversemarginpar % force all subsequent marginal notes to be put on the opposite side
+    \reversemarginpar % force all subsequent marginal notes to be put on the opposite side
 
   %%%%%%%%%%%% File size
     %\pdfcompresslevel=9 % default: 9
@@ -101,14 +102,14 @@
     %\usepackage{cmap} % use real Unicode characters instead of TeX compounds for non-ASCII chars
 
   %%%%%%%%%%%% General
-    \usepackage{ifthen}
+    \usepackage{ifthen} % just in case it has not been loaded yet
     \usepackage{microtype} % micro-typographic extensions of pdfTEX
     \usepackage{sectsty} % sections font control
     \usepackage{appendix} % appendices control
-    \usepackage[amssymb,textstyle]{SIunits} % get the upright'\micro'
+    \usepackage[amssymb,textstyle]{SIunits} % get the upright '\micro'
     \usepackage{textcomp} % e.g., to produce \textquotesingle
 
-  %%%%%%%%%%%% Fix for Acrobat Readers 
+  %%%%%%%%%%%% Fix for Acrobat Readers
     % By default Acrobat Readers use DeviceCMYK. At least with AR 8 and 9, converted RGB colors are
     % shifted and ill rendered, so we'll make sure AR will use DeviceRGB
     \pdfpageattr{/Group <</S /Transparency /I true /CS /DeviceRGB>>}
@@ -119,7 +120,7 @@
     %%% Get Dates to place in footer
     \newcommand{\revisiondate}{{\the\year/\/\two@digits{\the\month}/\/\two@digits{\the\day}}}
     %%% Adjust parameters
-    \renewcommand{\headrulewidth}{0pt} %default is 0.4pt? 
+    \renewcommand{\headrulewidth}{0pt} %default is 0.4pt?
     \fancyhead{}
     \renewcommand{\sectionmark}[1]{\markboth{#1}{}}
     \renewcommand{\subsectionmark}[1]{\markright{#1}{}}
@@ -146,7 +147,7 @@
     \usepackage{listings, xcolor}
     \colorlet{lstfcolor}{gray}% color of frame to be used in caption and lstset
     \colorlet{lstbcolor}{lstfcolor!10} % color of background to be used in lset
-  
+
     % Define a new caption style for listings: We'll insert a tcolorbox to match 'noteworthy' floats
     \DeclareCaptionFormat{listing}{
         \begin{tcolorbox}[coltext=white,colback=lstfcolor,colframe=lstfcolor,boxsep=0pt,top=2pt,bottom=2pt,left=4pt,boxrule=0.4mm]
@@ -155,7 +156,8 @@
     }
     % Adjust lstlisting caption
     \captionsetup[lstlisting]{%
-        format=listing, labelformat=parens, font={small,bf}, labelsep=space, listformat=parens, singlelinecheck=false
+        format=listing, labelformat=parens, font={small,bf}, labelsep=space, listformat=parens,
+        singlelinecheck=false
     }
     \providecommand*{\lstlistingname}{} %\footnotesize\textsc{Macro}
     \renewcommand*{\lstlistingname}{}   %\footnotesize\textsc{Macro}
@@ -179,15 +181,14 @@
         emph={abs, acos, Array.concat, Array.copy, Array.fill, Array.getStatistics, Array.print, Array.rankPositions, Array.reverse, Array.slice, Array.sort, Array.trim, asin, atan, atan2, autoUpdate, beep, bitDepth, calibrate, call, changeValues, charCodeAt, close, cos, d2s, Dialog.create, Dialog.addMessage, Dialog.addString, Dialog.addNumber, Dialog.addSlider, Dialog.addCheckbox, Dialog.addCheckboxGroup, Dialog.addChoice, Dialog.addHelp, Dialog.setInsets, Dialog.show, Dialog.getString, Dialog.getNumber, Dialog.getCheckbox, Dialog.getChoice, doCommand, doWand, drawLine, drawOval, drawRect, drawString, dump, endsWith, eval, exec, exit, exp, Ext, File.append, File.close, File.dateLastModified, File.delete, File.directory, File.exists, File.getName, File.getParent, File.isDirectory, File.lastModified, File.length, File.makeDirectory, File.name, File.nameWithoutExtension, File.open, File.openAsString, File.openAsRawString, File.openUrlAsString, File.openDialog, File.rename, File.saveString, File.separator, fill, fillOval, fillRect, Fit.doFit, Fit.rSquared, Fit.p, Fit.nParams, Fit.f, Fit.nEquations, Fit.getEquation, Fit.plot, Fit.logResults, Fit.showDialog, floodFill, floor, fromCharCode, getArgument, getBoolean, getBoundingRect, getCursorLoc, getDateAndTime, getDimensions, getDirectory, getDisplayedArea, getFileList, getHeight, getHistogram, getImageID, getImageInfo, getInfo, getLine, getList, getLocationAndSize, getLut, getMetadata, getMinAndMax, getNumber, getPixel, getPixelSize, getProfile, getRawStatistics, getResult, getResultLabel, getSelectionBounds, getSelectionCoordinates, getSliceNumber, getStatistics, getString, getStringWidth, getThreshold, getTime, getTitle, getValue, getVoxelSize, getVersion, getWidth, getZoom, IJ, deleteRows, getToolName, freeMemory, currentMemory, maxMemory, pad, redirectErrorMessages, renameResults, imageCalculator, indexOf, is, isActive, isKeyDown, isNaN, isOpen, lastIndexOf, lengthOf, lineTo, List.set, List.get, List.getValue, List.size, List.clear, List.setList, List.getList, List.setMeasurements, List.setCommands, log, makeEllipse, makeLine, makeOval, makePoint, makePolygon, makeRectangle, makeSelection, makeText, matches, maxOf, minOf, moveTo, newArray, newImage, newMenu, nImages, nResults, nSlices, open, Overlay.moveTo, Overlay.lineTo, Overlay.drawLine, Overlay.add, Overlay.setPosition, Overlay.drawRect, Overlay.drawEllipse, Overlay.drawString, Overlay.show, Overlay.hide, Overlay.hidden, Overlay.remove, Overlay.size, Overlay.removeSelection, Overlay.copy, Overlay.paste, parseFloat, parseInt, PI, Plot.create, Plot.setLimits, Plot.setFrameSize, Plot.setLineWidth, Plot.setColor, Plot.add, Plot.addText, Plot.setJustification, Plot.drawLine, Plot.show, Plot.update, Plot.getValues, pow, print, random, rename, replace, requires, reset, resetMinAndMax, resetThreshold, restorePreviousTool, restoreSettings, roiManager, round, run, runMacro, save, saveAs, saveSettings, screenHeight, screenWidth, selectionContains, selectionName, selectionType, selectImage, selectWindow, setAutoThreshold, setBackgroundColor, setBatchMode, setColor, setFont, setForegroundColor, setJustification, setKeyDown, setLineWidth, setLocation, setLut, setMetadata, setMinAndMax, setOption, setPasteMode, setPixel, setResult, setRGBWeights, setSelectionLocation, setSelectionName, setSlice, setThreshold, setTool, setupUndo, setVoxelSize, setZCoordinate, showMessage, showMessageWithCancel, showProgress, showStatus, sin, snapshot, split, sqrt, Stack.isHyperstack, Stack.getDimensions, Stack.setDimensions, Stack.setChannel, Stack.setSlice, Stack.setFrame, Stack.getPosition, Stack.setPosition, Stack.getFrameRate, Stack.setFrameRate, Stack.getFrameInterval, Stack.setFrameInterval, Stack.getUnits, Stack.setTUnit, Stack.setZUnit, Stack.setDisplayMode, Stack.getDisplayMode, Stack.setActiveChannels, Stack.getActiveChannels, Stack.swap, Stack.getStatistics, startsWith, String.resetBuffer, String.append, String.buffer, String.copy, String.copyResults, String.getResultsHeadings, String.paste, substring, tan, toBinary, toHex, toLowerCase, toolID, toScaled, toUnscaled, toString, toUpperCase, updateDisplay, updateResults, wait, waitForUser},%
         emphstyle=\color[RGB]{165,65,0},
       % other settings
-        sensitive=true, upquote=true, showstringspaces=false,
+        sensitive=true, upquote=true, showstringspaces=false, escapechar={\$}
     }
     \lstset{%
-        language=ijm, float=htb, captionpos=t,
-        frame=tblr, framerule=0.4mm, rulecolor=\color{lstfcolor},
+        language=ijm, float=htb, captionpos=t, frame=tblr, %framerule=0.4mm,
+        rulecolor=\color{lstfcolor}, backgroundcolor=\color{lstbcolor}, framerule=1pt,
         xleftmargin=13.15pt, framexleftmargin=9pt, framexrightmargin=-4.2pt,%
-        backgroundcolor=\color{lstbcolor},
-        numbers=left, numbersep=3pt, numberstyle=\tiny,
-        breaklines=true, breakatwhitespace=true, breakindent=15pt,
+        %numbers=left, numbersep=3pt, numberstyle=\tiny,
+        breaklines=true, breakatwhitespace=true, breakindent=15pt, tabsize=4,
         prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
         basicstyle=\footnotesize\ttfamily,
     }
@@ -203,6 +204,7 @@
     \def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
 
   %%%%%%    Fix for hyperfootnotes
+    %%%\usepackage{footnotebackref}
     % hyperfootnotes= false must be loaded as an option. it has no effect in the in hypersetup. As of this
     % writings LyX does not allow to load this option in the Document properties. This will impose it
     \toks@\expandafter{%
@@ -271,7 +273,7 @@
             \kern0pt\relax
             }%
         \let\@fs@iftopcapt\iftrue}
-    
+
     % Customize caption of infoboxes
     % define float. Use empty label and correct its aligment. issues with labelformat=simple in captionsetup?
     \floatname{infobox}{\protect\hspace*{-3.8pt}}
@@ -283,6 +285,10 @@
     \captionsetup[infobox]{listformat=myinfobox,labelsep=quad,font={sc,bf},singlelinecheck=false}
 
   %%%%%%%%%%%%  hyperref
+      % We could use the pdfscreen package to create a better on-screen experience
+         %\usepackage[screen]{pdfscreen}
+         %\margins{.8in}{.8in}{.8in}{.8in}
+         %\screensize{8.25in}{10.56in}
     \usepackage{hyperref}
     \urlstyle{same} % kill the default monospaced font
     \providecommand*{\phantomsection}{} % Avoid all sorts of troubles
@@ -323,10 +329,10 @@
 
   %%%%%%%%%%%   load menuitems: Menus and keystrokes
     \usepackage{menukeys}
-      \renewmenumacro{\keys}[+]{shadowedroundedkeys} % separator: +
+      \renewmenumacro{\keys}[-]{shadowedroundedkeys} % separator: -
       \renewmenumacro{\directory}[/]{hyphenatepaths}
       %\renewmenumacro{\menu}[>]{menus}
-    
+
   %%%%%%%%%%%   Define globally the version Guide, Title, etc..
     \providecommand{\theguideversion}{??}
 \makeatother
@@ -361,12 +367,14 @@
      \lstlistoflistings
  }
  \newcommand*{\userinterface}[1]{{\sffamily #1}}
- \providecommand*{\mykeystroke}[1]{{\keys{{#1}}}}
+ \providecommand*{\mykeystroke}[1]{{{\keys{{{{#1}}}}}}}%make sure the \keys macro allows math environments
  \newcommand*{\filenameref}[2][]{{\textcolor{black!90}{\relsize{-0.4}\winmenuwin\,\ttfamily{\directory{#1}{#2}}}}}
  \newcommand*{\dirnameref}[2][]{{\textcolor{black!90}{\relsize{-0.4}\drawtikzfolder\,\ttfamily{\directory{#1}{#2}}}}}
 \newcommand{\code}[1]{\texttt{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+%\usepackage{etex}
+
 %%%%%%%%%%%% Adjust TOC
 \usepackage{tocloft}
 \addtolength{\cftsubsecnumwidth}{6pt} % make space for more than 10 subsections
@@ -401,7 +409,7 @@
 \addto\captionsamerican{\renewcommand{\infoboxname}{Noteworthy}}
 
 \begin{document}
-\renewcommand{\theguideversion}{1.46p}
+\renewcommand{\theguideversion}{1.46r}
 
 \includepdf{\lyxdot \lyxdot /cover/CoverMain}
 
@@ -444,7 +452,7 @@
 
 The \emph{ImageJ User Guide} provides a detailed overview of ImageJ
 (and inherently \nameref{sub:Fiji-intro}), the standard in scientific
-image analysis.
+image analysis (\emph{see} \ref{infobox:focus} \nameref{infobox:focus}).
 
 It was thought as a comprehensive, fully-searchable, self-contained,
 annotatable manual (\emph{see} \nameref{sec:Guide-Conventions}).
@@ -664,18 +672,12 @@ moved to a different menu location in ImageJ\,\theguideversion{}.}\end{singlespa
   \def\@biblabel#1{\bibleftdelim #1\bibrightdelim}
 \makeatother % @ is a symbol
 \small{}
-
-\include{07-credits}
-
-% biblio fix: reset item labels
+\include{07-credits}% biblio fix: reset item labels
 \makeatletter % @ is now a letter
   \def\bibleftdelim{[}
   \def\bibrightdelim{]}
   \def\@biblabel#1{\bibleftdelim #1\bibrightdelim}
 \makeatother % @ is a symbol
-
-\clearpage{}
-
 \include{08-biblio}\clearpage{}
 
 %Nomenclature

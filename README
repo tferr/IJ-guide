@@ -129,8 +129,8 @@ How-To: HTML
 * The final tweaks (such as removal of latex markup/environments that do
   not make sense on HTML) are done by bulk search & replace using grep.
   At the moment this is done using CleanseGuide.textfactory, a textfactory
-  (.plist file) for BBEdit/TexWrangler, a closed source text editors for
-  Mac OS X.
+  (.plist file) for BBEdit/TexWrangler, closed source text editors for Mac
+  OS X.
 
 TO DO
 =====
@@ -142,7 +142,7 @@ TO DO
 3) Substitute IJguide.module with a proper LaTeX2e class
 4) Modify eLyXer source code to optimize the HTML conversion
 
-KNOWN BUGS
-==========
+KNOWN ISSUES
+============
 1) elyxer fails if there are href with images in description labels
    (they exist in 06-shortcuts)

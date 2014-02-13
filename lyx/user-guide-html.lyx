@@ -159,7 +159,25 @@ reference "sub:Fiji-intro"
 
 \end_inset
 
-), the standard in scientific image analysis.
+), the standard in scientific image analysis (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:focus"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:focus"
+
+\end_inset
+
+).
  It is available as a 
 \begin_inset CommandInset href
 LatexCommand href
@@ -204,7 +222,7 @@ target "http://imagej.nih.gov/ij/docs/user-guide.zip"
 
 \end_inset
 
- that you can install onto your hard disk for 
+ that you can install on your hard disk for 
 \begin_inset CommandInset href
 LatexCommand href
 name "offline browsing"
@@ -253,7 +271,7 @@ reference "sub:Getting-Involved"
 \begin_inset Float infobox
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -554,14 +572,14 @@ reference "sub:Macro-Programming"
 , 
 \begin_inset CommandInset ref
 LatexCommand nameref
-reference "sub:Fiji-Scrip-Editor"
+reference "sub:ImageJ-Macro-Editor"
 
 \end_inset
 
 , 
 \begin_inset CommandInset ref
 LatexCommand nameref
-reference "sub:ImageJ-Macro-Editor"
+reference "sub:Fiji-Scrip-Editor"
 
 \end_inset
 
@@ -640,6 +658,13 @@ reference "sub:Subtract-Background..."
 \begin_inset CommandInset ref
 LatexCommand nameref
 reference "sub:Find-Maxima"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Brightness/Contrast...[C]"
 
 \end_inset
 
@@ -886,13 +911,6 @@ reference "lis:toolsShrtct3"
 \begin_layout Standard
 \paragraph_spacing single
 \noindent
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "01-intro.lyx"
@@ -963,21 +981,15 @@ filename "07-credits.lyx"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Marginal
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\noindent
 The following references are a small sample (particularly biased towards
  the life sciences) of the bibliography directly related to ImageJ, the
  standard in scientific image analysis.
- These publications include: 1) technical articles and books describing
+ These publications  include: 1) technical articles and books describing
  routines implemented in ImageJ, 2) research articles that have made extensive
  use of ImageJ as a scientific tool or 3) reviews that discuss ImageJ pertinentl
 y.
@@ -1000,6 +1012,7 @@ target "http://fiji.sc/wiki/index.php/Publications"
 \end_layout
 
 \begin_layout Plain Layout
+\noindent
 \begin_inset VSpace medskip
 \end_inset
 
@@ -1007,19 +1020,22 @@ target "http://fiji.sc/wiki/index.php/Publications"
 \end_layout
 
 \begin_layout Plain Layout
-To reference ImageJ one of the 
+\noindent
+To cite ImageJ one of the citations is possible (see 
 \begin_inset CommandInset href
 LatexCommand href
-name "following citations"
+name "FAQs"
 target "http://imagej.nih.gov/ij/docs/faqs.html#cite"
 
 \end_inset
 
- is possible:
+):
 \end_layout
 
 \begin_layout Enumerate
-Rasband, W.S., ImageJ, U.S.
+\noindent
+Rasband WS.
+ ImageJ, U.S.
 \begin_inset space \space{}
 \end_inset
 
@@ -1035,17 +1051,21 @@ target "http://imagej.nih.gov/ij/"
 \end_layout
 
 \begin_layout Enumerate
-Abràmoff, M.D., Magalhães, P.J.
-\begin_inset space \space{}
+\noindent
+Abràmoff MD, Magalhães PJ and Ram SJ.
+ 
+\begin_inset Quotes eld
 \end_inset
 
-and Ram, S.J.
- 
-\emph on
 Image Processing with ImageJ
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\emph on
+Biophotonics International
 \emph default
-.
- Biophotonics International, 11(7):36--42, 2004 (
+, 11(7):36--42, 2004 (
 \begin_inset CommandInset href
 LatexCommand href
 name "PDF"
@@ -1063,25 +1083,101 @@ key "Abramoff:2004p4386"
 .
 \end_layout
 
-\begin_layout Plain Layout
-To reference this document:
-\end_layout
+\begin_layout Enumerate
+\noindent
+Schneider CA, Rasband WS and Eliceiri KW.
+ 
+\begin_inset Quotes eld
+\end_inset
 
-\begin_layout Itemize
-Ferreira T.
+NIH Image to ImageJ: 25 years of image analysis
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\emph on
+Nature Methods
+\emph default
+, pp.
 \begin_inset space \space{}
 \end_inset
 
-and Rasband W
+671, 2012 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schneider:2012p20999"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+To cite 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fiji-intro"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Schindelin J et al.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Fiji: an open-source platform for biological-image analysis
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\emph on
+Nature Methods
+\emph default
+, pp.
+\begin_inset space \space{}
+\end_inset
+
+676--82, 2012 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schindelin:2012p21012"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+To cite this document:
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Ferreira T and Rasband W
 \emph on
 .
- 
+
 \emph default
+ 
+\begin_inset Quotes eld
+\end_inset
+
 ImageJ User Guide --- IJ
 \begin_inset space \thinspace{}
 \end_inset
 
-1.46, 
+1.46
+\begin_inset Quotes erd
+\end_inset
+
+, 
 \begin_inset CommandInset href
 LatexCommand href
 name "imagej.nih.gov/ij/docs/guide/"

@@ -8,13 +8,13 @@
  * tf 2012.05.16
  */
 .syntaxhighlighter {
-  background-color: #efffef !important;
+  background-color: #efefef !important;
 }
 .syntaxhighlighter .line.alt1 {
-  background-color: #efffef !important;
+  background-color: #efefef !important;
 }
 .syntaxhighlighter .line.alt2 {
-  background-color: #efffef !important;
+  background-color: #efefef !important;
 }
 .syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2 {
   background-color: #e0e0e0 !important;

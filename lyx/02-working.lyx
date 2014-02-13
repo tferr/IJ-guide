@@ -1536,12 +1536,20 @@ target "http://imagejdev.org/imagej2-pixel-types"
 \begin_inset Formula $2^{32}$
 \end_inset
 
-) gray levels (integers and fractional values).
- 32--bit images pixels can have
+) gray levels (real numbers).
+ In 32--bit images, pixels are described by 
+\begin_inset CommandInset href
+LatexCommand href
+name "floating point"
+target "http://en.wikipedia.org/wiki/Floating_point"
+
+\end_inset
+
+ values and can have
 \shape smallcaps
  any
 \shape default
- intensity value (i.e., any real number) including 
+ intensity value including 
 \emph on
 NaN
 \emph default
@@ -1554,7 +1562,6 @@ description "Not a Number"
 \end_inset
 
  (Not a Number).
- In computing these are called floating point images.
 \end_layout
 
 \begin_layout Labeling
@@ -2352,14 +2359,50 @@ target "http://imagej.nih.gov/ij/plugins/file-handler.html"
 status collapsed
 
 \begin_layout Plain Layout
-LOCI Bio-Formats
+OME Bio-Formats 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{Bio-Formats,}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
 
 \begin_inset Index idx
-status collapsed
+status open
+
+\begin_layout Plain Layout
+LOCI Bio-Formats 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{Bio-Formats,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status open
 
 \begin_layout Plain Layout
 Bio-formats 
@@ -2383,30 +2426,95 @@ see{LOCI,}
 
 \begin_inset CommandInset href
 LatexCommand href
-name "LOCI Bio-Formats library"
-target "http://www.loci.wisc.edu/ome/formats.html"
+name "OME Bio-Formats library"
+target "http://loci.wisc.edu/software/bio-formats"
 
 \end_inset
 
- (if present), a remarkable plugin that supports around 
+ (if present), a remarkable plugin that supports more than 
 \begin_inset CommandInset href
 LatexCommand href
-name "eighty of the most common"
-target "http://www.loci.wisc.edu/software/bio-formats"
+name "one hundred of the most common"
+target "http://loci.wisc.edu/bio-formats/formats"
 
 \end_inset
 
  file formats used in microscopy.
  If nevertheless the file cannot be opened, an error message is displayed.
- Because both these plugins are under active development, it is important
+ 
+\end_layout
+
+\begin_layout Standard
+Because both these plugins are under active development, it is important
  that you keep them updated.
+ The OME Bio-Formats library can be updated using its self-updating plugin
+ (
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Plugins\SpecialChar \menuseparator
+LOCI\SpecialChar \menuseparator
+Update LOCI Plugin\SpecialChar \ldots{}
+
+\end_layout
+
+\end_inset
+
+) or Fiji↑'s built-in updater (
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Help\SpecialChar \menuseparator
+Update Fiji\SpecialChar \ldots{}
+
+\end_layout
+
+\end_inset
+
+).
+ The following websites provide more information on the OME Bio-Formats:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "http://loci.wisc.edu/bio-formats/imagej"
+target "http://loci.wisc.edu/bio-formats/imagej"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "http://fiji.sc/Bio-Formats"
+target "http://fiji.sc/Bio-Formats"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "http://loci.wisc.edu/bio-formats/using-bio-formats"
+target "http://loci.wisc.edu/bio-formats/using-bio-formats"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 In addition, the ImageJ web site lists 
 \begin_inset CommandInset href
 LatexCommand href
-name "more than fifty plugins"
+name "more than sixty plugins"
 target "http://imagej.nih.gov/ij/plugins/#io"
 
 \end_inset
@@ -2420,7 +2528,7 @@ exotic
 \end_inset
 
  file formats.
- The ImageJ Documentation Portal maintains a 
+ The ImageJ Documentation Portal also maintains a (somewhat outdated) 
 \begin_inset CommandInset href
 LatexCommand href
 name "list of file formats"
@@ -2847,7 +2955,7 @@ reference "sub:Stacks"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2897,7 +3005,7 @@ Mitosis (26MB, 5D stack)
 \end_inset
 
 .
- Hyperstacks dimensionality can be reduced using the 
+ Hyperstacks dimensionality can be reduced using 
 \begin_inset Flex MenuItem
 status collapsed
 
@@ -2954,7 +3062,6 @@ reference "sub:Channels...[Z]"
 
 \end_inset
 
- commands.
  The 
 \begin_inset Quotes els
 \end_inset
@@ -2963,7 +3070,7 @@ reference "sub:Channels...[Z]"
 \begin_inset Quotes ers
 \end_inset
 
- on the window titles denotes a virtual image (
+ on the window title denotes a virtual image (
 \emph on
 see
 \emph default
@@ -3000,7 +3107,7 @@ reference "sub:StacksMenu"
 \begin_inset CommandInset href
 LatexCommand href
 name "Stack Manipulations"
-target " http://fiji.sc/wiki/index.php/Stack_Manipulation"
+target "http://fiji.sc/wiki/index.php/Stack_Manipulation"
 
 \end_inset
 
@@ -3961,7 +4068,7 @@ YUV
 YUV color space.
  
 \begin_inset Float figure
-placement H
+placement h
 wide false
 sideways false
 status collapsed
@@ -6565,7 +6672,7 @@ reference "sub:ImageJ2intro"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -7508,17 +7615,7 @@ reference "misc:TrakEM2"
 
 \end_inset
 
- 
-\begin_inset Index idx
-status collapsed
-
-\begin_layout Plain Layout
-TrakEM2
-\end_layout
-
-\end_inset
-
-features powerful tools for multi-dimensional regions of interest 
+ features powerful tools for multi-dimensional regions of interest 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Cardona:2010p18306"
@@ -7756,7 +7853,11 @@ status collapsed
 
 \end_inset
 
- on Linux and in the ImageJ folder on Windows.
+ on Linux and Windows (with 
+\begin_inset Formula $\sim$
+\end_inset
+
+ referring to the user's home directory).
  Several macros and plugins also write parameters to this file.
  If the 
 \begin_inset Flex Filename

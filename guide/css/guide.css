@@ -35,8 +35,8 @@ body {
     display: block;
     position: fixed;
     _position: absolute; /* fix for IE */
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 200px;
     height: 100%;
 }
@@ -55,7 +55,7 @@ body {
     position: fixed;
     _position: absolute; /* IE6 */
     top: 14px;
-    right: 0px;
+    right: 0;
     _right: 220px;  /* IE6: account for width of TOC */
     border: 2px solid #735005;
     padding-left: 4px;
@@ -168,10 +168,10 @@ sub {font-size: 0.75em; line-height: 0.5em; vertical-align: text-bottom;}
 div.Standard {margin: 1em 0;}
 div.Unindented {margin: 0;}
 div.Indented {text-indent: 30pt; margin: 0;}
-div.Indented * {text-indent: 0pt;}
+div.Indented * {text-indent: 0;}
 p.dir {float: right;}
 p.printindex {font-size: 0.90em;}
-a.printindex {color: black;}
+a.printindex {color: #000;}
 table {
     display: inline-table;
     text-align: center;
@@ -188,19 +188,19 @@ td {
     border: thin solid #f0f0f0;
 }
 td div.Standard, div.table div.Standard {
-    margin: 0ex;
-    padding: 0ex;
+    margin: 0;
+    padding: 0;
 }
 td.numeric {text-align: right;}
 td.empty {text-align: center;}
 table.blank { /* 'invisible' table */
-    border-width: 0px;
-    border-spacing: 0px;
+    border-width: 0;
+    border-spacing: 0;
     border-style: none;
     border-collapse: collapse;
 }
 table.blank th, table.blank td {
-    border-width: 0px;
+    border-width: 0;
     padding: 2px;
     border-style: none;
 }
@@ -208,7 +208,7 @@ table.formal {
     border-top: 1px solid #555;
     border-bottom: 1px solid #555;
 }
-table.formal th, table.formal td {border-width: 0px;}
+table.formal th, table.formal td {border-width: 0;}
 div.right {text-align: right;}
 div.center {
     text-align: center;
@@ -247,10 +247,10 @@ span.Info {
 }
 a.Label {
     text-decoration: none;
-    color: #000000;
+    color: #000;
 }
-span.phantom {color: #ffffff;}
-a.biblioentry {color: black;}
+span.phantom {color: #fff;}
+a.biblioentry {color: #000;}
 /* Guide customizations */
 #footer {
     clear: both;
@@ -262,15 +262,22 @@ a.biblioentry {color: black;}
 div.infobox { /* Noteworthy infoboxes floats */
     position: relative;
     margin: 6ex auto;
-    background: #fff6bf;
     border: 1px solid #ffd324;
     border-radius: 6px 6px;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
-    padding: 5px 20px 5px 20px;
+    padding: 5px 20px;
     text-align: justify;
     color: #000;
     clear: both;
+	background: #fff6bf; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #fff6bf 0%, #ffff88 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#fff6bf), color-stop(100%,#ffff88)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  #fff6bf 0%,#ffff88 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  #fff6bf 0%,#ffff88 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  #fff6bf 0%,#ffff88 100%); /* IE10+ */
+	background: linear-gradient(-45deg,  #fff6bf 0%,#ffff88 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff6bf', endColorstr='#ffff88',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 div.infobox:before {
     position: absolute;
@@ -291,14 +298,10 @@ div.minipagefloat { /* Adjust illustrations in leftminipage */
     clear: both;
     overflow: auto; /* fix for IE?? */
 }
-div.See {
-    margin: 1.5em 0 1.5em 0;
-    color: #050;
-}
-div.See:before {
-    font-weight: bold;
-    content: 'See Also: ';
-}
+div.See {margin: 1.5em 0; color: #050;}
+div.See:before {font-weight: bold; content: 'See Also: ';}
+div.See a:link {color: #058;}
+div.See a:visited {color: #477;}
 blockquote { /* Adjust the Quotation environment */
     font-style: italic;
     margin-top: 10px;
@@ -307,7 +310,7 @@ blockquote { /* Adjust the Quotation environment */
     padding-left: 15px;
     border-left: 3px solid #ccc;
 }
-div.Labeling {margin: 1em 0 1em 0;}
+div.Labeling {margin: 1em 0;}
 div.Nomenclated {margin-bottom: 0.5em;}
 div.Nomenlabel {
     font-weight: bold;
@@ -349,7 +352,6 @@ span.Keystroke { /* KEYS.css (c) 2010 Michael Hüneburg, http://michaelhue.com/k
     box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 .4em rgb(200, 200, 200), 0 .1em 0 rgb(130, 130, 130), 0 .11em 0 rgba(0, 0, 0, .4), 0 .1em .11em rgba(0, 0, 0, .9);
 }
 span.normal {font-style: normal;}
-div.PlainVisible {}
 div.indexgroup {margin-left: 2em;}
 span.strong {font-weight: bold;}
 /* Figures and Tables */
@@ -386,7 +388,7 @@ div.tablecaption {
     font-family: sans-serif;
     margin-left: auto;
     margin-right: auto;
-    padding: 1.5ex 0.5ex 0 0.5ex; 
+    padding: 1.5ex 0.5ex 0;
 }
 div.algorithm {
     display: inline-block;
@@ -437,7 +439,7 @@ div.listing {
     position: relative;
     clear: both;
 }
-div.listing:before {
+div.listingcaption:before {
     position: absolute;
 	z-index: 2;
     content: url(../icons/gear.png);    
@@ -467,13 +469,13 @@ pre { /* format of listings when JavaScript is disabled */
 /* First page */
 h1.title {text-align: center;}
 h1.title img {  /* Fix for image in title */
-    margin-bottom: -10ex;
+    margin-bottom: -8.5ex;
     margin-left: -69px;
 }
 h2.author {  /* Fix for image in title */
     text-align: center;
     font-size: 1.2em;
-    margin-bottom: 6ex;
+    margin-bottom: 5ex;
 }
 h2.Date {
     font-size: 1.8em;
@@ -490,7 +492,7 @@ div.tocheader {
     margin: 1em 0;
     font-size: large;
 }
-a.toc {color: black;}
+a.toc {color: #000;}
 div.tocindent {padding: 0 0 0 2em;}
 div.toc {padding-top: .2em;}
 /* Extras: colors, footnotes, boxes, spaces...*/
@@ -501,7 +503,7 @@ span.green {color: #00c000;}
 span.magenta {color: #c000c0;}
 span.cyan {color: #00c0c0;}
 span.yellow {color: #c0c000;}
-span.white {color: #ffffff;}
+span.white {color: #fff;}
 /* Footnotes */
 span.SupFootMarker {
     color: #0030c0;
@@ -512,7 +514,7 @@ span.SupFootMarker {
 span.AlignFootMarker {color: #0030c0;}
 div.EndFoot {
     margin: 0.2ex;
-    background: #ffffff;
+    background: #fff;
     padding: 0.5ex;
     font-size: small;
     font-weight: normal;
@@ -524,7 +526,7 @@ span.MarginFoot {
     clear: right;
     margin: 0.2ex;
     border: thin solid #c0c0c0;
-    background: #ffffff;
+    background: #fff;
     width: 30%;
     padding: 0.5ex;
     font-size: small;
@@ -535,7 +537,7 @@ span.MarginFoot {
 span.HoverFoot {
     margin: 0.2ex;
     border: thin solid #c0c0c0;
-    background: #ffffff;
+    background: #fff;
     padding: 0.5ex;
     font-size: small;
     font-weight: normal;
@@ -550,14 +552,14 @@ span.FootOuter:hover .HoverFoot {
     display: inline;
     float: none;
 }
-span.Marginal {
+div.Marginal {
     float: right;
     clear: right;
     margin-left: 3ex;
     border-top: thin solid #c0c0c0;
     border-bottom: thin solid #c0c0c0;
-    background: #ffffff;
-    width: 30%;
+    background: #fff;
+    width: 36%;
     padding: 2ex 0 2ex 2ex;
     font-size: small;
     font-weight: normal;
@@ -566,7 +568,6 @@ span.Marginal {
 }
 span.Note {display: none;}
 /* Boxes */
-div.frameless, div.Frameless {}
 hr.line {display: inline-block;}
 /* Spaces */
 span.hspace {display: inline-block;}
@@ -682,7 +683,7 @@ span.overline, span.bar {text-decoration: overline;}
 span.numerator {display: block;}
 span.denominator {
     display: block;
-    padding: 0ex;
+    padding: 0;
     border-top: thin solid;
 }
 sup.numerator, sup.unit {
@@ -705,14 +706,14 @@ sup.root {
 }
 span.radical {
     display: inline-block;
-    padding: 0ex;
+    padding: 0;
     font-size: 150%;
     vertical-align: top;
 }
 span.root {
     display: inline-block;
     border-top: thin solid;
-    padding: 0ex;
+    padding: 0;
     vertical-align: middle;
 }
 span.symbol {font-size: 125%;}
@@ -744,7 +745,7 @@ span.symbolover {
     float: right;
     right: 100%;
     bottom: 0.5em;
-    width: 0px;
+    width: 0;
 }
 span.withsymbol {display: inline-block;}
 span.symbolunder {
@@ -754,7 +755,7 @@ span.symbolunder {
     float: right;
     right: 80%;
     top: 0.3em;
-    width: 0px;
+    width: 0;
 }
 /* Environments */
 span.array, span.bracketcases, span.binomial, span.environment {
@@ -766,29 +767,29 @@ span.array, span.bracketcases, span.binomial, span.environment {
 }
 span.arrayrow, span.binomrow {
     display: table-row;
-    padding: 0ex;
-    border: 0ex;
+    padding: 0;
+    border: 0;
 }
 span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
     display: table-cell;
-    padding: 0ex 0.2ex;
+    padding: 0 0.2ex;
     line-height: 99%;
-    border: 0ex;
+    border: 0;
 }
 /* CSS section for print */
 @media print {
 body {
     font: 90% serif;
-    background: #ffffff;
-    color: black;
+    background: #fff;
+    color: #000;
     margin: 0;
     padding: 0;
 }
 #globalWrapper {
     width: 100%;
-    margin: 0px;
-    padding: 0px;
-    background: #ffffff;
+    margin: 0;
+    padding: 0;
+    background: #fff;
     line-height: 1.5em;
 }
 span.FootOuter .Foot {
@@ -798,7 +799,7 @@ span.FootOuter .Foot {
     clear: right;
     margin: 0.2ex;
     border: thin solid #c0c0c0;
-    background: #ffffff;
+    background: #fff;
     width: 30%;
     padding: 0.5ex;
     font-size: small;
@@ -813,7 +814,7 @@ span.FootOuter .HoverFoot {
     clear: right;
     margin: 0.2ex;
     border: thin solid #c0c0c0;
-    background: #ffffff;
+    background: #fff;
     width: 30%;
     padding: 0.5ex;
     font-size: small;

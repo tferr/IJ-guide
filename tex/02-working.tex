@@ -161,10 +161,10 @@ gray levels (integers only).
 \item [{\textbf{16--bit}}] \noindent Images that can display 65,\,536
 ($2^{16}$) gray levels (integers only).
 \item [{\textbf{32--bit}}] \noindent Images that can display 4,\,294,\,967,\,296
-($2^{32}$) gray levels (integers and fractional values). 32--bit
-images pixels can have\textsc{ any} intensity value (i.e., any real
-number) including \emph{NaN}\nomenclature{NaN}{Not a Number} (Not
-a Number). In computing these are called floating point images.
+($2^{32}$) gray levels (real numbers). In 32--bit images, pixels
+are described by \href{http://en.wikipedia.org/wiki/Floating_point}{floating point}
+values and can have\textsc{ any} intensity value including \emph{NaN}\nomenclature{NaN}{Not a Number}
+(Not a Number).
 \item [{\textbf{RGB\ Color}}] \noindent \nameref{sec:Color-Images} that
 can display 256 values in the \uline{R}ed, \uline{G}reen and
 \uline{B}lue channel. These are 24--bit ($2^{3\times8}$) images.
@@ -242,15 +242,24 @@ the format. \index{Image formats!Non--native}If ImageJ does not recognize
 the type of file it calls for the appropriate reader plugin using
 \href{http://imagej.nih.gov/ij/plugins/file-handler.html}{HandleExtraFileTypes},
 a plugin bundled with ImageJ. If that fails, it tries to open the
-file using the \index{LOCI Bio-Formats}\index{Bio-formats@Bio-formats \see{LOCI,}}\href{http://www.loci.wisc.edu/ome/formats.html}{LOCI Bio-Formats library}
-(if present), a remarkable plugin that supports around \href{http://www.loci.wisc.edu/software/bio-formats}{eighty of the most common}
+file using the \index{OME Bio-Formats@OME Bio-Formats \see{Bio-Formats,}}\index{LOCI Bio-Formats@LOCI Bio-Formats \see{Bio-Formats,}}\index{Bio-formats@Bio-formats \see{LOCI,}}\href{http://loci.wisc.edu/software/bio-formats}{OME Bio-Formats library}
+(if present), a remarkable plugin that supports more than \href{http://loci.wisc.edu/bio-formats/formats}{one hundred of the most common}
 file formats used in microscopy. If nevertheless the file cannot be
-opened, an error message is displayed. Because both these plugins
-are under active development, it is important that you keep them updated.
+opened, an error message is displayed. 
 
-In addition, the ImageJ web site lists \href{http://imagej.nih.gov/ij/plugins/\#io}{more than fifty plugins}
+Because both these plugins are under active development, it is important
+that you keep them updated. The OME Bio-Formats library can be updated
+using its self-updating plugin (\userinterface{Plugins\lyxarrow{}LOCI\lyxarrow{}Update LOCI Plugin\ldots{}})
+or Fiji\textuparrow{}'s built-in updater (\userinterface{Help\lyxarrow{}Update Fiji\ldots{}}).
+The following websites provide more information on the OME Bio-Formats:
+\begin{itemize}
+\item \href{http://loci.wisc.edu/bio-formats/imagej}{http://loci.wisc.edu/bio-formats/imagej}
+\item \href{http://fiji.sc/Bio-Formats}{http://fiji.sc/Bio-Formats}
+\item \href{http://loci.wisc.edu/bio-formats/using-bio-formats}{http://loci.wisc.edu/bio-formats/using-bio-formats}
+\end{itemize}
+In addition, the ImageJ web site lists \href{http://imagej.nih.gov/ij/plugins/\#io}{more than sixty plugins}
 that recognize more `exotic' file formats. The ImageJ Documentation
-Portal maintains a \href{http://imagejdocu.tudor.lu/doku.php?id=faq:general:which_file_formats_are_supported_by_imagej}{list of file formats}
+Portal also maintains a (somewhat outdated) \href{http://imagejdocu.tudor.lu/doku.php?id=faq:general:which_file_formats_are_supported_by_imagej}{list of file formats}
 that are supported by ImageJ.
 
 
@@ -314,16 +323,16 @@ submenu contains commands for common stack operations.
 \begin{figure}
 \noindent \includegraphics[scale=0.55]{images/StacksHyperstacks}\caption[Stacks and Hyperstacks]{\label{fig:Stacks-and-Hyperstacks}\textbf{Stacks and Hyperstacks
 in ImageJ:}\textsf{ }\protect\userinterface{File\lyxarrow{}Open Samples\lyxarrow{}Mitosis (26MB, 5D stack)}.
-Hyperstacks dimensionality can be reduced using the \protect\userinterface{Image\lyxarrow{}Hyperstacks\lyxarrow{}\nameref{sub:Reduce-Dimensionality...}},
+Hyperstacks dimensionality can be reduced using \protect\userinterface{Image\lyxarrow{}Hyperstacks\lyxarrow{}\nameref{sub:Reduce-Dimensionality...}},
 \protect\userinterface{Image\lyxarrow{}Stacks\lyxarrow{}\nameref{sub:Z-Project...}}
 or \protect\userinterface{Image\lyxarrow{}Hyperstacks\lyxarrow{}\nameref{sub:Channels...[Z]}}
-commands. The `(V)' on the window titles denotes a virtual image
-(\emph{see} \nameref{sub:Virtual-Stacks}).}
+The `(V)' on the window title denotes a virtual image (\emph{see}
+\nameref{sub:Virtual-Stacks}).}
 \end{figure}
 
 
 
-\calso{\nameref{sub:StacksMenu}, \href{ http://fiji.sc/wiki/index.php/Stack_Manipulation}{Stack Manipulations}
+\calso{\nameref{sub:StacksMenu}, \href{http://fiji.sc/wiki/index.php/Stack_Manipulation}{Stack Manipulations}
 on Fiji website, \href{http://imagej.nih.gov/ij/plugins/image5d.html}{Image5D}}
 
 
@@ -449,7 +458,7 @@ human vision is trichromatic, most color models represent colors by
 three values. Mathematically, these values (color components) form
 a three-dimensional space such as the RGB\index{RGB}, \index{HSB}HSB,
 \index{CIE Lab}CIE\,Lab or \index{YUV}YUV color space. 
-\begin{figure}[H]
+\begin{figure}[h]
 \noindent \includegraphics[width=1\columnwidth]{images/RGB-HSBcolorModels}\caption[RGB and HSB color models]{\textbf{\label{fig:ColorModels}Representation of an eight pixel
 color image in the RGB and HSB color spaces.} The RGB color space
 maps the RGB color model to a cube with \emph{Red} (R) values increasing
@@ -864,7 +873,7 @@ for 3D visualization
 \item [{Simple\ Neurite\ Tracer}] \href{http://fiji.sc/wiki/index.php/Simple_Neurite_Tracer}{Simple Neurite Tracer}
 \index{Simple Neurite Tracer}allows semi-automated segmentation of
 tubular structures in 3D \cite{Longair:2011p20768}
-\item [{TrakEM2}] As mentioned earlier, \nameref{misc:TrakEM2} \index{TrakEM2}features
+\item [{TrakEM2}] As mentioned earlier, \nameref{misc:TrakEM2} features
 powerful tools for multi-dimensional regions of interest \cite{Cardona:2010p18306}
 \end{description}
 
@@ -882,10 +891,10 @@ on the ImageJ wikipage}
 \index{Settings}\index{Preferences@Preferences \see{Settings,}}\index{Options@Options \see{Settings,}}ImageJ
 preferences are automatically saved in a preferences file, the\texttt{
 }\filenameref{IJ\_prefs.txt} text file. This file is stored in \dirnameref{$\sim$/Library/Preferences/}
-on Mac OS\,X, in \dirnameref{$\sim$/.imagej/} on Linux and in the
-ImageJ folder on Windows. Several macros and plugins also write parameters
-to this file. If the \filenameref{IJ\_prefs.txt} is erased using
-\userinterface{Edit\lyxarrow{}Options\lyxarrow{}\nameref{sub:ResetOptions}},
+on Mac OS\,X, in \dirnameref{$\sim$/.imagej/} on Linux and Windows
+(with $\sim$ referring to the user's home directory). Several macros
+and plugins also write parameters to this file. If the \filenameref{IJ\_prefs.txt}
+is erased using \userinterface{Edit\lyxarrow{}Options\lyxarrow{}\nameref{sub:ResetOptions}},
 ImageJ will create a new one the next time it is opened resetting
 all parameters to their default values. 
 

@@ -4,19 +4,6 @@
 \begin_header
 \textclass article
 \begin_preamble
-%%%%%%%%%%%% Page Layout
-% We want a screen reading pdf with no odd/even margin assymetry. A booklet-like print version will
-% then be created using pdfpages. For that version we will place the marginal todonotes on the outer
-% margin, since that will save space in the inner margin of the booklet. This is the strategy: use the 
-% twoside option to alternate marginpars then eliminate symmetry with the geometry package.
-% While we are at it, we'll make textwidth textheight slightly bigger. NB: fancyhdr must be loaded after
-% geometry parameters. Using Lyx's page layout preference pane will load fancyhdr before, causing
-% misaligments in the headings
-\usepackage[a4paper, twoside, hmarginratio={1:1},margin=2.58cm]{geometry}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\usepackage{mparhack} % correct the notorious bug of misplaced mpar on top of page
-%\reversemarginpar
 \usepackage{layout}
 \end_preamble
 \use_default_options false
@@ -44,7 +31,7 @@ logicalmkup
 \output_sync 1
 \bibtex_command default
 \index_command default
-\paperfontsize 11
+\paperfontsize default
 \spacing single
 \use_hyperref true
 \pdf_title "IJguide.module test"
@@ -59,7 +46,7 @@ logicalmkup
 \pdf_backref false
 \pdf_pdfusetitle false
 \pdf_quoted_options "linkcolor={black!65}, citecolor={black!65}, urlcolor={blue!40!black}"
-\papersize a4paper
+\papersize default
 \use_geometry false
 \use_amsmath 1
 \use_esint 0
@@ -217,10 +204,7 @@ Noteworthy
 
 \end_inset
 
-, which gives something like this:
-\end_layout
-
-\begin_layout Plain Layout
+, which gives something like this: 
 \begin_inset FloatList infobox
 
 \end_inset
@@ -406,50 +390,7 @@ Table of Highlights
 \end_inset
 
 ).
- For instance, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-improvement{Banana}
-\end_layout
-
-\end_inset
-
-This 
-\begin_inset Quotes eld
-\end_inset
-
-improvement
-\begin_inset Quotes erd
-\end_inset
-
- note on the side will appear in List of Highlights.
- we have inserted it on the last page so go there and check.
-\begin_inset Newpage clearpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex Table of Highlights
-status open
-
-\begin_layout Plain Layout
-Summarized Release Notes for ImageJ
-\end_layout
-
-\end_inset
-
-
-\begin_inset Newpage clearpage
-\end_inset
-
-
+ 
 \end_layout
 
 \begin_layout Section
@@ -532,7 +473,21 @@ Y
 
 \end_inset
 
-.
+ Multiple.
+ Multiple Keys can also be typed like this 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+keys{Shift-K-E-Y}
+\end_layout
+
+\end_inset
+
+, but then they may not look as nice in the HTML version.
  Check the 
 \begin_inset Flex MenuItem
 status open
@@ -592,6 +547,12 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Dummy-Macro"
+
+\end_inset
+
 Dummy ImageJ macro
 \end_layout
 
@@ -602,12 +563,18 @@ Dummy ImageJ macro
 
 \begin_layout Plain Layout
 
- // This is a macro listing
+ // This is a macro listing.
+ The deafault syntax highlight is the IJM language
 \end_layout
 
 \begin_layout Plain Layout
 
- run
+ // As usual, this listing can be set to inline, float 
+\end_layout
+
+\begin_layout Plain Layout
+
+ run()
 \end_layout
 
 \end_inset

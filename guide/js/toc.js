@@ -2,13 +2,23 @@
 // remembering its scroll position. Based on the offline version of Dashcode User
 // Guide v3.0 (http://developer.apple.com/) and code from Ciarán O'Kelly
 // (http://www.crondesign.com/projects/downloads/scrollfix.js)
-// 20110804 T Ferreira 
+// 20120612 T Ferreira 
 
 function initialize_page() { // dynamically load TOC
     "use strict";
     var tocElt = document.createElement("div");
     tocElt.id = "tocMenu";
     tocElt.innerHTML = '<iframe id="tocframe" name="tocframe" src="toc.html" width="200" height="100%" align="left" frameborder="0">This document set is best viewed in a browser that supports iFrames.</iframe>';
+    document.body.appendChild(tocElt);
+    if (readCookie('IJguideTOCshow') === 'hide') { // determine TOC cookie state and set TOC appropriately
+        showHideTOC('hide');
+    }
+}
+function initialize_ijmpage() {
+    "use strict";
+    var tocElt = document.createElement("div");
+    tocElt.id = "tocMenu";
+    tocElt.innerHTML = '<iframe id="tocframe" name="tocframe" src="ijm-toc.html" width="200" height="100%" align="left" frameborder="0">This document set is best viewed in a browser that supports iFrames.</iframe>';
     document.body.appendChild(tocElt);
     if (readCookie('IJguideTOCshow') === 'hide') { // determine TOC cookie state and set TOC appropriately
         showHideTOC('hide');

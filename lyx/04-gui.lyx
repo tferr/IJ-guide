@@ -3025,8 +3025,8 @@ key "C-ROIbrush"
 \end_inset
 
 .
- ImageJ will treat the adjusted ROIs will become Clicking inside the area
- selection and dragging along its boundary will expand the boundary outwards.
+ Clicking inside the area selection and dragging along its boundary will
+ expand the boundary outwards.
  Clicking outside the area selection and dragging along its boundary will
  shrink the boundary inwards.
  Once the tool has been applied, ImageJ will treat the adjusted ROIs as
@@ -5976,6 +5976,14 @@ reference "sub:FloodFiller"
 \end_inset
 
 , 
+\begin_inset CommandInset href
+LatexCommand href
+name "Versatile Wand"
+target "http://imagejdocu.tudor.lu/doku.php?id=plugin:segmentation:versatile_wand:start"
+
+\end_inset
+
+ plugin, 
 \begin_inset CommandInset ref
 LatexCommand nameref
 reference "sub:Composite-selections"
@@ -6594,8 +6602,8 @@ Magnifying Glass Tool
 \end_layout
 
 \begin_layout Standard
-Magnifies and reduces the view of active image.
- Activate the tool and click on the image 
+Magnifies and reduces the view of the active image.
+ Activate the tool and click on the image to  
 \begin_inset Index idx
 status collapsed
 
@@ -12649,7 +12657,7 @@ Abort
 
 Macro 
 \family default
-Exits the macro
+Exits the macro.
 \end_layout
 
 \begin_layout Description
@@ -12724,13 +12732,13 @@ status collapsed
 
 \family sans
 Plugins\SpecialChar \menuseparator
-Macros\SpecialChar \menuseparator
+Help\SpecialChar \menuseparator
 
 \family default
 
 \begin_inset CommandInset ref
 LatexCommand nameref
-reference "sub:Install..."
+reference "sub:Macro-Functions..."
 
 \end_inset
 
@@ -12742,6 +12750,105 @@ reference "sub:Install..."
 
 \family default
  command).
+\end_layout
+
+\begin_layout Description
+
+\family sans
+Macro
+\begin_inset space \space{}
+\end_inset
+
+Functions\SpecialChar \ldots{}
+
+\begin_inset space \space{}
+\end_inset
+
+[M]
+\family default
+ 
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Ctrl
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+Shift
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Flex Keystroke
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \thinspace{}
+\end_inset
+
+M
+\end_layout
+
+\end_inset
+
+, Opens the 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Macro functions
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Macro Functions reference page"
+target "http://imagej.nih.gov/ij/developer/macro/functions.html"
+
+\end_inset
+
+, the indispensable guide to the built-in functions that can be called from
+ the ImageJ macro language (alias for 
+\family sans
+
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Help\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Macro-Functions..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+).
+\family default
+
 \begin_inset ERT
 status collapsed
 

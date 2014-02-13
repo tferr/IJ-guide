@@ -7,7 +7,7 @@
 // folder, the macros below can be used to open the guide from within IJ
 
 macro "Open User Guide (HTML)" {
-    path = getDirectory("imagej") + "guide/index.html";
+    path = getDirectory("imagej") + "user-guide/index.html";
     if (File.exists(path)) {
         path = replace(path, " ", "%20");
         os = getInfo("os.name");
@@ -18,7 +18,7 @@ macro "Open User Guide (HTML)" {
 }
 
 macro "Open User Guide (PDF)" {
-    path = getDirectory("imagej") + "guide/user-guide.pdf";
+    path = getDirectory("imagej") + "user-guide/user-guide.pdf";
     os = getInfo("os.name");
     win = startsWith(os, "Windows");
     if (win)

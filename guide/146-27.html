@@ -4,16 +4,16 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="generator" content="http://www.nongnu.org/elyxer/" />
-	<meta name="create-date" content="2012-06-07" />
+	<meta name="create-date" content="2012-06-24" />
 	<meta name="author" content="Tiago Ferreira" />
 	<meta name="description" content="The ImageJ handbook" />
 	<meta name="keywords" content="ImageJ,IJ,fiji,scientifc image processing,manual,guide" />
-	<title>Imagej User Guide - IJ 1.46p </title>
+	<title>ImageJ User Guide - IJ 1.46r | Edit Menu </title>
 	<link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
 	<link rel="stylesheet" href="css/guide.css" type="text/css" media="all" />
-<script type="text/javascript" src="js/toc.js"> </script> <script type="text/javascript" src="js/searchhi.js"> </script> <script type="text/javascript" src="sh/scripts/shCore.js"></script> <script type="text/javascript" src="sh/scripts/shBrushJScript.js"></script> <script type="text/javascript" src="sh/scripts/shBrushIJmacro.js"></script> 
 	<link href="sh/styles/shCore.css" rel="stylesheet" type="text/css" />
 	<link href="sh/styles/shThemeFijiEd.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/toc.js"> </script> <script type="text/javascript" src="js/searchhi.js"> </script> <script type="text/javascript" src="sh/scripts/shCore.js"></script> <script type="text/javascript" src="sh/scripts/shBrushJScript.js"></script> <script type="text/javascript" src="sh/scripts/shBrushIJmacro.js"></script> 
 <script type="text/javascript">SyntaxHighlighter.defaults['toolbar']=false;SyntaxHighlighter.all();</script> 
 </head>
 <body onload="initialize_page();">
@@ -51,7 +51,7 @@
 			<a class="toc" name="toc-Subsection-27.2">27.2</a> <span class="menuitem">Cut [x]</span><a class="Label" name="sub:Cut[x]"> </a> 
 		</h2>
 		<div class="Standard">
-			Copies the contents of the current image selection to the internal clipboard and fills it with the current background color. 
+			Copies the contents of the current image selection to the internal clipboard, filling the selection with the current background color. 
 		</div>
 		<div class="See">
 			<span class="menuitem">Edit<span class="menusep">▷</span><a class="Reference" href="146-27.html#sub:Copy-to-System">Copy to System↓</a></span>, <span class="menuitem"><a class="Reference" href="146-27.html#sub:Paste-Control...">Paste Control…↓</a></span> 
@@ -281,7 +281,7 @@
 		<a class="toc" name="toc-Subsubsection-27.12.5">27.12.5</a> <span class="menuitem">Fit Circle</span><a class="Label" name="sub:Fit-Circle"> </a> 
 	</h3>
 	<div class="Standard">
-		Fits a circle to a multipoint (with at leas 3 points) or area selection <span class="bibcites">[<a class="bibliocite" name="cite-14" href="146-References.html#biblio-14">14</a>]</span> (<i>see</i> <a class="Reference" href="146-27.html#fig:ROI-manipulations">ROI manipulations↑</a>). Composite selections are not supported. With open shapes (lines and points), the fitting algorithm (<i>Newton-based Pratt</i> fit) described in Pratt V, &ldquo;Direct least-squares fitting of algebraic surfaces&rdquo;, <i>Computer Graphics</i>, Vol.21, pp 145--152 (1987) is used. With closed shapes, the command creates a circle with the same area and centroid of the selection. 
+		Fits a circle to a multipoint (with at least 3 points) or area selection <span class="bibcites">[<a class="bibliocite" name="cite-14" href="146-References.html#biblio-14">14</a>]</span> (<i>see</i> <a class="Reference" href="146-27.html#fig:ROI-manipulations">ROI manipulations↑</a>). Composite selections are not supported. With open shapes (lines and points), the fitting algorithm (<i>Newton-based Pratt</i> fit) described in Pratt V, &ldquo;Direct least-squares fitting of algebraic surfaces&rdquo;, <i>Computer Graphics</i>, Vol.21, pp 145--152 (1987) is used. With closed shapes, the command creates a circle with the same area and centroid of the selection. 
 	</div>
 	<h3 class="Subsubsection">
 		<a class="toc" name="toc-Subsubsection-27.12.6">27.12.6</a> <span class="menuitem">Fit Ellipse</span><a class="Label" name="sub:Fit-Ellipse"> </a> 
@@ -351,7 +351,7 @@
 		</div>
 	</div>
 	<div class="Standard">
-		With <a class="Reference" href="146-19.html#sec:Text-Tool">Text Tool↑</a> selections, it is also possible to specify the font size and text alignment. Choose <i>List coordinates</i> to retrieve on a dedicated table the XY coordinates of active selection at evenly spaced one pixel intervals. 
+		With <a class="Reference" href="146-19.html#sec:Text-Tool">Text Tool↑</a> selections, it is also possible to specify the font size and text alignment. Choose <i>List coordinates</i> to retrieve a dedicated table of XY coordinates from the active selection at evenly spaced one pixel intervals. 
 	</div>
 	<div class="Standard">
 		Note that while this command can only be applied to the active selection, the ROI Manager’s <i>Properties…</i>command (<span class="menuitem">Analyze<span class="menusep">▷</span>Tools<span class="menusep">▷</span><a class="Reference" href="146-30.html#sub:ROI-Manager..."><span class="menuitem">ROI Manager…</span>↓</a></span>) can be applied to multiple ROIs. 
@@ -433,11 +433,10 @@
 		<div class="float">
 			<a class="Label" name="fig:Straighten"> </a>
 			<div class="figure">
-				<span class="small"><img class="embedded" src="images/Straighten.png" alt="figure images/Straighten.png" style="width: 438px; height: 246px;" /> </span><span class="default">
+				<img class="embedded" src="images/Straighten.png" alt="figure images/Straighten.png" style="width: 438px; height: 246px;" />
 			<div class="caption">
-				Figure 19 <b></b><span class="menuitem"><b>Edit<span class="menusep">▷</span>Selection<span class="menusep">▷</span></b><a class="Reference" href="146-27.html#sub:Straighten...">Straighten…↑</a></span>. As described in <a class="Reference" href="146-19.html#sub:Segmented-Line-Selection">Segmented Line Selection Tool↑</a>, the nodes of a polyline points can be repositioned (dragged), deleted (using Alt-click) or duplicated (using Shift-click). Press <span class="Keystroke">Shift</span> <span class="Keystroke">E</span> (<span class="menuitem">Edit<span class="menusep">▷</span>Selection<span class="menusep">▷</span><a class="Reference" href="146-27.html#sub:Restore-Selection-[E]">Restore Selection [E]↑</a></span>) to restore accidentally deleted lines. 
+				Figure 19 <b></b><span class="menuitem"><b>Edit<span class="menusep">▷</span>Selection<span class="menusep">▷</span></b><a class="Reference" href="146-27.html#sub:Straighten...">Straighten…↑</a></span>. As described in <a class="Reference" href="146-19.html#sub:Segmented-Line-Selection">Segmented Line Selection Tool↑</a>, the points of a polyline selection can be repositioned (dragged), deleted (using Alt-click) or duplicated (using Shift-click). Press <span class="Keystroke">Shift</span> <span class="Keystroke">E</span> (<span class="menuitem">Edit<span class="menusep">▷</span>Selection<span class="menusep">▷</span><a class="Reference" href="146-27.html#sub:Restore-Selection-[E]">Restore Selection [E]↑</a></span>) to restore accidentally deleted lines. 
 			</div>
-			</span> 
 		</div>
 	</div>
 </div>
@@ -473,7 +472,7 @@
 		<img class="embedded" src="images/ImageToSelection.png" alt="figure images/ImageToSelection.png" style="width: 193px; height: 118px;" /> 
 	</div>
 	<div class="Standard">
-		Creates an image selection (ImageROI). Image selections are <a class="Reference" href="146-11.html#sub:Overlay-Intro">Overlays↑</a> that can be moved around the canvas (<i>see</i> <span class="menuitem">Image<span class="menusep">▷</span>Overlay<span class="menusep">▷</span><a class="Reference" href="146-28.html#sub:Add-Image..."><span class="menuitem">Add Image…</span>↓</a></span>). Once created, opacity of the blended image be re-adjusted at any time using <span class="menuitem">Edit<span class="menusep">▷</span>Selection<span class="menusep">▷</span><a class="Reference" href="146-27.html#sub:Properties..."><span class="menuitem">Properties… [y]</span>↑</a></span>. Use <span class="Keystroke">Shift</span> <span class="Keystroke">E</span> (<span class="menuitem">Edit<span class="menusep">▷</span>Selection<span class="menusep">▷</span><a class="Reference" href="146-27.html#sub:Restore-Selection-[E]">Restore Selection [E]↑</a></span>) to recover the blending image after clicking outside its limits. Use <span class="Keystroke">Shift</span> <span class="Keystroke">F</span> (<span class="menuitem"><a class="Reference" href="146-28.html#sub:Flatten-[F]">Flatten [F]↓</a></span>) to finally embed the imageROI. 
+		Creates an image selection (ImageROI). Image selections are <a class="Reference" href="146-11.html#sub:Overlay-Intro">Overlays↑</a> that can be moved around the canvas (<i>see</i> <span class="menuitem">Image<span class="menusep">▷</span>Overlay<span class="menusep">▷</span><a class="Reference" href="146-28.html#sub:Add-Image..."><span class="menuitem">Add Image…</span>↓</a></span>). Once created, opacity of the blended image can be re-adjusted at any time using <span class="menuitem">Edit<span class="menusep">▷</span>Selection<span class="menusep">▷</span><a class="Reference" href="146-27.html#sub:Properties..."><span class="menuitem">Properties… [y]</span>↑</a></span>. Use <span class="Keystroke">Shift</span> <span class="Keystroke">E</span> (<span class="menuitem">Edit<span class="menusep">▷</span>Selection<span class="menusep">▷</span><a class="Reference" href="146-27.html#sub:Restore-Selection-[E]">Restore Selection [E]↑</a></span>) to recover the blending image after clicking outside its limits. Use <span class="Keystroke">Shift</span> <span class="Keystroke">F</span> (<span class="menuitem"><a class="Reference" href="146-28.html#sub:Flatten-[F]">Flatten [F]↓</a></span>) to finally embed the imageROI. 
 	</div>
 </div>
 <div class="Standard">
@@ -486,7 +485,7 @@
 	<a class="toc" name="toc-Subsubsection-27.12.22">27.12.22</a> <span class="menuitem">Add to Manager [t]</span><a class="Label" name="sub:Add-to-Manager"> </a> 
 </h3>
 <div class="Standard">
-	Adds the current selection to the ROI Manager (<span class="menuitem">Analyze<span class="menusep">▷</span>Tools<span class="menusep">▷</span><a class="Reference" href="146-30.html#sub:ROI-Manager..."><span class="menuitem">ROI Manager…</span>↓</a></span>). If there is no selection the ROI Manager is open. 
+	Adds the current selection to the ROI Manager (<span class="menuitem">Analyze<span class="menusep">▷</span>Tools<span class="menusep">▷</span><a class="Reference" href="146-30.html#sub:ROI-Manager..."><span class="menuitem">ROI Manager…</span>↓</a></span>). If there is no selection the ROI Manager is opened. 
 </div>
 <h2 class="Subsection">
 	<a class="toc" name="toc-Subsection-27.13">27.13</a> <span class="menuitem">Options<span class="menusep">▷</span></span><a class="Label" name="sub:Options"> </a> 
@@ -502,7 +501,7 @@
 		<img class="embedded" src="images/LineWidth1.png" alt="figure images/LineWidth1.png" style="width: 134px; height: 79px;" /> 
 	</div>
 	<div class="Standard">
-		Displays a dialog box that allows to change the line width (in pixels) of line selections (<i>see</i> <a class="Reference" href="146-19.html#sec:Line-Selection-Tools">Line Selection Tools↑</a>) and concomitantly the lines generated by the <span class="menuitem">Edit<span class="menusep">▷</span><a class="Reference" href="146-27.html#sub:Draw-[d]">Draw [d]↑</a></span> command. This legacy command has been superseded by the <span class="menuitem">Image<span class="menusep">▷</span>Adjust<span class="menusep">▷</span><a class="Reference" href="146-28.html#sub:Line-WidthSlider">Line Width…↓</a></span> widget, but required since the later is not recordable (<i>see</i> <span class="menuitem">Plugins<span class="menusep">▷</span>Macros<span class="menusep">▷</span><a class="Reference" href="146-31.html#sub:Record...">Record…↓</a></span>). 
+		Displays a dialog box that allows to change the line width (in pixels) of line selections (<i>see</i> <a class="Reference" href="146-19.html#sec:Line-Selection-Tools">Line Selection Tools↑</a>) and concomitantly the lines generated by the <span class="menuitem">Edit<span class="menusep">▷</span><a class="Reference" href="146-27.html#sub:Draw-[d]">Draw [d]↑</a></span> command. This legacy command has been superseded by the <span class="menuitem">Image<span class="menusep">▷</span>Adjust<span class="menusep">▷</span><a class="Reference" href="146-28.html#sub:Line-WidthSlider">Line Width…↓</a></span> widget, but required since the latter is not recordable (<i>see</i> <span class="menuitem">Plugins<span class="menusep">▷</span>Macros<span class="menusep">▷</span><a class="Reference" href="146-31.html#sub:Record...">Record…↓</a></span>). 
 	</div>
 </div>
 <h3 class="Subsubsection">
@@ -719,10 +718,10 @@
 	<span class="Description-entry"><i>Maximum memory</i></span> 64-bit OS and a 64-bit version of Java are required to use more than <span class="formula">≈</span>1700 MB of memory. Windows users must be running a 64-bit version of Windows and must install a 64-bit version of Java. Mac users must be running OS X 10.5 or later and may need to use the Java Preferences utility (in /Applications/Utilities/Java) to select a 64-bit version of Java. They may also need to switch to the ImageJ64 application. Linux users need to be running 64-bit versions of Linux and Java. The title of the <i>Memory</i> &amp; <i>Threads</i> dialog box changes to <i>Memory</i> <i>(64-bit)</i> when ImageJ is running on a properly configured 64-bit system. 
 </div>
 <div class="Description">
-	<span class="Description-entry"><i>Parallel threads for stacks</i></span> Defaults to the number of available processors determines the number of parallel threads used by commands in the <span class="menuitem">Process<span class="menusep">▷</span><a class="Reference" href="146-29.html#sub:Filters"><span class="menuitem">Filters<span class="menusep">▷</span></span>↓</a></span> and the <span class="menuitem">Process<span class="menusep">▷</span><a class="Reference" href="146-29.html#sub:Math">Math<span class="menusep">▷</span>↓</a></span> submenus when processing stacks. 
+	<span class="Description-entry"><i>Parallel threads for stacks</i></span> Determines the number of parallel threads used by commands in the <span class="menuitem">Process<span class="menusep">▷</span><a class="Reference" href="146-29.html#sub:Filters"><span class="menuitem">Filters<span class="menusep">▷</span></span>↓</a></span> and the <span class="menuitem">Process<span class="menusep">▷</span><a class="Reference" href="146-29.html#sub:Math">Math<span class="menusep">▷</span>↓</a></span> submenus when processing stacks. The default value is the number of available processors.
 </div>
 <div class="Description">
-	<span class="Description-entry"><i>Keep multiple undo buffers</i></span> If checked, the undo buffer will be preserved when switching images. <span class="menuitem">Edit<span class="menusep">▷</span><a class="Reference" href="146-27.html#sub:Undo-[z]">Undo [z]↑</a></span> remains restricted to the most recent operation, but is available for each opened image, as long as the buffer allows it. If <i>Keepmultipleundobuffers</i> is unchecked, the undo buffer is reset every time the active (frontmost) image changes. 
+	<span class="Description-entry"><i>Keep multiple undo buffers</i></span> If checked, the undo buffer will be preserved when switching images. <span class="menuitem">Edit<span class="menusep">▷</span><a class="Reference" href="146-27.html#sub:Undo-[z]">Undo [z]↑</a></span> remains restricted to the most recent operation, but is available for each opened image, as long as the buffer allows it. If <i>Keep multiple undo buffers</i> is unchecked, the undo buffer is reset every time the active (frontmost) image changes. 
 </div>
 <div class="Description">
 	<span class="Description-entry"><i>Run garbage collector on status bar click</i></span> If checked, forces the Java garbage collector to run every time the user clicks on the <a class="Reference" href="146-Part-IV.html#sub:Status-bar">Status bar↑</a>, which may help to reclaim unused memory (<i>see also</i> <span class="sans"><span class="menuitem"><span class="sans">Plugins<span class="menusep">▷</span>Utilities<span class="menusep">▷</span><a class="Reference" href="146-31.html#sub:Monitor-Memory..."><span class="menuitem">Monitor Memory…</span>↓</a></span></span></span>). 
@@ -759,7 +758,7 @@
 	</div>
 </div>
 <div class="Description">
-	<span class="Description-entry"><i>Target</i></span> Specifies the Java version of the class files created by <span class="menuitem">Plugins<span class="menusep">▷</span><a class="Reference" href="146-31.html#sub:Compile-and-Run...">Compile and Run…↓</a></span> Plugins compiled with a <i>Target</i> of 1.6 will not run on earlier version Java. A <i>Target</i> of 1.4 should be used to create plugins capable of running on all versions ImageJ. <i>Target</i> cannot be set higher than the version of Java ImageJ is currently running on. 
+	<span class="Description-entry"><i>Target</i></span> Specifies the Java version of the class files created by <span class="menuitem">Plugins<span class="menusep">▷</span><a class="Reference" href="146-31.html#sub:Compile-and-Run...">Compile and Run…↓</a></span> Plugins compiled with a <i>Target</i> of 1.6 will not run on earlier versions of Java. A <i>Target</i> of 1.4 should be used to create plugins capable of running on all versions ImageJ. <i>Target</i> cannot be set higher than the version of Java ImageJ is currently running on. 
 </div>
 <div class="Description">
 	<span class="Description-entry"><i>Generate Debugging Info (javac -g)</i></span> If checked, information needed by Java debuggers will be included in the class files. 
@@ -805,7 +804,7 @@
 	<span class="Description-entry"><i>Require control/command key for shortcuts</i></span> If checked, requires the Control key (Command key on Macs) to be pressed when using keyboard shortcuts for menu commands. 
 </div>
 <div class="Description">
-	<span class="Description-entry"><i>Move isolated plugins to Misc. menu</i></span> This option can reduce the size of the Plugins menu, preventing it from running off the bottom of the screen. When this option is enabled, plugins that attempt install themselves in a submenu with only one command are instead installed in the <span class="menuitem">Plugins<span class="menusep">▷</span>Miscellaneous</span> submenu. An example of such a plugin is <a class="URL" href="http://bigwww.epfl.ch/thevenaz/turboreg/">TurboReg</a>, which normally creates a <span class="menuitem">Plugins<span class="menusep">▷</span>TurboReg</span> submenu that contains only one command. 
+	<span class="Description-entry"><i>Move isolated plugins to Misc. menu</i></span> This option can reduce the size of the Plugins menu, preventing it from running off the bottom of the screen. When this option is enabled, plugins that attempt to install themselves in a submenu with only one command are instead installed in the <span class="menuitem">Plugins<span class="menusep">▷</span>Miscellaneous</span> submenu. An example of such a plugin is <a class="URL" href="http://bigwww.epfl.ch/thevenaz/turboreg/">TurboReg</a>, which normally creates a <span class="menuitem">Plugins<span class="menusep">▷</span>TurboReg</span> submenu that contains only one command. 
 </div>
 <div class="Description">
 	<span class="Description-entry"><i>Run single instance listener</i></span> If checked, ImageJ will use sockets to prevent multiple instances from being launched <span class="bibcites">[<a class="bibliocite" name="cite-16" href="146-References.html#biblio-16">16</a>]</span>. On Windows, this avoids the problem where another copy of ImageJ starts each time an image is dragged and dropped on the ImageJ icon. It also prevents multiple instances when running ImageJ from the command line. Note that you may get a security alert the first time ImageJ starts with this option enabled. ImageJ does not require external socket access so it is okay to deny it access in the security alert. This option is set by default with new Windows installations. 
@@ -831,7 +830,7 @@
 	</div>
 </div>
 <div class="Standard">
-	As mentioned in <a class="Reference" href="146-13.html#sec:Settings-and-Preferences">Settings and Preferences↑</a>, <span class="Filename">IJ_prefs.txt</span> holds all the settings and preferences of ImageJ and is stored in <span class="Directory"><span class="formula"> ~ </span>/Library/Preferences/</span> on Mac OS X, in <span class="Directory"><span class="formula"> ~ </span>/.imagej/</span> on Linux and in the ImageJ folder on Windows. Several macros and plugins also write parameters to this file. 
+	As mentioned in <a class="Reference" href="146-13.html#sec:Settings-and-Preferences">Settings and Preferences↑</a>, <span class="Filename">IJ_prefs.txt</span> holds all the settings and preferences of ImageJ and is stored in <span class="Directory"><span class="formula">~</span>/Library/Preferences/</span> on Mac OS X and in <span class="Directory"><span class="formula">~</span>/.imagej/</span> on Linux and Windows (with <span class="Directory"><span class="formula">~</span></span> referring to the user's home directory). Several macros and plugins also write parameters to this file. 
 </div>
 <div class="See">
 	<a class="Reference" href="146-13.html#lis:setOption">Settings and Preferences↑</a>, <span class="menuitem">Plugins<span class="menusep">▷</span>Utilities<span class="menusep">▷</span><a class="Reference" href="146-31.html#sub:Reset...">Reset…↓</a></span> 
@@ -845,7 +844,7 @@
 	<span class="prev"><a class="prev" name="prev" href="146-26.html">Prev</a> Sec. 26: File<span class="menusep">▷</span></span> <span class="up"><a class="up" name="up" href="146-Part-V.html">Up</a> Part V: Menu Commands</span> <span class="next">Sec. 28: Image<span class="menusep">▷</span> <a class="next" name="next" href="146-28.html">Next</a></span> 
 </div>
 <div id="footer">
-	Last modified: 2012-06-07 <a href="#" style="float:right">Top</a> 
+	Last modified: 2012-07-09 <a href="#" style="float:right">Top</a> 
 </div>
 </div>
 </div>

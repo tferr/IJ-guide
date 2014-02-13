@@ -792,7 +792,7 @@ reference "sub:Update-ImageJ..."
 \family default
 , however, will not update any of the plugins you may have installed
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Certain plugins, however, provide self-updating mechanisms (e.g., 
@@ -808,7 +808,7 @@ target "http://simon.bio.uva.nl/objectj/"
 status collapsed
 
 \begin_layout Plain Layout
-LOCI Bio-Formats
+Bio-Formats
 \end_layout
 
 \end_inset
@@ -816,8 +816,8 @@ LOCI Bio-Formats
 
 \begin_inset CommandInset href
 LatexCommand href
-name "LOCI Bio-Formats library"
-target "http://www.loci.wisc.edu/ome/formats.html"
+name "OME Bio-Formats"
+target "http://loci.wisc.edu/software/bio-formats"
 
 \end_inset
 
@@ -1132,6 +1132,13 @@ target "http://imagejdev.org/faq#n141"
 
 \begin_layout Subsection
 Related Software
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Related-Software"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -1802,7 +1809,7 @@ target "http://www.openmicroscopy.org/"
 status collapsed
 
 \begin_layout Plain Layout
-LOCI Bio-Formats
+Bio-Formats
 \end_layout
 
 \end_inset
@@ -3106,7 +3113,7 @@ reference "sub:List-Archives..."
 
 \family default
 ).
- Most of your questions may already been answered.
+ Most of your questions may have already been answered.
 \end_layout
 
 \begin_layout Enumerate

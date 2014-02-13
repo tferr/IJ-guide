@@ -113,7 +113,7 @@ name "par:Commands"
 \end_layout
 
 \begin_layout Standard
-As described in the 
+As described in 
 \begin_inset CommandInset ref
 LatexCommand nameref
 reference "par:User-Interface1"
@@ -2364,8 +2364,16 @@ Images
 \emph default
  Setting a value less than 100% will reduce memory requirements.
  E.g., entering 50 reduces the amount of memory needed to open a stack by
- 75%.
- 
+ 25% (two-dimensional images: 
+\begin_inset Formula $0.5\times0.5=0.25$
+\end_inset
+
+ of the original data).
+ This value  is ignored if 
+\emph on
+Use Virtual Stack
+\emph default
+ is checked.
 \end_layout
 
 \begin_layout Description
@@ -4462,7 +4470,7 @@ width "71col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Uses a built in version of the 
@@ -4520,9 +4528,7 @@ or drag and drop but macros must use this command to gain access to the
 \end_layout
 
 \begin_layout Plain Layout
-Please note that ImageJ only supports a restricted number of AVI formats
- including various YUV 4:2:2 and 4:2:0 compressed formats.
- 
+ImageJ supports a restricted number of AVI formats including 
 \begin_inset Index idx
 status collapsed
 
@@ -4532,8 +4538,7 @@ MJPG
 
 \end_inset
 
-MJPG (motion-JPEG) formats are not read correctly.
- (cf.
+MJPG (motion-JPEG) and various YUV 4:2:2/4:2:0 compressed formats (cf.
 \begin_inset space \space{}
 \end_inset
 
@@ -4546,6 +4551,95 @@ target "http://imagej.nih.gov/ij/source/ij/plugin/AVI_Reader.java"
 \end_inset
 
 ).
+ The 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+OME Bio-Formats 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{Bio-Formats,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+LOCI Bio-Formats 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{Bio-Formats,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Bio-formats 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+see{LOCI,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "OME Bio-Formats library"
+target "http://loci.wisc.edu/software/bio-formats"
+
+\end_inset
+
+ (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Non-native-Supported-Formats"
+
+\end_inset
+
+) extends support to  MSRLE and MSV1 encoded formats.
 \end_layout
 
 \end_inset
@@ -6556,7 +6650,7 @@ width "53col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Index idx
@@ -6586,6 +6680,11 @@ key "C-AviPlugins"
 \end_inset
 
 .
+ Note that AVI files larger than 2
+\begin_inset space \thinspace{}
+\end_inset
+
+GB are not correctly written.
 \end_layout
 
 \begin_layout Description
@@ -7212,7 +7311,7 @@ reference "sub:Non-native-Supported-Formats"
 status collapsed
 
 \begin_layout Plain Layout
-LOCI Bio-Formats
+Bio-Formats
 \end_layout
 
 \end_inset
@@ -7220,8 +7319,8 @@ LOCI Bio-Formats
 
 \begin_inset CommandInset href
 LatexCommand href
-name "LOCI Bio-Formats library"
-target "http://www.loci.wisc.edu/ome/formats.html"
+name "OME Bio-Formats library"
+target "http://loci.wisc.edu/software/bio-formats"
 
 \end_inset
 
@@ -7702,8 +7801,8 @@ name "sub:Cut[x]"
 \end_layout
 
 \begin_layout Standard
-Copies the contents of the current image selection to the internal clipboard
- and fills it with the current background color.
+Copies the contents of the current image selection to the internal clipboard,
+ filling the selection with the current background color.
 \end_layout
 
 \begin_layout See Also
@@ -9424,7 +9523,7 @@ Newton-based Pratt
 
 \end_inset
 
-circle to a multipoint (with at leas 3 points) or area selection 
+circle to a multipoint (with at least 3 points) or area selection 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "C-FitCircle"
@@ -10385,9 +10484,8 @@ reference "sec:Text-Tool"
 \emph on
 List coordinates
 \emph default
- to retrieve on a dedicated table the XY coordinates of active selection
+ to retrieve a dedicated table of XY coordinates from the active selection
  at evenly spaced one pixel intervals.
- 
 \end_layout
 
 \begin_layout Standard
@@ -11206,7 +11304,7 @@ Straighten\SpecialChar \ldots{}
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -11275,7 +11373,7 @@ reference "sub:Segmented-Line-Selection"
 
 \end_inset
 
-, the nodes of a polyline points can be repositioned (dragged), deleted
+, the points of a polyline selection can be repositioned (dragged), deleted
  (using Alt-click) or duplicated (using Shift-click).
  Press 
 \begin_inset Flex Keystroke
@@ -11738,8 +11836,8 @@ reference "sub:Add-Image..."
 \end_inset
 
 ).
- Once created, opacity of the blended image be re-adjusted at any time using
- 
+ Once created, opacity of the blended image can be re-adjusted at any time
+ using 
 \begin_inset Flex MenuItem
 status collapsed
 
@@ -11979,7 +12077,7 @@ reference "sub:ROI-Manager..."
 \end_inset
 
 ).
- If there is no selection the ROI Manager is open.
+ If there is no selection the ROI Manager is opened.
 \end_layout
 
 \begin_layout Subsection
@@ -12177,7 +12275,7 @@ reference "sub:Line-WidthSlider"
 
 \end_inset
 
- widget, but required since the later is not recordable (
+ widget, but required since the latter is not recordable (
 \emph on
 see
 \emph default
@@ -14763,8 +14861,7 @@ for
 \emph on
 stacks
 \emph default
- Defaults to the number of available processors determines the number of
- parallel threads used by commands in the 
+ Determines the number of parallel threads used by commands in the 
 \begin_inset Flex MenuItem
 status collapsed
 
@@ -14801,6 +14898,7 @@ reference "sub:Math"
 \end_inset
 
  submenus when processing stacks.
+ The default value is the number of available processors.
 \end_layout
 
 \begin_layout Description
@@ -15318,7 +15416,7 @@ reference "sub:Compile-and-Run..."
 \emph on
 Target
 \emph default
- of 1.6 will not run on earlier version Java.
+ of 1.6 will not run on earlier versions of Java.
  A 
 \emph on
 Target
@@ -15878,8 +15976,8 @@ menu
 \emph default
  This option can reduce the size of the Plugins menu, preventing it from
  running off the bottom of the screen.
- When this option is enabled, plugins that attempt install themselves in
- a submenu with only one command are instead installed in the 
+ When this option is enabled, plugins that attempt to install themselves
+ in a submenu with only one command are instead installed in the 
 \begin_inset Flex MenuItem
 status collapsed
 
@@ -16253,7 +16351,11 @@ status collapsed
 
 \end_inset
 
- on Linux and in the ImageJ folder on Windows.
+ on Linux and Windows (with 
+\begin_inset Formula $\sim$
+\end_inset
+
+ referring to the user's home directory).
  Several macros and plugins also write parameters to this file.
 \end_layout
 
@@ -16352,7 +16454,7 @@ Use this submenu to determine the type of the active image or to convert
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -16415,10 +16517,27 @@ target "http://developer.imagej.net/imagej2-pixel-types"
 <column alignment="center" valignment="middle" width="1.25cm">
 <column alignment="center" valignment="middle" width="1.25cm">
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+<cell multirow="3" alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
+\begin_inset Formula $\triangledown$
+\end_inset
+
+From
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+To
+\begin_inset Formula $\triangleright$
+\end_inset
+
 
 \end_layout
 
@@ -16429,6 +16548,7 @@ target "http://developer.imagej.net/imagej2-pixel-types"
 
 \begin_layout Plain Layout
 
+\series bold
 \size small
 8--bit
 \end_layout
@@ -16440,6 +16560,7 @@ target "http://developer.imagej.net/imagej2-pixel-types"
 
 \begin_layout Plain Layout
 
+\series bold
 \size small
 16--bit
 \end_layout
@@ -16451,6 +16572,7 @@ target "http://developer.imagej.net/imagej2-pixel-types"
 
 \begin_layout Plain Layout
 
+\series bold
 \size small
 32--bit
 \end_layout
@@ -16462,6 +16584,7 @@ target "http://developer.imagej.net/imagej2-pixel-types"
 
 \begin_layout Plain Layout
 
+\series bold
 \size small
 8--bit color
 \end_layout
@@ -16473,6 +16596,7 @@ target "http://developer.imagej.net/imagej2-pixel-types"
 
 \begin_layout Plain Layout
 
+\series bold
 \size small
 RGB color
 \end_layout
@@ -16484,6 +16608,7 @@ RGB color
 
 \begin_layout Plain Layout
 
+\series bold
 \size small
 RGB stack
 \end_layout
@@ -16495,6 +16620,7 @@ RGB stack
 
 \begin_layout Plain Layout
 
+\series bold
 \size small
 HSB stack
 \end_layout
@@ -16508,13 +16634,14 @@ HSB stack
 
 \begin_layout Plain Layout
 
+\series bold
 \size small
 8--bit
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="middle" bottomline="true" usebox="none">
+<cell alignment="center" valignment="middle" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16524,7 +16651,7 @@ HSB stack
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16535,7 +16662,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16546,7 +16673,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16555,7 +16682,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16566,7 +16693,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16575,7 +16702,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16591,13 +16718,14 @@ I, S
 
 \begin_layout Plain Layout
 
+\series bold
 \size small
 16--bit
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16608,7 +16736,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16618,7 +16746,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16629,7 +16757,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16638,7 +16766,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16649,7 +16777,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16658,7 +16786,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16674,13 +16802,14 @@ I, S
 
 \begin_layout Plain Layout
 
+\series bold
 \size small
 32--bit
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16691,7 +16820,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16702,7 +16831,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16712,7 +16841,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16721,7 +16850,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16732,7 +16861,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16741,7 +16870,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16757,13 +16886,14 @@ I, S
 
 \begin_layout Plain Layout
 
+\series bold
 \size small
 8--bit color
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16774,7 +16904,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16783,7 +16913,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16792,7 +16922,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16802,7 +16932,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16813,7 +16943,7 @@ I
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16822,7 +16952,7 @@ I
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16838,13 +16968,14 @@ I
 
 \begin_layout Plain Layout
 
+\series bold
 \size small
 RGB color
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16855,7 +16986,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16864,7 +16995,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16873,7 +17004,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16884,7 +17015,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16894,7 +17025,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16905,7 +17036,7 @@ I, S
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16923,6 +17054,7 @@ I, S
 
 \begin_layout Plain Layout
 
+\series bold
 \size small
 RGB stack
 \begin_inset space \space{}
@@ -16933,7 +17065,7 @@ RGB stack
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16942,7 +17074,7 @@ RGB stack
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16951,7 +17083,7 @@ RGB stack
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16960,7 +17092,7 @@ RGB stack
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16969,7 +17101,7 @@ RGB stack
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16980,7 +17112,7 @@ I
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16990,7 +17122,7 @@ I
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17006,6 +17138,7 @@ I
 
 \begin_layout Plain Layout
 
+\series bold
 \size small
 HSB stack
 \end_layout
@@ -18063,7 +18196,7 @@ Apply
 \emph default
  Applies the current display range mapping function to the pixel data.
  If there is a selection, only pixels within the selection are modified.
- This option currently only works with 8--bit images and stacks and with
+ This option currently only works with 8--bit images, 8--bit stacks and
  RGB stacks.
  
 \series bold
@@ -19122,11 +19255,7 @@ reference "sub:Measure...[m]"
 
 ) (with 
 \emph on
-Limit
-\begin_inset space ~
-\end_inset
-
-to
+Limitto
 \begin_inset space ~
 \end_inset
 
@@ -22031,7 +22160,7 @@ red
 \emph on
 gree
 \emph default
-, 
+n, 
 \emph on
 blue
 \emph default
@@ -22720,7 +22849,7 @@ White
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -23585,7 +23714,7 @@ status collapsed
 
 \end_inset
 
- will skip nine slices forward.
+ will skip ten slices forward.
 \end_layout
 
 \begin_layout See Also
@@ -23640,7 +23769,7 @@ status collapsed
 
 \end_inset
 
- will skip nine slices backward.
+ will skip ten slices backward.
 \end_layout
 
 \begin_layout See Also
@@ -25190,7 +25319,7 @@ see{Projection,}
 
 \end_inset
 
-hyperstacks, the projection s performed on the active time frame, or for
+hyperstacks, the projection is performed on the active time frame, or for
  all time points if 
 \emph on
 All Time Frames
@@ -25718,7 +25847,7 @@ reference "sub:Threshold...[T]"
 \emph on
 Opacity
 \emph default
- Can be used to reveal hidden spatial relationships, specially on overlapping
+ Can be used to reveal hidden spatial relationships, especially on overlapping
  objects of different colors and dimensions.
  The (surface) 
 \emph on
@@ -31416,7 +31545,7 @@ reference "sub:ZoomIn"
  and 
 \begin_inset CommandInset ref
 LatexCommand nameref
-reference "sub:ZoomIn"
+reference "sub:ZoomOut"
 
 \end_inset
 
@@ -31831,7 +31960,14 @@ name "sub:Original-Scale-[4]"
 
 \begin_layout Standard
 Displays the image at the magnification used when the image was first opened.
- As a shortcut, double click on the magnifying glass tool.
+ As a shortcut, double click on the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Magnifying-Glass"
+
+\end_inset
+
+ tool.
 \end_layout
 
 \begin_layout Subsubsection
@@ -32584,7 +32720,7 @@ B
 
 \end_inset
 
- will display the dialog box depicted on the left in which
+ will display a dialog box in which
 \emph on
  Stroke color
 \emph default
@@ -33148,7 +33284,7 @@ reference "par:Insert..."
 \begin_inset Float infobox
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -34214,7 +34350,7 @@ RGB triplet
 \begin_layout Plain Layout
 
 \size footnotesize
-Opacity value (optional)
+Opacity value
 \end_layout
 
 \end_inset
@@ -34346,161 +34482,195 @@ Hex triplet
 \begin_layout Plain Layout
 
 \size footnotesize
-0%
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-10%
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-20%
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-30%
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-40%
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-50%
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-60%
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-70%
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-80%
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-90%
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
 100%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \thinspace{}
+\end_inset
+
+90%
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \thinspace{}
+\end_inset
+
+80%
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \thinspace{}
+\end_inset
+
+70%
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \thinspace{}
+\end_inset
+
+60%
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \thinspace{}
+\end_inset
+
+50%
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \thinspace{}
+\end_inset
+
+40%
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \thinspace{}
+\end_inset
+
+30%
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \thinspace{}
+\end_inset
+
+20%
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \thinspace{}
+\end_inset
+
+10%
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+0%
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -39775,7 +39945,7 @@ Tolerance
  In other words, a threshold is set at the maximum value minus noise tolerance
  and the contiguous area around the maximum above the threshold is analyzed.
  For accepting a maximum, this area must not contain any point with a value
- higher at than the maximum.
+ higher than the maximum.
  Only one maximum within this area is accepted.
 \begin_inset Index idx
 status collapsed
@@ -42687,8 +42857,8 @@ reference "sub:Make-Binary"
 \end_inset
 
  will analyze the histogram of the current selection, or of the entire image
- if there is no selection is present and set an automatic threshold level
- to create the binary image (
+ if no selection is present, and set an automatic threshold level to create
+ the binary image (
 \emph on
 
 \begin_inset Quotes els
@@ -44952,7 +45122,7 @@ Euclidian distance map
 Euclidian distance map (EDM) and finds the ultimate eroded points (UEPs).
  It then dilates each of the UEPs (the peaks or local maxima of the EDM)
  as far as possible -- either until the edge of the particle is reached,
- or the edge of the region of another (growing) UEP.
+ or the edge touches a region of another (growing) UEP.
  Watershed segmentation works best for smooth convex objects that don't
  overlap too much.
 \end_layout
@@ -45339,8 +45509,8 @@ reference "sub:BinaryOptions..."
 
  dialog box.
  In the output, the value inside the Voronoi cells is zero; the pixel values
- of the dividing lines between the cells are equal to the distance to the
- two nearest particles.
+ of the dividing lines between the cells are equal to the distance between
+ the two nearest particles.
  This is similar to a medial axis transform of the background, but there
  are no lines in inner holes of particles.
  
@@ -45497,7 +45667,7 @@ width "42col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -45523,7 +45693,7 @@ width "58col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Description
 
@@ -45711,189 +45881,6 @@ reference "sub:Close--"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Description
-
-\emph on
-Black
-\begin_inset space \space{}
-\end_inset
-
-background
-\emph default
- If checked, binary images will be created without using an inverted LUT
- (cf.
-\begin_inset space \space{}
-\end_inset
-
-
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "infobox:InvertedLutMask"
-
-\end_inset
-
- 
-\begin_inset CommandInset ref
-LatexCommand nameref
-reference "infobox:InvertedLutMask"
-
-\end_inset
-
-)
-\begin_inset Index idx
-status collapsed
-
-\begin_layout Plain Layout
-Black background
-\end_layout
-
-\end_inset
-
- and commands in the 
-\begin_inset Flex MenuItem
-status collapsed
-
-\begin_layout Plain Layout
-Process\SpecialChar \menuseparator
-
-\begin_inset CommandInset ref
-LatexCommand nameref
-reference "sub:Binary"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- submenu will assume that images contain white objects on a black background
- (
-\emph on
-see
-\emph default
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "infobox:blackBackground"
-
-\end_inset
-
- 
-\begin_inset CommandInset ref
-LatexCommand nameref
-reference "infobox:blackBackground"
-
-\end_inset
-
-).
- Macros can set this option using 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-setOption("BlackBackground", true);
-\end_layout
-
-\end_inset
-
- (
-\emph on
-see
-\emph default
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "infobox:blackBackground"
-
-\end_inset
-
- 
-\begin_inset CommandInset ref
-LatexCommand nameref
-reference "infobox:blackBackground"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand nameref
-reference "sec:Settings-and-Preferences"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Description
-
-\emph on
-Pad
-\emph default
-
-\begin_inset space \space{}
-\end_inset
-
-
-\emph on
-edges
-\emph default
-
-\begin_inset space \space{}
-\end_inset
-
-
-\emph on
-when
-\emph default
-
-\begin_inset space \space{}
-\end_inset
-
-
-\emph on
-eroding
-\emph default
- If checked, 
-\begin_inset Flex MenuItem
-status collapsed
-
-\begin_layout Plain Layout
-Binary\SpecialChar \menuseparator
-
-\begin_inset CommandInset ref
-LatexCommand nameref
-reference "sub:Erode"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- does not erode from the edges of the image.
- This setting also affects 
-\begin_inset Flex MenuItem
-status collapsed
-
-\begin_layout Plain Layout
-Binary\SpecialChar \menuseparator
-
-\begin_inset CommandInset ref
-LatexCommand nameref
-reference "sub:Close--"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, which erodes from the edges unless this checkbox is selected.
 \end_layout
 
 \begin_layout Description
@@ -46013,8 +46000,8 @@ Overwrite
 \emph on
 Do
 \emph default
- This drop-down menu allows to test the chosen settings by previewing each
- binary operation (
+ This drop-down menu allows one to test the chosen settings by previewing
+ each binary operation (
 \begin_inset Flex MenuItem
 status collapsed
 
@@ -47172,7 +47159,7 @@ Applies the function
 \end_inset
 
 ) in the image or selection, where 
-\begin_inset Formula $0.1\leq\gamma\geq5.0$
+\begin_inset Formula $0.1\leq\gamma\leq5.0$
 \end_inset
 
 .
@@ -57361,15 +57348,15 @@ FeretAngle
 MinFeret
 \series default
 ).
- The length of the object's projection in the X (
+ The starting coordinates of the Feret diameter (
 \series bold
 FeretX
 \series default
-) and Y (
+ and 
 \series bold
 FeretY
 \series default
-) direction is also displayed (
+) are also displayed (
 \emph on
 see also
 \emph default
@@ -58385,7 +58372,7 @@ Distance in Pixels
 \emph default
  field and 
 \emph on
-Know Distance
+Known Distance
 \emph default
  to zero and the 
 \emph on
@@ -58529,7 +58516,12 @@ Calibration!Optical density
 Use this dialog box to calibrate an image to a set of density standards,
  for example radioactive isotope standards or a calibrated optical density
  step tablet.
- The calibration procedure is done in three steps: 
+ Note that, in general, calibrations cannot be applied to 32--bit images
+ (the pixel intensity unit of 32--bit images can still be changed, nevertheless).
+\end_layout
+
+\begin_layout Standard
+The calibration procedure is done in three steps: 
 \end_layout
 
 \begin_layout Enumerate
@@ -58600,17 +58592,15 @@ reference "sub:Calibrate..."
 \end_inset
 
  to display the 
-\begin_inset Flex MenuItem
-status collapsed
-
-\begin_layout Plain Layout
+\emph on
 Calibrate\SpecialChar \ldots{}
 
-\end_layout
+\emph default
 
+\begin_inset space ~
 \end_inset
 
- dialog box.
+dialog box.
  To calibrate the image, enter the known standard values in the right column.
  The left column will be already populated with the measured mean gray values.
  Select a curve fitting method from the popup menu, enter the unit of measuremen
@@ -58634,22 +58624,15 @@ Show plot
 
 \begin_layout Enumerate
 If the calibration function is not satisfactory, bring up the 
-\begin_inset Flex MenuItem
-status collapsed
+\emph on
+Calibrate\SpecialChar \ldots{}
 
-\begin_layout Plain Layout
-\begin_inset CommandInset ref
-LatexCommand nameref
-reference "sub:Calibrate..."
+\emph default
 
+\begin_inset space ~
 \end_inset
 
-
-\end_layout
-
-\end_inset
-
- dialog box again and select a different curve fitting method.
+dialog box again and select a different curve fitting method.
 \end_layout
 
 \begin_layout Standard
@@ -58683,8 +58666,34 @@ Uncalibrated
 
 OD
 \emph default
- Causes ImageJ to convert gray values from 8--bit images to uncalibrated
- optical density values using the function
+ As mentioned in 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Gels\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "misc:GelAnalyzerOptions"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, causes ImageJ to convert gray values from 8--bit images to uncalibrated
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "optical density"
+target "http://en.wikipedia.org/wiki/Absorbance"
+
+\end_inset
+
+ values using the function
 \begin_inset space ~
 \end_inset
 
@@ -58693,6 +58702,7 @@ OD
 \end_inset
 
 .
+ This conversion can only be performed on 8-bit images.
 \end_layout
 
 \begin_layout Description
@@ -58787,6 +58797,13 @@ reference "sub:Curve-Fitting..."
 
 
 \end_layout
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Image-Types"
 
 \end_inset
 
@@ -59169,33 +59186,6 @@ Mode
 \end_layout
 
 \begin_layout Standard
-Use the 
-\emph on
-List
-\emph default
- or 
-\emph on
-Copy
-\emph default
- buttons to save the 
-\begin_inset Index idx
-status collapsed
-
-\begin_layout Plain Layout
-Histogram
-\end_layout
-
-\end_inset
-
-histogram data.
- Click on 
-\emph on
-Log
-\emph default
- to display a log-scaled version of the histogram (overlaid in gray).
-\end_layout
-
-\begin_layout Standard
 \begin_inset Box Frameless
 position "c"
 hor_pos "c"
@@ -59233,7 +59223,7 @@ width "46.3col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Click on 
@@ -59330,20 +59320,6 @@ RGB
 \end_layout
 
 \begin_layout Standard
-With 16--bit images, the range of gray values between the 
-\emph on
-Min
-\emph default
- and 
-\emph on
-Max
-\emph default
- values is divided into 256 bins.
- With 32--bit images, the number of bins is specified in the depicted dialog
- box.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Wrap figure
 lines 9
 placement l
@@ -59352,6 +59328,10 @@ width "24col%"
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset VSpace -12pt*
+\end_inset
+
+
 \begin_inset Graphics
 	filename images/HistogramDialog.png
 	scale 55
@@ -59363,7 +59343,45 @@ status collapsed
 
 \end_inset
 
-With any image type, an options dialog can be called with 
+Use the 
+\emph on
+List
+\emph default
+ or 
+\emph on
+Copy
+\emph default
+ buttons to save the 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Histogram
+\end_layout
+
+\end_inset
+
+histogram data.
+ Click on 
+\emph on
+Log
+\emph default
+ to display a log-scaled version of the histogram (overlaid in gray).
+\end_layout
+
+\begin_layout Standard
+With 16--bit images, the range of gray values between the 
+\emph on
+Min
+\emph default
+ and 
+\emph on
+Max
+\emph default
+ values is divided into 256 bins.
+ With 32--bit images, the number of bins is specified in the depicted dialog
+ box.
+ With any image type, an options dialog can be called with 
 \begin_inset Flex Keystroke
 status collapsed
 
@@ -59422,6 +59440,13 @@ Bins
  Specifies the number of bins.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Description
 
 \emph on
@@ -59441,7 +59466,7 @@ X Min
 \emph on
  X Max
 \emph default
- values can be or specified to fix the X-axis range.
+ values can be specified to fix the X-axis range.
  
 \end_layout
 
@@ -59495,7 +59520,7 @@ Plot.getValues()
 \begin_inset Quotes els
 \end_inset
 
-value
+Value
 \begin_inset Quotes ers
 \end_inset
 
@@ -59741,7 +59766,7 @@ Displays a two-dimensional graph of the intensities of pixels along a line
  intensity.
  
 \emph on
-NaNs
+NaN
 \emph default
  values in 32--bit images (
 \emph on
@@ -60315,6 +60340,266 @@ target "http://imagej.nih.gov/ij/plugins/color-inspector.html"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float infobox
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "infobox:Densitometry"
+
+\end_inset
+
+Using Scanners in Densitometry
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Gel analysis@1--D Gel analysis
+\end_layout
+
+\end_inset
+
+Electrophoretic gels such as Western blots need frequently to be quantified
+ in order to translate biochemical results into statistical values (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Gels"
+
+\end_inset
+
+).
+ Independently of the measurement method, you should be familiar with the
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "Beer--Lambert law"
+target "http://en.wikipedia.org/wiki/Beer%E2%80%93Lambert_law "
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Bee--Lambert law
+\end_layout
+
+\end_inset
+
+, so that you are aware that the optical density (
+\begin_inset CommandInset href
+LatexCommand href
+name "absorbance"
+target "http://en.wikipedia.org/wiki/Absorbance"
+
+\end_inset
+
+) of the staining to be measured must be proportional to the concentration
+ of the probed material.
+ An obvious corollary of the Beer--Lambert law is that saturated stains
+ (or overexposed films) cannot be quantified.
+\begin_inset VSpace medskip*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Generally speaking, office scanners are not suitable for densitometric analysis.
+ That being said, and in the absence of better alternatives, they can be
+ used to digitize gels and X-ray films if the following guidelines are respected
+:
+\end_layout
+
+\begin_layout Description
+Samples
+\begin_inset space ~
+\end_inset
+
+must
+\begin_inset space ~
+\end_inset
+
+be
+\begin_inset space ~
+\end_inset
+
+scanned
+\begin_inset space ~
+\end_inset
+
+in
+\begin_inset space ~
+\end_inset
+
+transmission
+\begin_inset space ~
+\end_inset
+
+mode Most flatbed scanners have the light source and detector located on
+ the same side of the instrument (reflection mode).
+ Under these conditions, light interacts with semi-transparent objects in
+ a complex manner with reflected light re-passing through the object on
+ its way to the detector.
+ In addition, thick samples (such as Coomassie-stained gels) are imaged
+ from the surface under reflection light.
+\begin_inset Newline newline
+\end_inset
+
+Scanners can only serve as densitometers if the light source and detector
+ are on opposite sides of the instrument (transmission mode).
+ This is critical for quantitation of absorbances and requires an adapter
+ for transparencies or negatives to be mounted or built-in on the scanner.
+\end_layout
+
+\begin_layout Description
+The
+\begin_inset space ~
+\end_inset
+
+scanner
+\begin_inset space ~
+\end_inset
+
+must
+\begin_inset space ~
+\end_inset
+
+offer
+\begin_inset space ~
+\end_inset
+
+a
+\begin_inset space ~
+\end_inset
+
+linear
+\begin_inset space ~
+\end_inset
+
+intensity
+\begin_inset space ~
+\end_inset
+
+response The response characteristics of most scanner detectors is unknown,
+ therefore the film/gel should always be scanned next to a photographic
+ gray scale image of known optical intensity (optical tablet or step wedge,
+ 
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "optical density calibration tutorial"
+target "http://imagej.nih.gov/ij/docs/examples/calibration/"
+
+\end_inset
+
+).
+ Autogain must be disabled during digitization to ensure generally linear
+ intensity responses.
+\end_layout
+
+\begin_layout Plain Layout
+In addition, images should also be scanned with sufficiently high spatial
+ and dynamic (bit-depth) resolutions (the optical---not interpolated---resolutio
+n of a scanner can also be measured: e.g., high contrast patterns 84.6
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Formula $\micro$
+\end_inset
+
+m (
+\begin_inset Formula $\nicefrac{1}{300}$
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+inch) apart should be distinguishable on images scanned at 300
+\begin_inset space \thinspace{}
+\end_inset
+
+dpi).
+ Note that, in general, 
+\emph on
+a posteriori
+\emph default
+ background corrections on scanned images should also be avoided.
+\begin_inset VSpace medskip*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+All these issues have been discussed in detail in Gassmann et al.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Quantifying Western blots: pitfalls of densitometry
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gassmann:2009p20997"
+
+\end_inset
+
+ (N.B.: The paper benchmarks a legacy version of 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Process\SpecialChar \menuseparator
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Subtract-Background..."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 \begin_inset Argument
 status collapsed
@@ -60372,6 +60657,21 @@ improvement{}
 \begin_layout Standard
 Use the commands in this submenu to analyze one-dimensional electrophoretic
  gels.
+ Electrophoretic densitometry is discussed in more detail in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:Densitometry"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:Densitometry"
+
+\end_inset
+
+.
  
 \begin_inset Index idx
 status collapsed
@@ -60680,9 +60980,28 @@ Options\SpecialChar \ldots{}
 \end_inset
 
 ).
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
+\begin_inset CommandInset label
+LatexCommand label
+name "misc:GelAnalyzerOptions"
+
+\end_inset
+
 Gel
 \begin_inset space \space{}
 \end_inset
@@ -60692,7 +61011,7 @@ Analyzer
 \end_inset
 
 Options\SpecialChar \ldots{}
- Use this dialog to control the behavior of the Gel Analyzer.
+ Use this dialog to control the behavior of the gel analyzer.
 \end_layout
 
 \begin_deeper
@@ -60730,14 +61049,16 @@ Uncalibrated
 
 OD
 \emph default
- If checked, ImageJ will convert gray values to uncalibrated optical density
- values using the function: 
-\begin_inset Formula $\mbox{Unc.\,\ OD}=\log_{10}(\nicefrac{255}{pixel\, value})$
+ If checked, ImageJ will convert gray values to uncalibrated 
+\begin_inset CommandInset href
+LatexCommand href
+name "optical density"
+target "http://en.wikipedia.org/wiki/Absorbance"
+
 \end_inset
 
-.
- Note that images can be calibrated to, e.g., a calibrated optical density
- step tablet using the 
+ values.
+ As explained in 
 \begin_inset Flex MenuItem
 status collapsed
 
@@ -60755,7 +61076,23 @@ reference "sub:Calibrate..."
 
 \end_inset
 
- command.
+, ImageJ converts pixel intensities into optical density using the function:
+ 
+\begin_inset Formula $\mbox{Unc.\,\ OD}=\log_{10}(\nicefrac{255}{pixel\, value})$
+\end_inset
+
+.
+ As mentioned earlier, the conversion can only be performed on 8--bit images.
+ Thus, when dealing with higher bit-depth images (see 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Image-Types"
+
+\end_inset
+
+), the gel analyzer works on a 8--bit copy of the gel (kept hidden from
+ the user) when using this option.
+ 
 \end_layout
 
 \begin_layout Description
@@ -60782,11 +61119,24 @@ Percentages
  
 \series default
 \emph default
-If checked, the Label
-\begin_inset space \space{}
+If checked, the 
+\begin_inset Flex MenuItem
+status collapsed
+
+\begin_layout Plain Layout
+Label Peaks
+\end_layout
+
 \end_inset
 
-Peaks command will print to the Results table the 
+ command will print to the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Results-Table"
+
+\end_inset
+
+ table the 
 \emph on
 peak percentage
 \emph default
@@ -62055,7 +62405,7 @@ ImageJ's CurveFitter provides a simple tool for fitting various functions
 status collapsed
 
 \begin_layout Plain Layout
-Simplex algorithm 
+Simplex 
 \begin_inset ERT
 status collapsed
 
@@ -62074,14 +62424,37 @@ see{Curve fitting,}
 \end_inset
 
 
-\begin_inset CommandInset href
-LatexCommand href
-name "simplex"
-target "http://en.wikipedia.org/wiki/Simplex"
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Nelder-Mead 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+see{Curve fitting,}
+\end_layout
 
 \end_inset
 
- algorithm 
+
+\end_layout
+
+\end_inset
+
+simplex 
+\begin_inset CommandInset href
+LatexCommand href
+name "algorithm"
+target "http://en.wikipedia.org/wiki/Nelder-Mead_method"
+
+\end_inset
+
+ 
 \size small
 
 \begin_inset CommandInset citation
@@ -62114,9 +62487,11 @@ trial and error
  It proceeds by: 1) Making first guesses of all the non-linear parameters;
  2) Computing the model, comparing it to the data set and calculating a
  fitting error; 3) If the fitting error is large, the CurveFitter will systemati
-cally change parameters and return to step 3).
- The loop stops when the fitting accuracy is met (which in difficult cases
- may never happen).
+cally change parameters and return to step 2).
+ The loop stops when the fitting accuracy is met, which in difficult cases
+ may never happen.
+ In the latter case, the procedure terminates after an imposed number of
+ iterations or restarts.
  
 \end_layout
 
@@ -62230,7 +62605,13 @@ reference "tab:CurveFitterFunctions"
  User defined functions with up to six parameters are also possible by choosing
  
 \emph on
-*User-defined*.
+*User-defined*
+\emph default
+.
+ Note that elimination of parameters by linear regression does not take
+ place for user-defined functions.
+ As a consequence, the performance of custom functions does not fully match
+ that of built-in functions.
 \end_layout
 
 \begin_layout Enumerate
@@ -62291,8 +62672,8 @@ of
 \begin_inset space \space{}
 \end_inset
 
-restarts The number of re-initializations the algorithm should perform from
- the initial best solution in case it gets 
+restarts To ensure that the result is trustworthy (i.e., that it did that
+ it did not get 
 \begin_inset Quotes eld
 \end_inset
 
@@ -62300,10 +62681,15 @@ stuck
 \begin_inset Quotes erd
 \end_inset
 
- in a local minimum, i.e., when the algorithm fails to converge at an optimum
- solution.
- By default, the simplex is restarted twice.
- There is no limit for the number of restarts, apart form the maximum number
+ or find a local minimum), CurveFitter tries at least twice to find the
+ minimum, with different starting points.
+ If the two results are not the same, 
+\emph on
+Number of restarts
+\emph default
+ determines how often it may start two additional runs, until the best two
+ results agree within the error tolerance.
+ There is no limit for the number of restarts, apart from the maximum number
  of iterations.
 \end_layout
 
@@ -62334,7 +62720,7 @@ reference "sec:Image-Types"
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -62597,14 +62983,15 @@ reference "sub:Calibrate..."
 \begin_layout Plain Layout
 
 \size small
-\begin_inset Formula $[x_{\textup{Min}},x_{\textup{Max}}]$
+The range of 
+\begin_inset Formula $x$
 \end_inset
 
- should include 
+ values should not be too far from 
 \begin_inset Formula $0$
 \end_inset
 
-
+, especially for higher-order polynomials
 \end_layout
 
 \begin_layout Plain Layout
@@ -62621,6 +63008,25 @@ th
 
 : should fulfill 
 \begin_inset Formula $|x_{\textup{Mean}}|<2\times(x_{\textup{Max}}-x_{\textup{Min}})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size small
+5
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+th
+\end_layout
+
+\end_inset
+
+: should fulfill 
+\begin_inset Formula $|x_{\textup{Mean}}|<(x_{\textup{Max}}-x_{\textup{Min}})/2$
 \end_inset
 
 
@@ -62648,16 +63054,16 @@ th
 \end_inset
 
 : should fulfill 
-\begin_inset Formula $x_{\textup{Min}}+(x_{\textup{Max}}-x_{\textup{Min}})/2\approx0$
+\begin_inset Formula $|x_{\textup{Mean}}|\ll x_{\textup{Max}}-x_{\textup{Min}}$
 \end_inset
 
- 
+
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row topspace="default" interlinespace="default">
+<row topspace="default">
 <cell alignment="left" valignment="middle" usebox="none">
 \begin_inset Text
 
@@ -62665,6 +63071,10 @@ th
 
 \size small
 Power
+\begin_inset Formula $^{\dagger}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -62689,13 +63099,27 @@ Power
 \begin_layout Plain Layout
 
 \size small
-Optionally, fit can be performed without linear regression during minimization
+\begin_inset Formula $^{\dagger}$
+\end_inset
+
+Optionally, fit can be performed without linear regression during minimization.
+ Most curve-fitting programs such as Microsoft
+\begin_inset Formula $\textsuperscript{\textregistered}$
+\end_inset
+
+ Excel
+\begin_inset Formula $\textsuperscript{\textregistered}$
+\end_inset
+
+ use regression.
+ Fitting without regression assumes equal weight for all data points and
+ is insensitive to zero or negative data
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row topspace="default">
+<row topspace="default" interlinespace="default">
 <cell alignment="left" valignment="middle" usebox="none">
 \begin_inset Text
 
@@ -62703,6 +63127,10 @@ Optionally, fit can be performed without linear regression during minimization
 
 \size small
 Exponential
+\begin_inset Formula $^{\dagger}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -62731,7 +63159,7 @@ Exponential
 \end_inset
 </cell>
 </row>
-<row topspace="default">
+<row topspace="default" interlinespace="default">
 <cell alignment="left" valignment="middle" usebox="none">
 \begin_inset Text
 
@@ -62894,7 +63322,7 @@ Log
 \begin_layout Plain Layout
 
 \size small
-Rodboard
+Rodbard
 \end_layout
 
 \end_inset
@@ -62919,34 +63347,29 @@ Rodboard
 \begin_layout Plain Layout
 
 \size small
-In versions prior to IJ
-\begin_inset space \thinspace{}
-\end_inset
-
-1.46f,
-\emph on
- Rodbard (NIH Image)
-\emph default
- actually fits 
-\begin_inset Formula $x=Rodbard(y)$
-\end_inset
-
-, with the graph having 
-\begin_inset Formula $x$
-\end_inset
-
- and 
-\begin_inset Formula $y$
-\end_inset
-
- points exchanged 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "C-CurveFitter"
 
 \end_inset
 
+, 
+\emph on
+see
+\emph default
+ DeLean A, Munson PJ, Rodbard D.
+ Simultaneous analysis of families of sigmoidal curves: application to bioassay,
+ radioligand assay, and physiological dose-response curves.
+ Am J Physiol.
+ 1978 Aug;235(2):E97--102 [
+\begin_inset CommandInset href
+LatexCommand href
+name "PMID: 686171"
+target "http://www.ncbi.nlm.nih.gov/pubmed/686171"
 
+\end_inset
+
+]
 \end_layout
 
 \end_inset
@@ -62959,7 +63382,7 @@ key "C-CurveFitter"
 \begin_layout Plain Layout
 
 \size small
-Rodboard
+Rodbard
 \end_layout
 
 \begin_layout Plain Layout
@@ -63001,7 +63424,7 @@ Rodboard
 \begin_layout Plain Layout
 
 \size small
-Inverse Rodboard
+Inverse Rodbard
 \end_layout
 
 \end_inset
@@ -63726,19 +64149,8 @@ reference "infobox:ROIManager"
 
 \end_inset
 
-, 
-\emph on
-Deselect
-\emph default
- works as a 
-\emph on
-Select
-\begin_inset space ~
-\end_inset
-
-All 
-\emph default
-button, instructing commands to consider all ROIs in the list.
+, when items are deselected subsequent ROI Manager commands are applied
+ to all ROIs.
 \begin_inset ERT
 status collapsed
 
@@ -64260,7 +64672,48 @@ Displays a drop-down menu with several additional commands (this menu is
  also available when right-clicking on the ROI Manager's list area):
 \end_layout
 
-\begin_deeper
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "25.2col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Description
+
+\emph on
+\begin_inset Graphics
+	filename images/ROIManagerMenu.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "74.8col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
 \begin_layout Description
 
 \emph on
@@ -64416,49 +64869,6 @@ see{Logical operations,}
 
 \end_layout
 
-\end_deeper
-\begin_layout Standard
-\begin_inset Box Frameless
-position "c"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "25.2col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status collapsed
-
-\begin_layout Description
-
-\emph on
-\begin_inset Graphics
-	filename images/ROIManagerMenu.png
-	scale 55
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Box Frameless
-position "c"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "74.8col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status collapsed
-
 \begin_layout Description
 
 \emph on
@@ -64493,6 +64903,11 @@ status collapsed
  
 \backslash
 see{Logical operations,}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -64623,11 +65038,6 @@ to
 Manager
 \emph default
  in the Analyze Particles dialog box.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -65025,6 +65435,64 @@ reference "sub:Labels..."
 Show All
 \emph default
  is active.
+\end_layout
+
+\begin_layout Description
+
+\emph on
+List
+\emph default
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+feature{New command: ROI Manager's 
+\backslash
+emph{Print List}}
+\end_layout
+
+\end_inset
+
+Prints a table detailing the properties of the ROIs stored in the Manager,
+ including: 
+\emph on
+Index
+\emph default
+ (cf.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "roiManager(\"index\")"
+target "http://imagej.nih.gov/ij/developer/macro/functions.html#roiManager"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ macro function), 
+\emph on
+Name
+\emph default
+, 
+\emph on
+XY
+\emph default
+ coordinates of ROI center (pixels), and stroke 
+\emph on
+Color
+\emph default
+.
 \begin_inset Float infobox
 placement h
 wide false
@@ -66322,7 +66790,7 @@ e
 \emph on
 scaling
 \emph default
- If checked, positions to different windows is translated via offscreen
+ If checked, positions to different windows are translated via offscreen
  coordinates, providing correct registration at different zoom levels.
 \end_layout
 
@@ -67536,7 +68004,7 @@ width "58col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Installs a plugin in a user-specified submenu.
@@ -68830,7 +69298,7 @@ name "sub:Capture-Screen-[g]"
 \end_layout
 
 \begin_layout Standard
-Copies the screen to an RGB image and displays that image a new window.
+Copies the screen to an RGB image and displays that image in a new window.
 \begin_inset Index idx
 status collapsed
 
@@ -69804,6 +70272,47 @@ key "C-PluginTool"
 \end_inset
 
 .
+ A plugin tool is a Java plugin that installs in the ImageJ toolbar to interact
+ with the image canvas (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:CustomToolsAndToolsets"
+
+\end_inset
+
+).
+ Plugin tools with names ending in 
+\begin_inset Flex Filename
+status collapsed
+
+\begin_layout Plain Layout
+Tool
+\end_layout
+
+\end_inset
+
+ are listed on the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:ToolSwitcher"
+
+\end_inset
+
+ if placed in the 
+\begin_inset Flex Directory
+status collapsed
+
+\begin_layout Plain Layout
+ImageJ/plugins/Tools/
+\end_layout
+
+\end_inset
+
+ directory.
 \end_layout
 
 \begin_layout See Also
@@ -70194,7 +70703,15 @@ reference "sub:Compile-and-Run..."
 
 \end_inset
 
- adds the Bio-Formats plugin (
+ adds the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Bio-Formats"
+target "http://loci.wisc.edu/software/bio-formats"
+
+\end_inset
+
+ plugin (
 \begin_inset Flex Filename
 status collapsed
 
@@ -70922,6 +71439,13 @@ target "http://imagej.nih.gov/ij/developer/macro/functions.html"
 \begin_inset CommandInset ref
 LatexCommand nameref
 reference "sub:Macros-ExtendingIJ"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "FunctionFinder[F]"
 
 \end_inset
 

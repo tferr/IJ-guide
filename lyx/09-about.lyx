@@ -691,7 +691,7 @@ name "sec:Document-Revision-History"
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="2">
+<lyxtabular version="3" rows="8" columns="2">
 <features booktabs="true" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="19col%">
 <column alignment="left" valignment="top" width="72col%">
@@ -716,33 +716,36 @@ Notes
 </cell>
 </row>
 <row topspace="default" bottomspace="default">
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-monthname 
-\end_layout
-
-\end_inset
-
- 
-
-\begin_inset space \space{}
-\end_inset
-
-2012
+September/October 2012
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reviewed by Michael Schmid
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topspace="default" bottomspace="default">
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+July 2012
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -750,11 +753,40 @@ Updated for v
 \begin_inset space \thinspace{}
 \end_inset
 
-1.46
+1.46r
 \begin_inset Newline newline
 \end_inset
 
-Second major revision
+Reviewed by Barry DeZonia
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topspace="default" bottomspace="default">
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+June 2012
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Updated for v
+\begin_inset space \thinspace{}
+\end_inset
+
+1.46p
+\begin_inset Newline newline
+\end_inset
+
+Second major revision with new sections on overlays, 3D volumes, sub-pixel
+ selections, curve fitting and interface customizations
 \begin_inset Newline newline
 \end_inset
 
@@ -863,7 +895,7 @@ April 2010
 \begin_inset Text
 
 \begin_layout Plain Layout
-First edition covering v
+First edition: v
 \begin_inset space \thinspace{}
 \end_inset
 
@@ -908,8 +940,7 @@ target "http://alexgorbatchev.com/SyntaxHighlighter/"
 
 \end_inset
 
- and Johannes Schindelin for fruitful discussions and assistance with the
- 
+, Johannes Schindelin for assistance with the 
 \begin_inset CommandInset href
 LatexCommand href
 name "Git repository"
@@ -917,9 +948,10 @@ target "http://fiji.sc/guide.git"
 
 \end_inset
 
-.
- We are also thankful to all of those who submitted material, criticisms,
- suggestions and encouragement to update this edition.
+, Norbert Vischer for critical corrections and Michael Schmid and Barry
+ DeZonia for thorough revisions.
+ We are also thankful to all of those who submitted criticisms, suggestions
+ and encouragement to update this edition.
  But above all, our thanks go to the extraordinary ImageJ community for
  its dedication to the project.
 \end_layout

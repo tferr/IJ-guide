@@ -4,6 +4,8 @@
 \begin_header
 \textclass article
 \begin_preamble
+%\usepackage{etex}
+
 %%%%%%%%%%%% Adjust TOC
 \usepackage{tocloft}
 \addtolength{\cftsubsecnumwidth}{6pt} % make space for more than 10 subsections
@@ -107,10 +109,10 @@ logicalmkup
 
 \begin_layout Standard
 \begin_inset Flex Define Version
-status collapsed
+status open
 
 \begin_layout Plain Layout
-1.46p
+1.46r
 \end_layout
 
 \end_inset
@@ -446,7 +448,25 @@ reference "sub:Fiji-intro"
 
 \end_inset
 
-), the standard in scientific image analysis.
+), the standard in scientific image analysis (
+\emph on
+see
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "infobox:focus"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "infobox:focus"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -621,7 +641,7 @@ LatexCommand tableofcontents
 
 \begin_layout Standard
 \begin_inset Flex Footnote without mark
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Please note that this is not an extensive list.
@@ -2314,12 +2334,13 @@ makeatother % @ is a symbol
 small{}
 \end_layout
 
-\end_inset
-
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
 \begin_inset CommandInset include
 LatexCommand include
 filename "07-credits.lyx"
@@ -2327,9 +2348,6 @@ filename "07-credits.lyx"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status collapsed
 
@@ -2383,19 +2401,13 @@ bibrightdelim}
 makeatother % @ is a symbol
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage clearpage
-\end_inset
-
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
 \begin_inset CommandInset include
 LatexCommand include
 filename "08-biblio.lyx"

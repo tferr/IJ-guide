@@ -1446,7 +1446,7 @@ target "http://fiji.sc/wiki/index.php/Skeletonize3D"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "ITK"
-description "Insight Segmentation and Registration "
+description "Insight Segmentation and Registration"
 
 \end_inset
 
@@ -2113,28 +2113,223 @@ key "C-Several"
 Other additions, improvements and reproducible  bug reports have been contribute
 d by Adrian Daerr, Airen Peraza, Ajay Gopal, Albert Cardona, Alberto Duina,
  Alden Dima, Andreas Maier, Andrew French, Andrii Savchenko, Arttu Miettinen,
- Aryeh Weiss, Balazs Nyiri, Barry DeZonia, Bill Mohler, Bob Hamilton, Bruno
- Vellutini, Burri Olivier, Carne Draug, Charles Anderson, Cheryl McCreary,
- Christian Moll, Christophe Leterrier, Christopher Harrison, Damon Poburko,
- Daniel Hornung, Daniel Kalthoff, Daniel Senff, David Gauntt, David McDonald,
- Denny Hugg, Dimiter Prodanov, Divakar Ramachandran, Dorai Iyer, Duncan
- Mak, Eik Schumann, Emmanuel Levy, Erik Meijering, Fabian Svara, Francis
- Burton, Frank Sprenger, Franklin Shaffer, Frederic Hessman, Gabriel Landini,
- Gilles Carpentier, Gregory Reneff, Hiroki Hakoshima, Ian Lim, Ingo Bartholomaeu
-s, Jakob Preus, Jamie Robinson, Jan Eglinger, Jan Funke, Jarek Sacha, Jay
- Unruh, Jean-Pierre Clamme, Jerome Mutterer, Jesper Pedersen, Jim Passmore,
- Joachim Wesner, Johannes Hermen, Johannes Schindelin, Johannes Weissmann,
- John Oreopoulos, John Pearl, Jonathan Silver, Jose Wojnacki, Juan Grande,
- Julian Cooper, Kai Uwe Barthel, Karen Collins, Kees Straatman, Kevin Moll,
- Kris Sheets, Mark Krebs, Mark Longair, Martin Dressler, Mat Al-Tamimi,
- Matthew Smith, Michael Cammer, Michael Doube, Michael Ellis, Michael Schmid,
- Michel Julier, Nagananda Gurudev, Nico Stuurman, Norbert Vischer, Olaf
- Freyer, Oliver Bannach, Paul Jurczak, Peter Haub, Rainer Engel, Reinhard
- Mayr, Richard Cole, Richie Mort, Robert Dougherty, Shannon Stewman, Simon
- Roussel, Stefan Starke, Stephan Saalfeld, Steven Green, Thomas Boudier,
- Thorsten Wagner, Tiago Ferreira, Tomas Karlsson, Tseng Qingzong, Ulf Dittmer,
- Uwe Walschus, Valerio Mussi, Ved Sharma, Vytas Bindokas, Wilhelm Burger,
- Winfried Wurm, Xiao Chen, Zeljka Maglica.
+ Aryeh Weiss, Balazs Nyiri, Barry DeZonia, Bill Mohler, Bob Hamilton, Bob
+ Loushin, Bruno Vellutini, Burri Olivier, Carlos Becker, Carne Draug, Charles
+ Anderson, Cheryl McCreary, Christian Moll, Christophe Leterrier, Christopher
+ Harrison, Damon Poburko, Daniel Hornung, Daniel Kalthoff, Daniel Senff,
+ David Gauntt, David McDonald, Denny Hugg, Dimiter Prodanov, Divakar Ramachandra
+n, Dorai Iyer, Duncan Mak, Eik Schumann, Emmanuel Levy, Erik Meijering,
+ Fabian Svara, Francis Burton, Frank Sprenger, Franklin Shaffer, Frederic
+ Hessman, Gabriel Landini, Gilles Carpentier, Gregory Reneff, Hiroki Hakoshima,
+ Ian Lim, Ingo Bartholomaeus, Jakob Preus, Jamie Robinson, Jan Eglinger,
+ Jan Funke, Jarek Sacha, Jay Unruh, Jean-Pierre Clamme, Jerome Mutterer,
+ Jesper Pedersen, Jim Passmore, Joachim Wesner, Johannes Hermen, Johannes
+ Schindelin, Johannes Weissmann, John Oreopoulos, John Pearl, Jonathan Silver,
+ Jose Wojnacki, Juan Grande, Julian Cooper, Kai Uwe Barthel, Karen Collins,
+ Kees Straatman, Kevin Moll, Kris Sheets, Mark Krebs, Mark Longair, Martin
+ Dressler, Mat Al-Tamimi, Matthew Smith, Michael Cammer, Michael Doube,
+ Michael Ellis, Michael Schmid, Michel Julier, Nagananda Gurudev, Nico Stuurman,
+ Norbert Vischer, Olaf Freyer, Oliver Bannach, Olivier Bardot, Paul Jurczak,
+ Peter Haub, Rainer Engel, Raymond Coory, Reinhard Mayr, Richard Cole, Richie
+ Mort, Robert Dougherty, Shannon Stewman, Simon Roussel, Stefan Starke,
+ Stephan Saalfeld, Steven Green, Thomas Boudier, Thorsten Wagner, Tiago
+ Ferreira, Tomas Karlsson, Tseng Qingzong, Ulf Dittmer, Uwe Walschus, Valerio
+ Mussi, Ved Sharma, Vytas Bindokas, Wilhelm Burger, Winfried Wurm, Xiao
+ Chen, Zeljka Maglica.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{60pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float infobox
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "infobox:focus"
+
+\end_inset
+
+Focus on Bioimage Informatics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+In July 2012 Nature Methods issued a 
+\begin_inset CommandInset href
+LatexCommand href
+name "focus"
+target "http://www.nature.com/nmeth/focus/bioimageinformatics/index.html"
+
+\end_inset
+
+ dedicated to the role of bioimage informatics in microscopy, the tools
+ that are available for scientific image processing, and the challenges
+ and opportunities in the field.
+ The special issue features a large collection of articles discussing ImageJ,
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Fiji-intro"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Related-Software"
+
+\end_inset
+
+, including:
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Cardona A, Tomancak P: 
+\begin_inset Quotes eld
+\end_inset
+
+Current challenges in open-source bioimage informatics
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cardona:2012p21002"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Carpenter AE et al.: 
+\begin_inset Quotes eld
+\end_inset
+
+A call for bioimaging software usability
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Carpenter:2012p21003"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Eliceiri KW.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Biological imaging software tools
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Eliceiri:2012p21007"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Schindelin J et al.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Fiji: an open-source platform for biological-image analysis
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schindelin:2012p21012"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Schneider CA et al.: 
+\begin_inset Quotes eld
+\end_inset
+
+NIH Image to ImageJ: 25 years of image analysis
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schneider:2012p20999"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+A full announcement can be found on the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Fiji news channel"
+target "http://fiji.sc/wiki/index.php/2012-06-29_-_Fiji_papers_at_Nature_Methods"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

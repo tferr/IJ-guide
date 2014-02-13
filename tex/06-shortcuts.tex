@@ -8,9 +8,9 @@ and adding them to the \filenameref{StartupMacros.txt}. You can also
 assign a function key to a menu command using \textsf{\userinterface{\textsf{Plugins\lyxarrow{}Shortcuts\lyxarrow{}}\nameref{sub:Create-Shortcuts...}}}. 
 
 Several of these shortcuts accept key modifiers as described in \nameref{sec:Key-Modifiers}.
-Also note that, except when using the text tool, you do not need to
-hold down the control key to use a keyboard shortcut, unless \emph{Require
-control key for shortcuts }in \textsf{\userinterface{\textsf{Edit\lyxarrow{}Options\lyxarrow{}\nameref{sub:Misc...}}}}
+Also note that, except when using the \nameref{sec:Text-Tool}, you
+do not need to hold down the control key to use a keyboard shortcut,
+unless \emph{Require control key for shortcuts }in \textsf{\userinterface{\textsf{Edit\lyxarrow{}Options\lyxarrow{}\nameref{sub:Misc...}}}}
 is checked.
 
 
@@ -134,9 +134,9 @@ original image
 \item [{\textsf{Image\lyxarrow{}Stacks\lyxarrow{}\nameref{sub:Add-Slice}}}] Insert
 before current slice 
 \item [{\textsf{Image\lyxarrow{}Stacks\lyxarrow{}\nameref{sub:Next-Slice-[>]}}}] Skip
-nine slices 
+ten slices 
 \item [{\textsf{Image\lyxarrow{}Stacks\lyxarrow{}\nameref{sub:Previous-Slice-[>]}}}] Skip
-nine slices 
+ten slices 
 \item [{\textsf{Image\lyxarrow{}Stacks\lyxarrow{}\nameref{sub:Start-Animation}}}] Show
 options dialog
 \item [{\textsf{Image\lyxarrow{}\nameref{sub:Duplicate...[D]}}}] Skip
@@ -150,7 +150,7 @@ prompt
 \item [{\textsf{Analyze\lyxarrow{}\nameref{sub:Plot-Profile-[k]}}}] For
 rectangular selections, generate row average plot. For wide straight
 lines, display rotated contents 
-\item [{\textsf{Analyze\lyxarrow{}\nameref{sub:Gels}Select\ First\ Lane}}] Assume
+\item [{\textsf{Analyze\lyxarrow{}\nameref{sub:Gels}Select\ First\ Lane}}] Assumes
 lanes are horizontal
 \item [{\textsf{Analyze\lyxarrow{}Tools\lyxarrow{}\nameref{sub:Analyze-Line-Graph}}}] Show
 intermediate image 
@@ -158,22 +158,29 @@ intermediate image
 and add selection 
 \item [{\textsf{Plugins\lyxarrow{}Utilities\lyxarrow{}\nameref{sub:ImageJ-Properties...}}}] List
 all Java properties
-\item [{\nameref{sec:Area-selection-tools}}] Subtract current selection
-from the previous one
-\item [{\nameref{sub:Rectangular-Selection-Tool}\ and\ \nameref{sub:Oval-Selection-Tool}}] Current
-aspect ratio is maintained while resizing
-\item [{\nameref{sub:Straight-Line-Selection}}] Keeps the line length
-fixed while moving either end of the line. Forces the two points that
-define the line to have integer coordinate values when creating a
-line on a zoomed image 
-\item [{\nameref{sub:Segmented-Line-Selection}\ and\ \nameref{sub:Polygon-Selection-Tool}}] Alt-clicking
-on a node deletes it 
-\item [{\nameref{sec:Point-Tool}}] Alt-clicking on a point deletes it 
-\item [{\nameref{sec:Color-Picker}}] Alt-clicking on an image `picks-up'
-background color 
-\item [{All\textsf{\ }\nameref{sec:IJ-Tools}}] Show location and size
-in pixels rather than calibrated units
 \end{description}
+\nameref{sec:Area-selection-tools} Subtract current selection from
+the previous one
+
+\nameref{sub:Rectangular-Selection-Tool}\ and\ \nameref{sub:Oval-Selection-Tool}
+Current aspect ratio is maintained while resizing
+
+\nameref{sub:Straight-Line-Selection} Keeps the line length fixed
+while moving either end of the line. Forces the two points that define
+the line to have integer coordinate values when creating a line on
+a zoomed image 
+
+\nameref{sub:Segmented-Line-Selection}\ and\ \nameref{sub:Polygon-Selection-Tool}
+Alt-clicking on a node deletes it 
+
+\nameref{sec:Point-Tool} Alt-clicking on a point deletes it 
+
+\nameref{sec:Color-Picker} Alt-clicking on an image `picks-up'
+background color 
+
+All\textsf{\ }\nameref{sec:IJ-Tools} Show location and size in pixels
+rather than calibrated units
+
 
 \subsection{Shift Key Modifications}
 \begin{description}
@@ -183,32 +190,38 @@ in pixels rather than calibrated units
 adjustments to all channels of a composite image
 \item [{Installed\ \nameref{sub:Macros-ExtendingIJ}\ and\ \nameref{sub:Scripts}}] Open
 instead of run
-\item [{\nameref{sub:Rectangular-Selection-Tool}\ and\ \nameref{sub:Oval-Selection-Tool}}] Forces
-1:1 aspect ratio 
-\item [{\nameref{sec:Area-selection-tools}}] Add selection to previous
-one
-\item [{\nameref{sub:Polygon-Selection-Tool}}] Shift-clicking on a node
-duplicates it
-\item [{\nameref{sub:Straight-Line-Selection}}] Forces line to be horizontal
-or vertical
-\item [{\nameref{sub:Segmented-Line-Selection}}] Shift-clicking on a node
-duplicates it
-\item [{\nameref{sec:Point-Tool}}] Shift-clicking adds points (\nameref{sec:Multi-point-Tool}
-behavior)
-\item [{\nameref{sec:Magnifying-Glass}}] Shift-clicking and dragging runs
-\textsf{\userinterface{Image\lyxarrow{}Zoom\lyxarrow{}\nameref{sub:ZoomToSelection}}}
 \end{description}
+\nameref{sub:Rectangular-Selection-Tool}\ and\ \nameref{sub:Oval-Selection-Tool}
+Forces 1:1 aspect ratio 
+
+\nameref{sec:Area-selection-tools} Add selection to previous one
+
+\nameref{sub:Polygon-Selection-Tool} Shift-clicking on a node duplicates
+it
+
+\nameref{sub:Straight-Line-Selection} Forces line to be horizontal
+or vertical
+
+\nameref{sub:Segmented-Line-Selection} Shift-clicking on a node duplicates
+it
+
+\nameref{sec:Point-Tool} Shift-clicking adds points (\nameref{sec:Multi-point-Tool}
+behavior)
+
+\nameref{sec:Magnifying-Glass} Shift-clicking and dragging runs \textsf{\userinterface{Image\lyxarrow{}Zoom\lyxarrow{}\nameref{sub:ZoomToSelection}}}
+
 
 \calso{\nameref{sub:Manipulating-ROIs}, \nameref{sec:IJ-Tools}}
 
 
 \subsection{Ctrl (or Cmd) Key Modifications}
-\begin{description}
-\item [{\nameref{sub:Rectangular-Selection-Tool}\ and\ \nameref{sub:Oval-Selection-Tool}}] Selection
-is resized around its center 
-\item [{\nameref{sub:Straight-Line-Selection}}] Line is rotated/resized
-around its center
-\end{description}
+
+\nameref{sub:Rectangular-Selection-Tool}\ and\ \nameref{sub:Oval-Selection-Tool}
+Selection is resized around its center 
+
+\nameref{sub:Straight-Line-Selection} Line is rotated/resized around
+its center
+
 
 \calso{\nameref{sub:Manipulating-ROIs}, \nameref{sec:IJ-Tools}}
 
@@ -306,7 +319,7 @@ Shortcuts},label={lis:toolsShrtct2},showstringspaces=false,tabsize=4]
 
 A tool can be defined either by its name or by its position in the
 toolbar using \code{\href{http://imagej.nih.gov/ij/developer/macro/functions.html\#setTool}{setTool(id)}},
-which allows assigning keyboards to \nameref{sec:CustomToolsAndToolsets}
+which allows assigning keyboard shortcuts to \nameref{sec:CustomToolsAndToolsets}
 and items loaded by the \nameref{sec:ToolSwitcher} (e.g., \code{setTool(21);}
 activates whatever tool has been installed on the last slot of the
 toolbar). It is also possible to temporarily activate a tool. The

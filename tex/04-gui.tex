@@ -46,7 +46,7 @@ and \nameref{sub:Brush-Selection-Tool} }} & {\small 10} & {\small \nameref{sec:M
 {\small 4} & {\small \nameref{sub:Freehand-Selection-Tool}} & {\small 13} & {\small \nameref{sec:ToolSwitcher}}\tabularnewline
 \noalign{\vskip\doublerulesep}
 {\small 5} & {\small \nameref{sub:Straight-Line-Selection}, \nameref{sub:Segmented-Line-Selection},
-\nameref{sub:Freehand-Selection-Tool} and \nameref{sec:Arrow-Tool} } & {\small A--H} & \multirow{3}{49mm}{Customized tools installed from \filenameref{StartupMacros.txt},
+\nameref{sub:Freehand-Line-Selection} and \nameref{sec:Arrow-Tool} } & {\small A--H} & \multirow{3}{49mm}{Customized tools installed from \filenameref{StartupMacros.txt},
 \dirnameref{macros/toolsets/}, \dirnameref{macros/tools/} or \dirnameref{plugins/Tools/} }\tabularnewline
 \noalign{\vskip\doublerulesep}
 {\small 6} & {\small \nameref{sec:Angle-Tool}} &  & \tabularnewline
@@ -242,13 +242,12 @@ drag the handlers on its minor axis (conjugate diameter).
 Selection Tool\label{sub:Brush-Selection-Tool}\index{Tools!Area Selection!Brush}\index{Brush selection tool}\index{Selection!Refine}\improvement{}}
 
 \noindent Adjusts (refines) the shape of area selections using a circular
-`brush' \cite{C-ROIbrush}. ImageJ will treat the adjusted ROIs
-will become Clicking inside the area selection and dragging along
-its boundary will expand the boundary outwards. Clicking outside the
-area selection and dragging along its boundary will shrink the boundary
-inwards. Once the tool has been applied, ImageJ will treat the adjusted
-ROIs as \nameref{sub:Composite-selections}. The brush diameter can
-be adjusted by double clicking on the tool icon.
+`brush' \cite{C-ROIbrush}. Clicking inside the area selection and
+dragging along its boundary will expand the boundary outwards. Clicking
+outside the area selection and dragging along its boundary will shrink
+the boundary inwards. Once the tool has been applied, ImageJ will
+treat the adjusted ROIs as \nameref{sub:Composite-selections}. The
+brush diameter can be adjusted by double clicking on the tool icon.
 
 \noindent Modifier keys:
 \begin{lyxlist}{00.00.0000}
@@ -583,7 +582,8 @@ area from previously traced selections
 \end{lyxlist}
 
 \calso{\userinterface{Analyze\lyxarrow{}\nameref{sub:Analyze-Particles...}},
-\nameref{sub:FloodFiller}, \nameref{sub:Composite-selections}, \nameref{sub:Tools-shortcuts}}
+\nameref{sub:FloodFiller}, \href{http://imagejdocu.tudor.lu/doku.php?id=plugin:segmentation:versatile_wand:start}{Versatile Wand}
+plugin, \nameref{sub:Composite-selections}, \nameref{sub:Tools-shortcuts}}
 
 
 \subsection[Text Tool]{\noindent \textsf{\protect\includegraphics[bb=0bp 5bp 20bp 20bp,scale=0.6]{images/tools/Text}}~Text
@@ -632,8 +632,8 @@ macro, \nameref{sub:Tools-shortcuts} }
 \subsection[Magnifying Glass]{\noindent \textsf{\protect\includegraphics[bb=0bp 5bp 20bp 20bp,scale=0.6]{images/tools/Glass}}~Magnifying
 Glass\label{sec:Magnifying-Glass}\index{Tools!Magnifying Glass}\index{Magnifying Glass Tool}}
 
-Magnifies and reduces the view of active image. Activate the tool
-and click on the image \index{Zoom}zoom in. Right-click (or Alt-click)
+Magnifies and reduces the view of the active image. Activate the tool
+and click on the image to  \index{Zoom}zoom in. Right-click (or Alt-click)
 to zoom out. The current magnification is shown in the image's title
 bar. Double click on the magnifying glass icon to revert to the image's
 original magnification. As explained in \textsf{\userinterface{Image\lyxarrow{}Zoom\lyxarrow{}\nameref{sub:ZoomIn}}},
@@ -1230,11 +1230,15 @@ that allow you to run, install or evaluate macro code:
 Runs the macro or the selected line(s) of code.
 \item [{\textsf{Evaluate\ Line\ {[}y{]}}}] \mykeystroke{Ctrl}\,\mykeystroke{Y},
 Runs the line of code that contains the insertion point.
-\item [{\textsf{Abort\ Macro}}] Exits the macro
+\item [{\textsf{Abort\ Macro}}] Exits the macro.
 \item [{\textsf{Install\ Macros\ {[}i{]}}}] \mykeystroke{Ctrl}\,\mykeystroke{\,I},
 Adds the macro(s) contained in the editor to \textsf{\userinterface{Plugins\lyxarrow{}\nameref{sub:Macros}}}
-submenu (\textsf{\userinterface{\textsf{Plugins\lyxarrow{}Macros\lyxarrow{}}\nameref{sub:Install...}}}
-command).\phantomsection{}
+submenu (\textsf{\userinterface{\textsf{Plugins\lyxarrow{}Help\lyxarrow{}}\nameref{sub:Macro-Functions...}}}
+command).
+\item [{\textsf{Macro\ Functions\ldots{}\ {[}M{]}}}] \mykeystroke{Ctrl}\,\mykeystroke{Shift}\,\mykeystroke{\,M},
+Opens the \index{Macro functions}\href{http://imagej.nih.gov/ij/developer/macro/functions.html}{Macro Functions reference page},
+the indispensable guide to the built-in functions that can be called
+from the ImageJ macro language (alias for \textsf{\userinterface{Help\lyxarrow{}\nameref{sub:Macro-Functions...}}).}\phantomsection{}
 \item [{\textsf{\label{FunctionFinder[F]}Function\ Finder\ldots{}\ {[}F{]}}}] \mykeystroke{Ctrl}\,\mykeystroke{Shift}\,\mykeystroke{F},
 \cite{C-FxFinder} Retrieves \index{Macro functions}macro functions
 in the same way \nameref{sub:Command-Finder} retrieves commands.

@@ -15,15 +15,18 @@
   ## The common name to all the pages
     HOMEPAGE=146.html
   ## IJ version to appear in page titles
-    EDITION="IJ 1.46p"
+    EDITION="IJ 1.46r"
 
-    echo "  $(date), Creating guides for $EDITION:"
-
-### Create PDF versions
-    read -p "  Create PDF edition? (y/n) " -n 1 -r
+### Prompt for options
+    echo "  $(date), Creating $EDITION guide:"
+    read -p "  Create PDF editions? (y/n) " -n1 -r PDFREPLY
     echo ""
+    read -p "  Create HTML edition? (y/n) " -n1 -r HTMLREPLY
+    echo ""
+
+### Create PDF versions   
     START=$(date +%s)
-    if [[ $REPLY =~ ^[Yy]$ ]]
+    if [[ $PDFREPLY =~ ^[Yy]$ ]]
     then
         ### Check if pdflatex exists (Hopefully a full texlive installation will also exist)
         echo "  -->  Detecting pdflatex..."
@@ -85,12 +88,7 @@
     fi
 
 ### Create HTML version
-    STARTPAUSE=$(date +%s)
-    read -p "  Create HTML edition? (y/n) " -n 1 -r
-    echo ""
-    ENDPAUSE=$(date +%s)
-
-    if [[ $REPLY =~ ^[Yy]$ ]]
+    if [[ $HTMLREPLY =~ ^[Yy]$ ]]
     then
         ## We'll cd to the output directory. elyxer will read image dimensions from the images/ subfolder
         ## containing previously resized images using Resize_snapshots.ijm
@@ -111,4 +109,4 @@
         fi
     fi
 
-    echo "  Done. Guides for $EDITION created in $(( $(date +%s) - $START - ($ENDPAUSE - $STARTPAUSE))) seconds."
+    echo "  Done. Guides for $EDITION created in $(( $(date +%s) - $START)) seconds."
