@@ -22,7 +22,7 @@ Looking for something to do? Great! Pick something that looks interesting from t
 
 
 ## You’d like to see alternative implementations of the guide
-Have a look at the [alt-versions folder][./alt-versions/]. For example, a markdown version was generated using [pandoc](http://johnmacfarlane.net/pandoc/):
+Have a look at the [alt-versions folder](./alt-versions/). For example, a [markdown version](./alt-versions/guide.md) was generated using [pandoc](http://johnmacfarlane.net/pandoc/):
 
        latexpand ./user-guide.tex > guide.tex
        iconv -f MACROMAN -t UTF-8 guide.tex > guide.tex
