@@ -13,12 +13,20 @@ Want to contribute? Great! Here is what you can do:
 ### You have a concrete suggestion
 Check that your proposal has not been mentioned [previously][issues]. Then, try one of the following:
 
-  1. If you already use GitHub, create an [issue][issues] or a [pull request][pulls]
-  2. Otherwise, share it using the [IJ mailing list][list]. A simple subject line "_User Guide Suggestion_" should work.
+  1. If you already use GitHub, create a new [issue][issues] or a [pull request][pulls]
+  2. Otherwise, share it using the [IJ mailing list][list]. A simple subject line "_User Guide Suggestion: XX_" should work
 
 
 ### You’d like to help out but aren’t sure how
 Looking for something to do? Great! Pick something that looks interesting from the [issues list][issues]. Then, use one of the approaches mentioned above
+
+
+## You’d like to see alternative implementations of the guide
+Have a look at the [alt-versions folder][./alt-versions/]. For example, a markdown version was generated using [pandoc](http://johnmacfarlane.net/pandoc/):
+
+       latexpand ./user-guide.tex > guide.tex
+       iconv -f MACROMAN -t UTF-8 guide.tex > guide.tex
+       pandoc -f latex -t markdown ./guide.tex > guide.md
 
 
 ## Pre-releases
