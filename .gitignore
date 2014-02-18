@@ -21,3 +21,10 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+/guide/*.html
+/guide/images/*.png
+/guide/images/*/*.png
+/guide/*.pdf
+/tex/*.tex
+!/tex/user-guide-A4booklet.tex
+!/tex/user-guide-USbooklet.tex
