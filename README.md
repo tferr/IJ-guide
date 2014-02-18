@@ -21,11 +21,14 @@ Check that your proposal has not been mentioned [previously][issues]. Then, try 
 Looking for something to do? Great! Pick something that looks interesting from the [issues list][issues]. Then, use one of the approaches mentioned above
 
 
-## You’d like to see alternative implementations of the guide
-Have a look at the [alt-versions folder](./alt-versions/). For example, a [markdown version](./alt-versions/guide.md) was generated using [pandoc](http://johnmacfarlane.net/pandoc/):
+### You’d like to see alternative implementations of the guide
+There are several programs capable of converting the guide TeX files into other formats, such as RTF, MediaWiki or markdown markup. E.g., [pandoc](http://johnmacfarlane.net/pandoc/) could be used to convert the guide into markdown:
 
+       ## Aggregate all of the child documents into a single file
        latexpand ./user-guide.tex > guide.tex
+       ## Ensure UTF-8 encoding
        iconv -f MACROMAN -t UTF-8 guide.tex > guide.tex
+       ## Run pandoc
        pandoc -f latex -t markdown ./guide.tex > guide.md
 
 
