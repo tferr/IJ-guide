@@ -1,0 +1,48 @@
+%% This file lists the CTAN packages required to build the pdf of the guide
+%%% Critical (building would not be possible without these)
+	{amsmath}	% loaded by main file
+	{amssymb}	% loaded by main file
+	{appendix}	% loaded by IJ.module
+	{array}		% loaded by main file
+	{babel}		% loaded by main file
+	{caption}	% loaded by IJ.module
+	{color}		% loaded by main file
+	{colortbl}	% loaded by main file
+	{float}		% loaded by main file and IJ.module
+	{geometry}	% loaded by IJ.module
+	{graphicx}	% loaded by main file
+	{hyperref}	% loaded by IJ.module
+	{ifthen}	% loaded by IJ.module
+	{listings}	% loaded by IJ.module
+	{longtable}	% loaded by main file
+	{makeidx}	% loaded by main file
+	{multicol}	% loaded by IJ.module
+	{multirow}	% loaded by main file
+	{nomencl}	% loaded by main file and IJ.module
+	{pdfpages}	% loaded by main file
+	{pgf}		% loaded by IJ.module
+	{sectsty}	% loaded by IJ.module
+	{setspace}	% loaded by main file and IJ.module
+	{tcolorbox}	% loaded by IJ.module
+	{tocloft}	% loaded by main file
+	{todonotes}	% loaded by IJ.module
+	{ulem}		% loaded by main file
+	{units}		% loaded by main file
+	{url}		% loaded by main file
+	{varioref}	% loaded by main file
+	{wrapfig}	% loaded by main file
+
+%%% Non-critical (in the sense that we could build the guide without these)
+	{booktabs}	% loaded by main file
+	{datetime}	% loaded by main file
+	{fancyhdr}	% loaded by IJ.module
+	{footmisc}	% loaded by IJ.module
+	{menukeys}	% loaded by IJ.module
+	{microtype}	% loaded by IJ.module
+	{mparhack}	% loaded by IJ.module
+	{placeins}	% loaded by IJ.module
+	{prettyref}	% loaded by main file
+	{SIunits}	% loaded by IJ.module
+	{synctex}	% loaded by main file
+	{textcomp}	% loaded by IJ.module
+	{xcolor}	% loaded by IJ.module
