@@ -46,3 +46,5 @@ Not yet available
 [pulls]: https://github.com/tferr/IJ-guide/pulls
 [issues]: https://github.com/tferr/IJ-guide/issues
 [list]: https://list.nih.gov/cgi-bin/wa.exe?A0=IMAGEJ
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/tferr/ij-guide/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
