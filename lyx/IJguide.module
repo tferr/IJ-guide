@@ -26,7 +26,7 @@ Preamble
 
   %%%%%%%%%%%% General
     \usepackage{ifthen} % just in case it has not been loaded yet
-    \usepackage{microtype} % micro-typographic extensions of pdfTEX
+    %%\usepackage{microtype} % micro-typographic extensions of pdfTEX
     \usepackage{sectsty} % sections font control
     \usepackage{appendix} % appendices control
     \usepackage[amssymb,textstyle]{SIunits} % get the upright '\micro'
