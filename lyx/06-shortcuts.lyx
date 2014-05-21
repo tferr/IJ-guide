@@ -231,7 +231,7 @@ target "http://imagej.nih.gov/ij/macros/KeyboardShortcuts.txt"
 
 \end_inset
 
- macro (demonstrating how assign shortcuts to custom macros), 
+ macro (demonstrating how to assign shortcuts to custom macros), 
 \begin_inset CommandInset ref
 LatexCommand nameref
 reference "sub:Tools-shortcuts"
