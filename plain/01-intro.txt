@@ -1,0 +1,482 @@
+
+Getting Startedpart:Getting-Started
+
+This part provides basic information on ImageJ installation, troubleshooting
+and update strategies. It discusses sub:Fiji-introFIJIFiji Is Just ImageJ
+and sub:ImageJ2intro as well as third-party software related
+to ImageJ. Being impossible to document all the capabilities of ImageJ
+without exploring technical aspects of image processing, external
+resources allowing willing readers to know more about digital signal
+processing are also provided.
+
+
+Introductionsec:What-is-ImageJ?
+
+ImageJ is a http://rsb.info.nih.gov/ij/disclaimer.htmlpublic domain
+Java image processing and analysis program inspired by http://rsb.info.nih.gov/nih-image/NIH Image
+for the Macintosh. It runs, either as an online applet or as a downloadable
+application, on any computer with a Java1.5 or later virtual machine.
+http://imagej.nih.gov/ij/download.htmlDownloadable distributions
+are available for Windows, Mac OSX and Linux. It can display, edit,
+analyze, process, save and print 8-bit, 16-bit and 32-bit images.
+It can read many image formats including TIFF, GIF, JPEG, BMP, DICOM,
+FITS and 'raw'. It supports 'stacks' (and hyperstacks), a series
+of images that share a single window. It is multithreaded, so time-consuming
+operations such as image file reading can be performed in parallel
+with other operations(A somehow outdated list of ImageJ's features is available at http://imagej.nih.gov/ij/features.html).
+
+It can calculate area and pixel value statistics of user-defined selections.
+It can measure distances and angles. It can create density histograms
+and line profile plots. It supports standard image processing functions
+such as contrast manipulation, sharpening, smoothing, edge detection
+and median filtering.
+
+It does geometric transformations such as scaling, rotation and flips.
+Image can be zoomed up to 32:1 and down to 1:32. All analysis
+and processing functions are available at any magnification factor.
+The program supports any number of windows (images) simultaneously,
+limited only by available memory.
+
+Spatial calibration is available to provide real world dimensional
+measurements in units such as millimeters. Density or gray scale calibration
+is also available.
+
+ImageJ was designed with an open architecture that provides extensibility
+via Java plugins. Custom acquisition, analysis and processing plugins
+can be developed using ImageJ's built in editor and Java compiler.
+User-written plugins make it possible to solve almost any image processing
+or analysis problem.
+
+Being public domain open source software, an ImageJ user has the http://wikieducator.org/The_right_license/The_essential_freedomsfour essential freedoms
+defined by the Richard Stallman in 1986: 1) The freedom to run the
+program, for any purpose; 2) The freedom to study how the program
+works, and change it to make it do what you wish; 3) The freedom to
+redistribute copies so you can help your neighbor; 4) The freedom
+to improve the program, and release your improvements to the public,
+so that the whole community benefits.
+
+ImageJ is being developed on Mac OSX using its built in editor
+and Java compiler, plus the BBEdit editor and the Ant
+build tool. The source code is freely http://imagej.nih.gov/ij/developer/source/index.htmlavailable.
+The author, Wayne Rasband (mailto:wsr@nih.govwsr@nih.gov),
+is a Special Volunteer at the National Institute of Mental Health,
+Bethesda, Maryland, USA.
+
+http://imagejdev.org/historyHistory of ImageJ at imagejdev.org
+
+
+Installing and Maintaining ImageJsec:Updating-ImageJUpdates
+
+ImageJ can be downloaded from http://imagej.nih.gov/ij/download.html.
+Details on how to install ImageJ on Linuxhttp://imagej.nih.gov/ij/docs/install/linux.htmlLinux,
+http://imagej.nih.gov/ij/docs/install/mac.htmlMac OS 9,
+Mac OS Xhttp://imagej.nih.gov/ij/docs/install/osx.htmlMac OS X
+and Windows (OS)http://imagej.nih.gov/ij/docs/install/windows.htmlWindows
+C-WindowsInstaller are available at http://imagej.nih.gov/ij/docs/install/
+(Helpsub:Installation... command).
+Specially useful are the platform-specific Troubleshooting
+and Known Problems sections. Fijisub:Fiji-intro
+installation is described at http://fiji.sc/wiki/index.php/Downloads.
+
+The downloaded package may not contain the latest bug fixes so it
+is recommended to upgrade ImageJ right after a first installation.
+UpdatesUpdating IJIJImageJ consists only
+of running Helpsub:Update-ImageJ...,
+which will install the latest http://imagej.nih.gov/ij/upgrade/ij.jar
+in the ImageJ folder (on Linux and Windows) or inside the ImageJ.app
+(on Mac OSX). 
+
+Helpsub:Update-ImageJ... can
+be used to upgrade (or downgrade) the ij.jar file to release
+updates or daily builds. Release updates are announced frequently
+on the http://imagej.nih.gov/ij/notes.htmlIJ news website
+and are labelled alphabetically (e.g., v.1.43m). Typically, these
+releases contain several new features and bug fixes, described in
+detail on the http://imagej.nih.gov/ij/notes.htmlImageJ News page.
+Daily builds, on the other hand, are labelled with numeric
+sub-indexes (e.g., v.1.43n4) and are often released without documentation.
+Nevertheless, if available, release notes for daily builds can be
+found at http://imagej.nih.gov/ij/source/release-notes.html.
+When a release cycle ends (v.1.42 ended with 1.42q, v.1.43 with
+1.43u, etc.) an installation package is created, downloadable
+from http://imagej.nih.gov/ij/download.html. Typically, this
+package is bundled with a small list of add-ons (sub:Macros-ExtendingIJ,
+sub:Scripts and sub:Plugins).
+
+http://imagej.nih.gov/ij/macros/toolsets/Luts20Macros20and20Tools20Updater.txtLuts, Macros and Tools Updater,
+a macro toolset that performs live-updating of http://imagej.nih.gov/ij/macros/macros
+listed on the ImageJ web site
+
+
+ImageJDistributionssec:ImageJ-Distributions
+
+ImageJ alone is not that powerful: it's real strength is the vast
+repertoire of sub:Plugins that extend ImageJ's functionality
+beyond its basic core. The many hundreds, probably thousands,  freely
+available plugins from contributors around the world play a pivotal
+role in ImageJ's successCollins:2007p13684. Running Helpsub:Update-ImageJ...,
+however, will not update any of the plugins you may have installed(Certain plugins, however, provide self-updating mechanisms (e.g.,
+http://simon.bio.uva.nl/objectj/ObjectJ and the Bio-Formatshttp://loci.wisc.edu/software/bio-formatsOME Bio-Formats).).
+
+ImageJ add-ons (sub:Plugins, sub:Scripts and
+sub:Macros-ExtendingIJ) are available from several sources
+(http://imagej.nih.gov/ij/plugins/ImageJ's plugins page
+[Helpsub:Plugins...],
+http://imagejdocu.tudor.lu/doku.php?id=plugin:startImageJ Information and Documentation Portal
+and http://fiji.sc/wiki/index.php/Category:PluginsFiji's webpage,
+among others) making manual updates of a daunting task. This reason
+alone, makes it extremely convenient the use of sec:ImageJ-Distributions
+bundled with a pre-organized collection of add-ons.
+
+Below is a list of the most relevant projects that address the seeming
+difficult task of organizing and maintaining ImageJ beyond its basics.
+If you are a life scientist and have doubts about which distribution
+to choose you should opt for sub:Fiji-intro. It is heavily
+maintained, offers an automatic updater, improved scripting capabilities
+and ships with powerful plugins. More specialized adaptations of ImageJ
+are discussed in sub:Other-Software-Packages.
+
+
+Fijisub:Fiji-intro
+
+http://fiji.sc/FijiFiji (Fiji Is Just ImageJ-Batteries
+included) is a distribution of ImageJ together with Java, Java 3D
+and several plugins organized into a coherent menu structure. Citing
+its developers, "Fiji compares to ImageJ as Ubuntu compares to Linux".
+The main focus of Fiji is to assist research in life sciences, targeting
+image registration, stitching, segmentation, feature extraction and
+3D visualization, among others. It also supports many scripting languages
+(BeanScript, Clojure, Jython, Python, Ruby, see sec:ScriptingOtherLang).
+Importantly, Fiji ships with a http://fiji.sc/wiki/index.php/Update_Fijiconvenient updater
+that knows whether your files are up-to-date, obsolete or locally
+modified. http://fiji.sc/wiki/index.php/DocumentationComprehensive documentation
+is available for most of its plugins. The Fiji project was presented
+publicly for the first time at the http://imagejconf.tudor.lu/doku.phpImageJ User and Developer Conference
+in November 2008.
+
+
+MBF ImageJsub:MBFImageJintro
+
+The MBF ImageJImageJ for Microscopy@ImageJ for Microscopy  MBF ImageJ,http://www.macbiophotonics.ca/imagej/MBF ImageJ bundle
+or ImageJ for Microscopy (formerly http://www.uhnres.utoronto.ca/facilities/wcif/imagej/WCIF-ImageJ)
+features a collection of plugins and macros, collated and organized
+by Tony Collins at the MacBiophotonics facility, McMaster University.
+It is accompanied by a http://www.macbiophotonics.ca/imagej/comprehensive manual
+describing how to use the bundle with light microscopy image data.
+It is a great resource for microscopists but is not maintained actively,
+lagging behind the development of core ImageJ.
+
+Note that you can add plugins from MBF ImageJ to Fiji, combining the
+best of both programs. Actually, you can use multiple ImageJ distributions
+simultaneously, assemble your own ImageJ bundle by gathering the plugins
+that best serve your needs (probably, someone else at your institution
+already started one?) or create symbolic links to share plugins between
+different installations.
+
+Description of all ImageJ related projects at http://imagejdev.org/faqn141ImageDev
+
+
+Related Softwaresub:Related-Software
+
+
+Software Packages Built on Top of ImageJsub:Other-Software-Packages
+description
+[Bio7] http://bio7.org/Bio7 is an integrated development
+environment for Bio7ecological modeling with a main focus
+on individual based modeling and spatially explicit models. Bio7 features:
+Statistical analysis (using R); Spatial statistics; Fast communication
+between R (GNU S)@R (GNU S)  Interoperability,R and
+Java; BeanShell and Groovy support; Sensitivity analysis with an embedded
+flowchart editor and creation of 3D OpenGL (Jogl) models (see
+also RImageJ in sec:ImageJ-Interoperability).
+[BoneJ] http://bonej.org/BoneJ BoneJis a collection
+of tools for trabecular geometry and whole bone shape analysis.
+[Manager] http://www.micro-manager.org/Micro-Manager
+is a software package for control of automated microscopes. It lets
+you execute common microscope image acquisition strategies such as
+time-lapses, multi-channel imaging, z-stacks, and combinations thereof.
+Micro@ManagerManager works with microscopes
+from all four major manufacturers, most scientific-grade cameras and
+many peripherals used in microscope imaging.
+[MRI-CIA] http://www.mri.cnrs.fr/index.php?m=38MRI Cell Image Analyzer,
+developed by the Montpellier RIO Imaging facility (CNRS), is a rapid
+image analysis application development framework, adding visual scripting
+interface to ImageJ's capabilities. It can create batch applications
+as well as interactive applications. The applications include the
+topics DNA combing, quantification
+of stained proteins in cells, comparison
+of intensity ratios between nuclei and cytoplasm
+and counting nuclei stained in different channels".
+[ObjectJ] http://simon.bio.uva.nl/objectj/index.htmlObjectJ,
+the successor of http://simon.bio.uva.nl/Object-Image/object-image.htmlobject-image,
+supports graphical vector objects that non-destructively mark images
+on a transparent layer. Vector objects can be placed manually or by
+macro commands. Composite objects can encapsulate different color-coded
+marker structures in order to bundle features that belong together.
+ObjectJ provides back-and-forth navigation between results and images.
+The results table supports statistics, sorting, color coding, qualifying
+and macro access.
+[SalsaJ] http://www.euhou.net/index.php?option=com_content&task=view&id=7&Itemid=9SalsaJ
+is a student-friendly software developed specifically for the http://www.euhou.net/EU-HOU project.
+It is dedicated to image handling and analysis of astronomical images
+in the classroom. SalsaJSalsaJ has been translated into several
+languages.
+[misc:TrakEM2TrakEM2] http://www.ini.uzh.ch/ acardona/trakem2.htmlTrakEM2
+is a program for morphological Data mining@Data mining TrakEM2,data
+mining, three-dimensional Modeling@Modeling TrakEM2 and Bio7,modeling
+and image stitching, registration, editing and annotationCardona:2010p18306.
+TrakEM2FijiTrakEM2 is http://fiji.sc/wiki/index.php/TrakEM2distributed with Fiji
+and http://www.ini.uzh.ch/ acardona/trakem2_manual.htmlcapable of:
+
+
+description
+[3D modeling] Objects in 3D, defined by sequences of contours,
+or profiles, from which a skin, or mesh, can be constructed, and visualized
+in 3D.
+[Relational modeling] The extraction of the map that describes
+links between objects. For example, which neuron contacts which other
+neurons through how many and which synapses. 
+description
+description
+BioImageXDhttp://www.bioimagexd.net/BioImageXD,
+Endrovhttp://www.endrov.net/Endrov, Image SXMhttp://www.liv.ac.uk/7Esdb/ImageSXM/Image SXM
+
+
+ImageJ Interoperabilitysec:ImageJ-Interoperability
+
+Several packages exist that allow ImageJ to Interoperabilityinteract
+with other applications/environments:
+description
+[Bitplane Imaris] http://www.bitplane.com/go/products/imarisxtImarisXT
+can load and execute ImageJ plugins. Imarishttp://www.bitplane.com/go/products/imarisxt/xtensions/imagejbpImarisAdapter
+(Windows only and requiring valid licenses for Imaris and ImarisXT)
+allows the exchange of images between Imaris and ImageJ.
+[CellProfiler] CellProfiler@CellProfiler  Interoperability,http://www.cellprofiler.org/CellProfiler
+Carpenter:2006p1986 features http://cellprofiler.org/CPmanual/RunImageJ.htmlRunImageJ,
+a module that allows ImageJ plugins to be run in a CellProfiler pipeline.
+[Icy] http://www.bioimageanalysis.org/icy/Icy, an open
+source community software for Icybio-imaging, executes ImageJ
+plugins with almost 100 plugin compatibility. 
+[Knime] Knime http://knime.org/Knime (KnimeKonstanz Information MinerKonstanz
+Information Miner) contains several image processing nodes (KNIPKnime Image Processinghttp://tech.knime.org/community/image-processingKNIPKNIP@KNIP  Knime,)
+that are capable of executing ImageJ plugins and macros.
+[Open Microscopy Environment] OMEOpen Microsopy EnvironmentAll
+http://www.openmicroscopy.org/Open Microscopy Environment
+projects such as Bio-Formatshttp://www.openmicroscopy.org/site/products/bio-formatsBio-Formats,
+http://www.openmicroscopy.org/site/products/visbioVisBio
+and http://www.openmicroscopy.org/site/products/omeroOMERO
+integrate well with ImageJ.
+[RImageJ - R bindings for ImageJ] Bindings between
+ImageJ and R (GNU S)@R (GNU S)  Interoperability,http://www.r-project.org/R (GNU S)
+- The free software environment for statistical computing and graphics.
+The documentation for RImageJ is available at http://cran.r-project.org/web/packages/RImageJ/RImageJ.pdf
+(see also Bio7 in sub:Other-Software-Packages).
+[MIJ - Matlab-ImageJ bi-directional communication] A
+Java package for bi-directional data exchange between MATLAB@MATLAB  Interoperability,Matlab
+and ImageJ, allowing to exchange images between the two imaging software.
+MIJ@MIJ  Interoperability,MIJ also allows MATLAB to
+access all built-in functions of ImageJ as well as third-party ImageJ
+plugins. The developers provide more information on the http://bigwww.epfl.ch/sage/soft/mij/MIJ
+and http://www.mathworks.com/matlabcentral/fileexchange/32344-hardware-accelerated-3d-viewer-for-matlabMatlab File Exchange
+websites. sub:Fiji-intro features http://fiji.sc/wiki/index.php/MijiMiji.m,
+which makes even more convenient to use the libraries and functions
+provided by Fiji's components from within Matlab.
+description
+http://imagej.nih.gov/ij/links.htmlImageJ related links,
+list of http://developer.imagej.net/category/web-links/related-imaging-softwarerelated imaging software
+on the sub:ImageJ2intro website
+
+
+ImageJ2sub:ImageJ2intro
+
+http://imagejdev.org/ImageJDev is a http://imagejdev.org/fundingfederally funded,
+http://imagejdev.org/collaboratorsmulti-institution project
+dedicated to the development of the next-generation version of ImageJ:
+"ImageJ2ImageJ2". ImageJ2ImageDev@ImageDev ImageJ2,ImageJ2
+is a complete rewrite of ImageJ, that includes the current, stable
+version ImageJ ("ImageJ1") with a compatibility layer so that
+old-style plugins and macros can run the same as they currently do
+in ImageJ1. Below is a http://imagejdev.org/aimssummary
+of the http://imagejdev.org/ImageJDev project aims: 
+itemize
+To create the next generation version of ImageJ and improve its core
+architecture based on the needs of the community.
+To ensure ImageJ remains useful and relevant to the broadest possible
+community, maintaining backwards compatibility with ImageJ1 as close
+to 100 as possible.
+Expand functionality by interfacing ImageJ with existing open-source
+programs.
+To lead ImageJ development with a clear vision, avoiding duplication
+of efforts
+To provide a central online resource for ImageJ: program downloads,
+a plugin repository, developer resources and more.
+itemize
+Be sure to follow the ImageJ2 http://imagejdev.org/recent_changesproject news
+and the http://imagejdev.org/blogImageDev blog for updates
+on this exciting project.
+
+
+Getting Helpsec:Help-ResourcesHelp resources
+
+
+Help on Image Analysis
+
+Ethics@Ethics Acceptable manipulation,Acceptable manipulationBelow
+is a list of online resources (in no particular order) related to
+image processing and scientific image analysis, complementing the
+list of http://imagej.nih.gov/ij/links.htmlexternal resources on the IJ web site. 
+
+
+Ethics in Scientific Image Processing
+itemize
+http://www.ori.dhhs.gov/education/products/RIandImages/default.htmlOnline learning Tool for Research Integrity and Image Processing
+
+This website, created by the http://ori.dhhs.gov/Office of Research Integrity,
+explains what is appropriate in image processing in science and what
+is not.
+http://swehsc.pharmacy.arizona.edu/exppath/micro/digimage_ethics.phpDigital Imaging: Ethics (at the Cellular Imaging Facily Core, SEHSC)
+
+This website, compiled by Douglas Cromey at the University of Alabama
+- Birmingham, discusses thoroughly the topic of digital imaging ethics.
+It is recommended for all scientists. The website contains links to
+several external resources, including:
+
+
+enumerate
+http://www.jcb.org/cgi/reprint/166/1/11What's in a picture? The temptation of image manipulation
+(2004) M Rossner and K M Yamada, J Cell Biology 166(1):11-15, doi:10.1083/jcb.200406019
+http://www.nature.com/nature/journal/v439/n7079/full/439891b.htmlNot picture-perfect
+(2006), Nature 439, 891-892, doi:10.1038/439891b.
+enumerate
+itemize
+
+Scientific Image ProcessingImage processing (help)sub:IP-Resources
+itemize
+http://fiji.sc/wiki/index.php/IP_PrinciplesWhat you need to know about scientific image processing
+
+Simple and clear, this sub:Fiji-intro webpage explains
+basic aspects of scientific image processing.
+http://www.imagingbook.comimagingbook.com
+
+Web site of Digital Image Processing: An Algorithmic Introduction
+using Java by Wilhelm Burger and Mark BurgeBurger:2008p14082.
+This technical book provides a modern, self-contained, introduction
+to digital image processing techniques. Numerous complete Java implementations
+are provided, all of which work within ImageJ.
+http://homepages.inf.ed.ac.uk/rbf/HIPR2/Hypermedia Image Processing Reference (HIPR2)
+
+Developed at the Department of Artificial Intelligence in the University
+of Edinburgh, provides on-line reference and tutorial information
+on a wide range of image processing operations.
+https://ifn.mpi-cbg.de/wiki/ifn/index.php/Imaging_Facility_NetworkIFN wikipage
+
+The Imaging Facility Network (IFN) in Biopolis Dresden provides access
+to advanced microscopy systems and image processing. The website hosts
+high quality https://ifn.mpi-cbg.de/wiki/ifn/index.php/Teaching_Materialteaching material
+and useful links to external resources.
+http://www.stereology.info/stereology.info 
+
+Stereology Information for the Biological Sciences, designed to introduce
+both basic and advanced concepts in the field of stereology.
+itemize
+ImageJ Related Publications on page sec:IJ-related-pub
+
+
+Help on ImageJsub:Getting-Help
+
+Below is a list of the ImageJ Help resourceshelp resources
+that complement this guide (see sec:Guide-Formats).
+Specific documentation on advanced uses of ImageJ (macro programming,
+plugin development, etc.) is discussed in sec:Extending-ImageJ.
+enumerate
+The ImageJ http://imagej.nih.gov/ij/docs/online documentation pages
+
+Can be accessed via the Helpsub:Documentation...
+command.
+The Fijisub:Fiji-intro webpage:
+
+http://fiji.sc/
+The ImageJ Information and Documentation Portal (ImageJ wikipage):
+
+http://imagejdocu.tudor.lu/doku.phphttp://imagejdocu.tudor.lu/doku.php
+Video Tutorialstutorials on the ImageJ Documentation Portal
+and the Fiji YouTube channel:
+
+http://imagejdocu.tudor.lu/doku.php?id=video:start&s[]=video
+and http://www.youtube.com/user/fijichannel. New ImageJ users
+will probably profit from http://imagejdocu.tudor.lu/doku.php?id=video:beginner_help:imagej_beginner_s_tutorialChristine Labno's video tutorial.
+The MBF ImageJImageJ for Microscopy manual
+
+http://www.macbiophotonics.ca/imagej/
+Several online documents, most of them listed at:
+
+http://imagej.nih.gov/ij/links.html and http://imagej.nih.gov/ij/docs/examples/
+Mailing lists:Mailing lists@Mailing lists Help resources,
+
+enumerate
+ImageJ - http://imagej.nih.gov/ij/list.html
+
+General user and developer discussion about ImageJ. Can be accessed
+via the Helpsub:List-Archives...
+command. This list is also mirrored at http://imagej.1557.n6.nabble.com/Nabble
+and http://dir.gmane.org/gmane.comp.java.imagejGmane. You
+may find it easier to search and browse the list archives on these
+mirrors. Specially useful are the feed://rss.gmane.org/topics/excerpts/gmane.comp.java.imagejRSS feeds
+and the http://news.gmane.org/gmane.comp.java.imagejframes and threads
+view provided by Gmane.
+Fiji users - http://groups.google.com/group/fiji-users
+
+For user discussion specific to sub:Fiji-intro (rather
+than core ImageJ).
+Fiji-devel - http://groups.google.com/group/fiji-devel
+
+For developer discussion specific to Fiji.
+ImageJ-devel - http://imagejdev.org/mailman/listinfo/imagej-devel
+
+For communication and coordination of the ImageJDev project.
+Dedicated mailing lists for ImageJ related projects
+
+Described at http://imagejdev.org/mailing-lists .
+enumerate
+enumerate
+
+Using Mailing-lists
+
+If you are having problems with ImageJ, you should inquiry about them
+in the appropriated Help resourceslist. The ImageJ mailing
+list is an unmoderated forum subscribed by a knowledgeable worldwide
+user community with 2000 advanced users and developers.
+To have your questions promptly answered you should consider the following:
+enumerate
+Read the documentation files (described earlier in this section) before
+posting. Because there will always be a natural lag between the implementation
+of key features and their documentation it may be wise to check briefly
+the ImageJ news website (Helpsub:ImageJ-News...).
+Look up the mailing list archives (Helpsub:List-Archives...).
+Most of your questions may have already been answered.
+If you think you are facing a Bug (reporting)@Bug (reporting) Debug,bug
+try to upgrade to the latest version of ImageJ (Helpsub:Update-ImageJ...).
+You should also check if you are running the latest version of the
+Java Virtual Machine for your operating system. Detailed instructions
+on how to submit a bug report are found at http://imagej.nih.gov/ij/docs/faqs.html#bug.
+Remember that in most cases you can find answers within your own ImageJ
+installation without even connecting to the internet since the heuristics
+for finding commands or writing macros have been significantly improved
+in later versions (see sec:Finding-Commands and
+sec:Extending-ImageJ).
+As with any other mailing list, you should always follow basic http://en.wikipedia.org/wiki/Netiquettenetiquette,
+namely:
+
+enumerate
+Use descriptive subject lines - Re: Problem with Image>Set
+Scale command is much more effective than a general Re: Problem.
+Stay on topic - Do not post off-topic messages, unrelated to the
+message thread.
+Be careful when sending attachments - Refrain from attaching large
+files. Use, e.g., a http://en.wikipedia.org/wiki/File_hosting_serviceComparison_of_notable_file_hosting_servicesfile hosting service
+instead.
+Edit replies - You should include only the minimum content that is
+necessary to provide a logical flow from the question to the answer,
+i.e., quote only as much as absolutely necessary and relevant.enumerate
+enumerate
+

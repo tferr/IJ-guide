@@ -1,0 +1,249 @@
+sec:credits
+thebibliographyReferences
+C-WindowsInstallerThe ImageJ installer for Windows is created
+using the http://www.jrsoftware.org/isinfo.phpInno Setup
+installer generator. ImageJ.exe the Windows that launches ImageJ
+(ij.jar) was contributed by George Silva.
+
+C-ZIPcompressedTIFFsSupport for ZIP-compressed TIFFs was
+contributed by Jason Newton in IJ1.45g.
+
+C-FxFinderThe macro editor's Function Finder (MacrosFind Functions...)
+was written by Jérôme Mutterer.
+
+C-EllipseToolThe sub:Elliptical-Selection-Tool
+was contributed by Norbert Vischer.
+
+C-ROIbrushThe sub:Brush-Selection-Tool is based
+on the http://imagej.nih.gov/ij/plugins/roi-brush.htmlROI Brush Tool
+plugin from Tom Larkworthy and Johannes Schindelin.
+
+C-ArrowToolJean-Yves Tinevez and Johannes Schindelin (authors
+of the http://fiji.sc/wiki/index.php/ArrowFiji Arrow Tool)
+contributed code to the sec:Arrow-Tool.
+
+C-WandToolMichael Schmid, added 4-connected and 8-connected
+tracing with tolerance to the sub:Wand-Tool.
+
+C-ToolsetsMacro Toolsets distributed with ImageJ have been
+contributed by Gilles Carpentier, Jérôme Mutterer and Tiago Ferreira.
+
+C-PixelInspectorThe sub:PixelInspector is a
+plugin tool conversion of Michael Schmid's http://imagejdocu.tudor.lu/doku.php?id=plugin:utilities:pixel_inspector:startPixel Inspector
+plugin.
+
+C-ImportResultsIn IJ1.43l and earlier, the FileImportsub:Import>Results
+command was based on Jérôme Mutterer's http://imagej.nih.gov/ij/macros/Import_Results_Table.txtImportResultsTable
+macro.
+
+C-StackFromListMarcel van Herk added URLs support to the
+FileImportsub:Stack-From-List...
+command in IJ1.45f.
+
+C-AviPluginsMichael Schmid contributed improvements to
+the http://imagej.nih.gov/ij/source/ij/plugin/AVI_Reader.javaAVI reader
+and http://imagej.nih.gov/ij/source/ij/plugin/filter/AVI_Writer.javaAVI writer
+plugins.
+
+C-FITSwriterKaren Collins contributed improvements to the
+FITSWriter (FileSave Assub:FITS...
+command).
+
+C-FitCircleThe EditSelectionsub:Fit-Circle
+command, based on a MATLAB script by http://www.math.uab.edu/ chernov/cl/MATLABcircle.htmlNikolai Chernov,
+was contributed by Michael Doube and Ved Sharma.
+
+C-CreateSelectionThe EditSelectionsub:Create-Selection
+command is based on the ThresholdToSelection plugin written by
+Johannes Schindelin.
+
+C-SocketListenerIJ1.46f adopted Johannes Schindelin's
+RMI-based http://fiji.sc/javadoc/fiji/OtherInstance.htmlOtherInstance
+class from Fiji, which works on multi-user machines and is more secure.
+
+C-CPThe Color Picker (ImageColorsub:Color-Picker...=00005BK=00005D)
+was written by Gali Baler, a 2003-2004 intern from http://www.montgomeryschoolsmd.org/schools/bcchs/Bethesda-Chevy Chase High School.
+
+C-ThresMethThe 16different thresholding methods available
+in the ImageAdjustsub:Threshold...=00005BT=00005D
+tool were implemented by Gabriel Landini.
+
+C-Resizer-ScalerMichael Schmid contributed improvements
+to the downsizing kernel used by ImageAdjustsub:Size...
+and Imagesub:Scale...=00005BE=00005D
+as well as undo support for Imagesub:Scale...=00005BE=00005D.
+
+C-ColorThresThe ImageAdjustsub:Color-Threshold...
+command implements Gabriel Landini's http://www.dentistry.bham.ac.uk/landinig/software/software.htmlThreshold Colour plugin.
+
+C-Reslice-ZprojThe http://imagej.nih.gov/ij/source/ij/plugin/Slicer.javaReslice
+and the http://imagej.nih.gov/ij/source/ij/plugin/ZProjector.javaZProject
+plugin (ImageStackssub:Reslice...=00005B/=00005D
+and sub:Z-Project... commands) were contributed by Patrick
+Kelly and Harvey Karten of the University of California, San Diego.
+
+C-OrthoViewsThe ImageStackssub:Orthogonal-Views
+command is based on Dimiter Prodanov's http://imagej.nih.gov/ij/plugins/stack-slicer/index.htmlStackSlicer
+plugin and Albert Cardona's Updater class. Michael Doube added support
+for XZ and YZ view control as well as mouse wheel control.
+
+C-3Dproject-1The ImageStackssub:3D-Project...
+was written by Michael Castle and Janice Keller of the University
+of Michigan Mental Health Research Institute (MHRI). Bill Mohler added
+suport for hyperstacks and 16/32-bit images in IJ1.44m.
+
+C-ConcatenatorThe ImageStacksToolssub:Concatenate...
+command implemented in IJ1.46e is based on the http://imagej.nih.gov/ij/plugins/concatenate.htmlConcatenate
+plugin by Jonathan Jackson.
+
+C-SubstackMakerThe ImageStacksToolspar:Make-Substack
+command is based on the http://imagej.nih.gov/ij/plugins/substack-maker.htmlSubstack Maker
+plugin by Anthony Padua, Daniel Barboriak and Ved Sharma.
+
+C-ReduceDimensThe ImageHyperstackssub:Reduce-Dimensionality...
+command is based Jérôme Mutterer's http://imagej.nih.gov/ij/macros/Reduce_HyperStack.txtReduce HyperStack
+macro.
+
+C-BinnerThe ImageTransformsub:Bin...
+command is based on Nico Stuurman's http://valelab.ucsf.edu/ nico/IJplugins/Binner.htmlBinner
+plugin.
+
+C-SetZoomThe ImageZoomsub:Set-Zoom...
+command is based on Albert Cardona's http://albert.rierol.net/software.htmlZoom Exact
+plugin.
+
+C-Find-MaximaThe Processsub:Find-Maxima
+command is based on a plugin contributed by Michael Schmid.
+
+C-EnhContrastThe equalization code implemented in Processsub:Enhance-Contrast
+was contributed by Richard Kirk.
+
+C-RemoveNaNsThe ProcessNoisesub:Remove-NaNs...was
+contributed by Michael Schmid.
+
+C-MathMacroThe ProcessMathsub:Macro...
+command is modeled after Ulf Dittmer's http://www.ulfdittmer.com/imagej/index.htmlExpressionExpression
+plugin.
+
+C-FFTfilterThe ProcessFFTsub:Bandpass-Filter...
+is a built in version of Joachim Walter's http://imagej.nih.gov/ij/plugins/fft-filter.htmlFFT Filter
+plugin.
+
+C-Fill-HolesThe ProcessBinarysub:Fill-Holes
+algorithm was contributed by Gabriel Landini.
+
+C-Skeletonize3DThe http://fiji.sc/wiki/index.php/Skeletonize3DSkeletonize3D
+plugin was written by Ignacio Arganda-Carreras, based on an ITKInsight Segmentation and Registrationhttp://itk.org/itkindex.htmlITK
+implementation by http://hdl.handle.net/1926/1292Hanno Homann.
+It implements a 3D thinning algorithm from Lee et al. http://dx.doi.org/10.1006/cgip.1994.1042Building skeleton models via 3-D medial surface axis thinning algorithms. CVGIP,
+56(6):462-478, 1994. 
+
+C-MultiThreadFiltersMulti-threading support for all Processsub:Filters
+commands was contributed by Stephan Saalfeld and Michael Schmid in
+ImageJ1.45c.
+
+C-GaussianBlurThe faster and more accurate version of
+ProcessFilterssub:Gaussian-Blur...
+implemented in ImageJ1.38r was contributed by Michael Schmid.
+
+C-NonBlockingDialogThe NonBlockingGenericDialog.class
+used by the ProcessBatchsub:batch>Macro...
+command was added by Johannes Schindelin.
+
+C-SubtractBackgroundThe rolling ball code of Processsub:Subtract-Background...
+is based on the NIH Image Pascal version by Michael Castle and Janice
+Keller. The sliding paraboloid algorithm was written by Michael Schmid.
+
+C-DistributionThe Analyzesub:Distribution...
+command was written by Gabriel Landini.
+
+C-HistogramThe scaled color bar implemented in Analyzesub:Histogram
+was contributed by Bob Dougherty. 
+
+C-CurveFitterThe much improved http://imagej.nih.gov/ij/developer/api/ij/measure/CurveFitter.htmlCurveFitter
+(AnalyzeToolssub:Curve-Fitting...)
+implemented in IJ1.46f was contributed by Michael Schmid. The Rodboard
+and Gaussian functions were originally contributed by David Rodbard
+(NIH) and Stefan Worz (DKFZ), respectively.
+
+C-RM-XORThe ROI Manager(XOR) command (AnalyzeToolssub:ROI-Manager...)
+was added by Johannes Schindelin.
+
+C-RM-MultiMeasureThe ROI Manager(Multi Measure)
+command (AnalyzeToolssub:ROI-Manager...)
+is based on Bob Dougherty's MultiMeasure plugin.
+
+C-RM-MultiPlotThe ROI Manager(Multi Plot) command
+(AnalyzeToolssub:ROI-Manager...)
+was contributed by Philippe Gendre.
+
+C-SyncWIndowsThe AnalyzeToolssub:SynchronizeWindows
+command (an improved version of the http://imagej.nih.gov/ij/plugins/ucsd.htmlSyncWindows plugin
+by Patrick Kelly) was contributed by Joachim Walter.
+
+C-ControlPanelThe Control Panel (PluginsUtilitiessub:Control-Panel...)
+was written by Cezar M. Tigare.
+
+C-ComandFinderThe Command Finder (PluginsUtilitiessub:Command-Finder)
+was written by Mark Longair.
+
+C-PluginToolThe http://imagej.nih.gov/ij/source/ij/plugin/tool/PlugInTool.javaPlugInTool
+class was inspired by Johannes Schindelin's http://fiji.sc/javadoc/fiji/tool/AbstractTool.htmlAbstractTool
+class in Fiji.
+
+C-SeveralOther additions, improvements and reproducible
+ bug reports have been contributed by Adrian Daerr, Airen Peraza,
+Ajay Gopal, Albert Cardona, Alberto Duina, Alden Dima, Andreas Maier,
+Andrew French, Andrii Savchenko, Arttu Miettinen, Aryeh Weiss, Balazs
+Nyiri, Barry DeZonia, Bill Mohler, Bob Hamilton, Bob Loushin, Bruno
+Vellutini, Burri Olivier, Carlos Becker, Carne Draug, Charles Anderson,
+Cheryl McCreary, Christian Moll, Christophe Leterrier, Christopher
+Harrison, Damon Poburko, Daniel Hornung, Daniel Kalthoff, Daniel Senff,
+David Gauntt, David McDonald, Denny Hugg, Dimiter Prodanov, Divakar
+Ramachandran, Dorai Iyer, Duncan Mak, Eik Schumann, Emmanuel Levy,
+Erik Meijering, Fabian Svara, Francis Burton, Frank Sprenger, Franklin
+Shaffer, Frederic Hessman, Gabriel Landini, Gilles Carpentier, Gregory
+Reneff, Hiroki Hakoshima, Ian Lim, Ingo Bartholomaeus, Jakob Preus,
+Jamie Robinson, Jan Eglinger, Jan Funke, Jarek Sacha, Jay Unruh, Jean-Pierre
+Clamme, Jerome Mutterer, Jesper Pedersen, Jim Passmore, Joachim Wesner,
+Johannes Hermen, Johannes Schindelin, Johannes Weissmann, John Oreopoulos,
+John Pearl, Jonathan Silver, Jose Wojnacki, Juan Grande, Julian Cooper,
+Kai Uwe Barthel, Karen Collins, Kees Straatman, Kevin Moll, Kris Sheets,
+Mark Krebs, Mark Longair, Martin Dressler, Mat Al-Tamimi, Matthew
+Smith, Michael Cammer, Michael Doube, Michael Ellis, Michael Schmid,
+Michel Julier, Nagananda Gurudev, Nico Stuurman, Norbert Vischer,
+Olaf Freyer, Oliver Bannach, Olivier Bardot, Paul Jurczak, Peter Haub,
+Rainer Engel, Raymond Coory, Reinhard Mayr, Richard Cole, Richie Mort,
+Robert Dougherty, Shannon Stewman, Simon Roussel, Stefan Starke, Stephan
+Saalfeld, Steven Green, Thomas Boudier, Thorsten Wagner, Tiago Ferreira,
+Tomas Karlsson, Tseng Qingzong, Ulf Dittmer, Uwe Walschus, Valerio
+Mussi, Ved Sharma, Vytas Bindokas, Wilhelm Burger, Winfried Wurm,
+Xiao Chen, Zeljka Maglica.
+
+thebibliography
+
+
+infobox
+infobox:focusFocus on Bioimage Informatics
+
+
+In July 2012 Nature Methods issued a http://www.nature.com/nmeth/focus/bioimageinformatics/index.htmlfocus
+dedicated to the role of bioimage informatics in microscopy, the tools
+that are available for scientific image processing, and the challenges
+and opportunities in the field. The special issue features a large
+collection of articles discussing ImageJ, sub:Fiji-intro
+and sub:Related-Software, including:
+itemize
+Cardona A, Tomancak P: "Current challenges in open-source
+bioimage informatics"Cardona:2012p21002
+Carpenter AE et al.: "A call for bioimaging software usability"
+Carpenter:2012p21003
+Eliceiri KW. "Biological imaging software tools"Eliceiri:2012p21007
+Schindelin J et al. "Fiji: an open-source platform for
+biological-image analysis"Schindelin:2012p21012
+Schneider CA et al.: "NIH Image to ImageJ: 25 years of
+image analysis"Schneider:2012p20999
+itemize
+A full announcement can be found on the http://fiji.sc/wiki/index.php/2012-06-29_-_Fiji_papers_at_Nature_MethodsFiji news channel.
+infobox
+

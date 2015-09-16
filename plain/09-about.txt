@@ -1,0 +1,131 @@
+
+Colophonsec:About-this-Guide
+
+The initial contents of this guide have been retrieved in 2009 from
+the http://imagej.nih.gov/ij/ImageJ website using http://www.mbayer.de/html2text/html2text.
+Since then, it has been complemented and updated using informations
+posted on the http://imagej.nih.gov/ij/list.htmlImageJ mailing list,
+http://imagejdocu.tudor.lu/doku.php?id=startImageJ Documentation Portal,
+http://fiji.sc/wiki/index.php/FijiFiji, http://imagej.nih.gov/ij/ImageJ,
+and http://developer.imagej.net/ImageJDev websites and Tony
+Collins http://www.macbiophotonics.ca/imagej/ImageJ for Microscopy
+manual. Nevertheless, because there has never been accompanying documentation
+for some of the 350+ described commands, several sections have been
+written from scratch based on the relevant http://imagej.nih.gov/ij/developer/source/index.htmlImageJ source code
+and authors own experience. Legacy nomenclature that became obsolete
+with version  has been intentionally omitted. 
+
+The guide was typeset with Live2012 on Mac OS10.6.8.
+All illustrations were created with ImageJ/Fiji, loaded with G. Landini's
+http://fiji.sc/wiki/index.php/IJ_RobotIJ Robot and J. Schindelin's
+http://fiji.sc/wiki/index.php/Tutorial_MakerTutorial Maker
+plugins. Screenshots were produced by the screencapture
+shell utility controlled by the following IJ macro: 
+lstlisting[otherkeywords==,showstringspaces=false,tabsize=4]
+ exec("screencapture -ciWo > /dev/null 2>&1 &"); run("System Clipboard");
+ setLineWidth(1); setForegroundColor(111, 121, 132);
+ drawRect(0, 0, getWidth, getHeight);
+lstlisting
+
+
+The HTML version was produced with http://elyxer.nongnu.org/eLyXer 1.2
+and formatted using CSS code from Alex Fernández and Michael Hüneburg;
+JavaScript code from Ciarán O'Kelly, Stuart Langridge and Tiago Ferreira.
+It uses http://alexgorbatchev.com/SyntaxHighlighter/SyntaxHighlighter
+and icons from the http://tango.freedesktop.org/Tango_Desktop_ProjectTango Desktop Project.
+
+
+Getting Involvedsub:Getting-Involved
+
+Your help is needed to improve ImageJ. Even if you are not a programmer,
+your participation is important:
+itemize
+Are you a skilled ImageJ user?
+
+You might want to help out with the documentation effort: Write a
+FAQ, How-To, Tutorial or http://imagejdocu.tudor.lu/doku.php?id=video:startVideo Tutorial
+on the http://imagejdocu.tudor.lu/doku.php?id=howto:general:how_to_use_this_documenation_wikiImageJ Documentation Portal;
+Help us updating the ImageJ User Guide; Share the add-ons you may
+have created with the community;  Subscribe the http://imagej.nih.gov/ij/list.htmlmailing list
+and help answering the questions raised by other users.
+Are you know knowledgeable in image processing?
+
+Please join the http://imagej.nih.gov/ij/list.htmlmailing list
+and participate in the discussions. You could also write a Tutorial
+on the http://imagejdocu.tudor.lu/doku.php?id=howto:general:how_to_use_this_documenation_wikiImageJ Documentation Portal.
+Do you have a strong scientific background?
+
+Frequently, the most demanding tasks in scientific image processing
+relate to experimental design. Even if you do not have special expertise
+in image processing, by participating on the http://imagej.nih.gov/ij/list.htmlmailing list
+discussions, your experience will be valuable to others.
+Do you want ImageJ to improve?
+
+You can report bugs or request new features using the http://imagej.nih.gov/ij/list.htmlmailing list.
+Do you have experience in graphic/web design?
+
+If you are able to to improve the look and feel of the guide we welcome
+your skills.
+itemize
+
+The ImageJ Iconsec:About-the-Cover
+
+The Hartnack@Hartnack IJ icon,IJ iconHartnack
+microscope (ca. 1870's) depicted on the front page inspired
+the http://imagej.nih.gov/ij/docs/install/osx.htmliconImageJ icon for Mac OS X.
+It is based on a http://www.arsmachina.com/s-hart1209.htmphotograph
+by http://www.tomgrill.com/Tom Grill at http://www.arsmachina.com/arsmachina.com. 
+
+Edmund Hartnack (1826-1891) was a renown microscope manufacturer
+that pioneered the use of correction collars in water-immersion lenses
+and the adoption of the substage condenser(Merico, G. Microscopy in Camillo Golgi's times. J Hist Neurosci,
+(2003) 8(2):113-20). The precision and robustness of Hartnack optics played a pivotal
+role in the groundbreaking research by the Nobel laureates Robert
+Koch(Brock, TD. Robert Koch, A life in medicine and bacteriology.
+ASM, 1999), Camillo Golgi(Brenni P. Gli strumenti di fisica dell'Istituto Tecnico Toscano -
+Ottica. IMSS, 1995 ) and Santiago Ramón y Cajal(DeFelipe  Jones. Santiago Ramón y Cajal and methods in neurohistology.
+Trends Neurosci, (1992) 15(7):237-46).
+
+
+
+[1]Revision Historyrevisionhistory
+
+
+Document Revision Historysec:Document-Revision-History
+
+center
+tabular>p0.19>p0.72
+
+1cDate & 1cNotesSeptember/October 2012 & Reviewed by Michael SchmidJuly 2012 & Updated for v1.46r
+
+Reviewed by Barry DeZoniaJune 2012 & Updated for v1.46p
+
+Second major revision with new sections on overlays, 3D volumes, sub-pixel
+selections, curve fitting and interface customizations
+
+Improvements in layout and browsabilitySeptember 2011 & Updated for v1.45
+
+Deeply revised edition with several new sections in Parts I-IV
+
+Available as printable booklets
+
+Redesigned HTML version January 2011 & Updated for v1.44
+
+New sections on advanced ImageJ usage, Fiji scripting, command line
+usage and interoperability with other software packagesMay 2010 & First HTML versionApril 2010 & First edition: v1.43tabular
+center
+
+
+
+
+
+Acknowledgments
+
+We are extremely grateful to Alex Fernández for his wonderful http://elyxer.nongnu.org/eLyXer,
+Alex Gorbatchev for http://alexgorbatchev.com/SyntaxHighlighter/SyntaxHighlighter,
+Johannes Schindelin for assistance with the http://fiji.sc/guide.gitGit repository,
+Norbert Vischer for critical corrections and Michael Schmid and Barry
+DeZonia for thorough revisions. We are also thankful to all of those
+who submitted criticisms, suggestions and encouragement to update
+this edition. But above all, our thanks go to the extraordinary ImageJ
+community for its dedication to the project.

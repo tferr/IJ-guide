@@ -1,0 +1,264 @@
+
+Extending ImageJsec:Extending-ImageJ
+
+ImageJ capabilities can be extended by loadable code modules in the
+form of macros, scripts or plugins. 300 macros, 500 plugins
+and 20 scripts are available through the ImageJ web site. Below
+is a short description of these three type of ImageJ add-ons:
+lyxlistmacrosss
+[sub:Macros-ExtendingIJ] The easiest way to
+execute a series of ImageJ commands. The ImageJ Macrosmacro
+language - a Java-like language - contains a set of control
+structures, operators and built-in functions and can be used to call
+built-in commands and other macros. Macro code is stored in text files
+(.txt and .ijm extensions).
+[sub:Plugins] Much more powerful, flexible and faster
+than macros (most of ImageJ's built-in menu commands are actually
+Pluginsplugins) but harder to write and debug. Plugins are
+written in the JavaJava programming language (.java source
+files) and compiled to .class files.
+[sub:Scripts] ImageJ uses the Mozilla Rhino interpreter
+to run JavaScriptJavaScripts. Similarly to plugins, scripts
+have full access to all ImageJ and Java APIs but do not need to be
+compiled (scripts and macros run interpretively). On the other hand,
+scripts lack the simplicity of macro language and feel less integrated
+in ImageJ.
+lyxlist
+
+Macrossub:Macros-ExtendingIJ
+
+A Macrosmacro is a simple program that automates a series
+of ImageJ commands. The easiest way to create a macro is to record
+a sequence of commands using the command recorder (PluginsMacrossub:Record...). 
+
+A macro is saved as a text file (.txt or .ijm extension) and once
+installed executed by selecting the macro name in the Pluginssub:Macros
+submenu, by http://imagej.nih.gov/ij/developer/macro/macros.htmlshortcutspressing a key
+or, in the case of http://imagej.nih.gov/ij/developer/macro/macros.htmltoolsMacro tools,
+by clicking on an icon in the ImageJ toolbar. In addition, any macro
+file placed in ImageJ/plugins with an .ijm extension will be installed
+in the Plugins menu like any other plugin
+(before version1.41 only files with an underscore in the name would
+be listed).
+
+There are more than 300example macros, on the ImageJ Web site.
+To try one, open it in a browser window and drag it directly to the
+fig:The-ImageJ-window or, copy it to the clipboard (Ctrl
+A, Ctrl C), switch to IJ, and run FileNewsub:SystemClipboard=00005BV=00005D
+(Ctrl Shift V), pasting the macro into a new sub:ImageJ-Macro-Editor
+window. Run it using the editor's MacrosRun Macro
+command (Ctrl R). Most of the example macros are also available
+in the macros folder, inside the ImageJ folder.
+
+
+Macro Programmingsub:Macro-Programming
+
+The ImageJ community has created excellent tutorials on macro programming.
+These resources are indispensable guides to the ImageJ macro language: 
+enumerate
+The ImageJ Macro Language - Programmer's Reference Guide
+by Jérôme Mutterer and Wayne Rasband. This booklet compiles most of
+the documentation dispersed throughout the web related to ImageJ's
+macro programming. It provides an up to date printable manual for
+the ImageJ macro language:
+
+http://imagej.nih.gov/ij/docs/macro_reference_guide.pdf
+Fourtneen new macro functionsThe Built-in Macro Functions
+webpage (Helpsub:Macro-Functions...
+and MacrosFunctionFinder=00005BF=00005D
+in the sub:ImageJ-Macro-Editor) is the indispensable guide
+to the built-in functions that can be called from the ImageJ macro
+language. It is thoroughly documented and constantly updated:
+
+http://imagej.nih.gov/ij/developer/macro/functions.html
+Tutorials on the FijiFiji webpage: 
+
+http://fiji.sc/wiki/index.php/Introduction_into_Macro_Programming
+How-tos and tutorials on the ImageJ Documentation Portal
+
+http://imagejdocu.tudor.lu/
+enumerate
+sub:Scripts, sub:Plugins, sub:ImageJ-Macro-Editor,
+sub:Fiji-Scrip-Editor
+
+
+Scriptssub:Scripts
+
+JavaScriptJavaScript scripting was introduced in ImageJ1.41
+in order to bring full access to ImageJ and Java APIs (see
+tab:Advantages-JavaScript). ImageJ uses the Mozilla Rhino
+interpreter built into Java1.6 for Linux and Windows to run JavaScript.
+Mac users, and users of earlier versions of Java, must download JavaScript.jar
+into the plugins folder. This JARJARJava ARchive
+file is available on the http://imagej.nih.gov/ij/download/tools/JavaScript.jarImageJ website
+and is included with the Mac version of ImageJ in ImageJ/plugins/jars. 
+
+Example JavaScript programs are available at http://imagej.nih.gov/ij/macros/js/imagej.nih.gov/ij/macros/js/.
+Thread safe JavaScript code can be generated using the Recorder (PluginsMacrossub:Record...).
+Scripts can be opened in the editor as any other macro. Scripts with
+the extension .js can be run using MacrosRun Macro otherwise
+MacrosEvaluate JavaScript (Ctrl J) must be used.
+
+
+JavaScript Programming
+
+Resources on ImageJ JavaScript scripting include:
+enumerate
+The ImageJ web site, with growing documentation:
+
+http://imagej.nih.gov/ij/developer/javascript.html
+Tutorials on the FijiFiji webpage:
+
+http://fiji.sc/wiki/index.php/Javascript_Scripting
+Online scripts repository:
+
+http://imagej.nih.gov/ij/macros/js/
+enumerate
+american
+table
+[Advantages and disadvantages of JavaScript]english
+tab:Advantages-JavaScriptAdvantages and disadvantages
+of JavaScript in ImageJ. ActionBarCodeBar A thorough
+comparison between different scripting languages is available on the
+http://fiji.sc/wiki/index.php/Scripting_comparisonsFiji webpage.english
+
+
+
+
+minipage[t]1
+english
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
