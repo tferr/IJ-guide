@@ -1,8 +1,12 @@
-#The ImageJ User Guide
+
+
+[![DOI](https://zenodo.org/badge/16813828.svg)](https://zenodo.org/badge/latestdoi/16813828)
+
+# The ImageJ User Guide
 This repository contains all things related to the [ImageJ User Guide](http://imagej.nih.gov/ij/docs/guide/).
 
 
-##Typesetting
+## Typesetting
 See [README](./README) for instructions on how to build the guide.
 
 
